@@ -1,0 +1,19 @@
+{
+  "0": {
+    "basicblocks": 70,
+    "calls": "",
+    "file": "cnn_accel.cpp",
+    "fileloc": 9,
+    "instructions": 228,
+    "loads": {
+      "L": 4,
+      "T": 4
+    },
+    "name": "cnn_accel",
+    "stores": {
+      "L": 7,
+      "T": 2
+    },
+    "total_instructions": 228
+  }
+}

@@ -1,0 +1,104 @@
+---
+MainSourceFile:  /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_t2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      29
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_t2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      32
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_35_1:  '
+    FileOffset:      35
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          17043
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_35_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_38_2:  '
+    FileOffset:      38
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          17126
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_38_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_42_3:  '
+    FileOffset:      42
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          17210
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_42_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_43_4:  '
+    FileOffset:      43
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          17257
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_43_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_65_5:  '
+    FileOffset:      65
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          17891
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_65_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_66_6:  '
+    FileOffset:      66
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          17938
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_66_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_69_7:  '
+    FileOffset:      69
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          17997
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_69_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_83_8:  '
+    FileOffset:      83
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          18347
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_83_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_84_9:  '
+    FileOffset:      84
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          18394
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_84_9: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_93_10:  '
+    FileOffset:      93
+    FilePath:        cnn_accel.cpp
+    Replacements:    
+      - FilePath:        /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp
+        Offset:          18640
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_93_10: '
+...

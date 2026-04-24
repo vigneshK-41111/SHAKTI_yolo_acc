@@ -1,0 +1,40 @@
+/scratch1/iot/run_hls.tcl:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=name=cnn_accel_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=cnn_accel
+        ^
+cnn_accel.cpp:15:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=s_axilite port=return bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+        ^
+cnn_accel.cpp:16:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=s_axilite port=size bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=size bundle=control
+        ^
+cnn_accel.cpp:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=m_axi port=input bundle=gmem depth=(416 * 416 * 16) offset=slave_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=input bundle=gmem depth=(416 * 416 * 16) offset=slave
+        ^
+cnn_accel.cpp:19:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=m_axi port=output bundle=gmem depth=(416 * 416 * 16) offset=slave_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=output bundle=gmem depth=(416 * 416 * 16) offset=slave
+        ^
+cnn_accel.cpp:21:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=ap_ctrl_hs port=return_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE ap_ctrl_hs port=return
+        ^
+cnn_accel.cpp:29:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=variable=tile_in type=ram_t2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS BIND_STORAGE variable=tile_in type=ram_t2p impl=bram
+        ^
+cnn_accel.cpp:32:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=variable=tile_out type=ram_t2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS BIND_STORAGE variable=tile_out type=ram_t2p impl=bram
+        ^
+cnn_accel.cpp:36:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=min=1 max=416_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS LOOP_TRIPCOUNT min=1 max=416
+        ^
+cnn_accel.cpp:39:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=min=1 max=416_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS LOOP_TRIPCOUNT min=1 max=416
+        ^
+cnn_accel.cpp:44:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+cnn_accel.cpp:67:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+cnn_accel.cpp:85:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=cnn_accel_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+13 warnings generated.

@@ -1,0 +1,599 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 69, Column: 19 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_69_7
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 93, Column: 43 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_93_10
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_69_7
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:69:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          cnn_accel
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_93_10
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:93:43'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          cnn_accel
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_cnn_accel_ir
+Args:            
+  - Callee:          'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_cnn_accel_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 21 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.0
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 19 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          if.then.store.1
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 52, Column: 44 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: cnn_accel.cpp, Line: 52, Column: 44 }
+  - OrigDirection:   read
+  - OrigID:          if.then18.load.3
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 44 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 44 }
+  - OrigDirection:   read
+  - OrigID:          if.then18.load.8
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 54, Column: 44 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: cnn_accel.cpp, Line: 54, Column: 44 }
+  - OrigDirection:   read
+  - OrigID:          if.then18.load.13
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.8
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.14
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.20
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.26
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.32
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.38
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.44
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.50
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.56
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.62
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.68
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.74
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.80
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.86
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.92
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_93_10.store.98
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 28, Column: 12 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  cnn_accel
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:28:12'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:67:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=tile_out'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  cnn_accel
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:67:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
+  - VarName:         tile_out
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            tile_out
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 28, Column: 12 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tile_in
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z9cnn_accelPVKaPVai
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tile_out
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
