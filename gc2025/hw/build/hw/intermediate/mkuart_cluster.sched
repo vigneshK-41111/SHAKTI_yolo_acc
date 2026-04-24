@@ -1,0 +1,1111 @@
+=== Generated schedule for mkuart_cluster ===
+
+Method schedule
+---------------
+Method: uart0_io_sin
+Ready signal: True
+Conflict-free: uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Sequenced before (restricted): uart0_io_sin
+ 
+Method: uart0_io_sout
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: uart0_io_sout_en
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: uart1_io_sin
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Sequenced before (restricted): uart1_io_sin
+ 
+Method: uart1_io_sout
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: uart1_io_sout_en
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: uart2_io_sin
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Sequenced before (restricted): uart2_io_sin
+ 
+Method: uart2_io_sout
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: uart2_io_sout_en
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_awvalid
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Conflicts: slave_m_awvalid
+ 
+Method: slave_m_awready
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_wvalid
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Conflicts: slave_m_wvalid
+ 
+Method: slave_m_wready
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_bvalid
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_bresp
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Sequenced before: slave_m_bready
+ 
+Method: slave_m_buser
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_bready
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_buser,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Sequenced after: slave_m_bresp
+Conflicts: slave_m_bready
+ 
+Method: slave_m_arvalid
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+Conflicts: slave_m_arvalid
+ 
+Method: slave_m_arready
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_rvalid
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_rresp
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       uart_interrupts
+Sequenced before: slave_m_rready
+ 
+Method: slave_m_rdata
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       uart_interrupts
+Sequenced before: slave_m_rready
+ 
+Method: slave_m_ruser
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Method: slave_m_rready
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_ruser,
+	       uart_interrupts
+Sequenced after: slave_m_rresp, slave_m_rdata
+Conflicts: slave_m_rready
+ 
+Method: uart_interrupts
+Ready signal: True
+Conflict-free: uart0_io_sin,
+	       uart0_io_sout,
+	       uart0_io_sout_en,
+	       uart1_io_sin,
+	       uart1_io_sout,
+	       uart1_io_sout_en,
+	       uart2_io_sin,
+	       uart2_io_sout,
+	       uart2_io_sout_en,
+	       slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       uart_interrupts
+ 
+Rule schedule
+-------------
+Rule: fabric_rl_wr_xaction_master_to_slave
+Predicate: fabric_xactors_from_masters_0_f_wr_addr.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_data.i_notEmpty &&
+	   fabric_xactors_to_slaves_0_f_wr_addr.i_notFull &&
+	   fabric_xactors_to_slaves_0_f_wr_data.i_notFull &&
+	   fabric_v_f_wr_mis_0.i_notFull && fabric_v_f_wr_sjs_0.i_notFull &&
+	   (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	       32'h11300)) &&
+	   (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <= 32'h11340)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_wr_xaction_master_to_slave_1
+Predicate: fabric_xactors_from_masters_0_f_wr_addr.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_data.i_notEmpty &&
+	   fabric_v_f_wr_sjs_0.i_notFull &&
+	   fabric_xactors_to_slaves_1_f_wr_addr.i_notFull &&
+	   fabric_xactors_to_slaves_1_f_wr_data.i_notFull &&
+	   fabric_v_f_wr_mis_1.i_notFull &&
+	   ((fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	     32'h11300) ||
+	    (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <=
+		32'h11340))) &&
+	   (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	       32'h11400)) &&
+	   (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <= 32'h11440)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_wr_xaction_master_to_slave_2
+Predicate: fabric_xactors_from_masters_0_f_wr_addr.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_data.i_notEmpty &&
+	   fabric_v_f_wr_sjs_0.i_notFull &&
+	   fabric_xactors_to_slaves_2_f_wr_addr.i_notFull &&
+	   fabric_xactors_to_slaves_2_f_wr_data.i_notFull &&
+	   fabric_v_f_wr_mis_2.i_notFull &&
+	   ((fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	     32'h11300) ||
+	    (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <=
+		32'h11340))) &&
+	   ((fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	     32'h11400) ||
+	    (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <=
+		32'h11440))) &&
+	   (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	       32'h11500)) &&
+	   (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <= 32'h11540)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_wr_xaction_master_to_slave_3
+Predicate: fabric_xactors_from_masters_0_f_wr_addr.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_data.i_notEmpty &&
+	   fabric_v_f_wr_sjs_0.i_notFull &&
+	   fabric_xactors_to_slaves_3_f_wr_addr.i_notFull &&
+	   fabric_xactors_to_slaves_3_f_wr_data.i_notFull &&
+	   fabric_v_f_wr_mis_3.i_notFull &&
+	   ((fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	     32'h11300) ||
+	    (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <=
+		32'h11340))) &&
+	   ((fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	     32'h11400) ||
+	    (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <=
+		32'h11440))) &&
+	   ((fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <
+	     32'h11500) ||
+	    (! (fabric_xactors_from_masters_0_f_wr_addr.first[36:5] <=
+		32'h11540)))
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_xaction_master_to_slave
+Predicate: fabric_xactors_from_masters_0_f_rd_addr.i_notEmpty &&
+	   fabric_xactors_to_slaves_0_f_rd_addr.i_notFull &&
+	   fabric_v_f_rd_mis_0.i_notFull && fabric_v_f_rd_sjs_0.i_notFull &&
+	   (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	       32'h11300)) &&
+	   (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <= 32'h11340)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_xaction_master_to_slave_1
+Predicate: fabric_xactors_from_masters_0_f_rd_addr.i_notEmpty &&
+	   fabric_v_f_rd_sjs_0.i_notFull &&
+	   fabric_xactors_to_slaves_1_f_rd_addr.i_notFull &&
+	   fabric_v_f_rd_mis_1.i_notFull &&
+	   ((fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	     32'h11300) ||
+	    (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <=
+		32'h11340))) &&
+	   (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	       32'h11400)) &&
+	   (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <= 32'h11440)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_xaction_master_to_slave_2
+Predicate: fabric_xactors_from_masters_0_f_rd_addr.i_notEmpty &&
+	   fabric_v_f_rd_sjs_0.i_notFull &&
+	   fabric_xactors_to_slaves_2_f_rd_addr.i_notFull &&
+	   fabric_v_f_rd_mis_2.i_notFull &&
+	   ((fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	     32'h11300) ||
+	    (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <=
+		32'h11340))) &&
+	   ((fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	     32'h11400) ||
+	    (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <=
+		32'h11440))) &&
+	   (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	       32'h11500)) &&
+	   (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <= 32'h11540)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_xaction_master_to_slave_3
+Predicate: fabric_xactors_from_masters_0_f_rd_addr.i_notEmpty &&
+	   fabric_v_f_rd_sjs_0.i_notFull &&
+	   fabric_xactors_to_slaves_3_f_rd_addr.i_notFull &&
+	   fabric_v_f_rd_mis_3.i_notFull &&
+	   ((fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	     32'h11300) ||
+	    (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <=
+		32'h11340))) &&
+	   ((fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	     32'h11400) ||
+	    (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <=
+		32'h11440))) &&
+	   ((fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <
+	     32'h11500) ||
+	    (! (fabric_xactors_from_masters_0_f_rd_addr.first[36:5] <=
+		32'h11540)))
+Blocking rules: (none)
+ 
+Rule: fabric_rl_wr_resp_slave_to_master
+Predicate: fabric_v_f_wr_mis_0.i_notEmpty &&
+	   fabric_v_f_wr_sjs_0.i_notEmpty &&
+	   fabric_xactors_to_slaves_0_f_wr_resp.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_resp.i_notFull &&
+	   (! fabric_v_f_wr_mis_0.first) &&
+	   (fabric_v_f_wr_sjs_0.first == 3'd0)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_wr_resp_slave_to_master_1
+Predicate: fabric_v_f_wr_sjs_0.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_resp.i_notFull &&
+	   fabric_v_f_wr_mis_1.i_notEmpty &&
+	   fabric_xactors_to_slaves_1_f_wr_resp.i_notEmpty &&
+	   (! fabric_v_f_wr_mis_1.first) &&
+	   (fabric_v_f_wr_sjs_0.first == 3'd1)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_wr_resp_slave_to_master_2
+Predicate: fabric_v_f_wr_sjs_0.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_resp.i_notFull &&
+	   fabric_v_f_wr_mis_2.i_notEmpty &&
+	   fabric_xactors_to_slaves_2_f_wr_resp.i_notEmpty &&
+	   (! fabric_v_f_wr_mis_2.first) &&
+	   (fabric_v_f_wr_sjs_0.first == 3'd2)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_wr_resp_slave_to_master_3
+Predicate: fabric_v_f_wr_sjs_0.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_wr_resp.i_notFull &&
+	   fabric_v_f_wr_mis_3.i_notEmpty &&
+	   fabric_xactors_to_slaves_3_f_wr_resp.i_notEmpty &&
+	   (! fabric_v_f_wr_mis_3.first) &&
+	   (fabric_v_f_wr_sjs_0.first == 3'd3)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_resp_slave_to_master
+Predicate: fabric_v_f_rd_mis_0.i_notEmpty &&
+	   fabric_v_f_rd_sjs_0.i_notEmpty &&
+	   fabric_xactors_to_slaves_0_f_rd_data.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_rd_data.i_notFull &&
+	   (! fabric_v_f_rd_mis_0.first) &&
+	   (fabric_v_f_rd_sjs_0.first == 3'd0)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_resp_slave_to_master_1
+Predicate: fabric_v_f_rd_sjs_0.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_rd_data.i_notFull &&
+	   fabric_v_f_rd_mis_1.i_notEmpty &&
+	   fabric_xactors_to_slaves_1_f_rd_data.i_notEmpty &&
+	   (! fabric_v_f_rd_mis_1.first) &&
+	   (fabric_v_f_rd_sjs_0.first == 3'd1)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_resp_slave_to_master_2
+Predicate: fabric_v_f_rd_sjs_0.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_rd_data.i_notFull &&
+	   fabric_v_f_rd_mis_2.i_notEmpty &&
+	   fabric_xactors_to_slaves_2_f_rd_data.i_notEmpty &&
+	   (! fabric_v_f_rd_mis_2.first) &&
+	   (fabric_v_f_rd_sjs_0.first == 3'd2)
+Blocking rules: (none)
+ 
+Rule: fabric_rl_rd_resp_slave_to_master_3
+Predicate: fabric_v_f_rd_sjs_0.i_notEmpty &&
+	   fabric_xactors_from_masters_0_f_rd_data.i_notFull &&
+	   fabric_v_f_rd_mis_3.i_notEmpty &&
+	   fabric_xactors_to_slaves_3_f_rd_data.i_notEmpty &&
+	   (! fabric_v_f_rd_mis_3.first) &&
+	   (fabric_v_f_rd_sjs_0.first == 3'd3)
+Blocking rules: (none)
+ 
+Rule: err_slave_receive_read_request
+Predicate: err_slave_s_xactor_f_rd_addr.i_notEmpty &&
+	   err_slave_s_xactor_f_rd_data.i_notFull
+Blocking rules: (none)
+ 
+Rule: err_slave_receive_write_request
+Predicate: err_slave_s_xactor_f_wr_addr.i_notEmpty &&
+	   err_slave_s_xactor_f_wr_data.i_notEmpty &&
+	   err_slave_s_xactor_f_wr_resp.i_notFull
+Blocking rules: (none)
+ 
+Rule: rl_wr_addr_channel
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_data_channel
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_response_channel
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_addr_channel
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_data_channel
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_connect
+Predicate: c2m_xactor_f_wr_addr.i_notFull && c2s_xactor_f_wr_addr.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: rl_connect_1
+Predicate: c2m_xactor_f_wr_data.i_notFull && c2s_xactor_f_wr_data.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: rl_connect_2
+Predicate: c2s_xactor_f_wr_resp.i_notFull && c2m_xactor_f_wr_resp.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: rl_connect_3
+Predicate: c2m_xactor_f_rd_addr.i_notFull && c2s_xactor_f_rd_addr.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: rl_connect_4
+Predicate: c2s_xactor_f_rd_data.i_notFull && c2m_xactor_f_rd_data.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: rl_wr_addr_channel_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_data_channel_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_response_channel_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_addr_channel_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_data_channel_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_addr_channel_2
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_data_channel_2
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_response_channel_2
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_addr_channel_2
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_data_channel_2
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_addr_channel_3
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_data_channel_3
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_response_channel_3
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_addr_channel_3
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_data_channel_3
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_addr_channel_4
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_data_channel_4
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_wr_response_channel_4
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_addr_channel_4
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_rd_data_channel_4
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: uart0_io_sin,
+			 uart0_io_sout,
+			 uart0_io_sout_en,
+			 uart1_io_sin,
+			 uart1_io_sout,
+			 uart1_io_sout_en,
+			 uart2_io_sin,
+			 uart2_io_sout,
+			 uart2_io_sout_en,
+			 slave_m_awvalid,
+			 slave_m_awready,
+			 slave_m_wvalid,
+			 slave_m_wready,
+			 slave_m_bvalid,
+			 slave_m_bresp,
+			 slave_m_buser,
+			 slave_m_bready,
+			 slave_m_arvalid,
+			 slave_m_arready,
+			 slave_m_rvalid,
+			 slave_m_rresp,
+			 slave_m_rdata,
+			 slave_m_ruser,
+			 slave_m_rready,
+			 uart_interrupts,
+			 rl_wr_addr_channel,
+			 rl_wr_data_channel,
+			 rl_wr_response_channel,
+			 rl_rd_addr_channel,
+			 rl_rd_data_channel,
+			 rl_connect,
+			 rl_connect_1,
+			 rl_connect_2,
+			 rl_connect_3,
+			 rl_connect_4,
+			 rl_wr_addr_channel_1,
+			 rl_wr_data_channel_1,
+			 rl_wr_response_channel_1,
+			 rl_rd_addr_channel_1,
+			 rl_rd_data_channel_1,
+			 rl_wr_addr_channel_2,
+			 rl_wr_data_channel_2,
+			 rl_wr_response_channel_2,
+			 rl_rd_addr_channel_2,
+			 rl_rd_data_channel_2,
+			 rl_wr_addr_channel_3,
+			 rl_wr_data_channel_3,
+			 rl_wr_response_channel_3,
+			 rl_rd_addr_channel_3,
+			 rl_rd_data_channel_3,
+			 rl_wr_addr_channel_4,
+			 rl_wr_data_channel_4,
+			 rl_wr_response_channel_4,
+			 rl_rd_addr_channel_4,
+			 rl_rd_data_channel_4,
+			 fabric_rl_wr_xaction_master_to_slave,
+			 fabric_rl_wr_xaction_master_to_slave_1,
+			 fabric_rl_wr_xaction_master_to_slave_2,
+			 fabric_rl_wr_xaction_master_to_slave_3,
+			 fabric_rl_rd_xaction_master_to_slave,
+			 fabric_rl_rd_xaction_master_to_slave_1,
+			 fabric_rl_rd_xaction_master_to_slave_2,
+			 fabric_rl_rd_xaction_master_to_slave_3,
+			 fabric_rl_wr_resp_slave_to_master,
+			 fabric_rl_wr_resp_slave_to_master_1,
+			 fabric_rl_wr_resp_slave_to_master_2,
+			 fabric_rl_wr_resp_slave_to_master_3,
+			 fabric_rl_rd_resp_slave_to_master,
+			 fabric_rl_rd_resp_slave_to_master_1,
+			 fabric_rl_rd_resp_slave_to_master_2,
+			 fabric_rl_rd_resp_slave_to_master_3,
+			 err_slave_receive_read_request,
+			 err_slave_receive_write_request
+
+==============================================

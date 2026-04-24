@@ -1,0 +1,192 @@
+=== Generated schedule for mkxilinxdtm ===
+
+Method schedule
+---------------
+Method: tms_i
+Ready signal: True
+Conflict-free: tdi_i,
+	       capture_i,
+	       run_test_i,
+	       sel_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+Conflicts: tms_i
+ 
+Method: tdi_i
+Ready signal: True
+Conflict-free: tms_i,
+	       capture_i,
+	       run_test_i,
+	       sel_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+Conflicts: tdi_i
+ 
+Method: capture_i
+Ready signal: True
+Conflict-free: tms_i,
+	       tdi_i,
+	       run_test_i,
+	       sel_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+Conflicts: capture_i
+ 
+Method: run_test_i
+Ready signal: True
+Conflict-free: tms_i,
+	       tdi_i,
+	       capture_i,
+	       sel_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+Conflicts: run_test_i
+ 
+Method: sel_i
+Ready signal: True
+Conflict-free: tms_i,
+	       tdi_i,
+	       capture_i,
+	       run_test_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+Conflicts: sel_i
+ 
+Method: shift_i
+Ready signal: True
+Conflict-free: tms_i,
+	       tdi_i,
+	       capture_i,
+	       run_test_i,
+	       sel_i,
+	       update_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+Conflicts: shift_i
+ 
+Method: update_i
+Ready signal: True
+Conflict-free: tms_i,
+	       tdi_i,
+	       capture_i,
+	       run_test_i,
+	       sel_i,
+	       shift_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+Conflicts: update_i
+ 
+Method: tdo
+Ready signal: True
+Conflict-free: tms_i,
+	       tdi_i,
+	       capture_i,
+	       run_test_i,
+	       sel_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       response_from_dm,
+	       request_to_dm
+ 
+Method: response_from_dm
+Ready signal: response_from_DM.i_notFull
+Conflict-free: tms_i,
+	       tdi_i,
+	       capture_i,
+	       run_test_i,
+	       sel_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       request_to_dm
+Conflicts: response_from_dm
+ 
+Method: request_to_dm
+Ready signal: request_to_DM.i_notEmpty
+Conflict-free: tms_i,
+	       tdi_i,
+	       capture_i,
+	       run_test_i,
+	       sel_i,
+	       shift_i,
+	       update_i,
+	       tdo,
+	       response_from_dm
+Conflicts: request_to_dm
+ 
+Rule schedule
+-------------
+Rule: crossed_srg_mdr_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: crossed_output_tdo_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: generate_tdo_outputpin
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: shift_mdr
+Predicate: wr_sel.whas && wr_sel.wget && wr_shift.whas && wr_shift.wget
+Blocking rules: (none)
+ 
+Rule: tunneled_update
+Predicate: wr_sel.whas && wr_sel.wget && wr_update.whas && wr_update.wget &&
+	   ((! wr_capture.whas) || (! wr_capture.wget)) &&
+	   ((! wr_shift.whas) || (! wr_shift.wget))
+Blocking rules: (none)
+ 
+Rule: tunneled_capture
+Predicate: wr_sel.whas && wr_sel.wget && wr_capture.whas && wr_capture.wget &&
+	   ((! wr_update.whas) || (! wr_update.wget)) &&
+	   ((! wr_shift.whas) || (! wr_shift.wget))
+Blocking rules: (none)
+ 
+Rule: dmihardreset_generated
+Predicate: wr_dmi_hardreset.whas && wr_dmi_hardreset.wget
+Blocking rules: tunneled_capture, request_to_dm
+ 
+Rule: dmireset_generated
+Predicate: wr_dmi_reset.whas && wr_dmi_reset.wget
+Blocking rules: (none)
+ 
+Logical execution order: tms_i,
+			 tdi_i,
+			 capture_i,
+			 run_test_i,
+			 sel_i,
+			 shift_i,
+			 update_i,
+			 tdo,
+			 response_from_dm,
+			 request_to_dm,
+			 crossed_srg_mdr_clock_domain_crossing,
+			 shift_mdr,
+			 tunneled_update,
+			 tunneled_capture,
+			 dmihardreset_generated,
+			 dmireset_generated,
+			 crossed_output_tdo_clock_domain_crossing,
+			 generate_tdo_outputpin
+
+===========================================

@@ -1,0 +1,6 @@
+SyncReset0
+UngatedClockMux
+MakeClock
+SyncRegister
+SyncBit
+FIFO2

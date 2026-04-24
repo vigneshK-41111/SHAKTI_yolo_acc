@@ -1,0 +1,655 @@
+=== Generated schedule for mkpwm ===
+
+Method schedule
+---------------
+Method: slave_m_awvalid
+Ready signal: True
+Conflict-free: slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Conflicts: slave_m_awvalid
+ 
+Method: slave_m_awready
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: slave_m_wvalid
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Conflicts: slave_m_wvalid
+ 
+Method: slave_m_wready
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: slave_m_bvalid
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: slave_m_bresp
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Sequenced before: slave_m_bready
+ 
+Method: slave_m_buser
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: slave_m_bready
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_buser,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Sequenced after: slave_m_bresp
+Conflicts: slave_m_bready
+ 
+Method: slave_m_arvalid
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Conflicts: slave_m_arvalid
+ 
+Method: slave_m_arready
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: slave_m_rvalid
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: slave_m_rresp
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Sequenced before: slave_m_rready
+ 
+Method: slave_m_rdata
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Sequenced before: slave_m_rready
+ 
+Method: slave_m_ruser
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: slave_m_rready
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_ruser,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+Sequenced after: slave_m_rresp, slave_m_rdata
+Conflicts: slave_m_rready
+ 
+Method: io_pwm_o
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: io_pwm_comp
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Method: sb_interrupt
+Ready signal: True
+Conflict-free: slave_m_awvalid,
+	       slave_m_awready,
+	       slave_m_wvalid,
+	       slave_m_wready,
+	       slave_m_bvalid,
+	       slave_m_bresp,
+	       slave_m_buser,
+	       slave_m_bready,
+	       slave_m_arvalid,
+	       slave_m_arready,
+	       slave_m_rvalid,
+	       slave_m_rresp,
+	       slave_m_rdata,
+	       slave_m_ruser,
+	       slave_m_rready,
+	       io_pwm_o,
+	       io_pwm_comp,
+	       sb_interrupt
+ 
+Rule schedule
+-------------
+Rule: pwm_select_clock
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_transfer_data_from_clock_domains
+Predicate: pwm_sync_clock_divisor.RDY_write
+Blocking rules: (none)
+ 
+Rule: pwm_clk_divider_increment_counter
+Predicate: ! (pwm_clk_divider_rg_divisor == 15'd0)
+Blocking rules: (none)
+ 
+Rule: pwm_clk_divider_generate_clock
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_clk_divider_select_clock
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_generate_slow_clock
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_rising_edge
+Predicate: pwm_duty_cycle_0.RDY_write &&
+	   pwm_period_0.RDY_write && pwm_deadbanddelay_0.RDY_write &&
+	   (pwm_rg_update_0.read || pwm_cr_pwm_start_0) &&
+	   pwm_cr_pwm_update_enable_0
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_falling_edge
+Predicate: pwm_duty_cycle_0.RDY_write && pwm_period_0.RDY_write &&
+	   pwm_rg_update_0.read && pwm_cr_pwm_update_enable_0
+Blocking rules: (none)
+ 
+Rule: pwm_rl_update_interrupts
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_rl_reset_counter_reset
+Predicate: pwm_sync_counter_reset_0.RDY_write && pwm_cr_counter_reset_0
+Blocking rules: write_request
+ 
+Rule: pwm_compare_and_generate_pwm
+Predicate: pwm_sync_pwm_enable_0.read
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_rising_edge_1
+Predicate: pwm_duty_cycle_1.RDY_write &&
+	   pwm_period_1.RDY_write && pwm_deadbanddelay_1.RDY_write &&
+	   (pwm_rg_update_1.read || pwm_cr_pwm_start_1) &&
+	   pwm_cr_pwm_update_enable_1
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_falling_edge_1
+Predicate: pwm_duty_cycle_1.RDY_write && pwm_period_1.RDY_write &&
+	   pwm_rg_update_1.read && pwm_cr_pwm_update_enable_1
+Blocking rules: (none)
+ 
+Rule: pwm_rl_update_interrupts_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_rl_reset_counter_reset_1
+Predicate: pwm_sync_counter_reset_1.RDY_write && pwm_cr_counter_reset_1
+Blocking rules: write_request
+ 
+Rule: pwm_compare_and_generate_pwm_1
+Predicate: pwm_sync_pwm_enable_1.read
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_rising_edge_2
+Predicate: pwm_duty_cycle_2.RDY_write &&
+	   pwm_period_2.RDY_write && pwm_deadbanddelay_2.RDY_write &&
+	   (pwm_rg_update_2.read || pwm_cr_pwm_start_2) &&
+	   pwm_cr_pwm_update_enable_2
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_falling_edge_2
+Predicate: pwm_duty_cycle_2.RDY_write && pwm_period_2.RDY_write &&
+	   pwm_rg_update_2.read && pwm_cr_pwm_update_enable_2
+Blocking rules: (none)
+ 
+Rule: pwm_rl_update_interrupts_2
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_rl_reset_counter_reset_2
+Predicate: pwm_sync_counter_reset_2.RDY_write && pwm_cr_counter_reset_2
+Blocking rules: write_request
+ 
+Rule: pwm_compare_and_generate_pwm_2
+Predicate: pwm_sync_pwm_enable_2.read
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_rising_edge_3
+Predicate: pwm_duty_cycle_3.RDY_write &&
+	   pwm_period_3.RDY_write && pwm_deadbanddelay_3.RDY_write &&
+	   (pwm_rg_update_3.read || pwm_cr_pwm_start_3) &&
+	   pwm_cr_pwm_update_enable_3
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_falling_edge_3
+Predicate: pwm_duty_cycle_3.RDY_write && pwm_period_3.RDY_write &&
+	   pwm_rg_update_3.read && pwm_cr_pwm_update_enable_3
+Blocking rules: (none)
+ 
+Rule: pwm_rl_update_interrupts_3
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_rl_reset_counter_reset_3
+Predicate: pwm_sync_counter_reset_3.RDY_write && pwm_cr_counter_reset_3
+Blocking rules: write_request
+ 
+Rule: pwm_compare_and_generate_pwm_3
+Predicate: pwm_sync_pwm_enable_3.read
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_rising_edge_4
+Predicate: pwm_duty_cycle_4.RDY_write &&
+	   pwm_period_4.RDY_write && pwm_deadbanddelay_4.RDY_write &&
+	   (pwm_rg_update_4.read || pwm_cr_pwm_start_4) &&
+	   pwm_cr_pwm_update_enable_4
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_falling_edge_4
+Predicate: pwm_duty_cycle_4.RDY_write && pwm_period_4.RDY_write &&
+	   pwm_rg_update_4.read && pwm_cr_pwm_update_enable_4
+Blocking rules: (none)
+ 
+Rule: pwm_rl_update_interrupts_4
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_rl_reset_counter_reset_4
+Predicate: pwm_sync_counter_reset_4.RDY_write && pwm_cr_counter_reset_4
+Blocking rules: write_request
+ 
+Rule: pwm_compare_and_generate_pwm_4
+Predicate: pwm_sync_pwm_enable_4.read
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_rising_edge_5
+Predicate: pwm_duty_cycle_5.RDY_write &&
+	   pwm_period_5.RDY_write && pwm_deadbanddelay_5.RDY_write &&
+	   (pwm_rg_update_5.read || pwm_cr_pwm_start_5) &&
+	   pwm_cr_pwm_update_enable_5
+Blocking rules: (none)
+ 
+Rule: pwm_reload_input_values_at_falling_edge_5
+Predicate: pwm_duty_cycle_5.RDY_write && pwm_period_5.RDY_write &&
+	   pwm_rg_update_5.read && pwm_cr_pwm_update_enable_5
+Blocking rules: (none)
+ 
+Rule: pwm_rl_update_interrupts_5
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pwm_rl_reset_counter_reset_5
+Predicate: pwm_sync_counter_reset_5.RDY_write && pwm_cr_counter_reset_5
+Blocking rules: write_request
+ 
+Rule: pwm_compare_and_generate_pwm_5
+Predicate: pwm_sync_pwm_enable_5.read
+Blocking rules: (none)
+ 
+Rule: read_request
+Predicate: s_xactor_f_rd_addr.i_notEmpty && s_xactor_f_rd_data.i_notFull
+Blocking rules: (none)
+ 
+Rule: write_request
+Predicate: s_xactor_f_wr_addr.i_notEmpty &&
+	   s_xactor_f_wr_data.i_notEmpty &&
+	   s_xactor_f_wr_resp.i_notFull &&
+	   pwm_sync_pwm_enable_0.RDY_write &&
+	   pwm_sync_counter_reset_0.RDY_write &&
+	   pwm_sync_output_polarity_0.RDY_write &&
+	   pwm_sync_rise_interrupt_enable_0.RDY_write &&
+	   pwm_sync_fall_interrupt_enable_0.RDY_write &&
+	   pwm_sync_halfperiod_interrupt_enable_0.RDY_write &&
+	   pwm_sync_pwm_enable_1.RDY_write &&
+	   pwm_sync_counter_reset_1.RDY_write &&
+	   pwm_sync_output_polarity_1.RDY_write &&
+	   pwm_sync_rise_interrupt_enable_1.RDY_write &&
+	   pwm_sync_fall_interrupt_enable_1.RDY_write &&
+	   pwm_sync_halfperiod_interrupt_enable_1.RDY_write &&
+	   pwm_sync_pwm_enable_2.RDY_write &&
+	   pwm_sync_counter_reset_2.RDY_write &&
+	   pwm_sync_output_polarity_2.RDY_write &&
+	   pwm_sync_rise_interrupt_enable_2.RDY_write &&
+	   pwm_sync_fall_interrupt_enable_2.RDY_write &&
+	   pwm_sync_halfperiod_interrupt_enable_2.RDY_write &&
+	   pwm_sync_pwm_enable_3.RDY_write &&
+	   pwm_sync_counter_reset_3.RDY_write &&
+	   pwm_sync_output_polarity_3.RDY_write &&
+	   pwm_sync_rise_interrupt_enable_3.RDY_write &&
+	   pwm_sync_fall_interrupt_enable_3.RDY_write &&
+	   pwm_sync_halfperiod_interrupt_enable_3.RDY_write &&
+	   pwm_sync_pwm_enable_4.RDY_write &&
+	   pwm_sync_counter_reset_4.RDY_write &&
+	   pwm_sync_output_polarity_4.RDY_write &&
+	   pwm_sync_rise_interrupt_enable_4.RDY_write &&
+	   pwm_sync_fall_interrupt_enable_4.RDY_write &&
+	   pwm_sync_halfperiod_interrupt_enable_4.RDY_write &&
+	   pwm_sync_pwm_enable_5.RDY_write &&
+	   pwm_sync_counter_reset_5.RDY_write &&
+	   pwm_sync_output_polarity_5.RDY_write &&
+	   pwm_sync_rise_interrupt_enable_5.RDY_write &&
+	   pwm_sync_fall_interrupt_enable_5.RDY_write &&
+	   pwm_sync_halfperiod_interrupt_enable_5.RDY_write
+Blocking rules: (none)
+ 
+Logical execution order: slave_m_awvalid,
+			 slave_m_awready,
+			 slave_m_wvalid,
+			 slave_m_wready,
+			 slave_m_bvalid,
+			 slave_m_bresp,
+			 slave_m_buser,
+			 slave_m_bready,
+			 slave_m_arvalid,
+			 slave_m_arready,
+			 slave_m_rvalid,
+			 slave_m_rresp,
+			 slave_m_rdata,
+			 slave_m_ruser,
+			 slave_m_rready,
+			 io_pwm_o,
+			 io_pwm_comp,
+			 sb_interrupt,
+			 read_request,
+			 pwm_select_clock,
+			 pwm_transfer_data_from_clock_domains,
+			 pwm_reload_input_values_at_rising_edge,
+			 pwm_reload_input_values_at_falling_edge,
+			 pwm_rl_update_interrupts,
+			 pwm_rl_reset_counter_reset,
+			 pwm_compare_and_generate_pwm,
+			 pwm_reload_input_values_at_rising_edge_1,
+			 pwm_reload_input_values_at_falling_edge_1,
+			 pwm_rl_update_interrupts_1,
+			 pwm_rl_reset_counter_reset_1,
+			 pwm_compare_and_generate_pwm_1,
+			 pwm_reload_input_values_at_rising_edge_2,
+			 pwm_reload_input_values_at_falling_edge_2,
+			 pwm_rl_update_interrupts_2,
+			 pwm_rl_reset_counter_reset_2,
+			 pwm_compare_and_generate_pwm_2,
+			 pwm_reload_input_values_at_rising_edge_3,
+			 pwm_reload_input_values_at_falling_edge_3,
+			 pwm_rl_update_interrupts_3,
+			 pwm_rl_reset_counter_reset_3,
+			 pwm_compare_and_generate_pwm_3,
+			 pwm_reload_input_values_at_rising_edge_4,
+			 pwm_reload_input_values_at_falling_edge_4,
+			 pwm_rl_update_interrupts_4,
+			 pwm_rl_reset_counter_reset_4,
+			 pwm_compare_and_generate_pwm_4,
+			 pwm_reload_input_values_at_rising_edge_5,
+			 pwm_reload_input_values_at_falling_edge_5,
+			 write_request,
+			 pwm_rl_update_interrupts_5,
+			 pwm_rl_reset_counter_reset_5,
+			 pwm_compare_and_generate_pwm_5,
+			 pwm_clk_divider_generate_clock,
+			 pwm_clk_divider_increment_counter,
+			 pwm_clk_divider_select_clock,
+			 pwm_generate_slow_clock
+
+=====================================

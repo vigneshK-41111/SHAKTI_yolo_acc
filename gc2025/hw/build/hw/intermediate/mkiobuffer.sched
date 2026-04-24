@@ -1,0 +1,99 @@
+=== Generated schedule for mkiobuffer ===
+
+Method schedule
+---------------
+Method: mv_io_full
+Ready signal: True
+Conflict-free: mv_io_full,
+	       mv_io_empty,
+	       mv_io_head_valid,
+	       ma_increment_head,
+	       ma_commit_io,
+	       mv_io_head,
+	       ma_allocate_io
+ 
+Method: mv_io_empty
+Ready signal: True
+Conflict-free: mv_io_full,
+	       mv_io_empty,
+	       mv_io_head_valid,
+	       ma_increment_head,
+	       ma_commit_io,
+	       mv_io_head,
+	       ma_allocate_io
+ 
+Method: mv_io_head_valid
+Ready signal: True
+Conflict-free: mv_io_full, mv_io_empty, mv_io_head_valid, mv_io_head
+Sequenced before: ma_increment_head, ma_commit_io, ma_allocate_io
+ 
+Method: ma_increment_head
+Ready signal: True
+Conflict-free: mv_io_full, mv_io_empty, mv_io_head, ma_allocate_io
+Sequenced after: mv_io_head_valid, ma_commit_io
+Conflicts: ma_increment_head
+ 
+Method: ma_commit_io
+Ready signal: True
+Conflict-free: mv_io_full, mv_io_empty, mv_io_head
+Sequenced before: ma_increment_head
+Sequenced before (restricted): ma_commit_io, ma_allocate_io
+Sequenced after: mv_io_head_valid
+ 
+Method: mv_io_head
+Ready signal: wr_mv_io_head.whas
+Conflict-free: mv_io_full,
+	       mv_io_empty,
+	       mv_io_head_valid,
+	       ma_increment_head,
+	       ma_commit_io,
+	       mv_io_head,
+	       ma_allocate_io
+ 
+Method: ma_allocate_io
+Ready signal: True
+Conflict-free: mv_io_full, mv_io_empty, ma_increment_head, mv_io_head
+Sequenced after: mv_io_head_valid
+Sequenced after (restricted): ma_commit_io
+Conflicts: ma_allocate_io
+ 
+Rule schedule
+-------------
+Rule: assign_wr_mv_io_head
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: connect_v_iobuff_valid
+Predicate: (wr_valid_v_iobuff_valid_ma_allocate_io.whas &&
+	    wr_valid_v_iobuff_valid_ma_allocate_io.wget &&
+	    wr_io_index_v_iobuff_valid_ma_allocate_io.whas &&
+	    wr_io_index_v_iobuff_valid_ma_allocate_io.wget) ||
+	   (wr_valid_v_iobuff_valid_ma_increment_head.whas &&
+	    wr_valid_v_iobuff_valid_ma_increment_head.wget &&
+	    wr_io_index_v_iobuff_valid_ma_increment_head.whas &&
+	    wr_io_index_v_iobuff_valid_ma_increment_head.wget)
+Blocking rules: (none)
+ 
+Rule: connect_v_iobuff_valid_1
+Predicate: (wr_valid_v_iobuff_valid_ma_allocate_io.whas &&
+	    wr_valid_v_iobuff_valid_ma_allocate_io.wget &&
+	    ((! wr_io_index_v_iobuff_valid_ma_allocate_io.whas) ||
+	     (! wr_io_index_v_iobuff_valid_ma_allocate_io.wget))) ||
+	   (wr_valid_v_iobuff_valid_ma_increment_head.whas &&
+	    wr_valid_v_iobuff_valid_ma_increment_head.wget &&
+	    ((! wr_io_index_v_iobuff_valid_ma_increment_head.whas) ||
+	     (! wr_io_index_v_iobuff_valid_ma_increment_head.wget)))
+Blocking rules: (none)
+ 
+Logical execution order: mv_io_full,
+			 mv_io_empty,
+			 mv_io_head_valid,
+			 ma_commit_io,
+			 assign_wr_mv_io_head,
+			 ma_increment_head,
+			 mv_io_head,
+			 ma_allocate_io,
+			 connect_v_iobuff_valid,
+			 connect_v_iobuff_valid_1
+
+==========================================

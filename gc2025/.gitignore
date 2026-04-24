@@ -1,0 +1,8 @@
+.vscode/
+*.log
+*.elf
+*.shakti
+*.o
+
+Linux_RV32/Downloads/
+Linux_RV32/build/

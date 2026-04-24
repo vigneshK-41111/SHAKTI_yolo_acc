@@ -1,0 +1,6 @@
+mk_debug
+MakeReset0
+mkxilinxdtm
+mkSoc
+SyncFIFO1
+ResetEither

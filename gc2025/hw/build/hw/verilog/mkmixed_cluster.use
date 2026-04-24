@@ -1,0 +1,7 @@
+FIFO2
+FIFO20
+mkgpio
+mkgptimer
+mki2c
+mkpinmuxtop
+mkplic

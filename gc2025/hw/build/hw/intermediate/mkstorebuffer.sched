@@ -1,0 +1,205 @@
+=== Generated schedule for mkstorebuffer ===
+
+Method schedule
+---------------
+Method: mav_check_sb_hit
+Ready signal: True
+Conflict-free: ma_commit_store,
+	       ma_increment_head,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+Sequenced before: ma_allocate_entry
+Conflicts: mav_check_sb_hit
+ 
+Method: ma_allocate_entry
+Ready signal: ((! v_sb_valid_0.read) || (! v_sb_valid_1.read)) &&
+	      (! rg_sb_busy.read)
+Conflict-free: ma_commit_store,
+	       ma_increment_head,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid
+Sequenced after: mav_check_sb_hit, mv_sb_curr_tail
+Conflicts: ma_allocate_entry
+ 
+Method: ma_commit_store
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+Sequenced before (restricted): ma_increment_head, mv_sb_head_commit
+Conflicts: ma_commit_store
+ 
+Method: ma_increment_head
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_curr_tail
+Sequenced after: mv_sb_head_commit, mv_sb_head_valid
+Sequenced after (restricted): ma_commit_store
+Conflicts: ma_increment_head
+ 
+Method: mv_sb_head
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       ma_commit_store,
+	       ma_increment_head,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+ 
+Method: mv_sb_full
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       ma_commit_store,
+	       ma_increment_head,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+ 
+Method: mv_sb_empty
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       ma_commit_store,
+	       ma_increment_head,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+ 
+Method: mv_sb_busy
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       ma_commit_store,
+	       ma_increment_head,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+ 
+Method: mv_sb_head_commit
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+Sequenced before: ma_increment_head
+Sequenced after (restricted): ma_commit_store
+ 
+Method: mv_sb_head_valid
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_allocate_entry,
+	       ma_commit_store,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+Sequenced before: ma_increment_head
+ 
+Method: mv_sb_curr_tail
+Ready signal: True
+Conflict-free: mav_check_sb_hit,
+	       ma_commit_store,
+	       ma_increment_head,
+	       mv_sb_head,
+	       mv_sb_full,
+	       mv_sb_empty,
+	       mv_sb_busy,
+	       mv_sb_head_commit,
+	       mv_sb_head_valid,
+	       mv_sb_curr_tail
+Sequenced before: ma_allocate_entry
+ 
+Rule schedule
+-------------
+Rule: assign_head
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_perform_atomic
+Predicate: rg_sb_busy.read
+Blocking rules: (none)
+ 
+Rule: connect_v_sb_valid
+Predicate: (wr_valid_v_sb_valid_ma_allocate_entry.whas &&
+	    wr_valid_v_sb_valid_ma_allocate_entry.wget &&
+	    wr_sb_index_v_sb_valid_ma_allocate_entry.whas &&
+	    wr_sb_index_v_sb_valid_ma_allocate_entry.wget) ||
+	   (wr_valid_v_sb_valid_ma_increment_head.whas &&
+	    wr_valid_v_sb_valid_ma_increment_head.wget &&
+	    wr_sb_index_v_sb_valid_ma_increment_head.whas &&
+	    wr_sb_index_v_sb_valid_ma_increment_head.wget)
+Blocking rules: (none)
+ 
+Rule: connect_v_sb_valid_1
+Predicate: (wr_valid_v_sb_valid_ma_allocate_entry.whas &&
+	    wr_valid_v_sb_valid_ma_allocate_entry.wget &&
+	    ((! wr_sb_index_v_sb_valid_ma_allocate_entry.whas) ||
+	     (! wr_sb_index_v_sb_valid_ma_allocate_entry.wget))) ||
+	   (wr_valid_v_sb_valid_ma_increment_head.whas &&
+	    wr_valid_v_sb_valid_ma_increment_head.wget &&
+	    ((! wr_sb_index_v_sb_valid_ma_increment_head.whas) ||
+	     (! wr_sb_index_v_sb_valid_ma_increment_head.wget)))
+Blocking rules: (none)
+ 
+Logical execution order: mav_check_sb_hit,
+			 ma_commit_store,
+			 mv_sb_full,
+			 mv_sb_empty,
+			 mv_sb_busy,
+			 mv_sb_head_commit,
+			 mv_sb_head_valid,
+			 mv_sb_curr_tail,
+			 assign_head,
+			 ma_allocate_entry,
+			 ma_increment_head,
+			 mv_sb_head,
+			 rl_perform_atomic,
+			 connect_v_sb_valid,
+			 connect_v_sb_valid_1
+
+=============================================

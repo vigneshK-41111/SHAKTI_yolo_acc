@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Apr 21 12:03:23 2026
+# Process ID: 253751
+# Current directory: /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.runs/clk_divider_synth_1
+# Command line: vivado -log clk_divider.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_divider.tcl
+# Log file: /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.runs/clk_divider_synth_1/clk_divider.vds
+# Journal file: /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.runs/clk_divider_synth_1/vivado.jou
+#-----------------------------------------------------------
+source clk_divider.tcl -notrace
