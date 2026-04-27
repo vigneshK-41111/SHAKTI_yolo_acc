@@ -58,7 +58,7 @@ package Soc;
   import gpio :: *;
   import csrbox :: * ;
   import bram :: *;
-  import DMA :: *;
+  // import DMA :: *;
   import BUtils::*;
 
 `ifndef axi4_128b
@@ -301,15 +301,7 @@ package Soc;
   endinterface
 
   typedef (TAdd#(TSub#(TMul#(`num_harts,3),1), `ifdef debug 1 `else 0 `endif )) Debug_master_num;
-  // typedef (TAdd#(Debug_master_num,1)) DMA_master_num;
-  // typedef (TAdd#(DMA_master_num, 1)) Num_Fast_Masters;
-
-  // (*synthesize*)
-  // module mkdma(Ifc_DMA_AXI4_Lite#(`paddr, 4, 32, 0, `paddr, 32, 7, 8));
-  //   let ifc();
-  //   mkDMA_AXI4_Lite _temp(ifc);
-  //   return ifc;
-  // endmodule
+  typedef (TAdd#(Debug_master_num, 1)) Num_Fast_Masters;
 
 
   (*synthesize*)
@@ -329,7 +321,7 @@ package Soc;
 
     Ifc_ccore_axi4 ccore <- mkccore_axi4(`resetpc, 0);
 
-    AXI4_Fabric_IFC #(`Num_Fast_Masters, `Num_Fast_Slaves, `paddr, `axi4_id_width, `buswidth, `USERSPACE) 
+    AXI4_Fabric_IFC #( Num_Fast_Masters, `Num_Fast_Slaves, `paddr, `axi4_id_width, `buswidth, `USERSPACE) 
                                                     fabric <- mkAXI4_Fabric(fn_slave_map_fast);
     Ifc_clint_axi4#(`paddr, `axi4_id_width, `buswidth, `USERSPACE, `num_harts, 512) clint <- mkclint_axi4();
   //`ifdef debug
@@ -684,8 +676,8 @@ package Soc;
 		method  i2c0_out = mixed_cluster.i2c0_out;									//I2c IO interface
 		method  i2c1_out = mixed_cluster.i2c1_out;									//I2c IO interface
     interface iocell_io = mixed_cluster.pinmuxtop_iocell_side;						//GPIO IO interface
-    interface cnn_accel = fabric.v_to_slaves[`Acc_slave_num];
-    interface cnn_accel_top = mixed_cluster.cnn_accel;
+    interface cnn_accel_top = mixed_cluster.cnn_accel_top;
+    interface acc_master = fabric.v_from_masters[`Acc_Master_num];
     interface mem_master = fabric.v_to_slaves [`Memory_slave_num];
     method Action ext_interrupts(Bit#(2) i);
       wr_ext_interrupts <= i;

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Tue Apr 21 12:51:11 2026
+| Date             : Mon Apr 27 13:49:47 2026
 | Host             : jarvis running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file fpga_top_power_routed.rpt -pb fpga_top_power_summary_routed.pb -rpx fpga_top_power_routed.rpx
 | Design           : fpga_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.108        |
+| Total On-Chip Power (W)  | 1.109        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.939        |
+| Dynamic (W)              | 0.940        |
 | Device Static (W)        | 0.169        |
 | Effective TJA (C/W)      | 3.3          |
 | Max Ambient (C)          | 81.3         |
@@ -52,26 +52,26 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.116 |       25 |       --- |             --- |
-| Slice Logic              |     0.035 |   149246 |       --- |             --- |
-|   LUT as Logic           |     0.032 |    71895 |    133800 |           53.73 |
-|   Register               |     0.002 |    59638 |    267600 |           22.29 |
+| Clocks                   |     0.113 |       25 |       --- |             --- |
+| Slice Logic              |     0.036 |   143199 |       --- |             --- |
+|   LUT as Logic           |     0.032 |    68035 |    133800 |           50.85 |
+|   Register               |     0.002 |    57963 |    267600 |           21.66 |
+|   CARRY4                 |    <0.001 |     1726 |     33450 |            5.16 |
 |   LUT as Distributed RAM |    <0.001 |     1056 |     46200 |            2.29 |
-|   CARRY4                 |    <0.001 |     1755 |     33450 |            5.25 |
-|   F7/F8 Muxes            |    <0.001 |     3295 |    133800 |            2.46 |
+|   F7/F8 Muxes            |    <0.001 |     3106 |    133800 |            2.32 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   LUT as Shift Register  |    <0.001 |      224 |     46200 |            0.48 |
-|   Others                 |    <0.001 |     1580 |       --- |             --- |
-| Signals                  |     0.047 |   112834 |       --- |             --- |
-| Block RAM                |     0.009 |       83 |       365 |           22.74 |
+|   LUT as Shift Register  |    <0.001 |      332 |     46200 |            0.72 |
+|   Others                 |    <0.001 |     1624 |       --- |             --- |
+| Signals                  |     0.049 |   108236 |       --- |             --- |
+| Block RAM                |     0.006 |     73.5 |       365 |           20.14 |
 | MMCM                     |     0.202 |        2 |        10 |           20.00 |
 | PLL                      |     0.091 |        1 |        10 |           10.00 |
-| DSPs                     |     0.001 |        4 |       740 |            0.54 |
-| I/O                      |     0.300 |      100 |       285 |           35.09 |
+| DSPs                     |     0.003 |       10 |       740 |            1.35 |
+| I/O                      |     0.302 |      100 |       285 |           35.09 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
 | Static Power             |     0.169 |          |           |                 |
-| Total                    |     1.108 |          |           |                 |
+| Total                    |     1.109 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.001 |      0.003 |
+| Vccbram   |       1.000 |     0.003 |       0.000 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.022 |       0.002 |      0.020 |
@@ -169,34 +169,39 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------------------------------------------------+-----------+
-| Name                                              | Power (W) |
-+---------------------------------------------------+-----------+
-| fpga_top                                          |     0.939 |
-|   clk_div                                         |     0.108 |
-|     inst                                          |     0.108 |
-|   clock_converter                                 |     0.005 |
-|     inst                                          |     0.005 |
-|       gen_clock_conv.gen_async_conv.asyncfifo_axi |     0.005 |
-|   core                                            |     0.129 |
-|     debug_module                                  |     0.004 |
-|     jtag_tap                                      |     0.003 |
-|     ndm_reset                                     |     0.002 |
-|     soc                                           |     0.119 |
-|       ccore                                       |     0.052 |
-|       dma                                         |     0.007 |
-|       mixed_cluster                               |     0.015 |
-|       pwm_cluster                                 |     0.011 |
-|       spi_cluster                                 |     0.013 |
-|       uart_cluster                                |     0.009 |
-|     sync_request_to_dm                            |     0.002 |
-|   mig_ddr3                                        |     0.691 |
-|     u_mig_ddr3_mig                                |     0.691 |
-|       temp_mon_enabled.u_tempmon                  |     0.008 |
-|       u_ddr3_infrastructure                       |     0.187 |
-|       u_iodelay_ctrl                              |     0.001 |
-|       u_memc_ui_top_axi                           |     0.494 |
-|   wrapper_inst                                    |     0.003 |
-+---------------------------------------------------+-----------+
++-------------------------------------------------------------------+-----------+
+| Name                                                              | Power (W) |
++-------------------------------------------------------------------+-----------+
+| fpga_top                                                          |     0.940 |
+|   clk_div                                                         |     0.108 |
+|     inst                                                          |     0.108 |
+|   clock_converter                                                 |     0.005 |
+|     inst                                                          |     0.005 |
+|       gen_clock_conv.gen_async_conv.asyncfifo_axi                 |     0.005 |
+|   cnn_inst                                                        |     0.012 |
+|     gmem_m_axi_U                                                  |     0.005 |
+|       bus_write                                                   |     0.001 |
+|       load_unit_0                                                 |     0.001 |
+|       store_unit_0                                                |     0.002 |
+|     grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235 |     0.002 |
+|     grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272 |     0.003 |
+|       mul_28s_28s_28_3_1_U31                                      |     0.001 |
+|   core                                                            |     0.120 |
+|     debug_module                                                  |     0.004 |
+|     jtag_tap                                                      |     0.003 |
+|     ndm_reset                                                     |     0.002 |
+|     soc                                                           |     0.110 |
+|       ccore                                                       |     0.051 |
+|       mixed_cluster                                               |     0.015 |
+|       pwm_cluster                                                 |     0.012 |
+|       spi_cluster                                                 |     0.013 |
+|       uart_cluster                                                |     0.009 |
+|     sync_request_to_dm                                            |     0.002 |
+|   mig_ddr3                                                        |     0.693 |
+|     u_mig_ddr3_mig                                                |     0.693 |
+|       temp_mon_enabled.u_tempmon                                  |     0.008 |
+|       u_ddr3_infrastructure                                       |     0.187 |
+|       u_memc_ui_top_axi                                           |     0.497 |
++-------------------------------------------------------------------+-----------+
 
 

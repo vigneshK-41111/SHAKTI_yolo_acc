@@ -1,0 +1,55 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Apr 27 14:01:30 2026
+# Process ID: 111181
+# Current directory: /scratch1/iot/gc2025/hw
+# Command line: vivado fpga_project/c-class/c-class.xpr
+# Log file: /scratch1/iot/gc2025/hw/vivado.log
+# Journal file: /scratch1/iot/gc2025/hw/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project fpga_project/c-class/c-class.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/vignesh/tools/hw_tools/Vivado/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 6529.047 ; gain = 197.523 ; free physical = 46337 ; free virtual = 54381
+update_compile_order -fileset sources_1
+open_run core_impl_1
+INFO: [Netlist 29-17] Analyzing 5356 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 7872.223 ; gain = 136.633 ; free physical = 44797 ; free virtual = 52877
+Restored from archive | CPU: 7.720000 secs | Memory: 138.233040 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 7872.223 ; gain = 136.633 ; free physical = 44797 ; free virtual = 52877
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7872.223 ; gain = 0.000 ; free physical = 44792 ; free virtual = 52875
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 345 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 40 instances
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 15 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM128X1D => RAM128X1D (RAMD64E, RAMD64E, MUXF7, MUXF7, RAMD64E, RAMD64E): 8 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 8 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 254 instances
+  SRLC32E => SRL16E: 1 instances
+
+open_run: Time (s): cpu = 00:00:45 ; elapsed = 00:00:44 . Memory (MB): peak = 8045.324 ; gain = 1448.281 ; free physical = 44532 ; free virtual = 52616
+open_report: Time (s): cpu = 00:00:28 ; elapsed = 00:00:06 . Memory (MB): peak = 8313.570 ; gain = 184.141 ; free physical = 44246 ; free virtual = 52335
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:20 ; elapsed = 00:00:10 . Memory (MB): peak = 8377.484 ; gain = 40.258 ; free physical = 43874 ; free virtual = 51956

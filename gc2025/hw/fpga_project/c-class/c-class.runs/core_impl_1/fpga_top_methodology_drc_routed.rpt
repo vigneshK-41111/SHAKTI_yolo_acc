@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Tue Apr 21 12:50:36 2026
+| Date         : Mon Apr 27 13:49:15 2026
 | Host         : jarvis running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_methodology -file fpga_top_methodology_drc_routed.rpt -pb fpga_top_methodology_drc_routed.pb -rpx fpga_top_methodology_drc_routed.rpx
 | Design       : fpga_top
@@ -23,16 +23,16 @@ Table of Contents
           Floorplan: checkpoint_fpga_top
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 394
+             Violations found: 377
 +-----------+----------+-----------------------------------------------------------+------------+
 | Rule      | Severity | Description                                               | Violations |
 +-----------+----------+-----------------------------------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert                              | 14         |
 | PDRC-190  | Warning  | Suboptimally placed synchronized register chain           | 12         |
+| SYNTH-4   | Warning  | Shallow depth for a dedicated block RAM                   | 1          |
 | SYNTH-5   | Warning  | Mapped onto distributed RAM because of timing constraints | 8          |
-| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal                | 13         |
-| SYNTH-10  | Warning  | Wide multiplier                                           | 4          |
-| SYNTH-15  | Warning  | Byte wide write enable not inferred                       | 13         |
+| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal                | 2          |
+| SYNTH-10  | Warning  | Wide multiplier                                           | 10         |
 | TIMING-14 | Warning  | LUT on the clock tree                                     | 1          |
 | TIMING-17 | Warning  | Non-clocked sequential cell                               | 310        |
 | TIMING-18 | Warning  | Missing input or output delay                             | 2          |
@@ -44,27 +44,27 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell core/debug_module/dmactive_reset/data0_reg[43]_i_2__5, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/autoexecdata_reg[4]/CLR, core/debug_module/autoexecdata_reg[5]/CLR, core/debug_module/autoexecprogbuf_reg[10]/CLR, core/debug_module/autoexecprogbuf_reg[11]/CLR, core/debug_module/autoexecprogbuf_reg[12]/CLR, core/debug_module/autoexecprogbuf_reg[13]/CLR, core/debug_module/autoexecprogbuf_reg[14]/CLR, core/debug_module/autoexecprogbuf_reg[15]/CLR, core/debug_module/autoexecprogbuf_reg[8]/CLR, core/debug_module/autoexecprogbuf_reg[9]/CLR, core/debug_module/hartreset_reg/CLR, core/debug_module/sbaccess_reg[0]/CLR, core/debug_module/sbaccess_reg[2]/CLR, core/debug_module/sbaddress0_reg[0]/CLR, core/debug_module/sbaddress0_reg[16]/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell core/debug_module/dmactive_reset/data0_reg[43]_i_2__3, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/autoexecdata_reg[4]/CLR, core/debug_module/autoexecdata_reg[5]/CLR, core/debug_module/autoexecprogbuf_reg[10]/CLR, core/debug_module/autoexecprogbuf_reg[11]/CLR, core/debug_module/autoexecprogbuf_reg[12]/CLR, core/debug_module/autoexecprogbuf_reg[13]/CLR, core/debug_module/autoexecprogbuf_reg[14]/CLR, core/debug_module/autoexecprogbuf_reg[15]/CLR, core/debug_module/autoexecprogbuf_reg[8]/CLR, core/debug_module/autoexecprogbuf_reg[9]/CLR, core/debug_module/hartreset_reg/CLR, core/debug_module/sbaccess_reg[0]/CLR, core/debug_module/sbaccess_reg[2]/CLR, core/debug_module/sbaddress0_reg[0]/CLR, core/debug_module/sbaddress0_reg[16]/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell core/debug_module/dmactive_reset/data1_reg[18]_i_1__60, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/hahaltreq_reg/CLR, core/debug_module/v_data_reg_0_reg[2]/CLR, core/debug_module/v_data_reg_1_reg[2]/CLR, core/debug_module/v_data_reg_2_reg[2]/CLR, core/debug_module/v_hartinfo_reg_0_reg[10]/CLR, core/debug_module/v_hartinfo_reg_0_reg[13]/CLR, core/debug_module/v_hartinfo_reg_0_reg[14]/PRE, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[0]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[10]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[11]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[12]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[13]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[14]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[15]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[16]/CLR (the first 15 of 87 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell core/debug_module/dmactive_reset/data1_reg[18]_i_1__43, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/hahaltreq_reg/CLR, core/debug_module/v_data_reg_0_reg[2]/CLR, core/debug_module/v_data_reg_1_reg[2]/CLR, core/debug_module/v_data_reg_2_reg[2]/CLR, core/debug_module/v_hartinfo_reg_0_reg[10]/CLR, core/debug_module/v_hartinfo_reg_0_reg[13]/CLR, core/debug_module/v_hartinfo_reg_0_reg[14]/PRE, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[0]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[10]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[11]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[12]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[13]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[14]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[15]/CLR, core/debug_module/master_xactor_f_wr_data/data0_reg_reg[16]/CLR (the first 15 of 87 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#3 Warning
 LUT drives async reset alert  
-LUT cell core/debug_module/dmactive_reset/data1_reg[43]_i_1__12, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/rg_sbread_en_reg/CLR, core/debug_module/rg_sbwrite_en_reg/CLR, core/debug_module/sbaddress0_reg[10]/CLR, core/debug_module/sbaddress0_reg[11]/CLR, core/debug_module/sbaddress0_reg[12]/CLR, core/debug_module/sbaddress0_reg[13]/CLR, core/debug_module/sbaddress0_reg[14]/CLR, core/debug_module/sbaddress0_reg[15]/CLR, core/debug_module/sbaddress0_reg[20]/CLR, core/debug_module/sbaddress0_reg[21]/CLR, core/debug_module/sbaddress0_reg[22]/CLR, core/debug_module/sbaddress0_reg[23]/CLR, core/debug_module/sbaddress0_reg[8]/CLR, core/debug_module/sbaddress0_reg[9]/CLR, core/debug_module/sbbusy_reg/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell core/debug_module/dmactive_reset/data1_reg[43]_i_1__10, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/rg_sbread_en_reg/CLR, core/debug_module/rg_sbwrite_en_reg/CLR, core/debug_module/sbaddress0_reg[10]/CLR, core/debug_module/sbaddress0_reg[11]/CLR, core/debug_module/sbaddress0_reg[12]/CLR, core/debug_module/sbaddress0_reg[13]/CLR, core/debug_module/sbaddress0_reg[14]/CLR, core/debug_module/sbaddress0_reg[15]/CLR, core/debug_module/sbaddress0_reg[20]/CLR, core/debug_module/sbaddress0_reg[21]/CLR, core/debug_module/sbaddress0_reg[22]/CLR, core/debug_module/sbaddress0_reg[23]/CLR, core/debug_module/sbaddress0_reg[8]/CLR, core/debug_module/sbaddress0_reg[9]/CLR, core/debug_module/sbbusy_reg/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#4 Warning
 LUT drives async reset alert  
-LUT cell core/debug_module/dmactive_reset/data1_reg[47]_i_1__13, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/autoexecdata_reg[6]/CLR, core/debug_module/autoexecdata_reg[7]/CLR, core/debug_module/autoexecprogbuf_reg[0]/CLR, core/debug_module/autoexecprogbuf_reg[1]/CLR, core/debug_module/autoexecprogbuf_reg[2]/CLR, core/debug_module/autoexecprogbuf_reg[3]/CLR, core/debug_module/autoexecprogbuf_reg[4]/CLR, core/debug_module/autoexecprogbuf_reg[5]/CLR, core/debug_module/autoexecprogbuf_reg[6]/CLR, core/debug_module/autoexecprogbuf_reg[7]/CLR, core/debug_module/sbaddress0_reg[24]/CLR, core/debug_module/sbaddress0_reg[25]/CLR, core/debug_module/sbaddress0_reg[26]/CLR, core/debug_module/sbaddress0_reg[27]/CLR, core/debug_module/sbaddress0_reg[4]/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell core/debug_module/dmactive_reset/data1_reg[47]_i_1__10, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/autoexecdata_reg[6]/CLR, core/debug_module/autoexecdata_reg[7]/CLR, core/debug_module/autoexecprogbuf_reg[0]/CLR, core/debug_module/autoexecprogbuf_reg[1]/CLR, core/debug_module/autoexecprogbuf_reg[2]/CLR, core/debug_module/autoexecprogbuf_reg[3]/CLR, core/debug_module/autoexecprogbuf_reg[4]/CLR, core/debug_module/autoexecprogbuf_reg[5]/CLR, core/debug_module/autoexecprogbuf_reg[6]/CLR, core/debug_module/autoexecprogbuf_reg[7]/CLR, core/debug_module/sbaddress0_reg[24]/CLR, core/debug_module/sbaddress0_reg[25]/CLR, core/debug_module/sbaddress0_reg[26]/CLR, core/debug_module/sbaddress0_reg[27]/CLR, core/debug_module/sbaddress0_reg[4]/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell core/debug_module/dmactive_reset/data1_reg[51]_i_2__4, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/autoexecdata_reg[10]/CLR, core/debug_module/autoexecdata_reg[11]/CLR, core/debug_module/autoexecdata_reg[8]/CLR, core/debug_module/autoexecdata_reg[9]/CLR, core/debug_module/busy_reg/CLR, core/debug_module/cmderr_reg[0]/CLR, core/debug_module/cmderr_reg[1]/CLR, core/debug_module/cmderr_reg[2]/CLR, core/debug_module/cmdtype_reg[0]/CLR, core/debug_module/cmdtype_reg[1]/CLR, core/debug_module/cmdtype_reg[2]/CLR, core/debug_module/cmdtype_reg[3]/CLR, core/debug_module/cmdtype_reg[4]/CLR, core/debug_module/cmdtype_reg[5]/CLR, core/debug_module/cmdtype_reg[6]/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell core/debug_module/dmactive_reset/data1_reg[51]_i_2__3, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/debug_module/autoexecdata_reg[10]/CLR, core/debug_module/autoexecdata_reg[11]/CLR, core/debug_module/autoexecdata_reg[8]/CLR, core/debug_module/autoexecdata_reg[9]/CLR, core/debug_module/busy_reg/CLR, core/debug_module/cmderr_reg[0]/CLR, core/debug_module/cmderr_reg[1]/CLR, core/debug_module/cmderr_reg[2]/CLR, core/debug_module/cmdtype_reg[0]/CLR, core/debug_module/cmdtype_reg[1]/CLR, core/debug_module/cmdtype_reg[2]/CLR, core/debug_module/cmdtype_reg[3]/CLR, core/debug_module/cmdtype_reg[4]/CLR, core/debug_module/cmdtype_reg[5]/CLR, core/debug_module/cmdtype_reg[6]/CLR (the first 15 of 126 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#6 Warning
@@ -104,7 +104,7 @@ Related violations: <none>
 
 LUTAR-1#13 Warning
 LUT drives async reset alert  
-LUT cell core/ndm_reset/i___175_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/soc/boot_dut_read_request_sent_reg/CLR, core/soc/boot_read_state_reg/CLR, core/soc/boot_rg_readburst_counter_reg[0]/CLR, core/soc/boot_rg_readburst_counter_reg[1]/CLR, core/soc/boot_rg_readburst_counter_reg[2]/CLR, core/soc/boot_rg_readburst_counter_reg[3]/CLR, core/soc/boot_rg_readburst_counter_reg[4]/CLR, core/soc/boot_rg_readburst_counter_reg[5]/CLR, core/soc/boot_rg_readburst_counter_reg[6]/CLR, core/soc/boot_rg_readburst_counter_reg[7]/CLR, core/soc/boot_write_state_reg/CLR, core/soc/bridge_6_rg_accum_err_reg[0]/CLR, core/soc/bridge_6_rg_accum_err_reg[1]/CLR, core/soc/bridge_6_rg_rd_req_beat_reg[0]/CLR, core/soc/bridge_6_rg_rd_req_beat_reg[1]/CLR (the first 15 of 35725 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell core/ndm_reset/i___175_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) core/soc/boot_dut_read_request_sent_reg/CLR, core/soc/boot_read_state_reg/CLR, core/soc/boot_rg_readburst_counter_reg[0]/CLR, core/soc/boot_rg_readburst_counter_reg[1]/CLR, core/soc/boot_rg_readburst_counter_reg[2]/CLR, core/soc/boot_rg_readburst_counter_reg[3]/CLR, core/soc/boot_rg_readburst_counter_reg[4]/CLR, core/soc/boot_rg_readburst_counter_reg[5]/CLR, core/soc/boot_rg_readburst_counter_reg[6]/CLR, core/soc/boot_rg_readburst_counter_reg[7]/CLR, core/soc/boot_write_state_reg/CLR, core/soc/bridge_5_rg_accum_err_reg[0]/CLR, core/soc/bridge_5_rg_accum_err_reg[1]/CLR, core/soc/bridge_5_rg_rd_req_beat_reg[0]/CLR, core/soc/bridge_5_rg_rd_req_beat_reg[1]/CLR (the first 15 of 31589 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#14 Warning
@@ -114,62 +114,67 @@ Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X28Y209 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X38Y192 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X26Y207 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X43Y192 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X31Y209 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X37Y191 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X24Y211 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X42Y193 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#5 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X29Y209 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X44Y190 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#6 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X26Y209 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X45Y193 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#7 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X27Y212 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X40Y190 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#8 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X25Y211 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X42Y189 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#9 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X27Y207 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X44Y193 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#10 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X26Y211 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X43Y190 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#11 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X25Y208 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X42Y191 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#12 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X27Y210 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
+The FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X41Y189 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell mig_ddr3/u_mig_ddr3_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+SYNTH-4#1 Warning
+Shallow depth for a dedicated block RAM  
+The instance cnn_inst/gmem_m_axi_U/store_unit_0/buff_wdata/U_fifo_mem/mem_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason: The depth (6 address bits) is shallow. Please use attribute (* ram_style = "distributed" *)  to instruct Vivado to infer distributed LUT RAM.
 Related violations: <none>
 
 SYNTH-5#1 Warning
@@ -214,152 +219,62 @@ Related violations: <none>
 
 SYNTH-6#1 Warning
 Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_0_3, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+The timing for the instance cnn_inst/gmem_m_axi_U/load_unit_0/buff_rdata/U_fifo_mem/mem_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
 Related violations: <none>
 
 SYNTH-6#2 Warning
 Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_1_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#3 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_1_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#4 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_1_2, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#5 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_1_3, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#6 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_2_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#7 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_2_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#8 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_2_2, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#9 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_2_3, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#10 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_3_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#11 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_3_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#12 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_3_2, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
-Related violations: <none>
-
-SYNTH-6#13 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance wrapper_inst/output_mem_reg_3_3, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+The timing for the instance cnn_inst/gmem_m_axi_U/store_unit_0/buff_wdata/U_fifo_mem/mem_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
 Related violations: <none>
 
 SYNTH-10#1 Warning
 Wide multiplier  
-Detected multiplier at core/soc/ccore/riscv/mbox/mul_/signed_mul/c of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/buff0_reg__0 of size 18x15, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#2 Warning
 Wide multiplier  
-Detected multiplier at core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0 of size 16x16, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#3 Warning
 Wide multiplier  
-Detected multiplier at core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Detected multiplier at cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 SYNTH-10#4 Warning
 Wide multiplier  
+Detected multiplier at cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/buff0_reg of size 11x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#5 Warning
+Wide multiplier  
+Detected multiplier at cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/buff0_reg__1 of size 18x11, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#6 Warning
+Wide multiplier  
+Detected multiplier at cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/tmp_product of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#7 Warning
+Wide multiplier  
+Detected multiplier at core/soc/ccore/riscv/mbox/mul_/signed_mul/c of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#8 Warning
+Wide multiplier  
+Detected multiplier at core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0 of size 16x16, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#9 Warning
+Wide multiplier  
+Detected multiplier at core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#10 Warning
+Wide multiplier  
 Detected multiplier at core/soc/ccore/riscv/mbox/mul_/signed_mul/c__2 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-SYNTH-15#1 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_0_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#2 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_1_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#3 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_1_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#4 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_1_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#5 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_1_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#6 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_2_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#7 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_2_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#8 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_2_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#9 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_2_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#10 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_3_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#11 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_3_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#12 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_3_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#13 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM wrapper_inst/output_mem_reg_3_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
 Related violations: <none>
 
 TIMING-14#1 Warning

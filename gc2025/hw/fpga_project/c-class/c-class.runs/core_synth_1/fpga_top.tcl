@@ -56,13 +56,16 @@ read_verilog -library xil_defaultlib {
   /scratch1/iot/gc2025/hw/build/hw/verilog/UngatedClockMux.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/bram_1rw.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_70_8_VITIS_LOOP_71_9.v
+  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4.v
+  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6.v
+  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9.v
+  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_control_r_s_axi.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_control_s_axi.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_flow_control_loop_pipe_sequential_init.v
+  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_gmem_m_axi.v
+  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_mul_28s_28s_28_3_1.v
+  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_mul_32ns_32s_62_2_1.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_tile_in_RAM_T2P_BRAM_1R1W.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_axi_slave_wrapper.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkDebugSoc.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkSoc.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mk_csrbox.v
@@ -74,7 +77,6 @@ read_verilog -library xil_defaultlib {
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkdcache_data.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkdcache_fb_v2.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkdcache_tag.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkdma.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkdmem.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkfa_dtlb.v
   /scratch1/iot/gc2025/hw/build/hw/verilog/mkfa_itlb.v

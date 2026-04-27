@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Tue Apr 21 12:50:17 2026
+| Date         : Mon Apr 27 13:48:57 2026
 | Host         : jarvis running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_drc -file fpga_top_drc_routed.rpt -pb fpga_top_drc_routed.pb -rpx fpga_top_drc_routed.rpx
 | Design       : fpga_top
@@ -24,15 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 55
+             Violations found: 63
 +-----------+----------+-----------------------------------------------------+------------+
 | Rule      | Severity | Description                                         | Violations |
 +-----------+----------+-----------------------------------------------------+------------+
 | BUFC-1    | Warning  | Input Buffer Connections                            | 2          |
 | CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
 | CHECK-3   | Warning  | Report rule limit reached                           | 2          |
-| DPOP-1    | Warning  | PREG Output pipelining                              | 4          |
-| DPOP-2    | Warning  | MREG Output pipelining                              | 4          |
+| DPOP-1    | Warning  | PREG Output pipelining                              | 6          |
+| DPOP-2    | Warning  | MREG Output pipelining                              | 10         |
 | REQP-1709 | Warning  | Clock output buffering                              | 1          |
 | REQP-1839 | Warning  | RAMB36 async control check                          | 20         |
 | REQP-1840 | Warning  | RAMB18 async control check                          | 20         |
@@ -76,40 +76,80 @@ Related violations: <none>
 
 DPOP-1#1 Warning
 PREG Output pipelining  
-DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c output core/soc/ccore/riscv/mbox/mul_/signed_mul/c/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product__0 output cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#2 Warning
 PREG Output pipelining  
-DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0 output core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/tmp_product output cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#3 Warning
 PREG Output pipelining  
-DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1 output core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c output core/soc/ccore/riscv/mbox/mul_/signed_mul/c/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#4 Warning
+PREG Output pipelining  
+DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0 output core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1 output core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#6 Warning
 PREG Output pipelining  
 DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__2 output core/soc/ccore/riscv/mbox/mul_/signed_mul/c__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-2#1 Warning
 MREG Output pipelining  
-DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c multiplier stage core/soc/ccore/riscv/mbox/mul_/signed_mul/c/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/buff0_reg__0 multiplier stage cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/buff0_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#2 Warning
 MREG Output pipelining  
-DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0 multiplier stage core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product multiplier stage cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#3 Warning
 MREG Output pipelining  
-DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1 multiplier stage core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product__0 multiplier stage cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4_fu_235/mul_32ns_32s_62_2_1_U1/tmp_product__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#4 Warning
+MREG Output pipelining  
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/buff0_reg multiplier stage cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/buff0_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#5 Warning
+MREG Output pipelining  
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/buff0_reg__1 multiplier stage cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/buff0_reg__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#6 Warning
+MREG Output pipelining  
+DSP cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/tmp_product multiplier stage cnn_inst/grp_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9_fu_272/mul_28s_28s_28_3_1_U31/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#7 Warning
+MREG Output pipelining  
+DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c multiplier stage core/soc/ccore/riscv/mbox/mul_/signed_mul/c/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#8 Warning
+MREG Output pipelining  
+DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0 multiplier stage core/soc/ccore/riscv/mbox/mul_/signed_mul/c__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#9 Warning
+MREG Output pipelining  
+DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1 multiplier stage core/soc/ccore/riscv/mbox/mul_/signed_mul/c__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#10 Warning
 MREG Output pipelining  
 DSP core/soc/ccore/riscv/mbox/mul_/signed_mul/c__2 multiplier stage core/soc/ccore/riscv/mbox/mul_/signed_mul/c__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
@@ -246,77 +286,77 @@ Related violations: <none>
 
 REQP-1840#6 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dcache/ff_mem_wr_request/empty_reg_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[100]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#7 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dcache/m_iobuffer/v_iobuff_valid_0_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[101]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#8 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dcache/m_iobuffer/v_iobuff_valid_1_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[102]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#9 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[100]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[103]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#10 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[101]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#11 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[102]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#12 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[103]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#13 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#14 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[14]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#15 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[15]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#16 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[16]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#17 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[14]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[17]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#18 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/ptwalk_ff_memory_req/data0_reg_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[18]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#19 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/ptwalk_ff_memory_req/data0_reg_reg[60]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[19]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#20 Warning
 RAMB18 async control check  
-The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/ptwalk_ff_memory_req/empty_reg_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg has an input control pin core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg/ADDRARDADDR[9] (net: core/soc/ccore/dmem/dcache/m_data/v_data_0_ram_single_0/ram_reg_0[5]) which is driven by a register (core/soc/ccore/dmem/dtlb/ff_lookup_result/data0_reg_reg[20]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 RTSTAT-10#1 Warning

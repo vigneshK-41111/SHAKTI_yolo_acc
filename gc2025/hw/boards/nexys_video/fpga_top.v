@@ -139,7 +139,8 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
    );
 
   reg aresetn ;
-
+  wire use_cnn;   // control this from a register or hardcode for now
+  assign use_cnn = 1'b1;   // CNN only (debug phase)
   wire                            soc_reset;      // reset to the SoC
   wire                            core_clk;       // clock to the SoC
   wire                              ddr3_main;      // main clock to the ddr3-mig
@@ -283,45 +284,72 @@ wire        cnn_ctrl_arready;
 wire [31:0] cnn_ctrl_rdata;
 wire        cnn_ctrl_rvalid;
 wire        cnn_ctrl_rready;
-wire [1:0]  cnn_ctrl_rresp;
 
 
-// ================= CNN DATA SIGNALS =================
-wire [7:0] cnn_input;
-wire [7:0] cnn_output;
-wire       cnn_output_valid;
+wire cnn_master_awvalid;
+wire cnn_master_awready;
+wire [AXI_ADDR_WIDTH-1:0] cnn_master_awaddr;
+wire [AXI_ID_WIDTH-1:0] cnn_master_awid;
+wire [7:0] cnn_master_awlen;
+wire [2:0] cnn_master_awsize;
+wire [1:0] cnn_master_awburst;
+wire [0:0] cnn_master_awlock;
+wire [3:0] cnn_master_awcache;
+wire [2:0] cnn_master_awprot;
+wire [3:0] cnn_master_awqos;
+wire [3:0] cnn_master_awregion;
+wire cnn_master_awuser;
+wire cnn_master_wvalid;
+wire cnn_master_wready;
+`ifdef BUS_WIDTH128
+wire [127:0] cnn_master_wdata;
+wire [15:0] cnn_master_wstrb;
+`elsif BUS_WIDTH64
+wire [63:0] cnn_master_wdata;
+wire [7:0] cnn_master_wstrb;
+`elsif BUS_WIDTH32
+wire [31:0] cnn_master_wdata;
+wire [3:0] cnn_master_wstrb;
+`else
+wire [127:0] cnn_master_wdata;
+wire [15:0] cnn_master_wstrb;
+`endif
+wire cnn_master_wlast;
+wire [AXI_ID_WIDTH-1:0] cnn_master_wid;
+wire cnn_master_wuser;
+wire cnn_master_arvalid;
+wire cnn_master_arready;
+wire [AXI_ADDR_WIDTH-1:0] cnn_master_araddr;
+wire [AXI_ID_WIDTH-1:0] cnn_master_arid;
+wire [7:0] cnn_master_arlen;
+wire [2:0] cnn_master_arsize;
+wire [1:0] cnn_master_arburst;
+wire [0:0] cnn_master_arlock;
+wire [3:0] cnn_master_arcache;
+wire [2:0] cnn_master_arprot;
+wire [3:0] cnn_master_arqos;
+wire [3:0] cnn_master_arregion;
+wire cnn_master_aruser;
+wire cnn_master_rvalid;
+wire cnn_master_rready;
+`ifdef BUS_WIDTH128
+wire [127:0] cnn_master_rdata;
+`elsif BUS_WIDTH64
+wire [63:0] cnn_master_rdata;
+`elsif BUS_WIDTH32
+wire [31:0] cnn_master_rdata;
+`else
+wire [127:0] cnn_master_rdata;
+`endif
+wire cnn_master_rlast;
+wire [AXI_ID_WIDTH-1:0] cnn_master_rid;
+wire cnn_master_ruser;
+wire [1:0] cnn_master_rresp;
+wire cnn_master_bvalid;
+wire cnn_master_bready;
+wire [1:0] cnn_master_bresp;
+wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
 
-// ===== CNN AXI CONNECTION (Shakti → Wrapper) =====
-
-wire [31:0] cnn_awaddr;
-wire        cnn_awvalid;
-wire        cnn_awready;
-wire [7:0]  cnn_awlen;
-wire [2:0]  cnn_awsize;
-wire [1:0]  cnn_awburst;
-
-wire [31:0] cnn_wdata;
-wire [3:0]  cnn_wstrb;
-wire        cnn_wvalid;
-wire        cnn_wready;
-wire        cnn_wlast;
-
-wire [1:0]  cnn_bresp;
-wire        cnn_bvalid;
-wire        cnn_bready;
-
-wire [31:0] cnn_araddr;
-wire        cnn_arvalid;
-wire        cnn_arready;
-wire [7:0]  cnn_arlen;
-wire [2:0]  cnn_arsize;
-wire [1:0]  cnn_arburst;
-
-wire [31:0] cnn_rdata;
-wire [1:0]  cnn_rresp;
-wire        cnn_rvalid;
-wire        cnn_rready;
-wire        cnn_rlast;
 
 
 

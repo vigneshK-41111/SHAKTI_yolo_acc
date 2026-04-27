@@ -2,7 +2,6 @@ BRAM2BELoad
 FIFO2
 mkccore_axi4
 ResetEither
-mkdma
 FIFO20
 mkmixed_cluster
 mkpwm_cluster

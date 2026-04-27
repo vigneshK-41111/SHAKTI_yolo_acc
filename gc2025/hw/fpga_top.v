@@ -283,45 +283,72 @@ wire        cnn_ctrl_arready;
 wire [31:0] cnn_ctrl_rdata;
 wire        cnn_ctrl_rvalid;
 wire        cnn_ctrl_rready;
-wire [1:0]  cnn_ctrl_rresp;
 
 
-// ================= CNN DATA SIGNALS =================
-wire [7:0] cnn_input;
-wire [7:0] cnn_output;
-wire       cnn_output_valid;
+wire cnn_master_awvalid;
+wire cnn_master_awready;
+wire [AXI_ADDR_WIDTH-1:0] cnn_master_awaddr;
+wire [AXI_ID_WIDTH-1:0] cnn_master_awid;
+wire [7:0] cnn_master_awlen;
+wire [2:0] cnn_master_awsize;
+wire [1:0] cnn_master_awburst;
+wire [0:0] cnn_master_awlock;
+wire [3:0] cnn_master_awcache;
+wire [2:0] cnn_master_awprot;
+wire [3:0] cnn_master_awqos;
+wire [3:0] cnn_master_awregion;
+wire cnn_master_awuser;
+wire cnn_master_wvalid;
+wire cnn_master_wready;
+`ifdef BUS_WIDTH128
+wire [127:0] cnn_master_wdata;
+wire [15:0] cnn_master_wstrb;
+`elsif BUS_WIDTH64
+wire [63:0] cnn_master_wdata;
+wire [7:0] cnn_master_wstrb;
+`elsif BUS_WIDTH32
+wire [31:0] cnn_master_wdata;
+wire [3:0] cnn_master_wstrb;
+`else
+wire [127:0] cnn_master_wdata;
+wire [15:0] cnn_master_wstrb;
+`endif
+wire cnn_master_wlast;
+wire [AXI_ID_WIDTH-1:0] cnn_master_wid;
+wire cnn_master_wuser;
+wire cnn_master_arvalid;
+wire cnn_master_arready;
+wire [AXI_ADDR_WIDTH-1:0] cnn_master_araddr;
+wire [AXI_ID_WIDTH-1:0] cnn_master_arid;
+wire [7:0] cnn_master_arlen;
+wire [2:0] cnn_master_arsize;
+wire [1:0] cnn_master_arburst;
+wire [0:0] cnn_master_arlock;
+wire [3:0] cnn_master_arcache;
+wire [2:0] cnn_master_arprot;
+wire [3:0] cnn_master_arqos;
+wire [3:0] cnn_master_arregion;
+wire cnn_master_aruser;
+wire cnn_master_rvalid;
+wire cnn_master_rready;
+`ifdef BUS_WIDTH128
+wire [127:0] cnn_master_rdata;
+`elsif BUS_WIDTH64
+wire [63:0] cnn_master_rdata;
+`elsif BUS_WIDTH32
+wire [31:0] cnn_master_rdata;
+`else
+wire [127:0] cnn_master_rdata;
+`endif
+wire cnn_master_rlast;
+wire [AXI_ID_WIDTH-1:0] cnn_master_rid;
+wire cnn_master_ruser;
+wire [1:0] cnn_master_rresp;
+wire cnn_master_bvalid;
+wire cnn_master_bready;
+wire [1:0] cnn_master_bresp;
+wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
 
-// ===== CNN AXI CONNECTION (Shakti → Wrapper) =====
-
-wire [31:0] cnn_awaddr;
-wire        cnn_awvalid;
-wire        cnn_awready;
-wire [7:0]  cnn_awlen;
-wire [2:0]  cnn_awsize;
-wire [1:0]  cnn_awburst;
-
-wire [31:0] cnn_wdata;
-wire [3:0]  cnn_wstrb;
-wire        cnn_wvalid;
-wire        cnn_wready;
-wire        cnn_wlast;
-
-wire [1:0]  cnn_bresp;
-wire        cnn_bvalid;
-wire        cnn_bready;
-
-wire [31:0] cnn_araddr;
-wire        cnn_arvalid;
-wire        cnn_arready;
-wire [7:0]  cnn_arlen;
-wire [2:0]  cnn_arsize;
-wire [1:0]  cnn_arburst;
-
-wire [31:0] cnn_rdata;
-wire [1:0]  cnn_rresp;
-wire        cnn_rvalid;
-wire        cnn_rready;
-wire        cnn_rlast;
 
 
 
@@ -590,66 +617,74 @@ wire        cnn_rlast;
        .m_axi_rready(m_axi_rready)
    );
 
+  cnn_accel cnn_inst (
 
+    // ✅ FAST CLOCK (same as DDR)
+    .ap_clk(core_clk),
+    .ap_rst_n(aresetn),
 
-cnn_axi_slave_wrapper wrapper_inst (
+    .m_axi_gmem_AWVALID(cnn_master_awvalid),
+    .m_axi_gmem_AWREADY(cnn_master_awready),
+    .m_axi_gmem_AWADDR(cnn_master_awaddr),
+    .m_axi_gmem_AWID(cnn_master_awid),
+    .m_axi_gmem_AWLEN(cnn_master_awlen),
+    .m_axi_gmem_AWSIZE(cnn_master_awsize),
+    .m_axi_gmem_AWBURST(cnn_master_awburst),
+    .m_axi_gmem_AWLOCK(cnn_master_awlock),
+    .m_axi_gmem_AWCACHE(cnn_master_awcache),
+    .m_axi_gmem_AWPROT(cnn_master_awprot),
+    .m_axi_gmem_AWQOS(cnn_master_awqos),
+    .m_axi_gmem_AWREGION(cnn_master_awregion),
+    .m_axi_gmem_AWUSER(cnn_master_awuser),
+    .m_axi_gmem_WVALID(cnn_master_wvalid),
+    .m_axi_gmem_WREADY(cnn_master_wready),
+    .m_axi_gmem_WDATA(cnn_master_wdata),
+    .m_axi_gmem_WSTRB(cnn_master_wstrb),
+    .m_axi_gmem_WLAST(cnn_master_wlast),
+    .m_axi_gmem_WID(cnn_master_wid),
+    .m_axi_gmem_WUSER(cnn_master_wuser),
+    .m_axi_gmem_ARVALID(cnn_master_arvalid),
+    .m_axi_gmem_ARREADY(cnn_master_arready),
+    .m_axi_gmem_ARADDR(cnn_master_araddr),
+    .m_axi_gmem_ARID(cnn_master_arid),
+    .m_axi_gmem_ARLEN(cnn_master_arlen),
+    .m_axi_gmem_ARSIZE(cnn_master_arsize),
+    .m_axi_gmem_ARBURST(cnn_master_arburst),
+    .m_axi_gmem_ARLOCK(cnn_master_arlock),
+    .m_axi_gmem_ARCACHE(cnn_master_arcache),
+    .m_axi_gmem_ARPROT(cnn_master_arprot),
+    .m_axi_gmem_ARQOS(cnn_master_arqos),
+    .m_axi_gmem_ARREGION(cnn_master_arregion),
+    .m_axi_gmem_ARUSER(cnn_master_aruser),
+    .m_axi_gmem_RVALID(cnn_master_rvalid),
+    .m_axi_gmem_RREADY(cnn_master_rready),
+    .m_axi_gmem_RDATA(cnn_master_rdata),
+    .m_axi_gmem_RLAST(cnn_master_rlast),
+    .m_axi_gmem_RID(cnn_master_rid),
+    .m_axi_gmem_RUSER(cnn_master_ruser),
+    .m_axi_gmem_RRESP(cnn_master_rresp),
+    .m_axi_gmem_BVALID(cnn_master_bvalid),
+    .m_axi_gmem_BREADY(cnn_master_bready),
+    .m_axi_gmem_BRESP(cnn_master_bresp),
+    .m_axi_gmem_BID(cnn_master_bid),
+    .s_axi_control_AWVALID(cnn_ctrl_awvalid),
+    .s_axi_control_AWREADY(cnn_ctrl_awready),
+    .s_axi_control_AWADDR(cnn_ctrl_awaddr),
+    .s_axi_control_WVALID(cnn_ctrl_wvalid),
+    .s_axi_control_WREADY(cnn_ctrl_wready),
+    .s_axi_control_WDATA(cnn_ctrl_wdata),
+    .s_axi_control_WSTRB(cnn_ctrl_wstrb),
+    .s_axi_control_ARVALID(cnn_ctrl_arvalid),
+    .s_axi_control_ARREADY(cnn_ctrl_arready),
+    .s_axi_control_ARADDR(cnn_ctrl_araddr),
+    .s_axi_control_RVALID(cnn_ctrl_rvalid),
+    .s_axi_control_RREADY(cnn_ctrl_rready),
+    .s_axi_control_RDATA(cnn_ctrl_rdata),
+    .s_axi_control_RRESP(cnn_ctrl_rresp),
+    .s_axi_control_BVALID(cnn_ctrl_bvalid),
+    .s_axi_control_BREADY(cnn_ctrl_bready),
+    .s_axi_control_BRESP(cnn_ctrl_bresp)
 
-    .clk(core_clk),
-    .rst_n(aresetn),
-
-    // ===== AXI4 DATA =====
-    .AWADDR (cnn_awaddr),
-    .AWVALID(cnn_awvalid),
-    .AWREADY(cnn_awready),
-    .AWLEN  (cnn_awlen),
-    .AWSIZE (cnn_awsize),
-    .AWBURST(cnn_awburst),
-
-    .WDATA (cnn_wdata),
-    .WSTRB (cnn_wstrb),
-    .WVALID(cnn_wvalid),
-    .WREADY(cnn_wready),
-    .WLAST (cnn_wlast),
-
-    .BRESP (cnn_bresp),
-    .BVALID(cnn_bvalid),
-    .BREADY(cnn_bready),
-
-    .ARADDR (cnn_araddr),
-    .ARVALID(cnn_arvalid),
-    .ARREADY(cnn_arready),
-    .ARLEN  (cnn_arlen),
-    .ARSIZE (cnn_arsize),
-    .ARBURST(cnn_arburst),
-
-    .RDATA (cnn_rdata),
-    .RRESP (cnn_rresp),
-    .RVALID(cnn_rvalid),
-    .RREADY(cnn_rready),
-    .RLAST (cnn_rlast),
-
-    // ===== AXI-LITE CONTROL =====
-    .S_AXI_AWADDR (cnn_ctrl_awaddr),
-    .S_AXI_AWVALID(cnn_ctrl_awvalid),
-    .S_AXI_AWREADY(cnn_ctrl_awready),
-
-    .S_AXI_WDATA (cnn_ctrl_wdata),
-    .S_AXI_WSTRB (cnn_ctrl_wstrb),
-    .S_AXI_WVALID(cnn_ctrl_wvalid),
-    .S_AXI_WREADY(cnn_ctrl_wready),
-
-    .S_AXI_ARADDR (cnn_ctrl_araddr),
-    .S_AXI_ARVALID(cnn_ctrl_arvalid),
-    .S_AXI_ARREADY(cnn_ctrl_arready),
-
-    .S_AXI_RDATA (cnn_ctrl_rdata),
-    .S_AXI_RRESP (cnn_ctrl_rresp),
-    .S_AXI_RVALID(cnn_ctrl_rvalid),
-    .S_AXI_RREADY(cnn_ctrl_rready),
-
-    .S_AXI_BVALID(cnn_ctrl_bvalid),
-    .S_AXI_BREADY(cnn_ctrl_bready),
-    .S_AXI_BRESP (cnn_ctrl_bresp)
 );
 
 
@@ -755,58 +790,74 @@ cnn_axi_slave_wrapper wrapper_inst (
 		    .gptimer3_io_timer_out(gptimer3_out),	
 
         //AXI4 LITE Master Interface 
-        .cnn_accel_AWADDR   (cnn_awaddr),
-        .cnn_accel_AWVALID  (cnn_awvalid),
-        .cnn_accel_AWREADY  (cnn_awready),
-        .cnn_accel_AWLEN    (cnn_awlen),
-        .cnn_accel_AWSIZE   (cnn_awsize),
-        .cnn_accel_AWBURST  (cnn_awburst),
+        .cnn_accel_top_awaddr(cnn_ctrl_awaddr),
+        .cnn_accel_top_awvalid(cnn_ctrl_awvalid),
+        .cnn_accel_top_m_awready_awready(cnn_ctrl_awready),
 
-        .cnn_accel_WDATA    (cnn_wdata),
-        .cnn_accel_WSTRB    (cnn_wstrb),
-        .cnn_accel_WVALID   (cnn_wvalid),
-        .cnn_accel_WREADY   (cnn_wready),
-        .cnn_accel_WLAST    (cnn_wlast),
+        .cnn_accel_top_wdata(cnn_ctrl_wdata),
+        .cnn_accel_top_wvalid(cnn_ctrl_wvalid),
+        .cnn_accel_top_m_wready_wready(cnn_ctrl_wready),
+        .cnn_accel_top_wstrb(cnn_ctrl_wstrb),
+        
 
-        .cnn_accel_BRESP    (cnn_bresp),
-        .cnn_accel_BVALID   (cnn_bvalid),
-        .cnn_accel_BREADY   (cnn_bready),
+        .cnn_accel_top_m_bvalid_bresp(cnn_ctrl_bresp),
+        .cnn_accel_top_m_bvalid_bvalid(cnn_ctrl_bvalid),
+        .cnn_accel_top_bready(cnn_ctrl_bready),
+        
 
-        .cnn_accel_ARADDR   (cnn_araddr),
-        .cnn_accel_ARVALID  (cnn_arvalid),
-        .cnn_accel_ARREADY  (cnn_arready),
-        .cnn_accel_ARLEN    (cnn_arlen),
-        .cnn_accel_ARSIZE   (cnn_arsize),
-        .cnn_accel_ARBURST  (cnn_arburst),
+        .cnn_accel_top_araddr(cnn_ctrl_araddr),
+        .cnn_accel_top_arvalid(cnn_ctrl_arvalid),
+        .cnn_accel_top_m_arready_arready(cnn_ctrl_arready),
+        .cnn_accel_top_m_rvalid_rresp(cnn_ctrl_rresp),
 
-        .cnn_accel_RDATA    (cnn_rdata),
-        .cnn_accel_RRESP    (cnn_rresp),
-        .cnn_accel_RVALID   (cnn_rvalid),
-        .cnn_accel_RREADY   (cnn_rready),
-        .cnn_accel_RLAST    (cnn_rlast),
+        .cnn_accel_top_m_rvalid_rdata(cnn_ctrl_rdata),
+        .cnn_accel_top_m_rvalid_rvalid(cnn_ctrl_rvalid),
+        .cnn_accel_top_rready(cnn_ctrl_rready),
 
-        // ========= AXI-LITE CONTROL =========
-        .cnn_accel_top_awaddr   (cnn_ctrl_awaddr),
-        .cnn_accel_top_awvalid  (cnn_ctrl_awvalid),
-        .cnn_accel_top_m_awready_awready  (cnn_ctrl_awready),
-
-        .cnn_accel_top_wdata    (cnn_ctrl_wdata),
-        .cnn_accel_top_wstrb    (cnn_ctrl_wstrb),
-        .cnn_accel_top_wvalid   (cnn_ctrl_wvalid),
-        .cnn_accel_top_m_wready_wready   (cnn_ctrl_wready),
-
-        .cnn_accel_top_araddr   (cnn_ctrl_araddr),
-        .cnn_accel_top_arvalid  (cnn_ctrl_arvalid),
-        .cnn_accel_top_m_arready_arready  (cnn_ctrl_arready),
-
-        .cnn_accel_top_m_rvalid_rdata    (cnn_ctrl_rdata),
-        .cnn_accel_top_m_rvalid_rresp    (cnn_ctrl_rresp),
-        .cnn_accel_top_m_rvalid_rvalid   (cnn_ctrl_rvalid),
-        .cnn_accel_top_rready   (cnn_ctrl_rready),
-
-        .cnn_accel_top_m_bvalid_bvalid   (cnn_ctrl_bvalid),
-        .cnn_accel_top_bready   (cnn_ctrl_bready),
-        .cnn_accel_top_m_bvalid_bresp    (cnn_ctrl_bresp),
+        .acc_master_AWVALID(cnn_master_awvalid),
+        .acc_master_AWREADY(cnn_master_awready),
+        .acc_master_AWADDR(cnn_master_awaddr),
+        .acc_master_AWID(cnn_master_awid),
+        .acc_master_AWLEN(cnn_master_awlen),
+        .acc_master_AWSIZE(cnn_master_awsize),
+        .acc_master_AWBURST(cnn_master_awburst),
+        // .acc_master_AWLOCK(1'b0),
+        // .acc_master_AWCACHE(4'b10),
+        .acc_master_AWPROT(cnn_master_awprot),
+        // .acc_master_AWQOS(),
+        // .acc_master_AWREGION(),
+        // .acc_master_AWUSER(),
+        .acc_master_WVALID(cnn_master_wvalid),
+        .acc_master_WREADY(cnn_master_wready),
+        .acc_master_WDATA(cnn_master_wdata),
+        .acc_master_WSTRB(cnn_master_wstrb),
+        .acc_master_WLAST(cnn_master_wlast),
+        .acc_master_WID(cnn_master_wid),
+        // .acc_master_WUSER(),
+        .acc_master_ARVALID(cnn_master_arvalid),
+        .acc_master_ARREADY(cnn_master_arready),
+        .acc_master_ARADDR(cnn_master_araddr),
+        .acc_master_ARID(cnn_master_arid),
+        .acc_master_ARLEN(cnn_master_arlen),
+        .acc_master_ARSIZE(cnn_master_arsize),
+        .acc_master_ARBURST(cnn_master_arburst),
+        // .acc_master_ARLOCK(1'b0),
+        // .acc_master_ARCACHE(4'b10),
+        .acc_master_ARPROT(cnn_master_arprot),
+        // .acc_master_ARQOS(),
+        // .acc_master_ARREGION(),
+        // .acc_master_ARUSER(),
+        .acc_master_RVALID(cnn_master_rvalid),
+        .acc_master_RREADY(cnn_master_rready),
+        .acc_master_RDATA(cnn_master_rdata),
+        .acc_master_RLAST(cnn_master_rlast),
+        .acc_master_RID(cnn_master_rid),
+        // .acc_master_RUSER(),
+        .acc_master_RRESP(cnn_master_rresp),
+        .acc_master_BVALID(cnn_master_bvalid),
+        .acc_master_BREADY(cnn_master_bready),
+        .acc_master_BRESP(cnn_master_bresp),
+        .acc_master_BID(cnn_master_bid),
 
                  
         //pin muxed pins

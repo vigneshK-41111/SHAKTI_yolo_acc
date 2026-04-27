@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Apr 15 18:48:04 2026
+# Process ID: 1490527
+# Current directory: /scratch1/iot/gc2025/hw
+# Command line: wbtcv -mode batch -source /scratch1/iot/gc2025/hw/.Xil/Vivado-1489784-jarvis/webtalk/labtool_webtalk.tcl -notrace
+# Log file: /scratch1/iot/gc2025/hw/webtalk.log
+# Journal file: /scratch1/iot/gc2025/hw/webtalk.jou
+#-----------------------------------------------------------
+source /scratch1/iot/gc2025/hw/.Xil/Vivado-1489784-jarvis/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 15 18:48:05 2026...

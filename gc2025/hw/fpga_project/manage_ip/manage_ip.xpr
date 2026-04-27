@@ -6,7 +6,7 @@
 <Project Version="7" Minor="39" Path="/scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="a73c067acf7c4ad8b259f99893451f3e"/>
+    <Option Name="Id" Val="8e8148f2c6d14708a0907a5bf46d4e4c"/>
     <Option Name="Part" Val="xc7a200tsbg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>

@@ -94,7 +94,7 @@ endmodule
   endmodule
 
   (*synthesize*)
-  module mkplic(Ifc_plic_axi4lite#(`paddr, `buswidth, `USERSPACE, 36, 2, 7));
+  module mkplic(Ifc_plic_axi4lite#(`paddr, `buswidth, `USERSPACE, 35, 2, 7));
     let ifc();
     mkplic_axi4lite#(`PLICBase)_temp(ifc);
     return ifc;
@@ -158,7 +158,7 @@ endmodule
     let gptimer3 <- mkgptimer(ext_clk);
     let pinmuxtop <- mkpinmuxtop();
     Ifc_err_slave_axi4lite#(`paddr, `buswidth, `USERSPACE ) err_slave <- mkerr_slave_axi4lite;
-		Wire#(Bit#(14)) wr_external_interrupts <- mkDWire('d0);
+		Wire#(Bit#(13)) wr_external_interrupts <- mkDWire('d0);
     Wire#(Bit#(2)) wr_sb_ext_interrupt <- mkDWire(0);
 
 		//Rule to connect PLIC interrupt to the core's sideband
@@ -170,7 +170,7 @@ endmodule
     rule rl_connect_plic_connections;
 			let tmp <- gpio.sb_gpio_to_plic.get;
 			Bit#(16) lv_gpio_intr= truncate(pack(tmp));
-			Bit#(36) plic_inputs= {wr_external_interrupts[13:6], i2c1.isint, i2c0.isint, gptimer3.sb_interrupt, gptimer2.sb_interrupt, gptimer1.sb_interrupt, gptimer0.sb_interrupt, lv_gpio_intr, wr_external_interrupts[5:0]};
+			Bit#(35) plic_inputs= {wr_external_interrupts[12:6], i2c1.isint, i2c0.isint, gptimer3.sb_interrupt, gptimer2.sb_interrupt, gptimer1.sb_interrupt, gptimer0.sb_interrupt, lv_gpio_intr, wr_external_interrupts[5:0]};
 			plic.sb_frm_sources(plic_inputs);
 		endrule
 

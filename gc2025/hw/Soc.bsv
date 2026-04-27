@@ -58,7 +58,7 @@ package Soc;
   import gpio :: *;
   import csrbox :: * ;
   import bram :: *;
-  import DMA :: *;
+  // import DMA :: *;
   import BUtils::*;
 
 `ifndef axi4_128b
@@ -91,8 +91,6 @@ package Soc;
   `endif
     else if(addr >= `BootBase && addr <= `BootEnd)
       slave_num = `Boot_slave_num;
-    else if(addr >= `AccBase && addr <= `AccEnd)
-      slave_num = `Acc_slave_num;
     else if(addr >= `SlowBase && addr <= `SlowEnd)
       slave_num = `Slow_fabric_slave_num;
     else if(addr >= `PLICBase && addr <= `PLICEnd)
@@ -115,8 +113,8 @@ package Soc;
       slave_num = `UARTCluster_slave_num;
     else if(addr >= `SPIClusterBase && addr <= `SPIClusterEnd)
       slave_num = `SPICluster_slave_num;
-    else if(addr >= `DMABase && addr <= `DMAEnd)
-      slave_num = `DMA_slave_num;
+    // else if(addr >= `DMABase && addr <= `DMAEnd)
+    //   slave_num = `DMA_slave_num;
     else if(addr >= `MixedClusterBase && addr <= `MixedClusterEnd)
       slave_num = `MixedCluster_slave_num;
     else if(addr >= `PLICBase && addr <= `PLICEnd)
@@ -137,7 +135,7 @@ package Soc;
 		method I2C_out i2c0_out;									//I2c IO interface
 		method I2C_out i2c1_out;									//I2c IO interface
     (*always_ready, always_enabled*)
-    interface AXI4_Master_IFC#(`paddr ,`axi4_id_width, `buswidth, `USERSPACE) cnn_accel; 
+    interface AXI4_Slave_IFC#(`paddr ,`axi4_id_width, `buswidth, `USERSPACE) acc_master; 
     interface AXI4_Master_IFC#(`paddr, `axi4_id_width, `buswidth, `USERSPACE) mem_master;
     interface IOCellSide iocell_io;
 
@@ -302,23 +300,15 @@ package Soc;
     interface Ifc_soc_sb soc_sb;
   endinterface
 
-  typedef (TAdd#(TSub#(TMul#(`num_harts,2),1), `ifdef debug 1 `else 0 `endif )) Debug_master_num;
-  typedef (TAdd#(Debug_master_num,1)) DMA_master_num;
-  typedef (TAdd#(DMA_master_num, 1)) Num_Fast_Masters;
-
-  (*synthesize*)
-  module mkdma(Ifc_DMA_AXI4_Lite#(`paddr, 4, 32, 0, `paddr, 32, 7, 8));
-    let ifc();
-    mkDMA_AXI4_Lite _temp(ifc);
-    return ifc;
-  endmodule
+  typedef (TAdd#(TSub#(TMul#(`num_harts,3),1), `ifdef debug 1 `else 0 `endif )) Debug_master_num;
+  typedef (TAdd#(Debug_master_num, 1)) Num_Fast_Masters;
 
 
   (*synthesize*)
-  module mkSoc #(Clock ext_clk `ifdef debug , Vector#(`num_harts, Reset) hartresets `endif ) (Ifc_Soc);
+  module mkSoc#(Clock ext_clk `ifdef debug , Vector#(`num_harts, Reset) hartresets `endif ) (Ifc_Soc);
     let curr_clk<-exposeCurrentClock;
     let curr_reset<-exposeCurrentReset;
-    let dma <- mkdma;
+    // let dma <- mkdma;
     
     Reset core_reset [`num_harts];
     for (Integer i = 0; i<`num_harts; i = i + 1) begin
@@ -331,7 +321,7 @@ package Soc;
 
     Ifc_ccore_axi4 ccore <- mkccore_axi4(`resetpc, 0);
 
-    AXI4_Fabric_IFC #(Num_Fast_Masters, `Num_Fast_Slaves, `paddr, `axi4_id_width, `buswidth, `USERSPACE) 
+    AXI4_Fabric_IFC #( Num_Fast_Masters, `Num_Fast_Slaves, `paddr, `axi4_id_width, `buswidth, `USERSPACE) 
                                                     fabric <- mkAXI4_Fabric(fn_slave_map_fast);
     Ifc_clint_axi4#(`paddr, `axi4_id_width, `buswidth, `USERSPACE, `num_harts, 512) clint <- mkclint_axi4();
   //`ifdef debug
@@ -410,9 +400,8 @@ package Soc;
 	`endif
 
     rule connect_interrupt_lines;
-      let dma_inter <- dma.interrupt_to_proc.get;
-      mixed_cluster.interrupts({dma_inter, 
-                                spi_cluster.spi1_sb_interrupt,
+      // let dma_inter <- dma.interrupt_to_proc.get;
+      mixed_cluster.interrupts({spi_cluster.spi1_sb_interrupt,
                                 spi_cluster.spi0_sb_interrupt,
                                 wr_ext_interrupts, uart_cluster.uart_interrupts, pwm_cluster.pwm5_sb_interrupt, 
                                                   pwm_cluster.pwm4_sb_interrupt, 
@@ -430,7 +419,7 @@ package Soc;
     `ifdef simulate
       mkConnection(signature.master, fabric.v_from_masters[`Sign_master_num]);
     `endif
-    mkConnection(dma.master, fabric.v_from_masters[`DMA_master_num]);
+    // mkConnection(dma.master, fabric.v_from_masters[`DMA_master_num]);
   	mkConnection (fabric.v_to_slaves [`Clint_slave_num ],clint.slave);
     mkConnection (fabric.v_to_slaves [`FastErr_slave_num ] , fast_err_slave.slave);
   //`ifdef debug 
@@ -444,7 +433,7 @@ package Soc;
     mkConnection(ccore.sb_clint_mtip,clint.sb_clint_mtip);
     mkConnection(ccore.sb_clint_mtime,clint.sb_clint_mtime);
     
-    mkConnection(slow_fabric.v_to_slaves [`DMA_slave_num], dma.slave);
+    // mkConnection(slow_fabric.v_to_slaves [`DMA_slave_num], dma.slave);
     
     mkConnection (slow_fabric.v_to_slaves [`PWMCluster_slave_num], pwm_cluster.slave);
     mkConnection (slow_fabric.v_to_slaves [`UARTCluster_slave_num], uart_cluster.slave);
@@ -687,8 +676,8 @@ package Soc;
 		method  i2c0_out = mixed_cluster.i2c0_out;									//I2c IO interface
 		method  i2c1_out = mixed_cluster.i2c1_out;									//I2c IO interface
     interface iocell_io = mixed_cluster.pinmuxtop_iocell_side;						//GPIO IO interface
-    interface cnn_accel = fabric.v_to_slaves[`Acc_slave_num];
-    interface cnn_accel_top = mixed_cluster.cnn_accel;
+    interface cnn_accel_top = mixed_cluster.cnn_accel_top;
+    interface acc_master = fabric.v_from_masters[`Acc_Master_num];
     interface mem_master = fabric.v_to_slaves [`Memory_slave_num];
     method Action ext_interrupts(Bit#(2) i);
       wr_ext_interrupts <= i;

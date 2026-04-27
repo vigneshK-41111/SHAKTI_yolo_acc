@@ -5,7 +5,7 @@
 `define Debug_master_num 0
 `define Mem_master_num 1
 `define Fetch_master_num 2
-`define Acc_master_num 3
+`define Acc_Master_num 3
 `ifdef simulate
 `define Sign_master_num 4
 `endif
@@ -15,7 +15,7 @@
   `endif
   `define Mem_master_num 0
   `define Fetch_master_num 1
-  `define Acc_master_num 2
+  `define Acc_Master_num 2
   `ifdef simulate
     `define Sign_master_num 3
   `endif
@@ -70,7 +70,7 @@
 `define PWMClusterBase    'h0003_0000
 `define PWMClusterEnd     'h0003_05FF
 `define MixedClusterBase  'h0004_0000
-`define MixedClusterEnd   'h0004_15FF
+`define MixedClusterEnd   'h0004_16FF
 `define EthBase           'h0004_4000
 `define EthEnd            'h0004_7FFF
 // - PWM cluster
