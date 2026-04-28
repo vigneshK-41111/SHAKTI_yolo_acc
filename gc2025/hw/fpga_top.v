@@ -139,7 +139,8 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
    );
 
   reg aresetn ;
-
+  wire use_cnn;   // control this from a register or hardcode for now
+  assign use_cnn = 1'b1;   // CNN only (debug phase)
   wire                            soc_reset;      // reset to the SoC
   wire                            core_clk;       // clock to the SoC
   wire                              ddr3_main;      // main clock to the ddr3-mig

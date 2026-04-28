@@ -65,42 +65,55 @@ static int cap_done()
 
 static uint32_t fifo_len()
 {
-    uint32_t l = 0;
-    l  = rd_reg(FIFO_SIZE1);
-    l |= rd_reg(FIFO_SIZE2) << 8;
-    l |= rd_reg(FIFO_SIZE3) << 16;
-    return l & 0x07FFFFF;
+    uint8_t b1, b2, b3;
+
+    b1 = rd_reg(FIFO_SIZE1);
+    for (volatile int i = 0; i < 500; i++);
+
+    b2 = rd_reg(FIFO_SIZE2);
+    for (volatile int i = 0; i < 500; i++);
+
+    b3 = rd_reg(FIFO_SIZE3);
+    for (volatile int i = 0; i < 500; i++);
+
+    printf("SIZE1=%x SIZE2=%x SIZE3=%x\n", b1, b2, b3);
+
+    return ((uint32_t)b3 << 16) | ((uint32_t)b2 << 8) | b1;
 }
 
 
 // ---------- INIT ----------
 void arducam_init()
 {
-    // 🔥 INIT GPIO I2C
-    ov2640_write_reg(0xFF, 0x01);  // 🔥 SENSOR BANK
-    I2cInit();
-
-    // SPI INIT (UNCHANGED)
     sspi_init();
 
     sspi_struct *spi = sspi_instance[0];
 
+
     sspi_configure_mas_slv(spi, 1);
     sspi_configure_pins(spi, 1, 0, 1, 1);
-    sspi_configure_clock_in_hz(spi, 8000000);
+    sspi_configure_clock_in_hz(spi, 500000); // 🔥 SLOW DOWN
     sspi_configure_comm_mode(spi, FULL_DUPLEX);
     sspi_configure_lsb_first(spi, 0);
+    sspi_configure_clock_phase(spi, 1);
+    sspi_configure_clock_pol(spi ,1);  // CPOL=0, CPHA=0
+    sspi_configure_tx_setup_time(spi, 20);  // CS setup delay
+    sspi_configure_tx_hold_time(spi, 20);   // CS hold delay
 
-    // sspi_clear_fifo(spi);
-    // wr_reg(0x00, 0x55);
-    // uint8_t test = rd_reg(0x00);
-
-    // printf("SPI TEST = %x\n", test);
+    printf("REG0 = %x\n", rd_reg(0x00));
+    printf("REG0 = %x\n", rd_reg(0x00));
 
     printf("SSPI ready\n");
+    wr_reg(0x07, 0x80);  // reset ArduChip
+    for (volatile int i = 0; i < 100000; i++);
 
-    // 🔥 CAMERA INIT
-    ov2640_init_rgb565_320x240();
+    wr_reg(0x07, 0x00);  // normal mode
+    wr_reg(0x01, 0x00);  // FIFO clear flags
+
+        uint8_t a = rd_reg(0x00);
+    uint8_t b = rd_reg(0x00);
+
+printf("TEST: %x %x\n", a, b);
 }
 // ---------- CAPTURE ----------
 uint32_t arducam_capture(uint8_t *buf)
@@ -141,15 +154,20 @@ uint32_t arducam_capture(uint8_t *buf)
 uint32_t arducam_capture_jpeg(uint8_t *buf)
 {
     printf("Capturing JPEG frame...\n");
+// Step 1: clear FIFO + clear done flag
+wr_reg(ARDUCHIP_FIFO, 0x01);  // flush
+wr_reg(ARDUCHIP_FIFO, 0x00);  // clear
 
-    flush_fifo();
-    printf("FIFO after flush = %x\n", rd_reg(ARDUCHIP_FIFO));
+// Step 2: start capture
+wr_reg(ARDUCHIP_FIFO, 0x02);
 
-    start_cap();
+    // 🔥 REQUIRED delay
+    for (volatile int i = 0; i < 200000; i++);
     printf("FIFO after start = %x\n", rd_reg(ARDUCHIP_FIFO));
+    printf("TRIG FINAL = %x\n", rd_reg(ARDUCHIP_TRIG));
 
+    // 🔥 wait for capture complete
     int timeout = 500000;
-
     while (timeout--)
     {
         uint8_t trig = rd_reg(ARDUCHIP_TRIG);
@@ -166,18 +184,23 @@ uint32_t arducam_capture_jpeg(uint8_t *buf)
         return 0;
     }
 
+    // 🔥 read FIFO length
     uint32_t len = fifo_len();
-
     printf("JPEG size = %u\n", len);
 
-    // if (len == 0 || len > 200000) {
-    //     printf("Invalid JPEG length\n");
-    //     return 0;
-    // }
+    if (len == 0 || len > 200000) {
+        printf("Invalid JPEG length\n");
+        return 0;
+    }
 
-    sspi_transfer(0x3C);
+    // ============================================
+    // 🔥 CRITICAL FIX: continuous burst emulation
+    // ============================================
 
-    for (uint32_t i = 0; i < 1000; i++) {
+    for (uint32_t i = 0; i < len; i++)
+    {
+        // send BURST command every time (hack for broken CS)
+        sspi_transfer(0x3C);
         buf[i] = sspi_transfer(0x00);
     }
 

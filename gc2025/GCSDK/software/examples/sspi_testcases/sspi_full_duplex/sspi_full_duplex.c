@@ -33,7 +33,7 @@ In FPGA Board check the Pinmux pins for SPI1 and short the MOSI and MISO pins of
 #include "uart.h"
 #endif
 
-#define SSPI_INSTANCE 1
+#define SSPI_INSTANCE 0
 #define SSPI_SIZE 8
 #define DATA_SIZE 8
 

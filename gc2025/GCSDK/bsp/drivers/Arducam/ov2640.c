@@ -20,18 +20,21 @@ uint8_t ov2640_read_reg(uint8_t reg)
 {
     uint8_t val;
 
-    // select register
-    I2cSendSlaveAddress(0x60, I2C_WRITE, 10);
-    I2cWriteData(reg, 10);
+    // STEP 1: send register address
+    I2cSendSlaveAddress(0x60, I2C_WRITE, 50);
+    I2cWriteData(reg, 50);
 
-    // repeated start
-    I2cStart(10);
+    // 🔥 IMPORTANT: DO NOT STOP
 
-    // read
-    I2cSendSlaveAddress(0x60, I2C_READ, 10);
-    val = I2cReadDataNack(10);
+    // STEP 2: repeated start
+    I2cSendSlaveAddress(0x60, I2C_READ, 50);
 
-    I2cStop(10);
+    // 🔥 CRITICAL: release SDA before reading
+    // (your driver must switch SDA to input here)
+
+    val = I2cReadDataNack(50);
+
+    I2cStop(50);
 
     return val;
 }
@@ -80,4 +83,26 @@ void ov2640_init_jpeg(void)
     ov2640_write_reg(0x12, 0x40);
 
     printf("OV2640 JPEG init done\n");
+}
+void ov2640_init_jpeg_vga()
+{
+    printf("OV2640 JPEG VGA init\n");
+
+    ov2640_write_reg(0xFF, 0x01);
+    ov2640_write_reg(0x12, 0x80); // reset
+    for (volatile int i = 0; i < 300000; i++);
+
+    // JPEG mode
+    ov2640_write_reg(0xFF, 0x00);
+    ov2640_write_reg(0xE0, 0x14);
+    ov2640_write_reg(0xDA, 0x10);
+
+    // Enable output
+    ov2640_write_reg(0xFF, 0x01);
+    ov2640_write_reg(0x15, 0x00);  // VSYNC enable
+
+    // VGA
+    ov2640_write_reg(0x12, 0x40);
+
+    printf("OV2640 JPEG VGA init done\n");
 }

@@ -38,11 +38,13 @@ $(PROGRAM).riscv: create_dir
 	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) -w $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/Arducam/ov2640.c -o ./output/ov2640.o -lm -lgcc
 	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) -w $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/i2c/gpio_i2c.c -o ./output/gpio_i2c.o -lm -lgcc
 	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) -w $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/Arducam/resize.c -o ./output/resize.o -lm -lgcc
+	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) -w $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/Arducam/jpeg_resize_rgb565.c -o ./output/jpeg_resize_rgb565.o -lm -lgcc
+	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) -w $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/Arducam/picojpeg.c -o ./output/picojpeg.o -lm -lgcc
 	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) -w $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/Arducam/arducam_ddr.c -o ./output/arducam_ddr.o -lm -lgcc
 #	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/sspi/sspi_driver.c -o ./output/sspi_driver.o -lm -lgcc
 #	@riscv$(XLEN)-unknown-elf-gcc -march=$(MARCH) -mabi=$(MABI) $(DC) -mcmodel=medany -static -std=gnu99 -fno-builtin-printf -I$(bspboard) -I$(bspinc) -c $(bspdri)/sspi/sspi_spansion.c -o ./output/sspi_spansion.o -lm -lgcc
 	@echo "Linking files"
-	@riscv$(XLEN)-unknown-elf-gcc -T $(bspboard)/link.ld ./output/sspi_driver.o ./output/i2c_driver.o ./output/ov2640.o ./output/gpio_i2c.o ./output/resize.o ./output/arducam_ddr.o ./output/$(PROGRAM).o $(GENLIB)/gen_lib/libshakti$(XLEN).a  -o ./output/$(PROGRAM).shakti  -march=$(MARCH) -mabi=$(MABI) -static -nostartfiles -lm -lgcc 
+	@riscv$(XLEN)-unknown-elf-gcc -T $(bspboard)/link.ld ./output/sspi_driver.o ./output/i2c_driver.o ./output/ov2640.o ./output/gpio_i2c.o ./output/resize.o ./output/jpeg_resize_rgb565.o ./output/picojpeg.o ./output/arducam_ddr.o ./output/$(PROGRAM).o $(GENLIB)/gen_lib/libshakti$(XLEN).a  -o ./output/$(PROGRAM).shakti  -march=$(MARCH) -mabi=$(MABI) -static -nostartfiles -lm -lgcc 
 	@riscv$(XLEN)-unknown-elf-objdump -D ./output/$(PROGRAM).shakti &> ./output/$(PROGRAM).dump
 create_dir:
 	@mkdir -p ./output
