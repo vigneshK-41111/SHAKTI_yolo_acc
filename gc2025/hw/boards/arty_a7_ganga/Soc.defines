@@ -40,8 +40,8 @@
 
 `define MemoryBase        'h8000_0000
 `define MemoryEnd         'h8FFF_FFFF
-`define TCMBase           'h6000_0000
-`define TCMEnd            'h6FFF_FFFF
+`define TCMBase           'h9000_0000
+`define TCMEnd            'h9FFF_FFFF
 `define ClintBase         'h0200_0000
 `define ClintEnd          'h020B_FFFF
 `define DebugBase         'h0000_0000

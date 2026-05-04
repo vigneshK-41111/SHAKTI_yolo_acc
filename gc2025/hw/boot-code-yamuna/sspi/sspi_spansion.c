@@ -1,5 +1,5 @@
 /***************************************************************************
- * Project               	    	: "shakti project"
+ * Project               	    	: "iisu project"
  * Name of the file	            	: sspi_driver.c
  * Brief Description of file            : Driver file to Standard SPI
  * Name of Author    	                : Sambhav Jain
@@ -139,7 +139,7 @@ char flash_register_read(char command)
 	char stat = 0x0;
 
 		stat = flash_cmd_read(command);
-		// printf("\ncommand [%x] read value: %x\n", command, stat);
+		printf("\ncommand [%x] read value: %x\n", command, stat);
 
 	return stat;
 }
@@ -154,19 +154,19 @@ char flash_register_read(char command)
  * @param int (addr (address after the opcode))
  * @return int
  */
-// char flash_write_bank_register(char command, char value)
-// {
+char flash_write_bank_register(char command, char value)
+{
 
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = command;	//Do not shift  command when passing as argument.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = value;	//MSB byte of address.
-// 	sspi_configure_tx_rx_length(sspi_instance[SSPI_INSTANCE], 16, 0);//Tx - 16, Rx - 0;
-// 	sspi_configure_comm_mode(sspi_instance[SSPI_INSTANCE], SIMPLEX_TX);
-// 	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], ENABLE);
-// 	waitfor(20);
-// 	sspi_notbusy();
-// 	//log_debug("\n Flash write register is sent");
-// 	return 1;
-// }
+	sspi_instance[SSPI_INSTANCE]->data_tx = command;	//Do not shift  command when passing as argument.
+	sspi_instance[SSPI_INSTANCE]->data_tx = value;	//MSB byte of address.
+	sspi_configure_tx_rx_length(sspi_instance[SSPI_INSTANCE], 16, 0);//Tx - 16, Rx - 0;
+	sspi_configure_comm_mode(sspi_instance[SSPI_INSTANCE], SIMPLEX_TX);
+	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], ENABLE);
+	waitfor(20);
+	sspi_notbusy();
+	//log_debug("\n Flash write register is sent");
+	return 1;
+}
 
 
 
@@ -179,20 +179,20 @@ char flash_register_read(char command)
  * @param int (addr (address after the opcode))
  * @return int
  */
-// char flash_write_register(char command, char value1, char value2)
-// {
+char flash_write_register(char command, char value1, char value2)
+{
 
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = command;	//Do not shift  command when passing as argument.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = value1;	//MSB byte of address.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = value2;	//2nd byte of address.
-// 	sspi_configure_tx_rx_length(sspi_instance[SSPI_INSTANCE], 24, 0);//Tx - 40, Rx - 0;
-// 	sspi_configure_comm_mode(sspi_instance[SSPI_INSTANCE], SIMPLEX_TX);
-// 	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], ENABLE);
-// 	waitfor(20);
-// 	sspi_notbusy();
-// 	//log_debug("\n Flash write register is sent");
-// 	return 1;
-// }
+	sspi_instance[SSPI_INSTANCE]->data_tx = command;	//Do not shift  command when passing as argument.
+	sspi_instance[SSPI_INSTANCE]->data_tx = value1;	//MSB byte of address.
+	sspi_instance[SSPI_INSTANCE]->data_tx = value2;	//2nd byte of address.
+	sspi_configure_tx_rx_length(sspi_instance[SSPI_INSTANCE], 24, 0);//Tx - 40, Rx - 0;
+	sspi_configure_comm_mode(sspi_instance[SSPI_INSTANCE], SIMPLEX_TX);
+	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], ENABLE);
+	waitfor(20);
+	sspi_notbusy();
+	//log_debug("\n Flash write register is sent");
+	return 1;
+}
 
 
 /**
@@ -241,32 +241,32 @@ void flash_erase(int address)
  * @param int (addres (write address))
  * @param int(data (write data))
  */
-// void flash_write(int address, int data)
-// {
-// 	//log_debug("\n Write data %x at address %x", data, address);
-// #ifdef DISABLE_CS
-// 	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], DISABLE);
-// #endif
-// 	flash_write_enable();
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = FLASH_WRITE_COMMAND;	//Do not shift  command when passing as argument.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 24);	//MSB byte of address.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 16);	//2nd byte of address.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 8);	//3rd byte of address.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 0);	//4th byte of address.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 24);	//4th byte of data.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 16);	//4th byte of data.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 8);	//4th byte of data.
-// 	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 0);	//4th byte of data.
-// 	sspi_configure_tx_rx_length(sspi_instance[SSPI_INSTANCE], 72, 0);//Tx - 72, Rx - 0;
-// 	sspi_configure_comm_mode(sspi_instance[SSPI_INSTANCE], SIMPLEX_TX);
-// 	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], ENABLE);
-// #ifdef SHOW_REG
-// 	sspi_read_registers(sspi_instance[SSPI_INSTANCE]);
-// #endif	
-// 	sspi_notbusy();
-// 	flash_status_register_read();
-// 	//log_debug("\n Flash data is written");
-// }
+void flash_write(int address, int data)
+{
+	//log_debug("\n Write data %x at address %x", data, address);
+#ifdef DISABLE_CS
+	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], DISABLE);
+#endif
+	flash_write_enable();
+	sspi_instance[SSPI_INSTANCE]->data_tx = FLASH_WRITE_COMMAND;	//Do not shift  command when passing as argument.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 24);	//MSB byte of address.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 16);	//2nd byte of address.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 8);	//3rd byte of address.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (address >> 0);	//4th byte of address.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 24);	//4th byte of data.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 16);	//4th byte of data.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 8);	//4th byte of data.
+	sspi_instance[SSPI_INSTANCE]->data_tx = (data >> 0);	//4th byte of data.
+	sspi_configure_tx_rx_length(sspi_instance[SSPI_INSTANCE], 72, 0);//Tx - 72, Rx - 0;
+	sspi_configure_comm_mode(sspi_instance[SSPI_INSTANCE], SIMPLEX_TX);
+	sspi_enable_txrx(sspi_instance[SSPI_INSTANCE], ENABLE);
+#ifdef SHOW_REG
+	sspi_read_registers(sspi_instance[SSPI_INSTANCE]);
+#endif	
+	sspi_notbusy();
+	flash_status_register_read();
+	//log_debug("\n Flash data is written");
+}
 
 /** @fn int flash_read(int address)
  * @brief read the 4bytes data from given address 
@@ -388,11 +388,10 @@ int flash_device_id(void)
 	for (int i = 0; i < 6; i++)
 	{
 		read_data[i] = sspi_instance[SSPI_INSTANCE]->data_rx;
-		// printf("\n data[%x]: %x", i, read_data[i]);
+		printf("\n data[%x]: %x", i, read_data[i]);
 	}
 
 	recvData = read_data[0] << 16 | read_data[1] << 8 | read_data[2];
 	printf("\n Device id is %x", recvData);
-//	while(1);
 		return recvData;	
 }

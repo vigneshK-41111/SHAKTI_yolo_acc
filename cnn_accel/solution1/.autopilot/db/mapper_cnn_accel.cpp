@@ -248,18 +248,18 @@ extern "C" void apatb_cnn_accel_hw(volatile void * __xlx_apatb_param_input_r, vo
 using hls::sim::createStream;
   // Collect __xlx_input_r_output_r__tmp_vec
 std::vector<Byte<1>> __xlx_input_r_output_r__tmp_vec;
-for (size_t i = 0; i < 2768896; ++i){
+for (size_t i = 0; i < 1; ++i){
 __xlx_input_r_output_r__tmp_vec.push_back(((Byte<1>*)__xlx_apatb_param_input_r)[i]);
 }
-  int __xlx_size_param_input_r = 2768896;
+  int __xlx_size_param_input_r = 1;
   int __xlx_offset_param_input_r = 0;
   int __xlx_offset_byte_param_input_r = 0*1;
-for (size_t i = 0; i < 2768896; ++i){
+for (size_t i = 0; i < 1; ++i){
 __xlx_input_r_output_r__tmp_vec.push_back(((Byte<1>*)__xlx_apatb_param_output_r)[i]);
 }
-  int __xlx_size_param_output_r = 2768896;
-  int __xlx_offset_param_output_r = 2768896;
-  int __xlx_offset_byte_param_output_r = 2768896*1;
+  int __xlx_size_param_output_r = 1;
+  int __xlx_offset_param_output_r = 1;
+  int __xlx_offset_byte_param_output_r = 1*1;
   // DUT call
   cnn_accel(__xlx_input_r_output_r__tmp_vec.data(), __xlx_offset_byte_param_input_r, __xlx_offset_byte_param_output_r, __xlx_apatb_param_size);
 // print __xlx_apatb_param_input_r

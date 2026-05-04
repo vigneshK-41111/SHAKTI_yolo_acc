@@ -30,17 +30,10 @@ package DebugSoc ;
 
   `include "Logger.bsv"
   `include "Soc.defines"
-
-  `ifdef rtldump
-  interface Ifc_soc_sb;
-    interface Sbread sbread;
-    method Maybe#(CommitLogPacket) commitlog;
-  endinterface
-`endif
-
   interface Ifc_DebugSoc;
   `ifdef rtldump
-    interface Ifc_soc_sb soc_sb;
+    interface Sbread sbread;
+    method Maybe#(CommitLogPacket) commitlog;
   `endif
       // ------------- JTAG IOs ----------------------//
     interface Reset soc_reset;
@@ -74,7 +67,7 @@ package DebugSoc ;
   endmodule
 
   (*synthesize*)
-  module mkDebugSoc#(Clock tck_clk, Reset trst, Clock ext_clk)(Ifc_DebugSoc);
+  module mkDebugSoc#(Clock tck_clk, Reset trst)(Ifc_DebugSoc);
     
     let curr_clk<-exposeCurrentClock;
     let curr_reset<-exposeCurrentReset;
@@ -90,7 +83,7 @@ package DebugSoc ;
       hartresets[i] = hart_reset[i].new_rst;
     end
 
-    Ifc_Soc soc <- mkSoc(ext_clk, reset_by system_reset, hartresets);
+    Ifc_Soc soc <- mkSoc(reset_by system_reset, hartresets);
     // null crossing registers to transfer input signals from current_domain to tck domain
     //Wire#(Bit#(1)) tdi      <- mkWire(clocked_by tck_clk, reset_by trst);                                        
     //Wire#(Bit#(1)) tms      <- mkWire(clocked_by tck_clk, reset_by trst);                                        
@@ -219,10 +212,8 @@ package DebugSoc ;
       return tdo.crossed();                                                                       
     endmethod
   `ifdef rtldump
-   interface soc_sb = interface Ifc_soc_sb
     interface sbread  =soc.soc_sb.sbread;
     method commitlog = soc.soc_sb.commitlog;
-   endinterface;
   `endif
 
     interface soc_reset = system_reset;

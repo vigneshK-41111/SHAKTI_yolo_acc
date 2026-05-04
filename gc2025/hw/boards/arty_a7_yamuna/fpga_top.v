@@ -181,7 +181,7 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 28)
   wire                              m_axi_awvalid;
   wire                              m_axi_awready;    
   wire [31:0]                       m_axi_wdata;
-  wire [3:0]                        m_axi_wstrb;
+  wire [7:0]                        m_axi_wstrb;
   wire                              m_axi_wlast;
   wire                              m_axi_wvalid;
   wire                              m_axi_wready;   
@@ -217,7 +217,7 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 28)
   wire                              s_axi_awvalid;
   wire                              s_axi_awready;    
   wire [31:0]                       s_axi_wdata;
-  wire [3:0]                        s_axi_wstrb;
+  wire [7:0]                        s_axi_wstrb;
   wire                              s_axi_wlast;
   wire                              s_axi_wvalid;
   wire                              s_axi_wready;
@@ -574,9 +574,9 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 28)
         .spi0_io_sclk_out(spi0_io_sclk_out),
         .spi0_io_sclk_outen(spi0_io_sclk_outen),
         .spi0_io_sclk_in_val(spi0_io_sclk_in_val),
-        .spi0_io_ncs_out0(spi0_io_nss_out),
-        .spi0_io_ncs_outen0(spi0_io_nss_outen),
-        .spi0_io_ncs_in0_val(spi0_io_nss_in_val),
+        .spi0_io_ncs_out(spi0_io_nss_out),
+        .spi0_io_ncs_outen(spi0_io_nss_outen),
+        .spi0_io_ncs_in_val(spi0_io_nss_in_val),
 	.spi0_io_miso_out(spi0_io_miso_out),
 	.spi0_io_miso_outen(spi0_io_miso_outen),
 	.spi0_io_miso_in_val(spi0_io_miso_in_val),

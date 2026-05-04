@@ -1923,7 +1923,7 @@ Sequenced after (restricted): rx_rx_baseout_from_stage3_first_deq_rdy,
 			      s4_mbox_rx_mbox_output_first
  
 Method: cache_memory_response_put
-Ready signal: ! ff_memory_response_rv.port0__read[78]
+Ready signal: ! ff_memory_response_rv.port0__read[100]
 Conflict-free: rx_rx_baseout_from_stage3_notEmpty,
 	       rx_rx_baseout_from_stage3_first_deq_rdy,
 	       rx_rx_baseout_from_stage3_first,
@@ -2195,7 +2195,7 @@ Predicate: rx_fuid_w_rdy.wget &&
 Blocking rules: (none)
  
 Rule: rl_handle_memory
-Predicate: ff_memory_response_rv.port1__read[78] &&
+Predicate: ff_memory_response_rv.port1__read[100] &&
 	   rx_fuid_w_rdy.wget &&
 	   tx_fuid_w_rdy.wget &&
 	   rx_memoryout_w_rdy.wget &&

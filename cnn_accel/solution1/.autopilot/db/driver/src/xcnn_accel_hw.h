@@ -25,17 +25,31 @@
 //        bit 0 - ap_done (Read/TOW)
 //        bit 1 - ap_ready (Read/TOW)
 //        others - reserved
-// 0x10 : Data signal of size
+// 0x10 : Data signal of input_r
+//        bit 31~0 - input_r[31:0] (Read/Write)
+// 0x14 : Data signal of input_r
+//        bit 31~0 - input_r[63:32] (Read/Write)
+// 0x18 : reserved
+// 0x1c : Data signal of output_r
+//        bit 31~0 - output_r[31:0] (Read/Write)
+// 0x20 : Data signal of output_r
+//        bit 31~0 - output_r[63:32] (Read/Write)
+// 0x24 : reserved
+// 0x28 : Data signal of size
 //        bit 31~0 - size[31:0] (Read/Write)
-// 0x14 : reserved
+// 0x2c : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XCNN_ACCEL_CONTROL_ADDR_AP_CTRL   0x00
-#define XCNN_ACCEL_CONTROL_ADDR_GIE       0x04
-#define XCNN_ACCEL_CONTROL_ADDR_IER       0x08
-#define XCNN_ACCEL_CONTROL_ADDR_ISR       0x0c
-#define XCNN_ACCEL_CONTROL_ADDR_SIZE_DATA 0x10
-#define XCNN_ACCEL_CONTROL_BITS_SIZE_DATA 32
+#define XCNN_ACCEL_CONTROL_ADDR_AP_CTRL       0x00
+#define XCNN_ACCEL_CONTROL_ADDR_GIE           0x04
+#define XCNN_ACCEL_CONTROL_ADDR_IER           0x08
+#define XCNN_ACCEL_CONTROL_ADDR_ISR           0x0c
+#define XCNN_ACCEL_CONTROL_ADDR_INPUT_R_DATA  0x10
+#define XCNN_ACCEL_CONTROL_BITS_INPUT_R_DATA  64
+#define XCNN_ACCEL_CONTROL_ADDR_OUTPUT_R_DATA 0x1c
+#define XCNN_ACCEL_CONTROL_BITS_OUTPUT_R_DATA 64
+#define XCNN_ACCEL_CONTROL_ADDR_SIZE_DATA     0x28
+#define XCNN_ACCEL_CONTROL_BITS_SIZE_DATA     32
 
 // control_r
 // 0x00 : reserved

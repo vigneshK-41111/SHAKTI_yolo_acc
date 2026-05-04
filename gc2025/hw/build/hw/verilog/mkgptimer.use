@@ -1,7 +1,8 @@
-SyncResetA
+SyncReset0
 UngatedClockMux
 MakeClock
 SyncRegister
-SyncFIFO
-FIFO2
+MakeResetA
+ResetEither
 SyncBit
+FIFO2

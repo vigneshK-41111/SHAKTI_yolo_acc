@@ -5,7 +5,7 @@
 
 #define GRID_SIZE      13        // adjust based on your model
 #define NUM_CLASSES    8
-#define CHANNELS       (5 + NUM_CLASSES)
+#define CHANNELS       64
 #define MAX_DETECTIONS 100
 
 typedef struct {

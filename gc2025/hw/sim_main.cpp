@@ -74,10 +74,6 @@ int main (int argc, char **argv, char **env) {
 #if VM_TRACE
     if (tfp) { tfp->close(); tfp = NULL; }
 #endif
-
-#if VM_COVERAGE
-    VerilatedCov::write("coverage.dat");
-#endif
     delete mkTbSoC;
     mkTbSoC = NULL;
 

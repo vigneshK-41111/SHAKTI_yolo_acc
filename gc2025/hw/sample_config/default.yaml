@@ -32,7 +32,7 @@ bus_protocol: AXI4
 #  counters_in_grp6: 7
 #  counters_in_grp7: 8
 bsc_compile_options:
-  test_memory_size: 268435456
+  test_memory_size: 33554432
   assertions: true
   trace_dump: true
   compile_target: 'sim'

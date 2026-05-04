@@ -96,7 +96,7 @@ module example_top #
                                      // # of unique CS outputs per rank for phy
    parameter CKE_WIDTH             = 1,
                                      // # of CKE outputs to memory.
-   parameter DM_WIDTH              = 2,
+   parameter DM_WIDTH              = 4,
                                      // # of DM (data mask)
    parameter ODT_WIDTH             = 1,
                                      // # of ODT outputs to memory.
@@ -106,10 +106,10 @@ module example_top #
                                      // # of memory Column Address bits.
    parameter CS_WIDTH              = 1,
                                      // # of unique CS outputs to memory.
-   parameter DQ_WIDTH              = 16,
+   parameter DQ_WIDTH              = 32,
                                      // # of DQ (data)
-   parameter DQS_WIDTH             = 2,
-   parameter DQS_CNT_WIDTH         = 1,
+   parameter DQS_WIDTH             = 4,
+   parameter DQS_CNT_WIDTH         = 2,
                                      // = ceil(log2(DQS_WIDTH))
    parameter DRAM_WIDTH            = 8,
                                      // # of DQ per DQS
@@ -143,15 +143,15 @@ module example_top #
    // The following parameters are multiplier and divisor factors for PLLE2.
    // Based on the selected design frequency these parameters vary.
    //***************************************************************************
-   parameter CLKIN_PERIOD          = 10000,
+   parameter CLKIN_PERIOD          = 5000,
                                      // Input Clock Period
-   parameter CLKFBOUT_MULT         = 8,
+   parameter CLKFBOUT_MULT         = 5,
                                      // write PLL VCO multiplier
    parameter DIVCLK_DIVIDE         = 1,
                                      // write PLL VCO divisor
-   parameter CLKOUT0_PHASE         = 0.0,
+   parameter CLKOUT0_PHASE         = 337.5,
                                      // Phase for PLL output clock (CLKOUT0)
-   parameter CLKOUT0_DIVIDE        = 1,
+   parameter CLKOUT0_DIVIDE        = 2,
                                      // VCO output divisor for PLL output clock (CLKOUT0)
    parameter CLKOUT1_DIVIDE        = 2,
                                      // VCO output divisor for PLL output clock (CLKOUT1)
@@ -159,7 +159,7 @@ module example_top #
                                      // VCO output divisor for PLL output clock (CLKOUT2)
    parameter CLKOUT3_DIVIDE        = 8,
                                      // VCO output divisor for PLL output clock (CLKOUT3)
-   parameter MMCM_VCO              = 800,
+   parameter MMCM_VCO              = 1000,
                                      // Max Freq (MHz) of MMCM VCO
    parameter MMCM_MULT_F           = 8,
                                      // write MMCM VCO multiplier
@@ -191,7 +191,7 @@ module example_top #
    //***************************************************************************
    // AXI4 Shim parameters
    //***************************************************************************
-   parameter C_S_AXI_ID_WIDTH              = 4,
+   parameter C_S_AXI_ID_WIDTH              = 3,
                                              // Width of all master and slave ID signals.
                                              // # = >= 1.
    parameter C_S_AXI_ADDR_WIDTH            = 30,
@@ -221,9 +221,9 @@ module example_top #
   (
 
    // Inouts
-   inout [15:0]                         ddr3_dq,
-   inout [1:0]                        ddr3_dqs_n,
-   inout [1:0]                        ddr3_dqs_p,
+   inout [31:0]                         ddr3_dq,
+   inout [3:0]                        ddr3_dqs_n,
+   inout [3:0]                        ddr3_dqs_p,
 
    // Outputs
    output [14:0]                       ddr3_addr,
@@ -236,8 +236,9 @@ module example_top #
    output [0:0]                        ddr3_ck_n,
    output [0:0]                       ddr3_cke,
    
+   output [0:0]           ddr3_cs_n,
    
-   output [1:0]                        ddr3_dm,
+   output [3:0]                        ddr3_dm,
    
    output [0:0]                       ddr3_odt,
    
@@ -282,7 +283,7 @@ function integer clogb2 (input integer size);
   endfunction
 
 
-  localparam DATA_WIDTH            = 16;
+  localparam DATA_WIDTH            = 32;
   localparam RANK_WIDTH = clogb2(RANKS);
   localparam PAYLOAD_WIDTH         = (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH;
   localparam BURST_LENGTH          = STR_TO_INT(BURST_MODE);
@@ -421,7 +422,7 @@ function integer clogb2 (input integer size);
        .ddr3_reset_n                   (ddr3_reset_n),
        .init_calib_complete            (init_calib_complete),
       
-       
+       .ddr3_cs_n                      (ddr3_cs_n),
        .ddr3_dm                        (ddr3_dm),
        .ddr3_odt                       (ddr3_odt),
 // Application interface ports

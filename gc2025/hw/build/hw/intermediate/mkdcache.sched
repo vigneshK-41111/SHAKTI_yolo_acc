@@ -3,7 +3,8 @@
 Method schedule
 ---------------
 Method: receive_core_req_put
-Ready signal: (! ff_core_response_rv.port0__read[78]) && (! rg_fence_stall) &&
+Ready signal: (! ff_core_response_rv.port0__read[100]) &&
+	      (! rg_fence_stall) &&
 	      (! m_fillbuffer.mv_fbfull) &&
 	      (! rg_performing_replay) &&
 	      (! m_storebuffer.mv_sb_busy) &&
@@ -18,19 +19,14 @@ Conflict-free: send_core_io_resp,
 	       receive_mem_io_resp_put,
 	       ma_curr_priv,
 	       mv_storebuffer_empty,
-	       ma_commit_store,
-	       put_pa_from_tlb_put
-Sequenced before (restricted): send_core_cache_resp_get,
-			       ma_commit_io,
-			       get_ptw_resp_get,
-			       get_hold_req_get,
-			       mv_perf_counters
+	       ma_commit_store
+Sequenced before (restricted): send_core_cache_resp_get, ma_commit_io
 Sequenced after: mv_cache_available
 Sequenced after (restricted): ma_cache_enable
 Conflicts: receive_core_req_put
  
 Method: send_core_cache_resp_get
-Ready signal: ff_core_response_rv.port1__read[78]
+Ready signal: ff_core_response_rv.port1__read[100]
 Conflict-free: send_core_io_resp,
 	       send_mem_rd_req_get,
 	       receive_mem_rd_resp_put,
@@ -39,17 +35,13 @@ Conflict-free: send_core_io_resp,
 	       receive_mem_wr_resp_put,
 	       send_mem_io_req_get,
 	       receive_mem_io_resp_put,
-	       mv_storebuffer_empty,
-	       get_ptw_resp_get,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_curr_priv,
+	       mv_storebuffer_empty
 Sequenced after (restricted): receive_core_req_put,
-			      ma_curr_priv,
 			      ma_cache_enable,
 			      mv_cache_available,
 			      ma_commit_store,
-			      ma_commit_io,
-			      put_pa_from_tlb_put
+			      ma_commit_io
 Conflicts: send_core_cache_resp_get
  
 Method: send_core_io_resp
@@ -69,11 +61,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
  
 Method: send_mem_rd_req_get
 Ready signal: ff_mem_rd_request.i_notEmpty
@@ -91,11 +79,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
 Conflicts: send_mem_rd_req_get
  
 Method: receive_mem_rd_resp_put
@@ -114,11 +98,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
 Conflicts: receive_mem_rd_resp_put
  
 Method: send_mem_wr_req
@@ -137,11 +117,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
 Sequenced before: deq_mem_wr_req
  
 Method: deq_mem_wr_req
@@ -159,11 +135,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
 Sequenced after: send_mem_wr_req
 Conflicts: deq_mem_wr_req
  
@@ -183,11 +155,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
 Conflicts: receive_mem_wr_resp_put
  
 Method: send_mem_io_req_get
@@ -206,11 +174,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
 Conflicts: send_mem_io_req_get
  
 Method: receive_mem_io_resp_put
@@ -229,16 +193,13 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
 Conflicts: receive_mem_io_resp_put
  
 Method: ma_curr_priv
 Ready signal: True
 Conflict-free: receive_core_req_put,
+	       send_core_cache_resp_get,
 	       send_core_io_resp,
 	       send_mem_rd_req_get,
 	       receive_mem_rd_resp_put,
@@ -251,12 +212,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       put_pa_from_tlb_put
-Sequenced before (restricted): send_core_cache_resp_get,
-			       ma_commit_io,
-			       get_ptw_resp_get,
-			       get_hold_req_get,
-			       mv_perf_counters
+	       ma_commit_io
 Conflicts: ma_curr_priv
  
 Method: ma_cache_enable
@@ -272,14 +228,10 @@ Conflict-free: send_core_io_resp,
 	       ma_curr_priv,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
-	       ma_commit_store,
-	       put_pa_from_tlb_put
+	       ma_commit_store
 Sequenced before (restricted): receive_core_req_put,
 			       send_core_cache_resp_get,
-			       ma_commit_io,
-			       get_ptw_resp_get,
-			       get_hold_req_get,
-			       mv_perf_counters
+			       ma_commit_io
 Conflicts: ma_cache_enable
  
 Method: mv_storebuffer_empty
@@ -299,11 +251,7 @@ Conflict-free: receive_core_req_put,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
 	       ma_commit_store,
-	       ma_commit_io,
-	       get_ptw_resp_get,
-	       put_pa_from_tlb_put,
-	       get_hold_req_get,
-	       mv_perf_counters
+	       ma_commit_io
  
 Method: mv_cache_available
 Ready signal: True
@@ -319,14 +267,9 @@ Conflict-free: send_core_io_resp,
 	       ma_cache_enable,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
-	       ma_commit_store,
-	       put_pa_from_tlb_put
+	       ma_commit_store
 Sequenced before: receive_core_req_put
-Sequenced before (restricted): send_core_cache_resp_get,
-			       ma_commit_io,
-			       get_ptw_resp_get,
-			       get_hold_req_get,
-			       mv_perf_counters
+Sequenced before (restricted): send_core_cache_resp_get, ma_commit_io
  
 Method: ma_commit_store
 Ready signal: True
@@ -343,12 +286,8 @@ Conflict-free: receive_core_req_put,
 	       ma_cache_enable,
 	       mv_storebuffer_empty,
 	       mv_cache_available,
-	       ma_commit_io,
-	       put_pa_from_tlb_put
-Sequenced before (restricted): send_core_cache_resp_get,
-			       get_ptw_resp_get,
-			       get_hold_req_get,
-			       mv_perf_counters
+	       ma_commit_io
+Sequenced before (restricted): send_core_cache_resp_get
 Conflicts: ma_commit_store
  
 Method: ma_commit_io
@@ -361,110 +300,14 @@ Conflict-free: send_core_io_resp,
 	       receive_mem_wr_resp_put,
 	       send_mem_io_req_get,
 	       receive_mem_io_resp_put,
-	       mv_storebuffer_empty,
-	       ma_commit_store
-Sequenced before (restricted): send_core_cache_resp_get,
-			       get_ptw_resp_get,
-			       get_hold_req_get,
-			       mv_perf_counters
-Sequenced after (restricted): receive_core_req_put,
-			      ma_curr_priv,
-			      ma_cache_enable,
-			      mv_cache_available,
-			      put_pa_from_tlb_put
-Conflicts: ma_commit_io
- 
-Method: get_ptw_resp_get
-Ready signal: ff_ptw_response_rv.port1__read[78]
-Conflict-free: send_core_cache_resp_get,
-	       send_core_io_resp,
-	       send_mem_rd_req_get,
-	       receive_mem_rd_resp_put,
-	       send_mem_wr_req,
-	       deq_mem_wr_req,
-	       receive_mem_wr_resp_put,
-	       send_mem_io_req_get,
-	       receive_mem_io_resp_put,
-	       mv_storebuffer_empty,
-	       get_hold_req_get,
-	       mv_perf_counters
-Sequenced after (restricted): receive_core_req_put,
-			      ma_curr_priv,
-			      ma_cache_enable,
-			      mv_cache_available,
-			      ma_commit_store,
-			      ma_commit_io,
-			      put_pa_from_tlb_put
-Conflicts: get_ptw_resp_get
- 
-Method: put_pa_from_tlb_put
-Ready signal: ! ff_from_tlb_rv.port0__read[73]
-Conflict-free: receive_core_req_put,
-	       send_core_io_resp,
-	       send_mem_rd_req_get,
-	       receive_mem_rd_resp_put,
-	       send_mem_wr_req,
-	       deq_mem_wr_req,
-	       receive_mem_wr_resp_put,
-	       send_mem_io_req_get,
-	       receive_mem_io_resp_put,
 	       ma_curr_priv,
-	       ma_cache_enable,
 	       mv_storebuffer_empty,
-	       mv_cache_available,
 	       ma_commit_store
-Sequenced before (restricted): send_core_cache_resp_get,
-			       ma_commit_io,
-			       get_ptw_resp_get,
-			       get_hold_req_get,
-			       mv_perf_counters
-Conflicts: put_pa_from_tlb_put
- 
-Method: get_hold_req_get
-Ready signal: ff_hold_request_rv.port1__read[77]
-Conflict-free: send_core_cache_resp_get,
-	       send_core_io_resp,
-	       send_mem_rd_req_get,
-	       receive_mem_rd_resp_put,
-	       send_mem_wr_req,
-	       deq_mem_wr_req,
-	       receive_mem_wr_resp_put,
-	       send_mem_io_req_get,
-	       receive_mem_io_resp_put,
-	       mv_storebuffer_empty,
-	       get_ptw_resp_get,
-	       mv_perf_counters
+Sequenced before (restricted): send_core_cache_resp_get
 Sequenced after (restricted): receive_core_req_put,
-			      ma_curr_priv,
 			      ma_cache_enable,
-			      mv_cache_available,
-			      ma_commit_store,
-			      ma_commit_io,
-			      put_pa_from_tlb_put
-Conflicts: get_hold_req_get
- 
-Method: mv_perf_counters
-Ready signal: True
-Conflict-free: send_core_cache_resp_get,
-	       send_core_io_resp,
-	       send_mem_rd_req_get,
-	       receive_mem_rd_resp_put,
-	       send_mem_wr_req,
-	       deq_mem_wr_req,
-	       receive_mem_wr_resp_put,
-	       send_mem_io_req_get,
-	       receive_mem_io_resp_put,
-	       mv_storebuffer_empty,
-	       get_ptw_resp_get,
-	       get_hold_req_get,
-	       mv_perf_counters
-Sequenced after (restricted): receive_core_req_put,
-			      ma_curr_priv,
-			      ma_cache_enable,
-			      mv_cache_available,
-			      ma_commit_store,
-			      ma_commit_io,
-			      put_pa_from_tlb_put
+			      mv_cache_available
+Conflicts: ma_commit_io
  
 Rule schedule
 -------------
@@ -479,8 +322,8 @@ Blocking rules: (none)
 Rule: rl_fence_operation
 Predicate: ff_core_request.i_notEmpty &&
 	   ff_mem_wr_request.i_notFull &&
-	   (! ff_core_response_rv.port0__read[78]) &&
-	   ff_core_request.first[44] && rg_fence_stall &&
+	   (! ff_core_response_rv.port0__read[100]) &&
+	   ff_core_request.first[43] && rg_fence_stall &&
 	   m_fillbuffer.mv_fbempty &&
 	   m_storebuffer.mv_sb_empty &&
 	   m_iobuffer.mv_io_empty &&
@@ -490,7 +333,7 @@ Blocking rules: (none)
  
 Rule: rl_deq_write_resp
 Predicate: ff_core_request.i_notEmpty &&
-	   rg_fence_pending && ff_core_request.first[44]
+	   rg_fence_pending && ff_core_request.first[43]
 Blocking rules: (none)
  
 Rule: rl_deq_write_response
@@ -498,10 +341,8 @@ Predicate: ff_mem_wr_resp_rv.port1__read[1]
 Blocking rules: (none)
  
 Rule: rl_ram_check
-Predicate: ff_from_tlb_rv.port1__read[73] &&
-	   ff_core_request.i_notEmpty &&
-	   wr_priv.whas && wr_cache_enable.whas &&
-	   (! ff_core_request.first[44]) && (! rg_handling_miss) &&
+Predicate: ff_core_request.i_notEmpty && wr_cache_enable.whas &&
+	   (! ff_core_request.first[43]) && (! rg_handling_miss) &&
 	   (! rg_performing_replay) &&
 	   (! rg_polling_mode) &&
 	   (! m_fillbuffer.mv_fbfull) &&
@@ -511,21 +352,17 @@ Predicate: ff_from_tlb_rv.port1__read[73] &&
 Blocking rules: (none)
  
 Rule: rl_fillbuffer_check
-Predicate: ff_from_tlb_rv.port1__read[73] &&
-	   ff_core_request.i_notEmpty && wr_cache_enable.whas &&
-	   (! ff_core_request.first[44]) && (! m_fillbuffer.mv_fbfull) &&
+Predicate: ff_core_request.i_notEmpty && wr_cache_enable.whas &&
+	   (! ff_core_request.first[43]) && (! m_fillbuffer.mv_fbfull) &&
 	   (! m_iobuffer.mv_io_full) &&
 	   (! m_storebuffer.mv_sb_busy)
 Blocking rules: (none)
  
 Rule: rl_response_to_core
-Predicate: ff_from_tlb_rv.port1__read[73] &&
-	   ff_core_request.i_notEmpty &&
-	   (! ff_hold_request_rv.port0__read[77]) &&
-	   (! ff_ptw_response_rv.port0__read[78]) &&
-	   (! ff_core_response_rv.port0__read[78]) &&
+Predicate: ff_core_request.i_notEmpty &&
+	   (! ff_core_response_rv.port0__read[100]) &&
 	   m_storebuffer.RDY_ma_allocate_entry &&
-	   (! ff_core_request.first[44]) &&
+	   (! ff_core_request.first[43]) &&
 	   ((wr_fault.whas && wr_fault.wget) ||
 	    ((wr_ram_state.whas
 	      ? wr_ram_state.wget
@@ -538,8 +375,7 @@ Predicate: ff_from_tlb_rv.port1__read[73] &&
 Blocking rules: (none)
  
 Rule: rl_send_memory_request
-Predicate: ff_from_tlb_rv.port1__read[73] &&
-	   ff_core_request.i_notEmpty && ff_mem_rd_request.i_notFull &&
+Predicate: ff_core_request.i_notEmpty && ff_mem_rd_request.i_notFull &&
 	   ((wr_ram_state.whas
 	     ? wr_ram_state.wget
 	     : 2'd2) ==
@@ -551,7 +387,7 @@ Predicate: ff_from_tlb_rv.port1__read[73] &&
 	   (! m_fillbuffer.mv_fbfull) &&
 	   ((! wr_fault.whas) || (! wr_fault.wget)) &&
 	   (! rg_handling_miss) &&
-	   (! ff_core_request.first[44]) &&
+	   (! ff_core_request.first[43]) &&
 	   ff_pending_req.i_notFull
 Blocking rules: (none)
  
@@ -592,9 +428,7 @@ Blocking rules: (none)
  
 Rule: rl_io_response
 Predicate: m_iobuffer.RDY_mv_io_head &&
-	   ff_mem_io_resp.i_notEmpty &&
-	   (! ff_ptw_response_rv.port0__read[78]) &&
-	   ff_mem_io_request.i_notFull &&
+	   ff_mem_io_resp.i_notEmpty && ff_mem_io_request.i_notFull &&
 	   rg_io_busy
 Blocking rules: (none)
  
@@ -616,7 +450,6 @@ Logical execution order: send_core_io_resp,
 			 mv_cache_available,
 			 receive_core_req_put,
 			 ma_commit_store,
-			 put_pa_from_tlb_put,
 			 rl_fence_operation,
 			 rl_deq_write_resp,
 			 rl_deq_write_response,
@@ -630,12 +463,9 @@ Logical execution order: send_core_io_resp,
 			 ma_commit_io,
 			 rl_response_to_core,
 			 send_core_cache_resp_get,
-			 get_hold_req_get,
 			 rl_fill_from_memory,
-			 mv_perf_counters,
 			 rl_commit_stores,
 			 rl_io_response,
-			 get_ptw_resp_get,
 			 rg_core_io_response__dreg_update,
 			 rg_release_readphase__dreg_update
 

@@ -17,145 +17,289 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-create_project -in_memory -part xc7a200tsbg484-1
+create_project -in_memory -part xc7k325tffg900-2
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.cache/wt [current_project]
-set_property parent.project_path /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.xpr [current_project]
+set_property webtalk.parent_dir /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.cache/wt [current_project]
+set_property parent.project_path /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part digilentinc.com:nexys_video:part0:1.1 [current_project]
-set_property ip_output_repo /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.cache/ip [current_project]
+set_property board_part xilinx.com:kc705:part0:1.6 [current_project]
+set_property ip_output_repo /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-set_property include_dirs /scratch1/iot/gc2025/hw/build/hw/verilog [current_fileset]
+set_property include_dirs /scratch1/iot/new/gc2025/hw/build/hw/verilog [current_fileset]
 read_verilog -library xil_defaultlib {
-  /scratch1/iot/gc2025/hw/build/hw/verilog/BRAM2BELoad.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/ClockInverter.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/Counter.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/FIFO1.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/FIFO2.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/FIFO20.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/FIFOL1.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/MakeClock.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/MakeReset0.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/RegFile.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/ResetEither.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/RevertReg.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SizedFIFO.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SyncBit.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SyncFIFO.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SyncFIFO1.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SyncHandshake.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SyncRegister.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SyncReset0.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/SyncResetA.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/UngatedClockMux.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/bram_1rw.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_control_r_s_axi.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_control_s_axi.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_flow_control_loop_pipe_sequential_init.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_gmem_m_axi.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_mul_28s_28s_28_3_1.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_mul_32ns_32s_62_2_1.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/cnn_accel_tile_in_RAM_T2P_BRAM_1R1W.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkDebugSoc.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkSoc.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mk_csrbox.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mk_debug.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkbpu.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkccore_axi4.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkcombo_mul.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkdcache.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkdcache_data.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkdcache_fb_v2.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkdcache_tag.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkdmem.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkfa_dtlb.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkfa_itlb.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkgpio.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkgptimer.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mki2c.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkicache.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkicache_data.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkicache_fb_v2.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkicache_tag.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkimem.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkiobuffer.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkmbox.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkmixed_cluster.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkpinmux.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkpinmuxtop.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkplic.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkpwm.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkpwm_cluster.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkregisterfile.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkrestoring_div.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkriscv.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkscoreboard.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkspi.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkspi_cluster.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkstage0.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkstage1.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkstage2.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkstage3.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkstage4.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkstage5.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkstorebuffer.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkuart.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkuart_cluster.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/mkxilinxdtm.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_chk_interrupt.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_add.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_base_alu.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_bru.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_bypass.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_compare.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_fn.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_immediate.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_insttype.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_mem_access.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_rd.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_rs1.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_rs1type.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_rs2.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_rs2type.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decode_trapcause.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_decompress.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_logic.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_pmp_lookup.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_fn_shift.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_hasCSRPermission.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/module_valid_csr_access.v
-  /scratch1/iot/gc2025/hw/build/hw/verilog/signedmul.v
-  /scratch1/iot/gc2025/hw/fpga_top.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/BRAM2BELoad.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/ClockInverter.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/Counter.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/FIFO1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/FIFO10.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/FIFO2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/FIFO20.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/FIFOL1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/MakeClock.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/MakeReset0.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/MakeResetA.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/RegFile.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/ResetEither.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/RevertReg.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/SizedFIFO.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/SyncBit.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/SyncFIFO1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/SyncHandshake.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/SyncRegister.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/SyncReset0.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/SyncResetA.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/UngatedClockMux.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/bram_1rw.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_control_s_axi.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con0iy.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con1iI.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con2iS.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con3i2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con4jc.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con5jm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con6jw.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con7jG.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con8jQ.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con9j0.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conDeQ.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conEe0.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conFfa.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conGfk.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conHfu.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conIfE.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conJfO.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conKfY.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conLf8.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conMgi.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conNgs.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conOgC.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conPgM.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conQgW.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conRg6.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conShg.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conThq.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conUhA.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conVhK.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conWhU.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conXh4.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conYie.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conZio.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbAo.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbBo.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbCo.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbDo.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbEo.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbFp.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbGp.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbHp.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbIp.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbJp.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbKp.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbLp.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbMq.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbNq.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbak.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbbk.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbck.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbdk.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbek.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbfk.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbgk.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbhl.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbil.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbjl.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbkl.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbll.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbml.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbnm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbom.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbpm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbqm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbrm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbsm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbtn.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbun.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbvn.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbwn.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbxn.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbyn.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbzo.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_tile_in_423_RAM_T2P_BRAM_1R1W.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_1_tile_in_RAM_T2P_BRAM_1R1W.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_2_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_2_Pipeline_VITIS_LOOP_63_8_VITIS_LOOP_64_9.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_2_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_2_w_2_cv1_conv_weight_ROM_AUTO_1R.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_2_w_2_cv1_conv_weight_bias_ROM_AUTO_1R.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_Aem.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_Bew.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_CeG.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_bkb.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_cud.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_dEe.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_eOg.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_fYi.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_g8j.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_hbi.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ibs.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_jbC.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_kbM.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_lbW.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_mb6.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ncg.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ocq.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_pcA.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_qcK.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_rcU.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_sc4.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_tde.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_udo.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_vdy.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_wdI.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_xdS.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_yd2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_zec.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_tile_in_437_RAM_T2P_BRAM_1R1W.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_tile_in_RAM_T2P_BRAM_1R1W.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_conv_layer_tile_out_RAM_T2P_BRAM_1R1W.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_flow_control_loop_pipe_sequential_init.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_gmem_m_axi.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_5s_14s_14_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_6s_13s_14_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_6s_14s_14_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_6s_14s_15_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_6s_15s_15_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_6s_15s_16_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_6s_8s_13_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_7s_15ns_15_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_7s_15s_15_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_7s_15s_16_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_7s_16s_16_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_8s_15s_15_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_8s_15s_16_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_8s_16s_16_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_8s_16s_17_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mac_muladd_8s_8s_7ns_15_4_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_32ns_32s_58_2_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_32ns_32s_59_2_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_32ns_32s_60_2_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_33s_32s_59_2_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_33s_32s_60_2_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_33s_32s_63_2_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_5ns_7ns_11_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_7ns_5ns_11_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_8s_5s_13_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_8s_6s_14_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_8s_7s_13_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_8s_7s_14_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_8s_7s_15_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_8s_8s_15_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_mul_8s_8s_16_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_sparsemux_7_2_8_1_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/cnn_accel_urem_5ns_3ns_2_9_1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkDebugSoc.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkSoc.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mk_csrbox.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mk_debug.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkbpu.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkccore_axi4.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkcombo_mul.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkdcache.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkdcache_data.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkdcache_fb_v2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkdcache_tag.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkdmem.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkgpio.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkgptimer.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mki2c.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkicache.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkicache_data.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkicache_fb_v2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkicache_tag.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkimem.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkiobuffer.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkmbox.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkmixed_cluster.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkpinmux.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkpinmuxtop.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkplic.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkpwm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkpwm_cluster.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkregisterfile.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkrestoring_div.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkriscv.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkscoreboard.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkspi.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkspi_cluster.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkstage0.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkstage1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkstage2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkstage3.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkstage4.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkstage5.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkstorebuffer.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkuart.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkuart_cluster.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/mkxilinxdtm.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_chk_interrupt.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_add.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_base_alu.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_bru.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_bypass.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_compare.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_fn.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_immediate.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_insttype.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_mem_access.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_rd.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_rs1.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_rs1type.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_rs2.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_rs2type.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decode_trapcause.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_decompress.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_logic.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_fn_shift.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_hasCSRPermission.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/module_valid_csr_access.v
+  /scratch1/iot/new/gc2025/hw/build/hw/verilog/signedmul.v
+  /scratch1/iot/new/gc2025/hw/fpga_top.v
 }
-read_ip -quiet /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter.xci
-set_property used_in_synthesis false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter_clocks.xdc]
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter_clocks.xdc]
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter_ooc.xdc]
+read_ip -quiet /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter.xci
+set_property used_in_synthesis false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter_clocks.xdc]
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter_clocks.xdc]
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_converter/clk_converter_ooc.xdc]
 
-read_ip -quiet /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/mig_ddr3/mig_ddr3.xci
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/mig_ddr3/mig_ddr3/user_design/constraints/mig_ddr3_ooc.xdc]
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/mig_ddr3/mig_ddr3/user_design/constraints/mig_ddr3.xdc]
+read_ip -quiet /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/mig_ddr3/mig_ddr3.xci
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/mig_ddr3/mig_ddr3/user_design/constraints/mig_ddr3_ooc.xdc]
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/mig_ddr3/mig_ddr3/user_design/constraints/mig_ddr3.xdc]
 
-read_ip -quiet /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider.xci
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider_board.xdc]
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider.xdc]
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider_ooc.xdc]
+read_ip -quiet /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider.xci
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider_board.xdc]
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider.xdc]
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/clk_divider/clk_divider_ooc.xdc]
 
-read_ip -quiet /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0.xci
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_board.xdc]
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0.xdc]
-set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_ooc.xdc]
+read_ip -quiet /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0.xci
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_board.xdc]
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0.xdc]
+set_property used_in_implementation false [get_files -all /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -165,18 +309,18 @@ set_property used_in_implementation false [get_files -all /scratch1/iot/gc2025/h
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /scratch1/iot/gc2025/hw/constraints.xdc
-set_property used_in_implementation false [get_files /scratch1/iot/gc2025/hw/constraints.xdc]
+read_xdc /scratch1/iot/new/gc2025/hw/constraints.xdc
+set_property used_in_implementation false [get_files /scratch1/iot/new/gc2025/hw/constraints.xdc]
 
-read_xdc /scratch1/iot/gc2025/hw/jtag_constraints.xdc
-set_property used_in_implementation false [get_files /scratch1/iot/gc2025/hw/jtag_constraints.xdc]
+read_xdc /scratch1/iot/new/gc2025/hw/jtag_constraints.xdc
+set_property used_in_implementation false [get_files /scratch1/iot/new/gc2025/hw/jtag_constraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top fpga_top -part xc7a200tsbg484-1  -verilog_define BSV_RESET_FIFO_HEAD -verilog_define BSV_RESET_FIFO_ARRAY -verilog_define BSV_ASYNC_RESET -verilog_define BUS_WIDTH32
+synth_design -top fpga_top -part xc7k325tffg900-2  -verilog_define BSV_RESET_FIFO_HEAD -verilog_define BSV_RESET_FIFO_ARRAY
 
 
 # disable binary constraint mode for synth run checkpoints

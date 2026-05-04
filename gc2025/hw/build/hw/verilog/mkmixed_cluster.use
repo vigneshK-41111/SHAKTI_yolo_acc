@@ -1,4 +1,5 @@
 FIFO2
+SyncResetA
 FIFO20
 mkgpio
 mkgptimer

@@ -115,21 +115,6 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
     inout gpio_30,
     inout gpio_31,
 
-    input gptimer0_in,
-    output gptimer0_out,
-    input external_clk,
-
-    input gptimer1_in,
-    output gptimer1_out,
-
-    input gptimer2_in,
-    output gptimer2_out,
-
-    input gptimer3_in,
-    output gptimer3_out,
-	
-
-
 
     // ---- System Reset ------//
     input         sys_rst,	//Active Low
@@ -139,8 +124,7 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
    );
 
   reg aresetn ;
-  wire use_cnn;   // control this from a register or hardcode for now
-  assign use_cnn = 1'b1;   // CNN only (debug phase)
+
   wire                            soc_reset;      // reset to the SoC
   wire                            core_clk;       // clock to the SoC
   wire                              ddr3_main;      // main clock to the ddr3-mig
@@ -159,20 +143,9 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
   wire [3:0]                        m_axi_awcache;
   wire [2:0]                        m_axi_awprot;
   wire                              m_axi_awvalid;
-  wire                              m_axi_awready; 
-`ifdef BUS_WIDTH128   
-  wire [127:0]                       m_axi_wdata;
-  wire [15:0]                        m_axi_wstrb;
-`elsif BUS_WIDTH64
+  wire                              m_axi_awready;    
   wire [63:0]                       m_axi_wdata;
   wire [7:0]                        m_axi_wstrb;
-`elsif BUS_WIDTH32
-  wire [31:0]                       m_axi_wdata;
-  wire [3:0]                        m_axi_wstrb;
-`else
-  wire [127:0]                       m_axi_wdata;
-  wire [15:0]                        m_axi_wstrb;
-`endif
   wire                              m_axi_wlast;
   wire                              m_axi_wvalid;
   wire                              m_axi_wready;   
@@ -192,15 +165,7 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
   wire                              m_axi_arready;    
   wire                              m_axi_rready;
   wire [AXI_ID_WIDTH-1:0]           m_axi_rid;
-`ifdef BUS_WIDTH128   
-  wire [127:0]                      m_axi_rdata;
-`elsif BUS_WIDTH64
   wire [63:0]                       m_axi_rdata;
-`elsif BUS_WIDTH32
-  wire [31:0]                       m_axi_rdata;
-`else
-  wire [127:0]                      m_axi_rdata;
-`endif
   wire [1:0]                        m_axi_rresp;
   wire                              m_axi_rlast;
   wire                              m_axi_rvalid;   
@@ -215,19 +180,8 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
   wire [2:0]                        s_axi_awprot;
   wire                              s_axi_awvalid;
   wire                              s_axi_awready;    
-`ifdef BUS_WIDTH128   
-  wire [127:0]                       s_axi_wdata;
-  wire [15:0]                        s_axi_wstrb;
-`elsif BUS_WIDTH64
   wire [63:0]                       s_axi_wdata;
   wire [7:0]                        s_axi_wstrb;
-`elsif BUS_WIDTH32
-  wire [31:0]                       s_axi_wdata;
-  wire [3:0]                        s_axi_wstrb;
-`else
-  wire [127:0]                       s_axi_wdata;
-  wire [15:0]                        s_axi_wstrb;
-`endif
   wire                              s_axi_wlast;
   wire                              s_axi_wvalid;
   wire                              s_axi_wready;
@@ -247,15 +201,7 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
   wire                              s_axi_arready;
   wire                              s_axi_rready;
   wire [AXI_ID_WIDTH-1:0]           s_axi_rid;
-`ifdef BUS_WIDTH128   
-  wire [127:0]                      s_axi_rdata;
-`elsif BUS_WIDTH64
   wire [63:0]                       s_axi_rdata;
-`elsif BUS_WIDTH32
-  wire [31:0]                       s_axi_rdata;
-`else
-  wire [127:0]                      s_axi_rdata;
-`endif
   wire [1:0]                        s_axi_rresp;
   wire                              s_axi_rlast;
   wire                              s_axi_rvalid;   
@@ -263,95 +209,6 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 30)
   wire [1:0]                         interrupts;
 
    wire phy_mdio_o, phy_mdio_i, phy_mdio_t;
-// CPU → CNN (control path)
-wire [31:0] cnn_ctrl_awaddr;
-wire        cnn_ctrl_awvalid;
-wire        cnn_ctrl_awready;
-
-wire [31:0] cnn_ctrl_wdata;
-wire        cnn_ctrl_wvalid;
-wire        cnn_ctrl_wready;
-wire [3:0]  cnn_ctrl_wstrb;
-
-wire [1:0]  cnn_ctrl_bresp;
-wire        cnn_ctrl_bvalid;
-wire        cnn_ctrl_bready;
-
-wire [31:0] cnn_ctrl_araddr;
-wire        cnn_ctrl_arvalid;
-wire        cnn_ctrl_arready;
-
-wire [31:0] cnn_ctrl_rdata;
-wire        cnn_ctrl_rvalid;
-wire        cnn_ctrl_rready;
-
-
-wire cnn_master_awvalid;
-wire cnn_master_awready;
-wire [AXI_ADDR_WIDTH-1:0] cnn_master_awaddr;
-wire [AXI_ID_WIDTH-1:0] cnn_master_awid;
-wire [7:0] cnn_master_awlen;
-wire [2:0] cnn_master_awsize;
-wire [1:0] cnn_master_awburst;
-wire [0:0] cnn_master_awlock;
-wire [3:0] cnn_master_awcache;
-wire [2:0] cnn_master_awprot;
-wire [3:0] cnn_master_awqos;
-wire [3:0] cnn_master_awregion;
-wire cnn_master_awuser;
-wire cnn_master_wvalid;
-wire cnn_master_wready;
-`ifdef BUS_WIDTH128
-wire [127:0] cnn_master_wdata;
-wire [15:0] cnn_master_wstrb;
-`elsif BUS_WIDTH64
-wire [63:0] cnn_master_wdata;
-wire [7:0] cnn_master_wstrb;
-`elsif BUS_WIDTH32
-wire [31:0] cnn_master_wdata;
-wire [3:0] cnn_master_wstrb;
-`else
-wire [127:0] cnn_master_wdata;
-wire [15:0] cnn_master_wstrb;
-`endif
-wire cnn_master_wlast;
-wire [AXI_ID_WIDTH-1:0] cnn_master_wid;
-wire cnn_master_wuser;
-wire cnn_master_arvalid;
-wire cnn_master_arready;
-wire [AXI_ADDR_WIDTH-1:0] cnn_master_araddr;
-wire [AXI_ID_WIDTH-1:0] cnn_master_arid;
-wire [7:0] cnn_master_arlen;
-wire [2:0] cnn_master_arsize;
-wire [1:0] cnn_master_arburst;
-wire [0:0] cnn_master_arlock;
-wire [3:0] cnn_master_arcache;
-wire [2:0] cnn_master_arprot;
-wire [3:0] cnn_master_arqos;
-wire [3:0] cnn_master_arregion;
-wire cnn_master_aruser;
-wire cnn_master_rvalid;
-wire cnn_master_rready;
-`ifdef BUS_WIDTH128
-wire [127:0] cnn_master_rdata;
-`elsif BUS_WIDTH64
-wire [63:0] cnn_master_rdata;
-`elsif BUS_WIDTH32
-wire [31:0] cnn_master_rdata;
-`else
-wire [127:0] cnn_master_rdata;
-`endif
-wire cnn_master_rlast;
-wire [AXI_ID_WIDTH-1:0] cnn_master_rid;
-wire cnn_master_ruser;
-wire [1:0] cnn_master_rresp;
-wire cnn_master_bvalid;
-wire cnn_master_bready;
-wire [1:0] cnn_master_bresp;
-wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
-
-
-
 
    wire i2c0_scl_out, i2c0_scl_in, i2c0_scl_out_en;
    wire i2c0_sda_out, i2c0_sda_in, i2c0_sda_out_en;
@@ -392,7 +249,6 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
    wire gpio_30_in, gpio_30_out, gpio_30_en;
    wire gpio_31_in, gpio_31_out, gpio_31_en;
 
-   wire ip2intc_irpt;
 // ---------------------------------------------------------------------------- //
     wire wire_tck_clk;
     wire wire_trst;
@@ -422,7 +278,7 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
       .TDO(wire_tdo) // 1-bit input: Test Data Output (TDO) input for USER function.
     );
 
-
+  // --------- Address width truncation and Reset generation for SoC ------------ //
   wire [31:0] temp_s_axi_awaddr, temp_s_axi_araddr;
   assign s_axi_awaddr= temp_s_axi_awaddr [AXI_ADDR_WIDTH-1:0];
   assign s_axi_araddr= temp_s_axi_araddr [AXI_ADDR_WIDTH-1:0];
@@ -531,6 +387,7 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
    always @(posedge clk) begin
      aresetn <= ~rst;
    end
+   
 
    // Instantiating the clock converter between the SoC and DDR3 MIG
    clk_converter clock_converter (
@@ -618,78 +475,6 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
        .m_axi_rready(m_axi_rready)
    );
 
-  cnn_accel cnn_inst (
-
-    // ✅ FAST CLOCK (same as DDR)
-    .ap_clk(core_clk),
-    .ap_rst_n(aresetn),
-
-    .m_axi_gmem_AWVALID(cnn_master_awvalid),
-    .m_axi_gmem_AWREADY(cnn_master_awready),
-    .m_axi_gmem_AWADDR(cnn_master_awaddr),
-    .m_axi_gmem_AWID(cnn_master_awid),
-    .m_axi_gmem_AWLEN(cnn_master_awlen),
-    .m_axi_gmem_AWSIZE(cnn_master_awsize),
-    .m_axi_gmem_AWBURST(cnn_master_awburst),
-    .m_axi_gmem_AWLOCK(cnn_master_awlock),
-    .m_axi_gmem_AWCACHE(cnn_master_awcache),
-    .m_axi_gmem_AWPROT(cnn_master_awprot),
-    .m_axi_gmem_AWQOS(cnn_master_awqos),
-    .m_axi_gmem_AWREGION(cnn_master_awregion),
-    .m_axi_gmem_AWUSER(cnn_master_awuser),
-    .m_axi_gmem_WVALID(cnn_master_wvalid),
-    .m_axi_gmem_WREADY(cnn_master_wready),
-    .m_axi_gmem_WDATA(cnn_master_wdata),
-    .m_axi_gmem_WSTRB(cnn_master_wstrb),
-    .m_axi_gmem_WLAST(cnn_master_wlast),
-    .m_axi_gmem_WID(cnn_master_wid),
-    .m_axi_gmem_WUSER(cnn_master_wuser),
-    .m_axi_gmem_ARVALID(cnn_master_arvalid),
-    .m_axi_gmem_ARREADY(cnn_master_arready),
-    .m_axi_gmem_ARADDR(cnn_master_araddr),
-    .m_axi_gmem_ARID(cnn_master_arid),
-    .m_axi_gmem_ARLEN(cnn_master_arlen),
-    .m_axi_gmem_ARSIZE(cnn_master_arsize),
-    .m_axi_gmem_ARBURST(cnn_master_arburst),
-    .m_axi_gmem_ARLOCK(cnn_master_arlock),
-    .m_axi_gmem_ARCACHE(cnn_master_arcache),
-    .m_axi_gmem_ARPROT(cnn_master_arprot),
-    .m_axi_gmem_ARQOS(cnn_master_arqos),
-    .m_axi_gmem_ARREGION(cnn_master_arregion),
-    .m_axi_gmem_ARUSER(cnn_master_aruser),
-    .m_axi_gmem_RVALID(cnn_master_rvalid),
-    .m_axi_gmem_RREADY(cnn_master_rready),
-    .m_axi_gmem_RDATA(cnn_master_rdata),
-    .m_axi_gmem_RLAST(cnn_master_rlast),
-    .m_axi_gmem_RID(cnn_master_rid),
-    .m_axi_gmem_RUSER(cnn_master_ruser),
-    .m_axi_gmem_RRESP(cnn_master_rresp),
-    .m_axi_gmem_BVALID(cnn_master_bvalid),
-    .m_axi_gmem_BREADY(cnn_master_bready),
-    .m_axi_gmem_BRESP(cnn_master_bresp),
-    .m_axi_gmem_BID(cnn_master_bid),
-    .s_axi_control_AWVALID(cnn_ctrl_awvalid),
-    .s_axi_control_AWREADY(cnn_ctrl_awready),
-    .s_axi_control_AWADDR(cnn_ctrl_awaddr),
-    .s_axi_control_WVALID(cnn_ctrl_wvalid),
-    .s_axi_control_WREADY(cnn_ctrl_wready),
-    .s_axi_control_WDATA(cnn_ctrl_wdata),
-    .s_axi_control_WSTRB(cnn_ctrl_wstrb),
-    .s_axi_control_ARVALID(cnn_ctrl_arvalid),
-    .s_axi_control_ARREADY(cnn_ctrl_arready),
-    .s_axi_control_ARADDR(cnn_ctrl_araddr),
-    .s_axi_control_RVALID(cnn_ctrl_rvalid),
-    .s_axi_control_RREADY(cnn_ctrl_rready),
-    .s_axi_control_RDATA(cnn_ctrl_rdata),
-    .s_axi_control_RRESP(cnn_ctrl_rresp),
-    .s_axi_control_BVALID(cnn_ctrl_bvalid),
-    .s_axi_control_BREADY(cnn_ctrl_bready),
-    .s_axi_control_BRESP(cnn_ctrl_bresp)
-
-);
-
-
-
 
    // ---- Instantiating the C-class SoC -------------//
    mkDebugSoc core(
@@ -698,7 +483,6 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
         .RST_N(~soc_reset),
         .CLK_tck_clk(wire_tck_clk),
         .RST_N_trst(~wire_trst),
-        .CLK_ext_clk(external_clk),
         .wire_capture_capture_in(wire_capture),
         .wire_run_test_run_test_in(wire_run_test),
         .wire_sel_sel_in(wire_sel),
@@ -715,12 +499,12 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
         .spi0_io_sclk_out(spi0_io_sclk_out),
         .spi0_io_sclk_outen(spi0_io_sclk_outen),
         .spi0_io_sclk_in_val(spi0_io_sclk_in_val),
-        .spi0_io_ncs_out0(spi0_io_nss_out),
-        .spi0_io_ncs_outen0(spi0_io_nss_outen),
-        .spi0_io_ncs_in0_val(spi0_io_nss_in_val),
-	.spi0_io_miso_out(spi0_io_miso_out),
-	.spi0_io_miso_outen(spi0_io_miso_outen),
-	.spi0_io_miso_in_val(spi0_io_miso_in_val),
+        .spi0_io_ncs_out(spi0_io_nss_out),
+        .spi0_io_ncs_outen(spi0_io_nss_outen),
+        .spi0_io_ncs_in_val(spi0_io_nss_in_val),
+	      .spi0_io_miso_out(spi0_io_miso_out),
+	      .spi0_io_miso_outen(spi0_io_miso_outen),
+	      .spi0_io_miso_in_val(spi0_io_miso_in_val),
 
        // UART port definitions
         .uart0_io_SIN(uart0_SIN),
@@ -770,7 +554,7 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
         .i2c0_out_sda_in_in(i2c0_sda_in),
         .i2c0_out_sda_out_en(i2c0_sda_out_en),
 
-			  ////I2C ports
+			  //I2C ports
         .i2c1_out_scl_out (i2c1_scl_out),
         .i2c1_out_scl_in_in(i2c1_scl_in),
         .i2c1_out_scl_out_en(i2c1_scl_out_en),
@@ -778,89 +562,6 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
         .i2c1_out_sda_in_in(i2c1_sda_in),
         .i2c1_out_sda_out_en(i2c1_sda_out_en),
 
-        .gptimer0_io_input_signal_signal_in(gptimer0_in),
-		    .gptimer0_io_timer_out(gptimer0_out),	
-
-        .gptimer1_io_input_signal_signal_in(gptimer1_in),
-		    .gptimer1_io_timer_out(gptimer1_out),	
-
-        .gptimer2_io_input_signal_signal_in(gptimer2_in),
-		    .gptimer2_io_timer_out(gptimer2_out),	
-
-        .gptimer3_io_input_signal_signal_in(gptimer3_in),
-		    .gptimer3_io_timer_out(gptimer3_out),	
-
-        //AXI4 LITE Master Interface 
-        .cnn_accel_top_awaddr(cnn_ctrl_awaddr),
-        .cnn_accel_top_awvalid(cnn_ctrl_awvalid),
-        .cnn_accel_top_m_awready_awready(cnn_ctrl_awready),
-
-        .cnn_accel_top_wdata(cnn_ctrl_wdata),
-        .cnn_accel_top_wvalid(cnn_ctrl_wvalid),
-        .cnn_accel_top_m_wready_wready(cnn_ctrl_wready),
-        .cnn_accel_top_wstrb(cnn_ctrl_wstrb),
-        
-
-        .cnn_accel_top_m_bvalid_bresp(cnn_ctrl_bresp),
-        .cnn_accel_top_m_bvalid_bvalid(cnn_ctrl_bvalid),
-        .cnn_accel_top_bready(cnn_ctrl_bready),
-        
-
-        .cnn_accel_top_araddr(cnn_ctrl_araddr),
-        .cnn_accel_top_arvalid(cnn_ctrl_arvalid),
-        .cnn_accel_top_m_arready_arready(cnn_ctrl_arready),
-        .cnn_accel_top_m_rvalid_rresp(cnn_ctrl_rresp),
-
-        .cnn_accel_top_m_rvalid_rdata(cnn_ctrl_rdata),
-        .cnn_accel_top_m_rvalid_rvalid(cnn_ctrl_rvalid),
-        .cnn_accel_top_rready(cnn_ctrl_rready),
-
-        .acc_master_AWVALID(cnn_master_awvalid),
-        .acc_master_AWREADY(cnn_master_awready),
-        .acc_master_AWADDR(cnn_master_awaddr),
-        .acc_master_AWID(cnn_master_awid),
-        .acc_master_AWLEN(cnn_master_awlen),
-        .acc_master_AWSIZE(cnn_master_awsize),
-        .acc_master_AWBURST(cnn_master_awburst),
-        // .acc_master_AWLOCK(1'b0),
-        // .acc_master_AWCACHE(4'b10),
-        .acc_master_AWPROT(cnn_master_awprot),
-        // .acc_master_AWQOS(),
-        // .acc_master_AWREGION(),
-        // .acc_master_AWUSER(),
-        .acc_master_WVALID(cnn_master_wvalid),
-        .acc_master_WREADY(cnn_master_wready),
-        .acc_master_WDATA(cnn_master_wdata),
-        .acc_master_WSTRB(cnn_master_wstrb),
-        .acc_master_WLAST(cnn_master_wlast),
-        .acc_master_WID(cnn_master_wid),
-        // .acc_master_WUSER(),
-        .acc_master_ARVALID(cnn_master_arvalid),
-        .acc_master_ARREADY(cnn_master_arready),
-        .acc_master_ARADDR(cnn_master_araddr),
-        .acc_master_ARID(cnn_master_arid),
-        .acc_master_ARLEN(cnn_master_arlen),
-        .acc_master_ARSIZE(cnn_master_arsize),
-        .acc_master_ARBURST(cnn_master_arburst),
-        // .acc_master_ARLOCK(1'b0),
-        // .acc_master_ARCACHE(4'b10),
-        .acc_master_ARPROT(cnn_master_arprot),
-        // .acc_master_ARQOS(),
-        // .acc_master_ARREGION(),
-        // .acc_master_ARUSER(),
-        .acc_master_RVALID(cnn_master_rvalid),
-        .acc_master_RREADY(cnn_master_rready),
-        .acc_master_RDATA(cnn_master_rdata),
-        .acc_master_RLAST(cnn_master_rlast),
-        .acc_master_RID(cnn_master_rid),
-        // .acc_master_RUSER(),
-        .acc_master_RRESP(cnn_master_rresp),
-        .acc_master_BVALID(cnn_master_bvalid),
-        .acc_master_BREADY(cnn_master_bready),
-        .acc_master_BRESP(cnn_master_bresp),
-        .acc_master_BID(cnn_master_bid),
-
-                 
         //pin muxed pins
     	  .iocell_io_io7_cell_in_in(io7_cell_in),
     	  .iocell_io_io8_cell_in_in(io8_cell_in),
@@ -895,6 +596,7 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
     	  .iocell_io_io18_cell_outen(io18_cell_en),
     	  .iocell_io_io19_cell_outen(io19_cell_en),
     	  .iocell_io_io20_cell_outen(io20_cell_en),
+        
         
 
         //GPIO
@@ -968,7 +670,7 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
 
 
 
-  assign interrupts = 2'b0 ;
+  assign interrupts = 2'b0;
 
 /*   // ---- Instantiating the C-class SoC -------------//
    genvar index;
@@ -984,6 +686,8 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
       end
    endgenerate*/
 //---- IOBUF FOR I2C -----//
+
+
    IOBUF i2c0_scl_inst(
              .O(i2c0_scl_in),
              .IO(i2c0_scl),
@@ -998,7 +702,7 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
              .T(~i2c0_sda_out_en)
          );
 
-   ////---- IOBUF FOR I2C -----//
+   //---- IOBUF FOR I2C -----//
    IOBUF i2c1_scl_inst(
              .O(i2c1_scl_in),
              .IO(i2c1_scl),
@@ -1142,6 +846,6 @@ wire [AXI_ID_WIDTH-1:0] cnn_master_bid;
    IOBUF spi0_inst_nss(.O(spi0_io_nss_in_val) ,.IO(spi0_nss) ,.I(spi0_io_nss_out) ,.T(~spi0_io_nss_outen));
    IOBUF spi0_inst_sclk(.O(spi0_io_sclk_in_val) ,.IO(spi0_sclk) ,.I(spi0_io_sclk_out) ,.T(~spi0_io_sclk_outen));
 
-
+//
 
 endmodule

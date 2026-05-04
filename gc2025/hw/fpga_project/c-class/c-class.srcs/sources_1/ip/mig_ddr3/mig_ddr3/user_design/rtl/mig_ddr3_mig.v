@@ -91,20 +91,20 @@ module mig_ddr3_mig #
    parameter CKE_WIDTH             = 1,
                                      // # of CKE outputs to memory.
    parameter DATA_BUF_ADDR_WIDTH   = 5,
-   parameter DQ_CNT_WIDTH          = 4,
+   parameter DQ_CNT_WIDTH          = 5,
                                      // = ceil(log2(DQ_WIDTH))
    parameter DQ_PER_DM             = 8,
-   parameter DM_WIDTH              = 2,
+   parameter DM_WIDTH              = 4,
                                      // # of DM (data mask)
-   parameter DQ_WIDTH              = 16,
+   parameter DQ_WIDTH              = 32,
                                      // # of DQ (data)
-   parameter DQS_WIDTH             = 2,
-   parameter DQS_CNT_WIDTH         = 1,
+   parameter DQS_WIDTH             = 4,
+   parameter DQS_CNT_WIDTH         = 2,
                                      // = ceil(log2(DQS_WIDTH))
    parameter DRAM_WIDTH            = 8,
                                      // # of DQ per DQS
    parameter ECC                   = "OFF",
-   parameter DATA_WIDTH            = 16,
+   parameter DATA_WIDTH            = 32,
    parameter ECC_TEST              = "OFF",
    parameter PAYLOAD_WIDTH         = (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH,
    parameter MEM_ADDR_ORDER        = "BANK_ROW_COLUMN",
@@ -129,7 +129,7 @@ module mig_ddr3_mig #
                                      //     + ROW_WIDTH + COL_WIDTH;
                                      // Chip Select is always tied to low for
                                      // single rank devices
-   parameter USE_CS_PORT          = 0,
+   parameter USE_CS_PORT          = 1,
                                      // # = 1, When Chip Select (CS#) output is enabled
                                      //   = 0, When Chip Select (CS#) output is disabled
                                      // If CS_N disabled, user must connect
@@ -152,13 +152,13 @@ module mig_ddr3_mig #
                                       // # = "true" when clock is shared
                                       //   = "false" when clock is not shared
 
-   parameter PHY_CONTROL_MASTER_BANK = 0,
+   parameter PHY_CONTROL_MASTER_BANK = 1,
                                      // The bank index where master PHY_CONTROL resides,
                                      // equal to the PLL residing bank
    parameter MEM_DENSITY           = "4Gb",
                                      // Indicates the density of the Memory part
                                      // Added for the sake of Vivado simulations
-   parameter MEM_SPEEDGRADE        = "125",
+   parameter MEM_SPEEDGRADE        = "107E",
                                      // Indicates the Speed grade of Memory Part
                                      // Added for the sake of Vivado simulations
    parameter MEM_DEVICE_WIDTH      = 16,
@@ -189,15 +189,15 @@ module mig_ddr3_mig #
                                      // DDR2 SDRAM: Burst Type (Mode Register).
                                      // # = "SEQ" - (Sequential),
                                      //   = "INT" - (Interleaved).
-   parameter CL                    = 6,
+   parameter CL                    = 7,
                                      // in number of clock cycles
                                      // DDR3 SDRAM: CAS Latency (Mode Register 0).
                                      // DDR2 SDRAM: CAS Latency (Mode Register).
-   parameter CWL                   = 5,
+   parameter CWL                   = 6,
                                      // in number of clock cycles
                                      // DDR3 SDRAM: CAS Write Latency (Mode Register 2).
                                      // DDR2 SDRAM: Can be ignored
-   parameter OUTPUT_DRV            = "LOW",
+   parameter OUTPUT_DRV            = "HIGH",
                                      // Output Driver Impedance Control (Mode Register 1).
                                      // # = "HIGH" - RZQ/7,
                                      //   = "LOW" - RZQ/6.
@@ -228,15 +228,15 @@ module mig_ddr3_mig #
    // The following parameters are multiplier and divisor factors for PLLE2.
    // Based on the selected design frequency these parameters vary.
    //***************************************************************************
-   parameter CLKIN_PERIOD          = 10000,
+   parameter CLKIN_PERIOD          = 5000,
                                      // Input Clock Period
-   parameter CLKFBOUT_MULT         = 8,
+   parameter CLKFBOUT_MULT         = 5,
                                      // write PLL VCO multiplier
    parameter DIVCLK_DIVIDE         = 1,
                                      // write PLL VCO divisor
-   parameter CLKOUT0_PHASE         = 0.0,
+   parameter CLKOUT0_PHASE         = 337.5,
                                      // Phase for PLL output clock (CLKOUT0)
-   parameter CLKOUT0_DIVIDE        = 1,
+   parameter CLKOUT0_DIVIDE        = 2,
                                      // VCO output divisor for PLL output clock (CLKOUT0)
    parameter CLKOUT1_DIVIDE        = 2,
                                      // VCO output divisor for PLL output clock (CLKOUT1)
@@ -244,7 +244,7 @@ module mig_ddr3_mig #
                                      // VCO output divisor for PLL output clock (CLKOUT2)
    parameter CLKOUT3_DIVIDE        = 8,
                                      // VCO output divisor for PLL output clock (CLKOUT3)
-   parameter MMCM_VCO              = 800,
+   parameter MMCM_VCO              = 1000,
                                      // Max Freq (MHz) of MMCM VCO
    parameter MMCM_MULT_F           = 8,
                                      // write MMCM VCO multiplier
@@ -257,21 +257,21 @@ module mig_ddr3_mig #
    //***************************************************************************
    parameter tCKE                  = 5000,
                                      // memory tCKE paramter in pS
-   parameter tFAW                  = 40000,
+   parameter tFAW                  = 35000,
                                      // memory tRAW paramter in pS.
    parameter tPRDI                 = 1_000_000,
                                      // memory tPRDI paramter in pS.
-   parameter tRAS                  = 35000,
+   parameter tRAS                  = 34000,
                                      // memory tRAS paramter in pS.
-   parameter tRCD                  = 13750,
+   parameter tRCD                  = 13910,
                                      // memory tRCD paramter in pS.
    parameter tREFI                 = 7800000,
                                      // memory tREFI paramter in pS.
    parameter tRFC                  = 260000,
                                      // memory tRFC paramter in pS.
-   parameter tRP                   = 13750,
+   parameter tRP                   = 13910,
                                      // memory tRP paramter in pS.
-   parameter tRRD                  = 7500,
+   parameter tRRD                  = 6000,
                                      // memory tRRD paramter in pS.
    parameter tRTP                  = 7500,
                                      // memory tRTP paramter in pS.
@@ -303,7 +303,7 @@ module mig_ddr3_mig #
    //***************************************************************************
    parameter BYTE_LANES_B0         = 4'b1111,
                                      // Byte lanes used in an IO column.
-   parameter BYTE_LANES_B1         = 4'b0000,
+   parameter BYTE_LANES_B1         = 4'b1111,
                                      // Byte lanes used in an IO column.
    parameter BYTE_LANES_B2         = 4'b0000,
                                      // Byte lanes used in an IO column.
@@ -311,7 +311,7 @@ module mig_ddr3_mig #
                                      // Byte lanes used in an IO column.
    parameter BYTE_LANES_B4         = 4'b0000,
                                      // Byte lanes used in an IO column.
-   parameter DATA_CTL_B0           = 4'b1100,
+   parameter DATA_CTL_B0           = 4'b1111,
                                      // Indicates Byte lane is data byte lane
                                      // or control Byte lane. '1' in a bit
                                      // position indicates a data byte lane and
@@ -336,30 +336,30 @@ module mig_ddr3_mig #
                                      // or control Byte lane. '1' in a bit
                                      // position indicates a data byte lane and
                                      // a '0' indicates a control byte lane
-   parameter PHY_0_BITLANES        = 48'h3F7_3FE_FFF_BFF,
-   parameter PHY_1_BITLANES        = 48'h000_000_000_000,
+   parameter PHY_0_BITLANES        = 48'h3FE_3FE_3FE_2FF,
+   parameter PHY_1_BITLANES        = 48'h3FE_FFC_C10_003,
    parameter PHY_2_BITLANES        = 48'h000_000_000_000,
 
    // control/address/data pin mapping parameters
    parameter CK_BYTE_MAP
-     = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00,
+     = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_13,
    parameter ADDR_MAP
-     = 192'h000_001_005_009_000_011_007_003_004_008_006_00B_01B_015_002_014,
-   parameter BANK_MAP   = 36'h010_013_017,
-   parameter CAS_MAP    = 12'h016,
+     = 192'h000_114_139_138_137_136_135_134_133_132_131_125_128_127_126_12B,
+   parameter BANK_MAP   = 36'h12A_129_124,
+   parameter CAS_MAP    = 12'h122,
    parameter CKE_ODT_BYTE_MAP = 8'h00,
-   parameter CKE_MAP    = 96'h000_000_000_000_000_000_000_012,
-   parameter ODT_MAP    = 96'h000_000_000_000_000_000_000_019,
-   parameter CS_MAP     = 120'h000_000_000_000_000_000_000_000_000_000,
+   parameter CKE_MAP    = 96'h000_000_000_000_000_000_000_11B,
+   parameter ODT_MAP    = 96'h000_000_000_000_000_000_000_11A,
+   parameter CS_MAP     = 120'h000_000_000_000_000_000_000_000_000_100,
    parameter PARITY_MAP = 12'h000,
-   parameter RAS_MAP    = 12'h018,
-   parameter WE_MAP     = 12'h01A,
+   parameter RAS_MAP    = 12'h123,
+   parameter WE_MAP     = 12'h101,
    parameter DQS_BYTE_MAP
-     = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_03_02,
-   parameter DATA0_MAP  = 96'h025_027_023_029_028_024_021_026,
-   parameter DATA1_MAP  = 96'h039_035_038_037_034_031_036_030,
-   parameter DATA2_MAP  = 96'h000_000_000_000_000_000_000_000,
-   parameter DATA3_MAP  = 96'h000_000_000_000_000_000_000_000,
+     = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_01_02_03,
+   parameter DATA0_MAP  = 96'h031_032_033_034_035_036_037_038,
+   parameter DATA1_MAP  = 96'h021_022_023_024_025_026_027_028,
+   parameter DATA2_MAP  = 96'h011_012_013_014_015_016_017_018,
+   parameter DATA3_MAP  = 96'h000_001_002_003_004_005_006_007,
    parameter DATA4_MAP  = 96'h000_000_000_000_000_000_000_000,
    parameter DATA5_MAP  = 96'h000_000_000_000_000_000_000_000,
    parameter DATA6_MAP  = 96'h000_000_000_000_000_000_000_000,
@@ -374,7 +374,7 @@ module mig_ddr3_mig #
    parameter DATA15_MAP = 96'h000_000_000_000_000_000_000_000,
    parameter DATA16_MAP = 96'h000_000_000_000_000_000_000_000,
    parameter DATA17_MAP = 96'h000_000_000_000_000_000_000_000,
-   parameter MASK0_MAP  = 108'h000_000_000_000_000_000_000_032_022,
+   parameter MASK0_MAP  = 108'h000_000_000_000_000_009_019_029_039,
    parameter MASK1_MAP  = 108'h000_000_000_000_000_000_000_000_000,
 
    parameter SLOT_0_CONFIG         = 8'b0000_0001,
@@ -389,9 +389,9 @@ module mig_ddr3_mig #
                                      // to phy_top
    parameter DATA_IO_IDLE_PWRDWN   = "ON",
                                      // # = "ON", "OFF"
-   parameter BANK_TYPE             = "HR_IO",
+   parameter BANK_TYPE             = "HP_IO",
                                      // # = "HP_IO", "HPL_IO", "HR_IO", "HRL_IO"
-   parameter DATA_IO_PRIM_TYPE     = "HR_LP",
+   parameter DATA_IO_PRIM_TYPE     = "HP_LP",
                                      // # = "HP_LP", "HR_LP", "DEFAULT"
    parameter CKE_ODT_AUX           = "FALSE",
    parameter USER_REFRESH          = "OFF",
@@ -432,7 +432,7 @@ module mig_ddr3_mig #
                                      // "TRUE" - if pin is selected for sys_rst
                                      //          and IBUF will be instantiated.
                                      // "FALSE" - if pin is not selected for sys_rst
-   parameter FPGA_SPEED_GRADE      = 1,
+   parameter FPGA_SPEED_GRADE      = 2,
                                      // FPGA speed grade
       
    parameter CMD_PIPE_PLUS1        = "ON",
@@ -455,7 +455,7 @@ module mig_ddr3_mig #
    //***************************************************************************
    // System clock frequency parameters
    //***************************************************************************
-   parameter tCK                   = 2500,
+   parameter tCK                   = 2000,
                                      // memory tCK paramter.
                                      // # = Clock Period in pS.
    parameter nCK_PER_CLK           = 4,
@@ -476,10 +476,10 @@ module mig_ddr3_mig #
                                      // 1/2, 1/4 and 1/8 of fabrick clock.
                                      // Valid for DDR2/DDR3 AXI interfaces
                                      // based on GUI selection
-   parameter C_S_AXI_ID_WIDTH              = 4,
+   parameter C_S_AXI_ID_WIDTH              = 3,
                                              // Width of all master and slave ID signals.
                                              // # = >= 1.
-   parameter C_S_AXI_MEM_SIZE              = "536870912",
+   parameter C_S_AXI_MEM_SIZE              = "1073741824",
                                      // Address Space required for this component
    parameter C_S_AXI_ADDR_WIDTH            = 30,
                                              // Width of S_AXI_AWADDR, S_AXI_ARADDR, M_AXI_AWADDR and
@@ -586,6 +586,7 @@ module mig_ddr3_mig #
    output [CK_WIDTH-1:0]                        ddr3_ck_n,
    output [CKE_WIDTH-1:0]                       ddr3_cke,
    
+   output [(CS_WIDTH*nCS_PER_RANK)-1:0]           ddr3_cs_n,
    
    output [DM_WIDTH-1:0]                        ddr3_dm,
    
@@ -1181,7 +1182,7 @@ module mig_ddr3_mig #
        .ddr_ck_n                         (ddr3_ck_n),
        .ddr_ck                           (ddr3_ck_p),
        .ddr_cke                          (ddr3_cke),
-       .ddr_cs_n                         (),
+       .ddr_cs_n                         (ddr3_cs_n),
        .ddr_dm                           (ddr3_dm),
        .ddr_odt                          (ddr3_odt),
        .ddr_ras_n                        (ddr3_ras_n),

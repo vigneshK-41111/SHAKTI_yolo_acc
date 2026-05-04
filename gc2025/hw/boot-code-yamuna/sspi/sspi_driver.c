@@ -1,5 +1,5 @@
 /***************************************************************************
- * Project               	    		: "shakti project"
+ * Project               	    		: "iisu project"
  * Name of the file	            		: sspi_driver.c
  * Brief Description of file            : Driver file to Standard SPI
  * Name of Author    	                : Sambhav Jain
@@ -24,7 +24,7 @@
 ***************************************************************************/
 /**
  * @file sspi_driver.c
- * @project shakti project
+ * @project iisu project
  * @brief Driver file to sspi driver 
  */
 
@@ -55,7 +55,7 @@ void sspi_init()
     for(int i = 0; i < SSPI_MAX_COUNT; i++)
     {
 		sspi_instance[i] = (sspi_struct*) ( (SSPI0_BASE_ADDRESS + ( i * SSPI_BASE_OFFSET) ) );
-      //  printf("sspi_instance[%x]: %x", i, sspi_instance[i]);
+        printf("sspi_instance[%x]: %x", i, sspi_instance[i]);
     }
 }
 
@@ -225,11 +225,11 @@ void sspi_configure_tx_setup_time(sspi_struct *sspi_instance, uint8_t delay_valu
  * @param sspi_instance pointer holds the instance of sspi_struct
  * @param delay_value 
  */
-// void sspi_configure_tx_hold_time(sspi_struct *sspi_instance, uint8_t delay_value)
-// {
-//     uint32_t temp = sspi_instance -> clk_control & (~ SPI_TX2SS_DELAY(255));
-//     sspi_instance -> clk_control = temp |  SPI_TX2SS_DELAY(delay_value);
-// }
+void sspi_configure_tx_hold_time(sspi_struct *sspi_instance, uint8_t delay_value)
+{
+    uint32_t temp = sspi_instance -> clk_control & (~ SPI_TX2SS_DELAY(255));
+    sspi_instance -> clk_control = temp |  SPI_TX2SS_DELAY(delay_value);
+}
 
 
 /** @fn void sspi_configure_clock_in_hz(sspi_struct *sspi_instance, uint32_t bit_rate)
@@ -331,7 +331,7 @@ void sspi_configure_clock(sspi_struct *sspi_instance, uint8_t prescaler, uint8_t
 void sspi_read_comm_status(sspi_struct *sspi_instance, uint8_t *sts)
 {
     *sts = sspi_instance -> comm_status;
-	// printf("\n commn status %x",  *sts);
+	printf("\n commn status %x",  *sts);
 }
 
 /** @fn void sspi_read_comm_status(sspi_struct *sspi_instance, uint8_t *sts)
@@ -340,14 +340,14 @@ void sspi_read_comm_status(sspi_struct *sspi_instance, uint8_t *sts)
  * @param sspi_instance pointer holds the instance of sspi_struct
  * @param sts pointer which will hold communication status register value 
  */
-// void sspi_read_registers(sspi_struct *sspi_instance)
-// {
-//     printf("\n spi_instance -> comm_control: %x", sspi_instance ->comm_control);
-//     printf("\n spi_instance -> clk_control: %x", sspi_instance ->clk_control);
-//     printf("\n spi_instance -> comm_status: %x", sspi_instance ->comm_status);
-//     printf("\n spi_instance -> fifo_status: %x", sspi_instance ->fifo_status);
-//     printf("\n spi_instance -> qual: %x", sspi_instance ->qual);
-// }
+void sspi_read_registers(sspi_struct *sspi_instance)
+{
+    printf("\n spi_instance -> comm_control: %x", sspi_instance ->comm_control);
+    printf("\n spi_instance -> clk_control: %x", sspi_instance ->clk_control);
+    printf("\n spi_instance -> comm_status: %x", sspi_instance ->comm_status);
+    printf("\n spi_instance -> fifo_status: %x", sspi_instance ->fifo_status);
+    printf("\n spi_instance -> qual: %x", sspi_instance ->qual);
+}
 
 /** @fn void sspi_read_fifo_status(sspi_struct *sspi_instance, uint8_t *fifo_sts)
  * @brief Reads the FIFO status register  
@@ -449,13 +449,13 @@ void sspi_check_overrun_fifo(sspi_struct *sspi_instance, uint8_t *sts)
  * @param tx_int_cntrl  Holds value from 0 to 15 to set interrupts on TX FIFO 
  * @param rx_int_cntrl  Holds value from 0 to 15 to set interrupts on RX FIFO
  */
-// void sspi_enable_tx_rx_interrupts(sspi_struct *sspi_instance, uint8_t tx_int_cntrl, uint8_t rx_int_cntrl)
-// {
-//     tx_int_cntrl &= 0xF;
-//     rx_int_cntrl &= 0xF;
-//     uint16_t temp = sspi_instance -> intr_en & (~(0xFF));
-//     sspi_instance ->intr_en = temp | tx_int_cntrl | (rx_int_cntrl << 4);
-// }
+void sspi_enable_tx_rx_interrupts(sspi_struct *sspi_instance, uint8_t tx_int_cntrl, uint8_t rx_int_cntrl)
+{
+    tx_int_cntrl &= 0xF;
+    rx_int_cntrl &= 0xF;
+    uint16_t temp = sspi_instance -> intr_en & (~(0xFF));
+    sspi_instance ->intr_en = temp | tx_int_cntrl | (rx_int_cntrl << 4);
+}
 
 /** @fn void sspi_enable_over_run_interrupt(sspi_struct *sspi_instance, uint8_t over_run_int_cntrl)
  * @brief Enabling the overrun interrupt 
@@ -463,17 +463,17 @@ void sspi_check_overrun_fifo(sspi_struct *sspi_instance, uint8_t *sts)
  * @param sspi_instance pointer holds the instance of sspi_struct
  * @param over_run_int_cntrl  Holds value from 0 to 1 to set interrupts on SPI_RX_OVERRUN_INTR_EN bit.
  */
-// void sspi_enable_over_run_interrupt(sspi_struct *sspi_instance, uint8_t overrun_int_cntrl)
-// {
-//     uint16_t temp = sspi_instance -> intr_en;
-//     overrun_int_cntrl &= 0x01;
-//     if(overrun_int_cntrl == 1 ) {
-//         sspi_instance -> intr_en = temp | SPI_RX_OVERRUN_INTR_EN;
-//     }
-//     else {
-//         sspi_instance -> intr_en = temp & ~(SPI_RX_OVERRUN_INTR_EN);
-//     } 
-// }
+void sspi_enable_over_run_interrupt(sspi_struct *sspi_instance, uint8_t overrun_int_cntrl)
+{
+    uint16_t temp = sspi_instance -> intr_en;
+    overrun_int_cntrl &= 0x01;
+    if(overrun_int_cntrl == 1 ) {
+        sspi_instance -> intr_en = temp | SPI_RX_OVERRUN_INTR_EN;
+    }
+    else {
+        sspi_instance -> intr_en = temp & ~(SPI_RX_OVERRUN_INTR_EN);
+    } 
+}
 
 /** @fn void sspi_transmit_data(sspi_struct *sspi_instance, uint32_t*buf_data, uint8_t buf_length)
  * @brief To transmit data on TX data register
@@ -482,19 +482,19 @@ void sspi_check_overrun_fifo(sspi_struct *sspi_instance, uint8_t *sts)
  * @param buf_data this pointer holds the buffer data which has to be transmitted 
  * @param buf_length Holds the length of the buffer data sent
  */
-// void sspi_transmit_data(sspi_struct *sspi_instance, uint32_t*buf_data, uint8_t buf_length)
-// {
-//     uint8_t comm_status  = sspi_instance -> comm_status;
+void sspi_transmit_data(sspi_struct *sspi_instance, uint32_t*buf_data, uint8_t buf_length)
+{
+    uint8_t comm_status  = sspi_instance -> comm_status;
     
-//     while(buf_length != 0) {
-//         if(comm_status & SPI_TXE) {
-//             sspi_instance -> data_tx = *buf_data;
-// 			sspi_enable_txrx(sspi_instance, ENABLE);
-// 	    printf("\n Send data : %x", sspi_instance -> data_tx);
-//             buf_length --;
-//         }
-//     }
-// }
+    while(buf_length != 0) {
+        if(comm_status & SPI_TXE) {
+            sspi_instance -> data_tx = *buf_data;
+			sspi_enable_txrx(sspi_instance, ENABLE);
+	    printf("\n Send data : %x", sspi_instance -> data_tx);
+            buf_length --;
+        }
+    }
+}
 
 /** @fn void sspi_receive_data(sspi_struct *sspi_instance, uint32_t *buf_data)
  * @brief Receiving data on RX Data Register
@@ -511,7 +511,7 @@ int sspi_receive_data(sspi_struct *sspi_instance, uint16_t *buf_data)
 	{
 		if(timeout++ > 0x1000) //0x8FFFFFFF)
 		{
-			// printf("\n sspi_instance -> comm_status : %x", sspi_instance -> comm_status );
+			printf("\n sspi_instance -> comm_status : %x", sspi_instance -> comm_status );
 			return TIMEOUT;
 		}
 	}
@@ -531,7 +531,7 @@ void sspi_clear_fifo(sspi_struct *sspi_instance)
     uint8_t temp_data;
    // sspi_instance->clock_en=SSPI_CLK_EN;
    // log_info("\nclock enable pin ~~%x",sspi_instance->clock_en);
-    // printf("\n spi clear fifo functiom");
+    printf("\n spi clear fifo functiom");
     while(!(sspi_instance -> fifo_status & SPI_TX_EMPTY)) 
     {  printf(".");
         // printf("\n tx not empty");
@@ -544,12 +544,12 @@ void sspi_clear_fifo(sspi_struct *sspi_instance)
 	//printf("\n sspi_instance[SSPI1_INSTANCE]->comm_status: %x", sspi_instance->comm_status);
 
     while(!(sspi_instance -> fifo_status & SPI_RX_EMPTY))
-    {  //printf(",");
+    {  printf(",");
         // printf("\n rx not empty");
 	    temp_data =  sspi_instance->data_rx;				
     }
-	// printf("\n RX FIFO sspi_instance->fifo_status: %x", sspi_instance->fifo_status);
-	// printf("\n sspi_instance->comm_status: %x", sspi_instance->comm_status);
+	printf("\n RX FIFO sspi_instance->fifo_status: %x", sspi_instance->fifo_status);
+	printf("\n sspi_instance->comm_status: %x", sspi_instance->comm_status);
     
 }
 

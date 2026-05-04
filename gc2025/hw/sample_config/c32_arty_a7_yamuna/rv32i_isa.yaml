@@ -18,7 +18,7 @@ hart0:
         cause_name: debug_interrupt
         on_reset_enable: 1
         priv_mode : M
-    ISA: RV32IMACSUZicsr_Zifencei
+    ISA: RV32IMACZicsr_Zifencei
     User_Spec_Version: '2.3'
     pmp_granularity: 1
     physical_addr_sz: 32
@@ -35,9 +35,9 @@ hart0:
     stvec:
         reset-val: 0x00000000
         rv32:
-            accessible: true
+            accessible: false
             base:
-                implemented: true
+                implemented: false
                 type:
                     warl:
                         dependency_fields: []
@@ -46,7 +46,7 @@ hart0:
                         wr_illegal:
                           - "Unchanged"
             mode:
-                implemented: true
+                implemented: false
                 type:
                     warl:
                         dependency_fields: []
@@ -88,7 +88,7 @@ hart0:
             uie:
                 implemented: false
             sie:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
@@ -97,14 +97,14 @@ hart0:
             upie:
                 implemented: false
             spie:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
             mpie:
                 implemented: true
             spp:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
@@ -118,7 +118,7 @@ hart0:
                     wr_illegal:
                       - Unchanged
             fs:
-                implemented: true
+                implemented: false
                 type:
                   warl:
                     dependency_fields: []
@@ -129,7 +129,7 @@ hart0:
             xs:
                 implemented: false
             mprv:
-                implemented: true
+                implemented: false
                 type:
                   warl:
                     dependency_fields: []
@@ -138,32 +138,32 @@ hart0:
                     wr_illegal:
                       - Unchanged
             sum:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
             mxr:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
             tvm:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
             tw:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
             tsr:
-                implemented: true
+                implemented: false
                 type:
                   wlrl:
                     - 0:1
             sd:
-                implemented: true
+                implemented: false
                 type:
                     ro_variable: true
         reset-val: 0x00000000
@@ -171,7 +171,7 @@ hart0:
         rv64:
           accessible: false
         rv32:
-          accessible: true
+          accessible: false
     marchid:
         rv64:
             accessible: false
@@ -204,7 +204,7 @@ hart0:
             usip:
                 implemented: false
             ssip:
-                implemented: true
+                implemented: false
             msip:
                 implemented: true
                 type:
@@ -212,7 +212,7 @@ hart0:
             utip:
                 implemented: false
             stip:
-                implemented: true
+                implemented: false
             mtip:
                 implemented: true
                 type:
@@ -220,7 +220,7 @@ hart0:
             ueip:
                 implemented: false
             seip:
-                implemented: true
+                implemented: false
             meip:
                 implemented: true
                 type:
@@ -230,7 +230,7 @@ hart0:
       rv64:
         accessible: false
       rv32:
-        accessible: True
+        accessible: false
     mie:
         rv64:
             accessible: false
@@ -239,19 +239,19 @@ hart0:
             usie:
                 implemented: false
             ssie:
-                implemented: true
+                implemented: false
             msie:
                 implemented: true
             utie:
                 implemented: false
             stie:
-                implemented: true
+                implemented: false
             mtie:
                 implemented: true
             ueie:
                 implemented: false
             seie:
-                implemented: true
+                implemented: false
             meie:
                 implemented: true
         reset-val: 0
@@ -259,7 +259,7 @@ hart0:
       rv64:
         accessible: False
       rv32:
-        accessible: true
+        accessible: false
     mscratch:
         rv64:
             accessible: false
@@ -278,7 +278,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type: 
                 warl:
                     dependency_fields: []
@@ -292,7 +292,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type:
                 warl:
                     dependency_fields: []
@@ -305,7 +305,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type:
                 warl:
                     dependency_fields: []
@@ -318,14 +318,11 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             exception_code:
-              implemented: True
-              type:
-                wlrl:
-                  - 0:23
+              implemented: false
             interrupt:
-              implemented: True
+              implemented: false
         reset-val: 0
     mepc:
         rv64:
@@ -358,13 +355,6 @@ hart0:
             accessible: false
         rv32:
             accessible: true
-            exception_code:
-              implemented: True
-              type:
-                wlrl:
-                  - 0:23
-            interrupt:
-              implemented: True
         reset-val: 0
     mcycleh:
         rv64:
@@ -446,7 +436,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type:
                 ro_variable: true
         reset-val: 0
@@ -454,7 +444,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type:
                 ro_variable: true
         reset-val: 0
@@ -462,7 +452,7 @@ hart0:
       rv64:
         accessible: false
       rv32:
-        accessible: true
+        accessible: false
         type:
           warl:
             dependency_fields: []
@@ -474,7 +464,7 @@ hart0:
       rv64:
         accessible: false
       rv32:
-        accessible: true
+        accessible: false
         type:
           warl:
             dependency_fields: []
@@ -487,7 +477,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             pmp0cfg:
                 implemented: true
                 type: 
@@ -524,77 +514,11 @@ hart0:
                         - "pmp3cfg[7] in [0] -> pmp3cfg[7] in [0x0,0x1] pmp3cfg[6:5] in [0] pmp3cfg[4:3] not in [2] pmp3cfg[2:0] not in [2,6]"
                       wr_illegal:
                         - Unchanged
-    pmpcfg1:
-        reset-val: 0x0
-        rv64:
-            accessible: false
-        rv32:
-            accessible: true
-            pmp4cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp5cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp6cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp7cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-    pmpcfg2:
-        reset-val: 0
-        rv64:
-            accessible: false
-        rv32:
-            accessible: true
-            pmp8cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp9cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp10cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp11cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-    pmpcfg3:
-        reset-val: 0
-        rv64:
-            accessible: false
-        rv32:
-            accessible: true
-            pmp12cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp13cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp14cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
-            pmp15cfg:
-                implemented: true
-                type:
-                  ro_constant: 0
     pmpaddr0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type: 
                 warl:
                     dependency_fields: [pmpcfg0::pmp0cfg]
@@ -607,7 +531,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type: 
                 warl:
                     dependency_fields: [pmpcfg0::pmp1cfg]
@@ -620,7 +544,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type: 
                 warl:
                     dependency_fields: [pmpcfg0::pmp2cfg]
@@ -633,7 +557,7 @@ hart0:
         rv64:
             accessible: false
         rv32:
-            accessible: true
+            accessible: false
             type: 
                 warl:
                     dependency_fields: [pmpcfg0::pmp3cfg]
@@ -642,132 +566,13 @@ hart0:
                     wr_illegal:
                       - Unchanged
         reset-val: 0
-    pmpaddr4: &pmp_const
-        rv64:
-          accessible: False
-        rv32:
-          accessible: True
-          type:
-            ro_constant : 0
-    pmpaddr5: 
-      <<: *pmp_const
-    pmpaddr6: 
-      <<: *pmp_const
-    pmpaddr7: 
-      <<: *pmp_const
-    pmpaddr8: 
-      <<: *pmp_const
-    pmpaddr9: 
-      <<: *pmp_const
-    pmpaddr10: 
-      <<: *pmp_const
-    pmpaddr11: 
-      <<: *pmp_const
-    pmpaddr12: 
-      <<: *pmp_const
-    pmpaddr13: 
-      <<: *pmp_const
-    pmpaddr14: 
-      <<: *pmp_const
-    pmpaddr15: 
-      <<: *pmp_const
-    mcounteren:
-      rv64:
-        accessible: False
-      rv32:
-        accessible: True
-        type:
-          warl:
-            dependency_fields: []
-            legal:
-              - "mcounteren[31:0] bitmask [0x0000001f, 0x00000000]"
-            wr_illegal:
-              - Unchanged
-    scounteren:
-      rv64:
-        accessible: False
-      rv32:
-        accessible: True
-        type:
-          warl:
-            dependency_fields: []
-            legal:
-              - "scounteren[31:0] bitmask [0x0000001f, 0x00000000]"
-            wr_illegal:
-              - Unchanged
-    menvcfg:
-      rv64:
-        accessible: False
-      rv32:
-        accessible: True
-    menvcfgh:
-      rv64:
-        accessible: False
-      rv32:
-        accessible: True
-    senvcfg:
-      rv64:
-        accessible: False
-      rv32:
-        accessible: True
-    mhpmevent3:
-        rv64:
-            accessible: false
-        rv32:
-            accessible: true
-            type: 
-                warl:
-                    dependency_fields: []
-                    legal:
-                      - "mhpmevent3[31:0] in [0x00000000:0x0000001F]"
-                    wr_illegal:
-                      - Unchanged
-        reset-val: 0
-    mhpmevent4:
-        rv64:
-            accessible: false
-        rv32:
-            accessible: true
-            type: 
-                warl:
-                    dependency_fields: []
-                    legal:
-                      - "mhpmevent4[31:0] in [0x00000000:0x0000001F]"
-                    wr_illegal:
-                      - Unchanged
-        reset-val: 0
-    mhpmevent5:
-        rv64:
-            accessible: false
-        rv32:
-            accessible: true
-            type: 
-                warl:
-                    dependency_fields: []
-                    legal:
-                      - "mhpmevent5[31:0] in [0x00000000:0x0000001F]"
-                    wr_illegal:
-                      - Unchanged
-        reset-val: 0
-    mhpmevent6:
-        rv64:
-            accessible: false
-        rv32:
-            accessible: true
-            type: 
-                warl:
-                    dependency_fields: []
-                    legal:
-                      - "mhpmevent6[31:0] in [0x00000000:0x0000001F]"
-                    wr_illegal:
-                      - Unchanged
-        reset-val: 0
     satp:
       rv64:
         accessible: false
       rv32:
-        accessible: true
+        accessible: false
         ppn:
+          implemented: false
           type:
             warl:
               dependency_fields: []
@@ -776,6 +581,7 @@ hart0:
               wr_illegal:
                 - Unchanged
         asid:
+          implemented: false
           type:
             warl:
               dependency_fields: []
@@ -784,6 +590,7 @@ hart0:
               wr_illegal:
                 - Unchanged
         mode:
+          implemented: false
           type:
             warl:
               dependency_fields: []

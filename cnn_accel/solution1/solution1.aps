@@ -2,18 +2,21 @@
     <clockList>
         <clock name="default" period="10" default="false"/>
     </clockList>
-    <name>
-        <value string="solution1"/>
-    </name>
-    <project>
-        <value string="cnn_accel"/>
-    </project>
-    <flowTarget value="vivado"/>
+    <config>
+        <config_compile complex-mul-dsp="0" pipeline_loops="1"/>
+    </config>
     <targetInfo>
         <TargetInfo value="xc7a200t:-sbg484:-1"/>
     </targetInfo>
     <libraryList>
         <library value="xilinx/artix7/artix7" name="DefaultPlatform"/>
     </libraryList>
+    <flowTarget value="vivado"/>
+    <name>
+        <value string="solution1"/>
+    </name>
+    <project>
+        <value string="cnn_accel"/>
+    </project>
 </AutoPilot:solution>
 

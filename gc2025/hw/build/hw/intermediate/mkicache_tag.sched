@@ -17,23 +17,6 @@ Rule: v_tags_0_capture_output
 Predicate: True
 Blocking rules: (none)
  
-Rule: v_tags_1_capture_output
-Predicate: True
-Blocking rules: (none)
- 
-Rule: v_tags_2_capture_output
-Predicate: True
-Blocking rules: (none)
- 
-Rule: v_tags_3_capture_output
-Predicate: True
-Blocking rules: (none)
- 
-Logical execution order: ma_request,
-			 v_tags_0_capture_output,
-			 v_tags_1_capture_output,
-			 v_tags_2_capture_output,
-			 v_tags_3_capture_output,
-			 mv_read_response
+Logical execution order: ma_request, v_tags_0_capture_output, mv_read_response
 
 ============================================

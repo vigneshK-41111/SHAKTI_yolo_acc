@@ -30,8 +30,7 @@ protocol.
 
 #include <stdint.h>
 #include "sspi.h"
-#include "boot.h"
-
+//#include "app_data.h"
 
 
 #define  WRITE_SIZE write_data[0]
@@ -83,18 +82,13 @@ void main()
 	int  data = 0, count = 0; //32 bits of data can be written at a time
 	uint32_t length = 11;
 	int* bram_address = (int*) 0x80000000;
-	printf("%s\n SHAKTI PROCESSORS \n",bootlogo);
-	printf("Booting on GANGA! hart 0 \n");
-	printf("GANGA is a SoC build on top of Artix7 100T.\n");
-	printf("The core belongs to Shakti C class, 64 bit.\n");
-	printf("Supported ISA: RV64IMACSU.\n");
+
 	sspi_init();
 	flash_init();
-
-	// printf("SPI init done\n");
-	// printf("\n Com status: %x", sspi_instance[0] -> comm_status);
-	// printf("\n FIFO status: %x", sspi_instance[0] -> fifo_status);
-	sspi_clear_fifo(sspi_instance[SSPI_INSTANCE]);
+	printf("SPI init done\n");
+	printf("\n Com status: %x", sspi_instance[0] -> comm_status);
+	printf("\n FIFO status: %x", sspi_instance[0] -> fifo_status);
+	// sspi_clear_fifo(sspi_instance[SSPI_INSTANCE]);
 	flash_register_read(0x35);
 	flash_register_read(0x05);
 	// flash_write_bank_register(0x17, 0x80);
@@ -132,16 +126,13 @@ void main()
 	printf("\n count value: %x", count);
 	while(1);
 	*/
-	if(0xFFFFFFFF != count)
-	{
-		printf("\n Valid data in flash. Read count: %x", count);
 	read_address += 4;
 	for(int i = 1; i < count; i++)
 	{
 		data = flash_read(read_address);
 		// printf("\n read data[%x]: %x", read_address, data);
 //		printf("\n Addr: %x; wdata: %x; rdata: %x", read_address, write_data[i], data);
-			delay_loop(10, 5);
+		delay_loop(20, 10);
 #if 0
 		if(data != write_data[i])
 			{
@@ -153,15 +144,8 @@ void main()
 	bram_address++;
 	read_address += 4;
 	}
-	// printf("\n\nread complete.\n");
+
+	printf("\n\nread complete.\n");
 	jumpToRAM();
-	asm volatile ("ebreak");
-	}
-	else
-	{
-		printf("\n No valid data in flash");
-		printf("\n Upload application data to flash using flash_write application");
-		while(1);
-	}
 
 }

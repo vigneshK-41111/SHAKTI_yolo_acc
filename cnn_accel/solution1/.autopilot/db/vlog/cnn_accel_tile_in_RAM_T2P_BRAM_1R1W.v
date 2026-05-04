@@ -9,18 +9,28 @@ module cnn_accel_tile_in_RAM_T2P_BRAM_1R1W (
     address0, ce0,
     d0, we0, 
     q0, 
+      
+    address1, ce1,
+    d1, we1, 
+    
      
     reset, clk);
 
 parameter DataWidth = 8;
-parameter AddressWidth = 10;
-parameter AddressRange = 1024;
+parameter AddressWidth = 4;
+parameter AddressRange = 16;
  
 input[AddressWidth-1:0] address0;
 input ce0;
 input[DataWidth-1:0] d0;
 input we0; 
 output reg[DataWidth-1:0] q0; 
+ 
+input[AddressWidth-1:0] address1;
+input ce1;
+input[DataWidth-1:0] d1;
+input we1; 
+
 
 input reset;
 input clk;
@@ -44,6 +54,19 @@ begin
 
     end
 end 
+ 
+  
+
+always @(posedge clk)  
+begin 
+    if (ce1) begin
+        if (we1) 
+            ram[address1] <= d1; 
+    end
+end 
+
+
+
  
  
 

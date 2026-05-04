@@ -1,15 +1,22 @@
 <AutoPilot:project xmlns:AutoPilot="com.autoesl.autopilot.project" projectType="C/C++" name="cnn_accel" ideType="classic" top="cnn_accel">
+    <Simulation argv="">
+        <SimFlow name="csim" setup="false" optimizeCompile="false" clean="false" ldflags="" mflags=""/>
+    </Simulation>
     <files>
+        <file name="2_cv1_conv_weight_bias.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="2_cv1_conv_weight.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="1_conv_weight_bias.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="1_conv_weight.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="0_conv_weight_bias.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="0_conv_weight.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="conv3_weight.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="conv2_weight.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="conv1_weight.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="cnn_accel.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
-    <Simulation argv="">
-        <SimFlow name="csim" setup="false" optimizeCompile="false" clean="false" ldflags="" mflags=""/>
-    </Simulation>
     <solutions>
         <solution name="solution1" status=""/>
+        <solution name="solution2" status=""/>
     </solutions>
 </AutoPilot:project>
 

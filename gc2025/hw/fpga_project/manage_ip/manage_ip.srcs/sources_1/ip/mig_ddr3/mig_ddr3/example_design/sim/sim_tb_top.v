@@ -92,12 +92,12 @@ module sim_tb_top;
                                      // # of memory Column Address bits.
    parameter CS_WIDTH              = 1;
                                      // # of unique CS outputs to memory.
-   parameter DM_WIDTH              = 2;
+   parameter DM_WIDTH              = 4;
                                      // # of DM (data mask)
-   parameter DQ_WIDTH              = 16;
+   parameter DQ_WIDTH              = 32;
                                      // # of DQ (data)
-   parameter DQS_WIDTH             = 2;
-   parameter DQS_CNT_WIDTH         = 1;
+   parameter DQS_WIDTH             = 4;
+   parameter DQS_CNT_WIDTH         = 2;
                                      // = ceil(log2(DQS_WIDTH))
    parameter DRAM_WIDTH            = 8;
                                      // # of DQ per DQS
@@ -130,7 +130,7 @@ module sim_tb_top;
    // The following parameters are multiplier and divisor factors for PLLE2.
    // Based on the selected design frequency these parameters vary.
    //***************************************************************************
-   parameter CLKIN_PERIOD          = 10000;
+   parameter CLKIN_PERIOD          = 5000;
                                      // Input Clock Period
 
 
@@ -164,7 +164,7 @@ module sim_tb_top;
    //***************************************************************************
    // System clock frequency parameters
    //***************************************************************************
-   parameter tCK                   = 2500;
+   parameter tCK                   = 2000;
                                      // memory tCK paramter.
                      // # = Clock Period in pS.
    parameter nCK_PER_CLK           = 4;
@@ -174,7 +174,7 @@ module sim_tb_top;
    //***************************************************************************
    // AXI4 Shim parameters
    //***************************************************************************
-   parameter C_S_AXI_ID_WIDTH              = 4;
+   parameter C_S_AXI_ID_WIDTH              = 3;
                                              // Width of all master and slave ID signals.
                                              // # = >= 1.
    parameter C_S_AXI_ADDR_WIDTH            = 30;
@@ -258,13 +258,15 @@ module sim_tb_top;
   
   wire                               init_calib_complete;
   wire                               tg_compare_error;
-  
+  wire [(CS_WIDTH*1)-1:0] ddr3_cs_n_fpga;
+    
   wire [DM_WIDTH-1:0]                ddr3_dm_fpga;
     
   wire [ODT_WIDTH-1:0]               ddr3_odt_fpga;
     
   
-  
+  reg [(CS_WIDTH*1)-1:0] ddr3_cs_n_sdram_tmp;
+    
   reg [DM_WIDTH-1:0]                 ddr3_dm_sdram_tmp;
     
   reg [ODT_WIDTH-1:0]                ddr3_odt_sdram_tmp;
@@ -343,7 +345,9 @@ module sim_tb_top;
   end
     
 
-  assign ddr3_cs_n_sdram =  {(CS_WIDTH*1){1'b0}};
+  always @( * )
+    ddr3_cs_n_sdram_tmp   <=  #(TPROP_PCB_CTRL) ddr3_cs_n_fpga;
+  assign ddr3_cs_n_sdram =  ddr3_cs_n_sdram_tmp;
     
 
   always @( * )
@@ -484,6 +488,8 @@ module sim_tb_top;
      .ddr3_ck_p            (ddr3_ck_p_fpga),
      .ddr3_ck_n            (ddr3_ck_n_fpga),
      .ddr3_cke             (ddr3_cke_fpga),
+     .ddr3_cs_n            (ddr3_cs_n_fpga),
+    
      .ddr3_dm              (ddr3_dm_fpga),
     
      .ddr3_odt             (ddr3_odt_fpga),

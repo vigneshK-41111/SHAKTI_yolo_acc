@@ -64,7 +64,7 @@ Sequenced before (restricted): common_ma_update_eEpoch,
 Conflicts: common_ma_reset_done
  
 Method: icache_to_icache_get
-Ready signal: ff_to_cache_rv.port1__read[36]
+Ready signal: ff_to_cache_rv.port1__read[35]
 Conflict-free: common_ma_update_eEpoch,
 	       common_ma_update_wEpoch,
 	       common_ma_flush,
@@ -191,9 +191,9 @@ Predicate: wr_reset_sequence_done.whas &&
 Blocking rules: (none)
  
 Rule: rl_gen_next_pc
-Predicate: (! ff_to_cache_rv.port0__read[36]) &&
-	   wr_reset_sequence_done.whas &&
-	   bpu.RDY_mav_prediction_response && tx_tostage1_w_rdy.wget &&
+Predicate: bpu.RDY_mav_prediction_response &&
+	   (! ff_to_cache_rv.port0__read[35]) &&
+	   wr_reset_sequence_done.whas && tx_tostage1_w_rdy.wget &&
 	   tx_tostage1_w_notFull.wget && (! rg_initialize) &&
 	   wr_reset_sequence_done.wget
 Blocking rules: (none)

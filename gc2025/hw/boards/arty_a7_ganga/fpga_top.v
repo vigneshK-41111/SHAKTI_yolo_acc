@@ -307,8 +307,8 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 28)
     wire [13-1 : 0] eth_master_awaddr;
     wire eth_master_m_awready_awready;
     wire eth_master_wvalid;
-    wire [64-1 : 0] eth_master_wdata;
-    wire [(64/8)-1 : 0] eth_master_wstrb;
+    wire [32-1 : 0] eth_master_wdata;
+    wire [(32/8)-1 : 0] eth_master_wstrb;
     wire eth_master_m_wready_wready;
     wire eth_master_m_bvalid_bvalid;
     wire [1:0] eth_master_m_bvalid_bresp;
@@ -318,7 +318,7 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 28)
     wire eth_master_m_arready_arready;
     wire eth_master_m_rvalid_rvalid;
     wire [1 : 0] eth_master_m_rvalid_rresp;
-    wire [64-1 : 0] eth_master_m_rvalid_rdata;
+    wire [32-1 : 0] eth_master_m_rvalid_rdata;
     wire eth_master_rready;
   // --------- Address width truncation and Reset generation for SoC ------------ //
   wire [31:0] temp_s_axi_awaddr, temp_s_axi_araddr;
@@ -543,9 +543,9 @@ module fpga_top#( parameter AXI_ID_WIDTH = 4, parameter AXI_ADDR_WIDTH = 28)
        .spi0_io_sclk_out(spi0_io_sclk_out),
         .spi0_io_sclk_outen(spi0_io_sclk_outen),
         .spi0_io_sclk_in_val(spi0_io_sclk_in_val),
-        .spi0_io_ncs_out0(spi0_io_nss_out),
-        .spi0_io_ncs_outen0(spi0_io_nss_outen),
-        .spi0_io_ncs_in0_val(spi0_io_nss_in_val),
+        .spi0_io_ncs_out(spi0_io_nss_out),
+        .spi0_io_ncs_outen(spi0_io_nss_outen),
+        .spi0_io_ncs_in_val(spi0_io_nss_in_val),
 	      .spi0_io_miso_out(spi0_io_miso_out),
 	      .spi0_io_miso_outen(spi0_io_miso_outen),
 	      .spi0_io_miso_in_val(spi0_io_miso_in_val),

@@ -14,9 +14,9 @@ if { [get_ips -quiet clk_converter] eq "" } {
 }
 
 set_property -dict [list \
-  CONFIG.DATA_WIDTH $bus_width \
+  CONFIG.DATA_WIDTH {64} \
   CONFIG.ID_WIDTH {4} \
-  CONFIG.ADDR_WIDTH {30} ] [get_ips clk_converter]
+  CONFIG.ADDR_WIDTH {29} ] [get_ips clk_converter]
 generate_target {instantiation_template} [get_ips clk_converter]
 create_ip_run [get_ips clk_converter]
 #launch_run clk_converter_synth_1

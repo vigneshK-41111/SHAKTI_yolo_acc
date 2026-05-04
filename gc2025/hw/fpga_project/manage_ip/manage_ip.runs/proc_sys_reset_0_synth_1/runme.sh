@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.runs/proc_sys_reset_0_synth_1'
+HD_PWD='/scratch1/iot/new/gc2025/hw/fpga_project/manage_ip/manage_ip.runs/proc_sys_reset_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

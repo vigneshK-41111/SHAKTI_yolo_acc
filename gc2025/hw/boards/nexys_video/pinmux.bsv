@@ -170,15 +170,15 @@ package pinmux;
       // Bi-directional functions also have an output-enable (which
       // again comes *in* from the peripheral)
             interface PeripheralSideUART uart1;
-            interface PeripheralSideUART uart2;
+           interface PeripheralSideUART uart2;
             interface PeripheralSideMSPI mspi;
             interface PeripheralSideGPIOA gpioa;
-            interface PeripheralSidePWM pwm0;
-            interface PeripheralSidePWM pwm1;
-            interface PeripheralSidePWM pwm2;
-            interface PeripheralSidePWM pwm3;
-            interface PeripheralSidePWM pwm4;
-            interface PeripheralSidePWM pwm5;
+           interface PeripheralSidePWM pwm0;
+           interface PeripheralSidePWM pwm1;
+           interface PeripheralSidePWM pwm2;
+           interface PeripheralSidePWM pwm3;
+           interface PeripheralSidePWM pwm4;
+           interface PeripheralSidePWM pwm5;
       endinterface
 
 
@@ -352,27 +352,27 @@ package pinmux;
 
       // following wires capture signals to IO CELL if pwm-0 is
       // allotted to it
-      Wire#(Bit#(1)) wrpwm0_out<-mkDWire(0);
+//      Wire#(Bit#(1)) wrpwm0_out<-mkDWire(0);
 
       // following wires capture signals to IO CELL if pwm-1 is
       // allotted to it
-      Wire#(Bit#(1)) wrpwm1_out<-mkDWire(0);
+//      Wire#(Bit#(1)) wrpwm1_out<-mkDWire(0);
 
       // following wires capture signals to IO CELL if pwm-2 is
       // allotted to it
-      Wire#(Bit#(1)) wrpwm2_out<-mkDWire(0);
+//      Wire#(Bit#(1)) wrpwm2_out<-mkDWire(0);
 
       // following wires capture signals to IO CELL if pwm-3 is
       // allotted to it
-      Wire#(Bit#(1)) wrpwm3_out<-mkDWire(0);
+//      Wire#(Bit#(1)) wrpwm3_out<-mkDWire(0);
 
       // following wires capture signals to IO CELL if pwm-4 is
       // allotted to it
-      Wire#(Bit#(1)) wrpwm4_out<-mkDWire(0);
+//      Wire#(Bit#(1)) wrpwm4_out<-mkDWire(0);
 
       // following wires capture signals to IO CELL if pwm-5 is
       // allotted to it
-      Wire#(Bit#(1)) wrpwm5_out<-mkDWire(0);
+//      Wire#(Bit#(1)) wrpwm5_out<-mkDWire(0);
 
 
       /*====== This where the muxing starts for each io-cell======*/
@@ -463,29 +463,29 @@ package pinmux;
       // outen muxer for cell idx 9
       cell9_mux_outen=
 			wrcell9_mux==0?wrgpioa_a2_outen: // bi-directional
-			wrcell9_mux==1?val1: // uart2_rx is an input
+//			wrcell9_mux==1?val1: // uart2_rx is an input
 			wrcell9_mux==2?val0:
 			val0; // unused
 
       // priority-in-muxer for cell idx 2
       rule assign_wrgpioa_a2_in_on_cell9(wrcell9_mux==0);
         wrgpioa_a2_in<=cell9_mux_in;
-        wruart2_rx<=val1;
+//        wruart2_rx<=val1;
       endrule
 
       rule assign_wruart2_rx_on_cell9(wrcell9_mux==1);
         wrgpioa_a2_in<=val0;
-        wruart2_rx<=cell9_mux_in;
+//        wruart2_rx<=cell9_mux_in;
       endrule
 
       rule assign_wr_on_cell9_2(wrcell9_mux==2);
         wrgpioa_a2_in<=val0;
-        wruart2_rx<=val1;
+//        wruart2_rx<=val1;
       endrule
 
       rule assign_wr_on_cell9_3(wrcell9_mux==3);
         wrgpioa_a2_in<=val0;
-        wruart2_rx<=val1;
+//        wruart2_rx<=val1;
       endrule
 
       // --------------------
@@ -494,14 +494,14 @@ package pinmux;
       // output muxer for cell idx 10
       cell10_mux_out=
 			wrcell10_mux==0?wrgpioa_a3_out:
-			wrcell10_mux==1?wruart2_tx: // uart2_tx is an output
-			wrcell10_mux==2?wrpwm0_out: // pwm0 is a output
+//			wrcell10_mux==1?wruart2_tx: // uart2_tx is an output
+	//		wrcell10_mux==2?1'b0;//wrpwm0_out: // pwm0 is a output
 			val0; // unused
 
       // outen muxer for cell idx 3
       cell10_mux_outen=
 			wrcell10_mux==0?wrgpioa_a3_outen: // bi-directional
-			wrcell10_mux==1?val0: // uart2_tx is an output
+//			wrcell10_mux==1?val0: // uart2_tx is an output
 			wrcell10_mux==2?val0: // pwm0 is a output
 			val0; // unused
 
@@ -530,7 +530,7 @@ package pinmux;
       cell12_mux_out=
 			wrcell12_mux==0?wrgpioa_a5_out:
 			wrcell12_mux==1?val0: // unused
-			wrcell12_mux==2?wrpwm1_out:
+//			wrcell12_mux==2?wrpwm1_out:
 			val0; // unused
 
       // outen muxer for cell idx 12
@@ -564,7 +564,7 @@ package pinmux;
       cell13_mux_out=
 			wrcell13_mux==0?wrgpioa_a6_out:
 			wrcell13_mux==1?val0: // unused
-			wrcell13_mux==2?wrpwm2_out: // pwm2_out is an output
+//			wrcell13_mux==2?wrpwm2_out: // pwm2_out is an output
 			val0; // unused
 
       // outen muxer for cell idx 13
@@ -598,7 +598,7 @@ package pinmux;
       cell16_mux_out=
 			wrcell16_mux==0?wrgpioa_a9_out:
 			wrcell16_mux==1?val0: // unused
-			wrcell16_mux==2?wrpwm3_out: // pwm3_out is an output
+//			wrcell16_mux==2?wrpwm3_out: // pwm3_out is an output
 			val0; // unused
 
       // outen muxer for cell idx 16
@@ -632,7 +632,7 @@ package pinmux;
       cell17_mux_out=
 			wrcell17_mux==0?wrgpioa_a10_out:
 			wrcell17_mux==1?wrmspi2_nss_out: // mspi nss is an output
-			wrcell17_mux==2?wrpwm4_out: // pwm4_out is an output
+//			wrcell17_mux==2?wrpwm4_out: // pwm4_out is an output
 			val0; // unused
 
       // outen muxer for cell idx 17
@@ -670,7 +670,7 @@ package pinmux;
       cell18_mux_out=
 			wrcell18_mux==0?wrgpioa_a11_out:
 			wrcell18_mux==1?wrmspi2_mosi_out:
-			wrcell18_mux==2?wrpwm5_out:
+//			wrcell18_mux==2?wrpwm5_out:
 			val0; // unused
 
       // outen muxer for cell idx 18
@@ -917,18 +917,18 @@ package pinmux;
             endinterface;
         endinterface;
 
-        interface uart2 = interface PeripheralSideUART
-            interface tx = interface Put
-              method Action put(Bit#(1) in);
-                wruart2_tx<=in;
-              endmethod
-            endinterface;
-            interface rx = interface Get
-              method ActionValue#(Bit#(1)) get;
-                return wruart2_rx;
-              endmethod
-            endinterface;
-        endinterface;
+//        interface uart2 = interface PeripheralSideUART
+//            interface tx = interface Put
+//              method Action put(Bit#(1) in);
+//                wruart2_tx<=in;
+//              endmethod
+//            endinterface;
+//            interface rx = interface Get
+//              method ActionValue#(Bit#(1)) get;
+//                return wruart2_rx;
+//              endmethod
+//            endinterface;
+//        endinterface;
 
         interface mspi = interface PeripheralSideMSPI
             interface clk_out = interface Put
@@ -1058,53 +1058,53 @@ package pinmux;
 
         endinterface;
 
-        interface pwm0 = interface PeripheralSidePWM
-            interface out = interface Put
-              method Action put(Bit#(1) in);
-                wrpwm0_out<=in;
-              endmethod
-            endinterface;
-        endinterface;
-
-        interface pwm1 = interface PeripheralSidePWM
-            interface out = interface Put
-              method Action put(Bit#(1) in);
-                wrpwm1_out<=in;
-              endmethod
-            endinterface;
-        endinterface;
-
-        interface pwm2 = interface PeripheralSidePWM
-            interface out = interface Put
-              method Action put(Bit#(1) in);
-                wrpwm2_out<=in;
-              endmethod
-            endinterface;
-        endinterface;
-
-        interface pwm3 = interface PeripheralSidePWM
-            interface out = interface Put
-              method Action put(Bit#(1) in);
-                wrpwm3_out<=in;
-              endmethod
-            endinterface;
-        endinterface;
-
-        interface pwm4 = interface PeripheralSidePWM
-            interface out = interface Put
-              method Action put(Bit#(1) in);
-                wrpwm4_out<=in;
-              endmethod
-            endinterface;
-        endinterface;
-
-        interface pwm5 = interface PeripheralSidePWM
-            interface out = interface Put
-              method Action put(Bit#(1) in);
-                wrpwm5_out<=in;
-              endmethod
-            endinterface;
-        endinterface;
+//        interface pwm0 = interface PeripheralSidePWM
+//            interface out = interface Put
+//              method Action put(Bit#(1) in);
+//                wrpwm0_out<=in;
+//              endmethod
+//            endinterface;
+//        endinterface;
+//
+//        interface pwm1 = interface PeripheralSidePWM
+//            interface out = interface Put
+//              method Action put(Bit#(1) in);
+//                wrpwm1_out<=in;
+//              endmethod
+//            endinterface;
+//        endinterface;
+//
+//        interface pwm2 = interface PeripheralSidePWM
+//            interface out = interface Put
+//              method Action put(Bit#(1) in);
+//                wrpwm2_out<=in;
+//              endmethod
+//            endinterface;
+//        endinterface;
+//
+//        interface pwm3 = interface PeripheralSidePWM
+//            interface out = interface Put
+//              method Action put(Bit#(1) in);
+//                wrpwm3_out<=in;
+//              endmethod
+//            endinterface;
+//        endinterface;
+//
+//        interface pwm4 = interface PeripheralSidePWM
+//            interface out = interface Put
+//              method Action put(Bit#(1) in);
+//                wrpwm4_out<=in;
+//              endmethod
+//            endinterface;
+//        endinterface;
+//
+//        interface pwm5 = interface PeripheralSidePWM
+//            interface out = interface Put
+//              method Action put(Bit#(1) in);
+//                wrpwm5_out<=in;
+//              endmethod
+//            endinterface;
+//        endinterface;
 
 
       endinterface;

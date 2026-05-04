@@ -6,7 +6,6 @@ isb_sizes:
     isb_s4s5: 8
 num_harts: 1
 merged_rf: False
-hardfloat: False
 s_extension:
   itlb_size: 4
   dtlb_size: 4
@@ -49,23 +48,14 @@ dcache_configuration:
   one_hot_select: false
   rwports: '1rw'
 reset_pc: 4096
-bus_protocol_configuration:
-  bus_protocol: AXI4
-  bus_width: 64
-  axi4_transactor_fifo_depth: 2
-  axi4_internal_fifo_depth: 2
-  axi4_lite_transactor_fifo_depth: 2
-  axi4_lite_internal_fifo_depth: 2
-  axi4_id_width: 4
-  userspace_width: 0
+bus_protocol: AXI4
 bsc_compile_options:
-  test_memory_size: 268435456
+  test_memory_size: 33554432
   assertions: true
   ovl_assertions: False
   sva_assertions: False
   ovl_path: ""
   trace_dump: false
-  etrace_port: False
   compile_target: 'fpga'
   suppress_warnings: ["none"]
   verilog_dir: build/hw/verilog

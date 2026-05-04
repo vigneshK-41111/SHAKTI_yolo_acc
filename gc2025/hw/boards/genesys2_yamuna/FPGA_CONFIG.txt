@@ -1,0 +1,15 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+:::::::::::::::::::::::: FPGA Configuration for GENESYS 2 BOARD ::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+GENESYS 2 FPGA Configuration done in four ways: 
+    1.  it can be programmed through JTAG (port number J17) to program the FPGA any time the power is on.
+    2.  it can be programmed through the nonvolatile serial (SPI) Flash device can be transferred to the FPGA.
+    3.  it can be programmed through micro SD Card.
+    4.  it can be programmed through USB mass-storage device (pen-drive) attached to the USB HOST port.
+
+    > FPGA programming can be done in different ways via JP4 (for media selection) & JP5 (for mode selection) ports.
+
+    > Reffer to GENESYS 2 refference manual page 7 & 8 for better understanding about JP4 & JP5.

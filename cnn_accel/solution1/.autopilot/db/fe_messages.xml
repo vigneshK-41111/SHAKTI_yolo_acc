@@ -1,72 +1,133 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/scratch1/iot/run_hls.tcl:18:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaContext="directive" ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=cnn_accel" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:15:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:16:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=size bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:18:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=input bundle=gmem depth=(416 * 416 * 16) offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:19:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=output bundle=gmem depth=(416 * 416 * 16) offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:21:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_ctrl_hs port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:29:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=tile_in type=ram_t2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="conv_layer" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:32:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=tile_out type=ram_t2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="conv_layer" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=tile_in type=ram_t2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:36:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=416" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="conv_layer" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=tile_out type=ram_t2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:39:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=416" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:45:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="conv_layer" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:44:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:66:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="conv_layer" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:67:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:98:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="conv_layer" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:85:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/scratch1/iot/run_hls.tcl:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=cnn_accel" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="cnn_accel.cpp:69:19" msg_body="Loop 'VITIS_LOOP_69_7' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_69_7"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:125:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=input bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="cnn_accel.cpp:93:43" msg_body="Loop 'VITIS_LOOP_93_10' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_93_10"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:126:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=output bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:13:0" msg_body="Unrolling loop 'VITIS_LOOP_69_7' (cnn_accel.cpp:69:19) in function 'cnn_accel' completely with a factor of 16">
-        <args Factor="16" LoopLoc="cnn_accel.cpp:69:19" LoopName="VITIS_LOOP_69_7"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:127:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=size" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:13:0" msg_body="Unrolling loop 'VITIS_LOOP_93_10' (cnn_accel.cpp:93:43) in function 'cnn_accel' completely with a factor of 16">
-        <args Factor="16" LoopLoc="cnn_accel.cpp:93:43" LoopName="VITIS_LOOP_93_10"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cnn_accel.cpp:128:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cnn_accel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="cnn_accel.cpp:28:12" msg_body="array_partition dim=3 type=complete  variable=tile_in 1 cnn_accel cnn_accel.cpp:28:12 cnn_accel.cpp:67:9tile_in">
-        <args PragmaFunction="cnn_accel" PragmaIsAuto="1" PragmaOptions="dim=3 type=complete  variable=tile_in" PragmaSrcLoc="cnn_accel.cpp:67:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 67 Column 9" PragmaType="array_partition" VarName="tile_in" varLoc="cnn_accel.cpp:28:12"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="cnn_accel.cpp:50:42" msg_body="Loop 'VITIS_LOOP_50_6' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_50_6"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:67:9" msg_body="Inferring pragma 'array_partition type=complete dim=3' for array 'tile_in' due to pipeline pragma">
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="cnn_accel.cpp:70:47" msg_body="Loop 'VITIS_LOOP_70_10' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_70_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="cnn_accel.cpp:71:51" msg_body="Loop 'VITIS_LOOP_71_11' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_71_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="cnn_accel.cpp:72:55" msg_body="Loop 'VITIS_LOOP_72_12' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_72_12"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="cnn_accel.cpp:106:48" msg_body="Loop 'VITIS_LOOP_106_15' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_106_15"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_71_11' (cnn_accel.cpp:71:51) in function 'conv_layer' completely with a factor of 3">
+        <args Factor="3" LoopLoc="cnn_accel.cpp:71:51" LoopName="VITIS_LOOP_71_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_72_12' (cnn_accel.cpp:72:55) in function 'conv_layer' completely with a factor of 3">
+        <args Factor="3" LoopLoc="cnn_accel.cpp:72:55" LoopName="VITIS_LOOP_72_12"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_106_15' (cnn_accel.cpp:106:48) in function 'conv_layer' completely with a factor of 8">
+        <args Factor="8" LoopLoc="cnn_accel.cpp:106:48" LoopName="VITIS_LOOP_106_15"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_50_6' (cnn_accel.cpp:50:42) in function 'conv_layer' completely with a factor of 32">
+        <args Factor="32" LoopLoc="cnn_accel.cpp:50:42" LoopName="VITIS_LOOP_50_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_70_10' (cnn_accel.cpp:70:47) in function 'conv_layer' completely with a factor of 32">
+        <args Factor="32" LoopLoc="cnn_accel.cpp:70:47" LoopName="VITIS_LOOP_70_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_50_6' (cnn_accel.cpp:50:42) in function 'conv_layer' completely with a factor of 16">
+        <args Factor="16" LoopLoc="cnn_accel.cpp:50:42" LoopName="VITIS_LOOP_50_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_70_10' (cnn_accel.cpp:70:47) in function 'conv_layer' completely with a factor of 16">
+        <args Factor="16" LoopLoc="cnn_accel.cpp:70:47" LoopName="VITIS_LOOP_70_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_50_6' (cnn_accel.cpp:50:42) in function 'conv_layer' completely with a factor of 3">
+        <args Factor="3" LoopLoc="cnn_accel.cpp:50:42" LoopName="VITIS_LOOP_50_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cnn_accel.cpp:27:0" msg_body="Unrolling loop 'VITIS_LOOP_70_10' (cnn_accel.cpp:70:47) in function 'conv_layer' completely with a factor of 3">
+        <args Factor="3" LoopLoc="cnn_accel.cpp:70:47" LoopName="VITIS_LOOP_70_10"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="cnn_accel.cpp:80:48" msg_body="The program may have out of bound array access on variable 'w_2_cv1_conv_weight'"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="cnn_accel.cpp:62:34" msg_body="Automatically disabling loop flattening for loop 'VITIS_LOOP_62_7'.">
+        <args LoopName="VITIS_LOOP_62_7"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="cnn_accel.cpp:62:34" msg_body="loop_flatten 0 1 conv_layer cnn_accel.cpp:62:34VITIS_LOOP_62_7 cnn_accel.cpp:62:34">
+        <args LoopLoc="cnn_accel.cpp:62:34" LoopLoc-DebugLoc="File cnn_accel.cpp Line 62 Column 34" LoopName="VITIS_LOOP_62_7" PragmaFunction="conv_layer" PragmaIsAuto="1" PragmaOptions="0" PragmaSrcLoc="cnn_accel.cpp:62:34" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 62 Column 34" PragmaType="loop_flatten"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="./0_conv_weight.h:5:0" msg_body="array_partition dim=1 type=cyclic factor=27 variable=w_0_conv_weight 1 cnn_accel ./0_conv_weight.h:5:0 cnn_accel.cpp:66:9w_0_conv_weight">
+        <args PragmaFunction="cnn_accel" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=27 variable=w_0_conv_weight" PragmaSrcLoc="cnn_accel.cpp:66:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 66 Column 9" PragmaType="array_partition" VarName="w_0_conv_weight" varLoc="./0_conv_weight.h:5:0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:66:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=27 dim=1' for array 'w_0_conv_weight' due to pipeline pragma">
+        <args Dim="1" Factor="27" Mode="cyclic" Name="w_0_conv_weight" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="./1_conv_weight.h:5:0" msg_body="array_partition dim=1 type=cyclic factor=72 variable=w_1_conv_weight 1 cnn_accel ./1_conv_weight.h:5:0 cnn_accel.cpp:66:9w_1_conv_weight">
+        <args PragmaFunction="cnn_accel" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=72 variable=w_1_conv_weight" PragmaSrcLoc="cnn_accel.cpp:66:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 66 Column 9" PragmaType="array_partition" VarName="w_1_conv_weight" varLoc="./1_conv_weight.h:5:0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:66:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=72 dim=1' for array 'w_1_conv_weight' due to pipeline pragma">
+        <args Dim="1" Factor="72" Mode="cyclic" Name="w_1_conv_weight" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="array_partition dim=1 type=cyclic factor=3 variable=tile_in 1 conv_layer cnn_accel.cpp:31:9 cnn_accel.cpp:66:9tile_in">
+        <args PragmaFunction="conv_layer" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=3 variable=tile_in" PragmaSrcLoc="cnn_accel.cpp:66:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 66 Column 9" PragmaType="array_partition" VarName="tile_in" varLoc="cnn_accel.cpp:31:9"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:66:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=3 dim=1' for array 'tile_in' due to pipeline pragma">
+        <args Dim="1" Factor="3" Mode="cyclic" Name="tile_in" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="array_partition dim=3 type=cyclic factor=3 variable=tile_in 1 conv_layer cnn_accel.cpp:31:9 cnn_accel.cpp:66:9tile_in">
+        <args PragmaFunction="conv_layer" PragmaIsAuto="1" PragmaOptions="dim=3 type=cyclic factor=3 variable=tile_in" PragmaSrcLoc="cnn_accel.cpp:66:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 66 Column 9" PragmaType="array_partition" VarName="tile_in" varLoc="cnn_accel.cpp:31:9"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:66:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=3 dim=3' for array 'tile_in' due to pipeline pragma">
+        <args Dim="3" Factor="3" Mode="cyclic" Name="tile_in" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="array_partition dim=2 type=cyclic factor=3 variable=tile_in 1 conv_layer cnn_accel.cpp:31:9 cnn_accel.cpp:66:9tile_in">
+        <args PragmaFunction="conv_layer" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=3 variable=tile_in" PragmaSrcLoc="cnn_accel.cpp:66:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 66 Column 9" PragmaType="array_partition" VarName="tile_in" varLoc="cnn_accel.cpp:31:9"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:66:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=3 dim=2' for array 'tile_in' due to pipeline pragma">
+        <args Dim="2" Factor="3" Mode="cyclic" Name="tile_in" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="array_partition dim=3 type=complete  variable=tile_in 1 conv_layer cnn_accel.cpp:31:9 cnn_accel.cpp:66:9tile_in">
+        <args PragmaFunction="conv_layer" PragmaIsAuto="1" PragmaOptions="dim=3 type=complete  variable=tile_in" PragmaSrcLoc="cnn_accel.cpp:66:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 66 Column 9" PragmaType="array_partition" VarName="tile_in" varLoc="cnn_accel.cpp:31:9"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:66:9" msg_body="Inferring pragma 'array_partition type=complete dim=3' for array 'tile_in' due to pipeline pragma">
         <args Dim="3" Mode="complete" Name="tile_in" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="array_partition dim=3 type=complete  variable=tile_out 1 cnn_accel cnn_accel.cpp:31:9 cnn_accel.cpp:67:9tile_out">
-        <args PragmaFunction="cnn_accel" PragmaIsAuto="1" PragmaOptions="dim=3 type=complete  variable=tile_out" PragmaSrcLoc="cnn_accel.cpp:67:9" PragmaSrcLoc-DebugLoc="File cnn_accel.cpp Line 67 Column 9" PragmaType="array_partition" VarName="tile_out" varLoc="cnn_accel.cpp:31:9"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="./1_conv_weight.h:5:0" msg_body="Applying array_partition to 'w_1_conv_weight': Cyclic partitioning with factor 72 on dimension 1.">
+        <args Dim="1" Factor="72" Mode="Cyclic" UOName="w_1_conv_weight"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="cnn_accel.cpp:67:9" msg_body="Inferring pragma 'array_partition type=complete dim=3' for array 'tile_out' due to pipeline pragma">
-        <args Dim="3" Mode="complete" Name="tile_out" PragmaType="array_partition"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="./0_conv_weight.h:5:0" msg_body="Applying array_partition to 'w_0_conv_weight': Cyclic partitioning with factor 27 on dimension 1.">
+        <args Dim="1" Factor="27" Mode="Cyclic" UOName="w_0_conv_weight"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="cnn_accel.cpp:28:12" msg_body="Applying array_partition to 'tile_in': Complete partitioning on dimension 3.">
-        <args Dim="3" Mode="Complete" UOName="tile_in"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="Applying array_partition to 'tile_in': Cyclic partitioning with factor 3 on dimension 1. Cyclic partitioning with factor 3 on dimension 2. Cyclic partitioning with factor 3 on dimension 3.">
+        <args Dim="islist 1 2 3" Factor="islist 3 3 3" Mode="islist Cyclic Cyclic Cyclic" UOName="tile_in"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="Applying array_partition to 'tile_out': Complete partitioning on dimension 3.">
-        <args Dim="3" Mode="Complete" UOName="tile_out"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="cnn_accel.cpp:31:9" msg_body="Applying array_partition to 'tile_in': Cyclic partitioning with factor 3 on dimension 1. Cyclic partitioning with factor 3 on dimension 2. Complete partitioning on dimension 3.">
+        <args Dim="islist 1 2 3" Factor="islist 3 3" Mode="islist Cyclic Cyclic Complete" UOName="tile_in"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

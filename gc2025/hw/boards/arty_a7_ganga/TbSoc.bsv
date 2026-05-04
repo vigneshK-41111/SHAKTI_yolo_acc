@@ -29,47 +29,42 @@ Details:
 --------------------------------------------------------------------------------------------------
 */
 package TbSoc;
+  import Vector :: *;
   import Soc:: *;
+  import DebugSoc :: *;
   import Clocks::*;
   import GetPut:: *;
 	import Semi_FIFOF:: *;
 	import AXI4_Types:: *;
 	import AXI4_Fabric:: *;
   import uart::*;
-  import ccore_types::*;
-  import csr_types :: *;
-  import csrbox_decoder :: *;
-  import csrbox :: *;
-  import Vector :: * ;
+	import ccore_types::*;
   `include "ccore_params.defines"
   `include "Logger.bsv"
   `include "Soc.defines"
   `include "csrbox.defines"
   import device_common::*;
   import DReg :: *;
-  import Connectable :: *;
   import bram :: *;
+  import Connectable :: *;
   import bootrom :: *;
   import i2c :: * ;
   import pinmux :: * ;
-  import pinmux_axi4lite :: * ;
   import sspi :: * ;
-  import gptimer::*;
-  import TriState :: * ;
-`ifdef debug
-  import DebugSoc     :: * ;
-`endif
+  import csrbox_decoder :: *;
+  import csrbox :: *;
+  import csr_types :: *;
 
-  import pipe_ifcs::*;
-  
+  import TriState :: * ;
+
 `define limit 'd10000000
 
 `ifdef openocd
   import "BDPI" function ActionValue #(int) init_rbb_jtag(Bit#(1) dummy);
   import "BDPI" function ActionValue #(Bit #(8))get_frame(int client_fd);
   import "BDPI" function Action send_tdo(Bit #(1) tdo , int client_fd);
-  import "BDPI" function ActionValue #(int) init_rbb_jtag_loop(int socket_fd);
 `endif
+
     function Bit#(`xlen) fn_atomic_op (Bit#(5) op,  Bit#(`xlen) rs2,  Bit#(`xlen) loaded);
       Bit#(`xlen) op1 = loaded;
       Bit#(`xlen) op2 = rs2;
@@ -109,34 +104,47 @@ package TbSoc;
         return False;
     endfunction
   `endif
+
+
   (*synthesize*)
   module mkTbSoc(Empty);
 
-    let def_clk <- exposeCurrentClock;
-    let def_rst <- exposeCurrentReset;
-
+  `ifdef debug
     MakeClockIfc#(Bit#(1)) tck_clk <-mkUngatedClock(1);
     MakeResetIfc trst <- mkReset(0,False,tck_clk.new_clk);
-
-  `ifdef debug
-    Ifc_DebugSoc soc <- mkDebugSoc(tck_clk.new_clk, trst.new_rst, def_clk);
-  `else
-    Ifc_Soc soc <- mkSoc();
   `endif
 
-    Ifc_bram_axi4#(`paddr,`axi4_id_width, `buswidth, `USERSPACE, `Addr_space) bram <- mkbram_axi4(`MemoryBase,
-                                                "code.mem", "MainMEM");
-    Ifc_bram_axi4lite#(`paddr, `buswidth, `USERSPACE,  15) eth0 <- mkbram_axi4lite(`EthBase, "boot1.mem","BRAM");
-  
+    Ifc_bram_axi4#(`paddr, XLEN, 0,  25) bram <- mkbram_axi4('h8000_0000, "code.mem","BRAM");
+    Ifc_bram_axi4lite#(`paddr, 32, 0,  15) xbram <- mkbram_axi4lite('h4_1000, "boot1.mem","BRAM");
+    Ifc_bram_axi4lite#(`paddr, 32, 0,  15) eth0 <- mkbram_axi4lite('h4_1000, "boot1.mem","BRAM");
+
+    /*doc:wire: */
+    Wire#(Bit#(32)) wr_reset_pc <- mkDWire(`MemoryBase);
+    rule set_reset_pc;
+      let bootmode <- $test$plusargs("debugmode");
+      if(bootmode)
+        wr_reset_pc <= `DebugBase;
+    endrule
+
+
+  `ifdef debug
+    Ifc_DebugSoc soc <- mkDebugSoc(tck_clk.new_clk, trst.new_rst);
+  `else
+    Ifc_Soc soc <- mkSoc;
+  `endif
+
   `ifdef rtldump
     `include "csr_probe.bsv"
   `endif
+
 		// ------------------- SDRAM connections ----------------------------------//
     mkConnection(soc.chip_io.mem_master, bram.slave);
+    mkConnection(soc.chip_io.xadc_master, xbram.slave);
     mkConnection(soc.chip_io.eth_master, eth0.slave);
 
-    UserInterface#(`paddr,`buswidth,16) uart0 <- mkuart_user(5,0,0);
-    UserInterface#(`paddr,`buswidth,16) uart1 <- mkuart_user(5,0,0);
+    UserInterface#(`paddr,XLEN,16) uart0 <- mkuart_user(5,0,0);
+    UserInterface#(`paddr,XLEN,16) uart1 <- mkuart_user(5,0,0);
+    UserInterface#(`paddr,XLEN,16) uart2 <- mkuart_user(5,0,0);
     Reg#(Bool) rg_read_rx<- mkDRegA(False);
 
     Reg#(Bit#(5)) rg_cnt <-mkRegA(0);
@@ -157,7 +165,6 @@ package TbSoc;
   `ifdef rtldump
   Reg#(Bit#(`xlen)) rg_prev_mstatus <- mkReg(0);
   Reg#(Bool) rg_prev_mstatus_valid <- mkReg(False);
-
   Bit#(XLEN) lv_misa_init = 0;
   `ifdef RV64
     lv_misa_init[63:62] = 2'b10;
@@ -224,39 +231,6 @@ package TbSoc;
       uart0.io.sin(soc.chip_io.uart0_io.sout);
     endrule
    
-    rule connect_io_pins;
-      soc.chip_io.iocell_io.io12_cell_in(1'b0);
-      soc.chip_io.iocell_io.io13_cell_in(1'b0);
-      soc.chip_io.iocell_io.io16_cell_in(1'b0);
-      soc.chip_io.iocell_io.io17_cell_in(1'b1);
-      soc.chip_io.iocell_io.io18_cell_in(1'b1);
-      soc.chip_io.iocell_io.io19_cell_in(1'b1);
-      soc.chip_io.iocell_io.io20_cell_in(1'b1);
-      soc.chip_io.iocell_io.io7_cell_in(1'b0);
-      soc.chip_io.iocell_io.io9_cell_in(1'b0);
-      soc.chip_io.iocell_io.io10_cell_in(1'b0);
-    endrule
-
-    rule connect_spi_connection;
-      soc.chip_io.spi0_io.miso_in(1'b1);
-      soc.chip_io.spi0_io.mosi_in(1'b1);
-      soc.chip_io.spi0_io.ncs_in0(1'b1);
-      soc.chip_io.spi0_io.sclk_in(1'b1);
-    endrule
-
-    rule connect_gpio_connection;
-      soc.chip_io.gpio_14(1'b0);
-      soc.chip_io.gpio_15(1'b0);
-      soc.chip_io.gpio_4(1'b0);
-      soc.chip_io.gpio_7(1'b0);
-      soc.chip_io.gpio_8(1'b0);
-    endrule
-
-    rule connect_gpt_connection;
-      soc.chip_io.gptimer0_io.input_signal(1'b0);
-      soc.chip_io.gptimer1_io.input_signal(1'b0);
-    endrule
-
     // -------- when uart1 is enabled through pinmux ----------//
     rule connect_uart1_out(soc.chip_io.iocell_io.io7_cell_outen==1);
       soc.chip_io.iocell_io.io8_cell_in(uart1.io.sout);
@@ -265,6 +239,14 @@ package TbSoc;
       uart1.io.sin(soc.chip_io.iocell_io.io8_cell_out);
     endrule
     // --------------------------------------------------------//
+    
+    // -------- when uart1 is enabled through pinmux ----------//
+    rule connect_uart2_out(soc.chip_io.iocell_io.io9_cell_outen==1);
+      soc.chip_io.iocell_io.io10_cell_in(uart2.io.sout);
+    endrule
+    rule connect_uart2_in(soc.chip_io.iocell_io.io10_cell_outen==0);
+      uart2.io.sin(soc.chip_io.iocell_io.io10_cell_out);
+    endrule
     // --------------------------------------------------------//
 
     rule check_if_character_present(!rg_read_rx);
@@ -273,15 +255,57 @@ package TbSoc;
         rg_read_rx<=True;
     endrule
 
-    rule write_received_character(rg_cnt>=1 && rg_read_rx);
+    rule write_received_character(rg_cnt>=5 && rg_read_rx);
       let {data,err}<-uart0.read_req('h8,Byte);
       $fwrite(dump1,"%c",data);
     endrule
 
+    rule drive_constants;
+      soc.chip_io.gpio_14(0);
+      soc.chip_io.gpio_15(0);
+      soc.chip_io.gpio_16(0);
+      soc.chip_io.gpio_17(0);
+      soc.chip_io.gpio_18(0);
+      soc.chip_io.gpio_19(0);
+      soc.chip_io.gpio_20(0);
+      soc.chip_io.gpio_21(0);
+      soc.chip_io.gpio_22(0);
+      soc.chip_io.gpio_23(0);
+      soc.chip_io.gpio_24(0);
+      soc.chip_io.gpio_25(0);
+      soc.chip_io.gpio_26(0);
+      soc.chip_io.gpio_27(0);
+      soc.chip_io.gpio_28(0);
+      soc.chip_io.gpio_29(0);
+      soc.chip_io.gpio_30(0);
+      soc.chip_io.gpio_31(0);
+      soc.chip_io.gpio_4(0);
+      soc.chip_io.gpio_7(0);
+      soc.chip_io.gpio_8(0);
+      soc.chip_io.iocell_io.io7_cell_in(0);
+      soc.chip_io.iocell_io.io9_cell_in(0);
+      soc.chip_io.iocell_io.io12_cell_in(0);
+      soc.chip_io.iocell_io.io13_cell_in(0);
+      soc.chip_io.iocell_io.io16_cell_in(0);
+      soc.chip_io.iocell_io.io17_cell_in(0);
+      soc.chip_io.iocell_io.io18_cell_in(0);
+      soc.chip_io.iocell_io.io19_cell_in(0);
+      soc.chip_io.iocell_io.io20_cell_in(0);
+    endrule
+
     rule rl_drive_consts_i2c;
       soc.chip_io.i2c0_out.scl_in(0);
+      soc.chip_io.i2c1_out.scl_in(0);
       soc.chip_io.i2c0_out.sda_in(0);
+      soc.chip_io.i2c1_out.sda_in(0);
     endrule: rl_drive_consts_i2c
+    rule rl_drive_consts_sspi;
+      soc.chip_io.spi0_io.mosi_in(0);
+      soc.chip_io.spi0_io.sclk_in(0);
+      soc.chip_io.spi0_io.miso_in(0);
+      soc.chip_io.spi0_io.ncs_in(0);
+    endrule
+
 
     rule rl_connect_interrupts;
       soc.chip_io.ext_interrupts(0);
@@ -293,7 +317,7 @@ package TbSoc;
 
       let generate_dump <- $test$plusargs("rtldump");
       let stime <- $stime;
-      if (soc.soc_sb.commitlog matches tagged Valid .idump) begin
+      if (soc.commitlog matches tagged Valid .idump) begin
     `ifndef openocd `ifndef cocotb_sim
       if(idump.instruction=='h00006f||idump.instruction =='h00a001)
         $finish(0);
@@ -307,9 +331,9 @@ package TbSoc;
         rg_inst_count <= rg_inst_count + 1;
 
         if (idump.instruction[1:0] == 'b11)
-        	$fwrite(dump, "core   0: ", idump.mode, `ifdef hypervisor " %1d", idump.v, `endif `ifdef RV32 " 0x%8h" `else " 0x%16h" `endif , idump.pc, " (0x%8h", idump.instruction, ")");
+        	$fwrite(dump, "core   0: ", idump.mode, `ifdef hypervisor " %1d", idump.v, `endif " 0x%16h", idump.pc, " (0x%8h", idump.instruction, ")");
         else
-          $fwrite(dump, "core   0: ", idump.mode, `ifdef hypervisor " %1d", idump.v, `endif `ifdef RV32 " 0x%8h" `else " 0x%16h" `endif , idump.pc, " (0x%4h", idump.instruction[15:0], ")");
+          $fwrite(dump, "core   0: ", idump.mode, `ifdef hypervisor " %1d", idump.v, `endif " 0x%16h", idump.pc, " (0x%4h", idump.instruction[15:0], ")");
 
         if (idump.inst_type matches tagged REG .d) begin
 
@@ -381,18 +405,11 @@ package TbSoc;
               $fwrite(dump, " c1536_hstatus 0x%16h", hstatus);
             end
             `endif
-            if ( `ifdef spfpu csr_address != `FCSR && `endif csr_address != `MISA ) begin
+            if (csr_address != `FCSR && csr_address != `MISA ) begin
             if (valueOf(`xlen) == 64) 
               $fwrite(dump, " ", fn_csr_to_str(csr_address), " 0x%16h", wdata);
-            if (valueOf(`xlen) == 32) begin
-	     `ifdef RV32
-                if (csr_address == `MSTATUS && idump.instruction == 'h30200073 ) begin //mret
-		Bit#(`xlen) wdata1 = fn_probe_csr(`MSTATUSH);
-		$fwrite(dump, " " , fn_csr_to_str(`MSTATUSH), " 0x%8h", wdata1);
-	        end
-      	     `endif
+            if (valueOf(`xlen) == 32)
               $fwrite(dump, " " , fn_csr_to_str(csr_address), " 0x%8h", wdata);
-		end
 
             if (csr_address == `MSTATUS) begin
               rg_prev_mstatus <= wdata;
@@ -433,7 +450,6 @@ package TbSoc;
         end
           if (csr_address == `FCSR || csr_address == `FRM || csr_address == `FFLAGS)begin
             csr_address = `MSTATUS;
-            Bit#(`xlen) wdata = fn_probe_csr(csr_address);
             if ( !rg_prev_mstatus_valid || (wdata!=rg_prev_mstatus)   ) begin 
             if (!(d.op==2'b10 && idump.instruction[19:15] == 0)) begin
               if (valueOf(`xlen) == 64) 
@@ -484,6 +500,9 @@ package TbSoc;
 
           if (d.access == Store  `ifdef atomic || (d.access == Atomic && d.atomic_op[3:0] != 5) `endif ) begin
             if (d.size == 0) begin
+              if (store_data[7:4]==0)
+                $fwrite(dump, " 0x%1h", store_data[3:0]);
+              else
                 $fwrite(dump, " 0x%2h", store_data[7:0]);
             end
             if (d.size == 1)
@@ -502,6 +521,8 @@ package TbSoc;
   `endif
 
   `ifdef debug
+    //Wire#(Bit#(1)) wr_tdi <-mkWire(clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Wire#(Bit#(1)) wr_tms <-mkWire(clocked_by tck_clk.new_clk, reset_by trst.new_rst);
     Wire#(Bit#(1)) wr_tdi <- mkWire();
     Wire#(Bit#(1)) wr_tms <- mkWire();
     rule connect_jtag_io;
@@ -511,31 +532,27 @@ package TbSoc;
   `endif
   `ifdef openocd
     Wire#(Bit#(1)) wr_tdo <-mkWire();
-    Wire#(Bit#(1)) wr_tck <-mkWire();
-    Wire#(Bit#(1)) wr_trst <-mkWire();
     rule rl_wr_tdo;
       wr_tdo <= soc.wire_tdo();
     endrule
     Reg#(Bit#(1)) rg_initial <- mkRegA(0);
-    Reg#(Bit#(1)) rg_initial_init <- mkRegA(0);
     Reg#(Bit#(1)) rg_end_sim <- mkRegA(0);
     Reg#(int) rg_client_fd <- mkRegA(32'hffffffff);
-    Reg#(int) rg_socket_fd <- mkRegA(32'hffffffff);
     Reg#(Bit#(5)) delayed_actor <- mkRegA(0);
     Reg#(Bit#(5)) delayed_actor2 <- mkRegA(0);
     Reg#(Bit#(5)) delayed_actor3 <- mkRegA(0);
     Reg#(Bit#(5)) delayed_actor4 <- mkRegA(0);
     Reg#(Bit#(5)) delayed_actor5 <- mkRegA(0);
-    rule rl_initial_init(rg_initial_init==0);
+    //Reg#(Bit#(1)) rg_initial <- mkRegA(0, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Reg#(Bit#(1)) rg_end_sim <- mkRegA(0, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Reg#(int) rg_client_fd <- mkRegA(32'hffffffff, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Reg#(Bit#(5)) delayed_actor <- mkRegA(0, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Reg#(Bit#(5)) delayed_actor2 <- mkRegA(0, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Reg#(Bit#(5)) delayed_actor3 <- mkRegA(0, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Reg#(Bit#(5)) delayed_actor4 <- mkRegA(0, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    //Reg#(Bit#(5)) delayed_actor5 <- mkRegA(0, clocked_by tck_clk.new_clk, reset_by trst.new_rst);
+    rule rl_initial(rg_initial == 0);
       let x <- init_rbb_jtag(0);
-      if(x != 32'hffffffff)begin
-        rg_initial_init <= 1'b1;
-        rg_socket_fd <= x;
-      end
-    endrule
-
-    rule rl_initial(rg_initial == 0 && rg_initial_init ==1'b1);
-      let x <- init_rbb_jtag_loop(rg_socket_fd);
       if(x != 32'hffffffff)begin
         rg_initial <= 1'b1;
         rg_client_fd <= x;

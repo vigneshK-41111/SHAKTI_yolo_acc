@@ -101,12 +101,12 @@ u32 XCnn_accel_IsReady(XCnn_accel *InstancePtr);
 void XCnn_accel_EnableAutoRestart(XCnn_accel *InstancePtr);
 void XCnn_accel_DisableAutoRestart(XCnn_accel *InstancePtr);
 
-void XCnn_accel_Set_size(XCnn_accel *InstancePtr, u32 Data);
-u32 XCnn_accel_Get_size(XCnn_accel *InstancePtr);
 void XCnn_accel_Set_input_r(XCnn_accel *InstancePtr, u64 Data);
 u64 XCnn_accel_Get_input_r(XCnn_accel *InstancePtr);
 void XCnn_accel_Set_output_r(XCnn_accel *InstancePtr, u64 Data);
 u64 XCnn_accel_Get_output_r(XCnn_accel *InstancePtr);
+void XCnn_accel_Set_size(XCnn_accel *InstancePtr, u32 Data);
+u32 XCnn_accel_Get_size(XCnn_accel *InstancePtr);
 
 void XCnn_accel_InterruptGlobalEnable(XCnn_accel *InstancePtr);
 void XCnn_accel_InterruptGlobalDisable(XCnn_accel *InstancePtr);

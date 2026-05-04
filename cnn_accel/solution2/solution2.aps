@@ -1,0 +1,10 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="solution2"/>
+    </name>
+    <project>
+        <value string="cnn_accel"/>
+    </project>
+    <flowTarget value="vivado"/>
+</AutoPilot:solution>
+

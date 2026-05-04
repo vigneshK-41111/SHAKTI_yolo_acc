@@ -1,7 +1,7 @@
 set curdir [ file dirname [ file normalize [ info script ] ] ]
 source $curdir/env.tcl
 
-if { $argc != 6 } {
+if { $argc != 4 } {
   puts "ERROR: Please pass the top module name that needs to be synthesized along with the fpga part"
   puts "       -tclargs <fpga-part-no> <xlen> <isa> <jobs>"
   exit 2
@@ -12,11 +12,8 @@ set fpga_part [lindex $argv 0]
 set mul_width [lindex $argv 1]
 set isa [lindex $argv 2]
 set jobs [lindex $argv 3]
-set bus_width [lindex $argv 4]
-set axibuswidth [lindex $argv 5]
 
-
-puts "\nDEBUG: Generating IPs for FPGA:$fpga_part ISA:$isa JOBS:$jobs DATA_WIDTH:$bus_width\n"
+puts "\nDEBUG: Generating IPs for FPGA:$fpga_part ISA:$isa JOBS:$jobs\n"
 
 # extract base version of Vivado
 set base_version [string range [version -short] 0 3]

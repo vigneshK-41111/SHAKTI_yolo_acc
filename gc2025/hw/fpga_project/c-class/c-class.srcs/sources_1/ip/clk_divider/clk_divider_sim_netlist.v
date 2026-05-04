@@ -1,14 +1,14 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Mon Apr 27 13:16:00 2026
+// Date        : Thu Apr 30 14:35:43 2026
 // Host        : jarvis running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
-//               /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/clk_divider/clk_divider_sim_netlist.v
+//               /scratch1/iot/new/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/clk_divider/clk_divider_sim_netlist.v
 // Design      : clk_divider
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a200tsbg484-1
+// Device      : xc7k325tffg900-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -19,15 +19,18 @@ module clk_divider
     clk_out3,
     resetn,
     locked,
-    clk_in1);
+    clk_in1_p,
+    clk_in1_n);
   output clk_out1;
   output clk_out2;
   output clk_out3;
   input resetn;
   output locked;
-  input clk_in1;
+  input clk_in1_p;
+  input clk_in1_n;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  (* DIFF_TERM = 0 *) (* IBUF_LOW_PWR *) wire clk_in1_n;
+  (* DIFF_TERM = 0 *) (* IBUF_LOW_PWR *) wire clk_in1_p;
   wire clk_out1;
   wire clk_out2;
   wire clk_out3;
@@ -35,7 +38,8 @@ module clk_divider
   wire resetn;
 
   clk_divider_clk_divider_clk_wiz inst
-       (.clk_in1(clk_in1),
+       (.clk_in1_n(clk_in1_n),
+        .clk_in1_p(clk_in1_p),
         .clk_out1(clk_out1),
         .clk_out2(clk_out2),
         .clk_out3(clk_out3),
@@ -50,16 +54,19 @@ module clk_divider_clk_divider_clk_wiz
     clk_out3,
     resetn,
     locked,
-    clk_in1);
+    clk_in1_p,
+    clk_in1_n);
   output clk_out1;
   output clk_out2;
   output clk_out3;
   input resetn;
   output locked;
-  input clk_in1;
+  input clk_in1_p;
+  input clk_in1_n;
 
-  wire clk_in1;
   wire clk_in1_clk_divider;
+  wire clk_in1_n;
+  wire clk_in1_p;
   wire clk_out1;
   wire clk_out1_clk_divider;
   wire clk_out2;
@@ -94,10 +101,11 @@ module clk_divider_clk_divider_clk_wiz
   (* CAPACITANCE = "DONT_CARE" *) 
   (* IBUF_DELAY_VALUE = "0" *) 
   (* IFD_DELAY_VALUE = "AUTO" *) 
-  IBUF #(
+  IBUFDS #(
     .IOSTANDARD("DEFAULT")) 
-    clkin1_ibufg
-       (.I(clk_in1),
+    clkin1_ibufgds
+       (.I(clk_in1_p),
+        .IB(clk_in1_n),
         .O(clk_in1_clk_divider));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
@@ -114,16 +122,16 @@ module clk_divider_clk_divider_clk_wiz
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(10.000000),
+    .CLKFBOUT_MULT_F(5.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
-    .CLKIN1_PERIOD(10.000000),
+    .CLKIN1_PERIOD(5.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(25.000000),
+    .CLKOUT0_DIVIDE_F(20.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(10),
+    .CLKOUT1_DIVIDE(5),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),

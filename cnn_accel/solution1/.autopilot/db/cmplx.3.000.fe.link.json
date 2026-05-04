@@ -1,19 +1,26 @@
 {
   "0": {
-    "basicblocks": 70,
+    "basicblocks": 1,
+    "calls": "1 1 1",
+    "file": "cnn_accel.cpp",
+    "fileloc": 119,
+    "instructions": 8,
+    "name": "cnn_accel",
+    "total_instructions": 773
+  },
+  "1": {
+    "basicblocks": 104,
     "calls": "",
     "file": "cnn_accel.cpp",
-    "fileloc": 9,
-    "instructions": 228,
+    "fileloc": 19,
+    "instructions": 255,
     "loads": {
-      "L": 4,
-      "T": 4
+      "L": 5
     },
-    "name": "cnn_accel",
+    "name": "conv_layer",
     "stores": {
-      "L": 7,
-      "T": 2
+      "L": 4
     },
-    "total_instructions": 228
+    "total_instructions": 255
   }
 }

@@ -1,62 +1,166 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: cnn_accel.cpp, Line: 131, Column: 2 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - Callee:          'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'cnn_accel(signed char volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 123, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: cnn_accel.cpp, Line: 69, Column: 19 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 50, Column: 42 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_69_7
+  - LoopName:        VITIS_LOOP_50_6
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: cnn_accel.cpp, Line: 93, Column: 43 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 70, Column: 47 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_93_10
+  - LoopName:        VITIS_LOOP_70_10
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 71, Column: 51 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_71_11
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 72, Column: 55 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_72_12
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 106, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_106_15
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
-DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_69_7
+  - LoopName:        VITIS_LOOP_71_11
   - String:          ''' ('
-  - LoopLoc:         'cnn_accel.cpp:69:19'
+  - LoopLoc:         'cnn_accel.cpp:71:51'
   - String:          ') '
   - String:          'in function '''
-  - String:          cnn_accel
+  - String:          conv_layer
   - String:          ''' completely with a factor of '
-  - Factor:          '16'
+  - Factor:          '3'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
-DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_93_10
+  - LoopName:        VITIS_LOOP_72_12
   - String:          ''' ('
-  - LoopLoc:         'cnn_accel.cpp:93:43'
+  - LoopLoc:         'cnn_accel.cpp:72:55'
   - String:          ') '
   - String:          'in function '''
-  - String:          cnn_accel
+  - String:          conv_layer
   - String:          ''' completely with a factor of '
-  - Factor:          '16'
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_72_12
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:72:55'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_72_12
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:72:55'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_106_15
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:106:48'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: cnn_accel.cpp, Line: 131, Column: 2 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - Callee:          'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'cnn_accel(signed char volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 123, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 Function:        apatb_cnn_accel_ir
 Args:            
-  - Callee:          'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Callee:          'cnn_accel(signed char volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 123, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_cnn_accel_ir
   - String:          ' because it should never be inlined (cost=never)'
@@ -64,428 +168,4096 @@ Args:
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 21 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 52 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 21 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 52 }
   - OrigDirection:   read
-  - OrigID:          if.then.load.0
+  - OrigID:          if.then.load.2
   - ArrayName:       input
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 19 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 25, Column: 19 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          if.then.store.1
+  - OrigID:          VITIS_LOOP_106_15.store.6
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 52, Column: 44 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.11
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.16
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.21
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.26
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.31
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.36
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.41
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 52 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: cnn_accel.cpp, Line: 52, Column: 44 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 52 }
   - OrigDirection:   read
-  - OrigID:          if.then18.load.3
+  - OrigID:          if.then.load.2
   - ArrayName:       input
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 44 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.6
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.11
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.16
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.21
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.26
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.31
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.36
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_106_15.store.41
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 52 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 44 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 53, Column: 52 }
   - OrigDirection:   read
-  - OrigID:          if.then18.load.8
+  - OrigID:          if.then.load.2
   - ArrayName:       input
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 54, Column: 44 }
-Function:        _Z9cnn_accelPVKaPVai
-Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      load
-    DebugLoc:        { File: cnn_accel.cpp, Line: 54, Column: 44 }
-  - OrigDirection:   read
-  - OrigID:          if.then18.load.13
-  - ArrayName:       input
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
-...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.8
+  - OrigID:          VITIS_LOOP_106_15.store.6
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.14
+  - OrigID:          VITIS_LOOP_106_15.store.11
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.20
+  - OrigID:          VITIS_LOOP_106_15.store.16
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.26
+  - OrigID:          VITIS_LOOP_106_15.store.21
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.32
+  - OrigID:          VITIS_LOOP_106_15.store.26
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.38
+  - OrigID:          VITIS_LOOP_106_15.store.31
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.44
+  - OrigID:          VITIS_LOOP_106_15.store.36
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            reflow-burst-inference
 Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          Volatile or Atomic access cannot be transformed
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
+    DebugLoc:        { File: cnn_accel.cpp, Line: 107, Column: 60 }
   - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.50
+  - OrigID:          VITIS_LOOP_106_15.store.41
   - ArrayName:       output
   - String:          ' '
   - BundleName:      gmem
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - Function:        'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
   - String:          ' '
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.56
-  - ArrayName:       output
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_50_6
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:50:42'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.62
-  - ArrayName:       output
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_70_10
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:70:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.68
-  - ArrayName:       output
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_50_6
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:50:42'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.74
-  - ArrayName:       output
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_70_10
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:70:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.80
-  - ArrayName:       output
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_50_6
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:50:42'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.86
-  - ArrayName:       output
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_70_10
+  - String:          ''' ('
+  - LoopLoc:         'cnn_accel.cpp:70:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.92
-  - ArrayName:       output
-  - String:          ' '
-  - BundleName:      gmem
-  - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
-  - String:          ' '
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
 ...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            NonSimpleMemoryAccess
-DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-Function:        _Z9cnn_accelPVKaPVai
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
-  - String:          Volatile or Atomic access cannot be transformed
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: cnn_accel.cpp, Line: 94, Column: 45 }
-  - OrigDirection:   write
-  - OrigID:          VITIS_LOOP_93_10.store.98
-  - ArrayName:       output
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+DebugLoc:        { File: cnn_accel.cpp, Line: 80, Column: 48 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          The program may have out of bound array access
+  - String:          ' on variable '''
+  - String:          w_2_cv1_conv_weight
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-loop-flatten-cost-model
+Name:            FlattenOffInference
+DebugLoc:        { File: cnn_accel.cpp, Line: 62, Column: 34 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          'Automatically disabling loop flattening for loop '''
+  - LoopName:        VITIS_LOOP_62_7
+  - String:          '''.'
+...
+--- !Passed
+Pass:            reflow-loop-flatten-cost-model
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 62, Column: 34 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - PragmaType:      loop_flatten
   - String:          ' '
-  - BundleName:      gmem
+  - PragmaOptions:   off
   - String:          ' '
-  - Function:        'cnn_accel(signed char const volatile*, signed char volatile*, int)'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 13, Column: 0 }
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:62:34'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 62, Column: 34 }
+  - LoopName:        VITIS_LOOP_62_7
+  - String:          ' '
+  - LoopLoc:         'cnn_accel.cpp:62:34'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 62, Column: 34 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: cnn_accel.cpp, Line: 28, Column: 12 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: ./0_conv_weight.h, Line: 5, Column: 0 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=27 variable=w_0_conv_weight'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  cnn_accel
+  - String:          ' '
+  - varLoc:          './0_conv_weight.h:5:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         w_0_conv_weight
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '27'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            w_0_conv_weight
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./1_conv_weight.h, Line: 5, Column: 0 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=72 variable=w_1_conv_weight'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  cnn_accel
+  - String:          ' '
+  - varLoc:          './1_conv_weight.h:5:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         w_1_conv_weight
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '72'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            w_1_conv_weight
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=3 variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=cyclic factor=3 variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=3 variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=3 variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - PragmaType:      array_partition
   - String:          ' '
@@ -493,20 +4265,20 @@ Args:
   - String:          ' '
   - PragmaIsAuto:    '1'
   - String:          ' '
-  - PragmaFunction:  cnn_accel
+  - PragmaFunction:  conv_layer
   - String:          ' '
-  - varLoc:          'cnn_accel.cpp:28:12'
+  - varLoc:          'cnn_accel.cpp:31:9'
   - String:          ' '
-  - PragmaSrcLoc:    'cnn_accel.cpp:67:9'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
   - VarName:         tile_in
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoArrayXform
-DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          'Inferring pragma '''
   - PragmaType:      array_partition
@@ -525,28 +4297,112 @@ Args:
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
 DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
-Function:        _Z9cnn_accelPVKaPVai
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - PragmaType:      array_partition
   - String:          ' '
-  - PragmaOptions:   'dim=3 type=complete  variable=tile_out'
+  - PragmaOptions:   'dim=2 type=cyclic factor=3 variable=tile_in'
   - String:          ' '
   - PragmaIsAuto:    '1'
   - String:          ' '
-  - PragmaFunction:  cnn_accel
+  - PragmaFunction:  conv_layer
   - String:          ' '
   - varLoc:          'cnn_accel.cpp:31:9'
   - String:          ' '
-  - PragmaSrcLoc:    'cnn_accel.cpp:67:9'
-    DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
-  - VarName:         tile_out
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoArrayXform
-DebugLoc:        { File: cnn_accel.cpp, Line: 67, Column: 9 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=3 variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
 Args:            
   - String:          'Inferring pragma '''
   - PragmaType:      array_partition
@@ -555,7 +4411,49 @@ Args:
   - String:          ' dim='
   - Dim:             '3'
   - String:          ''' for array '''
-  - Name:            tile_out
+  - Name:            tile_in
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=3 variable=tile_in'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  conv_layer
+  - String:          ' '
+  - varLoc:          'cnn_accel.cpp:31:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'cnn_accel.cpp:66:9'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+  - VarName:         tile_in
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 66, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            tile_in
   - String:          ''''
   - String:          ' due to '
   - String:          pipeline
@@ -564,14 +4462,106 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: cnn_accel.cpp, Line: 28, Column: 12 }
-Function:        _Z9cnn_accelPVKaPVai
+DebugLoc:        { File: ./1_conv_weight.h, Line: 5, Column: 0 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          w_1_conv_weight
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '72'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./0_conv_weight.h, Line: 5, Column: 0 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          w_0_conv_weight
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '27'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
   - UOName:          tile_in
   - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tile_in
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
   - String:          ' '
   - Mode:            Complete
   - String:          ' partitioning'
@@ -583,17 +4573,72 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: cnn_accel.cpp, Line: 31, Column: 9 }
-Function:        _Z9cnn_accelPVKaPVai
+Function:        _Z10conv_layerPVaS0_iiiiPaS1_.clone.clone
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          tile_out
+  - UOName:          tile_in
   - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
   - String:          ' '
   - Mode:            Complete
   - String:          ' partitioning'
   - String:          ' on dimension '
   - Dim:             '3'
   - String:          .
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: cnn_accel.cpp, Line: 131, Column: 2 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - Callee:          'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.1)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'cnn_accel(signed char volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 123, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: cnn_accel.cpp, Line: 134, Column: 5 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - Callee:          'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.1)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'cnn_accel(signed char volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 123, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: cnn_accel.cpp, Line: 137, Column: 5 }
+Function:        _Z9cnn_accelPVaS0_i
+Args:            
+  - Callee:          'conv_layer(signed char volatile*, signed char volatile*, int, int, int, int, signed char*, signed char*) (.clone.clone.1)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 27, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'cnn_accel(signed char volatile*, signed char volatile*, int)'
+    DebugLoc:        { File: cnn_accel.cpp, Line: 123, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
 ...

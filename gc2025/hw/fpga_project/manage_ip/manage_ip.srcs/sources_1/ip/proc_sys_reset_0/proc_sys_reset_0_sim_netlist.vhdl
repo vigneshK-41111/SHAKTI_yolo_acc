@@ -1,14 +1,14 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Mon Apr 27 13:16:00 2026
+-- Date        : Thu Apr 30 14:35:44 2026
 -- Host        : jarvis running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_sim_netlist.vhdl
+--               /scratch1/iot/new/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_sim_netlist.vhdl
 -- Design      : proc_sys_reset_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a200tsbg484-1
+-- Device      : xc7k325tffg900-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -915,7 +915,7 @@ entity proc_sys_reset_0_proc_sys_reset is
   attribute C_EXT_RST_WIDTH : integer;
   attribute C_EXT_RST_WIDTH of proc_sys_reset_0_proc_sys_reset : entity is 4;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of proc_sys_reset_0_proc_sys_reset : entity is "artix7";
+  attribute C_FAMILY of proc_sys_reset_0_proc_sys_reset : entity is "kintex7";
   attribute C_NUM_BUS_RST : integer;
   attribute C_NUM_BUS_RST of proc_sys_reset_0_proc_sys_reset : entity is 1;
   attribute C_NUM_INTERCONNECT_ARESETN : integer;
@@ -1069,7 +1069,7 @@ architecture STRUCTURE of proc_sys_reset_0 is
   attribute C_EXT_RST_WIDTH : integer;
   attribute C_EXT_RST_WIDTH of U0 : label is 4;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of U0 : label is "artix7";
+  attribute C_FAMILY of U0 : label is "kintex7";
   attribute C_NUM_BUS_RST : integer;
   attribute C_NUM_BUS_RST of U0 : label is 1;
   attribute C_NUM_INTERCONNECT_ARESETN : integer;

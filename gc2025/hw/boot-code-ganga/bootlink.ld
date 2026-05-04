@@ -37,7 +37,7 @@ SECTIONS
        __rodata_end = .;
  }
   .sdata : {
-    __global_pointer$ = . + 0x10;
+    __global_pointer$ = . + 0x800;
     *(.srodata.cst16) *(.srodata.cst8) *(.srodata.cst4) *(.srodata.cst2) *(.srodata*)
     *(.sdata .sdata.* .gnu.linkonce.s.*)
   }
@@ -82,7 +82,7 @@ SECTIONS
   . = ALIGN(4);
   _end = .;
   
-  . = __start_base + 0x8000 - 0x300;
+  . = __start_base + 0x8000 - 0x400;
   _free_space = . - _end;
   _STACK_SIZE = (_free_space * 50) / 100 ;
   _HEAP_SIZE = _free_space - _STACK_SIZE;

@@ -1,13 +1,13 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Mon Apr 27 13:16:00 2026
+-- Date        : Thu Apr 30 14:35:43 2026
 -- Host        : jarvis running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode synth_stub
---               /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/clk_divider/clk_divider_stub.vhdl
+--               /scratch1/iot/new/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/clk_divider/clk_divider_stub.vhdl
 -- Design      : clk_divider
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a200tsbg484-1
+-- Device      : xc7k325tffg900-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -19,7 +19,8 @@ entity clk_divider is
     clk_out3 : out STD_LOGIC;
     resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    clk_in1_p : in STD_LOGIC;
+    clk_in1_n : in STD_LOGIC
   );
 
 end clk_divider;
@@ -28,6 +29,6 @@ architecture stub of clk_divider is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk_out1,clk_out2,clk_out3,resetn,locked,clk_in1";
+attribute black_box_pad_pin of stub : architecture is "clk_out1,clk_out2,clk_out3,resetn,locked,clk_in1_p,clk_in1_n";
 begin
 end;

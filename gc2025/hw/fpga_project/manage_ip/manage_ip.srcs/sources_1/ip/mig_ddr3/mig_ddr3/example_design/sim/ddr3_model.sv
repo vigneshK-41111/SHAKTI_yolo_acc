@@ -97,7 +97,7 @@
 // `define MODEL_PASR
 //Memory Details
 `define x4Gb
-`define sg125
+`define sg107E
 `define x16
 module ddr3_model (
     rst_n,

@@ -381,88 +381,124 @@ Conflict-free: slave_m_awvalid,
  
 Rule schedule
 -------------
-Rule: clk_divider_increment_counter
-Predicate: ! (clk_divider_rg_divisor == 16'd0)
-Blocking rules: (none)
- 
-Rule: clk_divider_generate_clock
+Rule: gptimer_generate_reset
 Predicate: True
 Blocking rules: (none)
  
-Rule: clk_divider_select_clock
+Rule: gptimer_select_busclk_extclk
 Predicate: True
 Blocking rules: (none)
  
-Rule: gptimer_rl_gpt_reset
-Predicate: gptimer_count_reset || gptimer_gpt_reset
+Rule: gptimer_transfer_data_from_clock_domains
+Predicate: gptimer_clock_divisor_sync.RDY_write
 Blocking rules: (none)
+ 
+Rule: gptimer_clk_divider_increment_counter
+Predicate: ! (gptimer_clk_divider_rg_divisor == 16'd0)
+Blocking rules: (none)
+ 
+Rule: gptimer_clk_divider_generate_clock
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_clk_divider_select_clock
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_generate_slow_clock
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_gpt_enable_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_count_reset_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_continuous_count_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_gpt_mode_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_pwm_fall_intr_en_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_pwm_rise_intr_en_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_cntr_overflow_intr_en_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_cntr_underflow_intr_en_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_duty_cycle_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_sync_period_clock_domain_crossing
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_rl_update_interrupts
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: gptimer_rl_update_counter
+Predicate: gptimer_rg_sync_counter.RDY_write &&
+	   gptimer_rg_sync_repeated_count.RDY_write
+Blocking rules: (none)
+ 
+Rule: gptimer_rl_counter_reset
+Predicate: gptimer_count_reset.read
+Blocking rules: (none)
+ 
+Rule: gptimer_rl_reset_counter_reset
+Predicate: gptimer_count_reset.RDY_write && gptimer_sync_count_reset.wget
+Blocking rules: write_request
  
 Rule: gptimer_rl_pwm_operation
-Predicate: (gptimer_gpt_mode == 2'd0) && gptimer_gpt_enable
-Blocking rules: (none)
+Predicate: (gptimer_gpt_mode.read == 2'd0) && gptimer_gpt_enable.read
+Blocking rules: gptimer_rl_counter_reset
  
 Rule: gptimer_rl_up_counter
-Predicate: (gptimer_gpt_mode == 2'd1) && gptimer_gpt_enable
-Blocking rules: (none)
+Predicate: (gptimer_gpt_mode.read == 2'd1) && gptimer_gpt_enable.read
+Blocking rules: gptimer_rl_counter_reset
  
 Rule: gptimer_rl_down_counter
-Predicate: (gptimer_gpt_mode == 2'd2) && gptimer_gpt_enable
-Blocking rules: (none)
+Predicate: (gptimer_gpt_mode.read == 2'd2) && gptimer_gpt_enable.read
+Blocking rules: gptimer_rl_counter_reset
  
 Rule: gptimer_rl_up_down_counter
-Predicate: (gptimer_gpt_mode == 2'd3) && gptimer_gpt_enable
+Predicate: (gptimer_gpt_mode.read == 2'd3) && gptimer_gpt_enable.read
+Blocking rules: gptimer_rl_counter_reset
+ 
+Rule: read_request
+Predicate: s_xactor_f_rd_addr.i_notEmpty && s_xactor_f_rd_data.i_notFull
 Blocking rules: (none)
  
-Rule: transfer_data_from_clock_domains
-Predicate: clock_divisor_sync.RDY_write
-Blocking rules: (none)
- 
-Rule: generate_slow_clock
-Predicate: True
-Blocking rules: (none)
- 
-Rule: clk_select
-Predicate: True
-Blocking rules: (none)
- 
-Rule: capture_read_request
-Predicate: ff_rd_request.RDY_enq && s_xactor_f_rd_addr.i_notEmpty
-Blocking rules: (none)
- 
-Rule: perform_read
-Predicate: ff_rd_response.RDY_enq &&
-	   ff_rd_request.RDY_deq && ff_rd_request.RDY_first
-Blocking rules: (none)
- 
-Rule: send_read_response
-Predicate: ff_rd_response.RDY_deq &&
-	   ff_rd_response.RDY_first && s_xactor_f_rd_data.i_notFull
-Blocking rules: (none)
- 
-Rule: capture_write_request
-Predicate: ff_wr_request.RDY_enq &&
-	   ff_wdata_request.RDY_enq &&
-	   s_xactor_f_wr_addr.i_notEmpty && s_xactor_f_wr_data.i_notEmpty
-Blocking rules: (none)
- 
-Rule: perform_write
-Predicate: ff_wr_response.RDY_enq &&
-	   ff_wr_request.RDY_deq &&
-	   ff_wdata_request.RDY_deq &&
-	   ff_wr_request.RDY_first && ff_wdata_request.RDY_first
-Blocking rules: (none)
- 
-Rule: send_write_response
-Predicate: ff_wr_response.RDY_deq &&
-	   ff_wr_response.RDY_first && s_xactor_f_wr_resp.i_notFull
-Blocking rules: (none)
- 
-Rule: syncbits_out
-Predicate: True
-Blocking rules: (none)
- 
-Rule: syncbits_in
-Predicate: True
+Rule: write_request
+Predicate: s_xactor_f_wr_addr.i_notEmpty &&
+	   s_xactor_f_wr_data.i_notEmpty &&
+	   s_xactor_f_wr_resp.i_notFull &&
+	   gptimer_gpt_enable.RDY_write &&
+	   gptimer_gpt_mode.RDY_write &&
+	   gptimer_count_reset.RDY_write &&
+	   gptimer_continuous_count.RDY_write &&
+	   gptimer_pwm_fall_intr_en.RDY_write &&
+	   gptimer_pwm_rise_intr_en.RDY_write &&
+	   gptimer_cntr_overflow_intr_en.RDY_write &&
+	   gptimer_cntr_underflow_intr_en.RDY_write &&
+	   gptimer_rg_duty_cycle.RDY_write && gptimer_rg_period.RDY_write
 Blocking rules: (none)
  
 Logical execution order: slave_m_awvalid,
@@ -480,27 +516,35 @@ Logical execution order: slave_m_awvalid,
 			 slave_m_rdata,
 			 slave_m_ruser,
 			 slave_m_rready,
-			 io_input_signal,
 			 io_timer_out,
 			 sb_interrupt,
-			 transfer_data_from_clock_domains,
-			 clk_select,
-			 capture_read_request,
-			 perform_read,
-			 send_read_response,
-			 capture_write_request,
-			 send_write_response,
-			 syncbits_in,
-			 clk_divider_generate_clock,
-			 clk_divider_increment_counter,
-			 clk_divider_select_clock,
-			 generate_slow_clock,
+			 read_request,
+			 io_input_signal,
+			 gptimer_generate_reset,
+			 gptimer_select_busclk_extclk,
+			 gptimer_transfer_data_from_clock_domains,
+			 write_request,
+			 gptimer_rl_update_interrupts,
+			 gptimer_rl_update_counter,
+			 gptimer_rl_counter_reset,
+			 gptimer_rl_reset_counter_reset,
 			 gptimer_rl_pwm_operation,
 			 gptimer_rl_up_counter,
 			 gptimer_rl_down_counter,
 			 gptimer_rl_up_down_counter,
-			 syncbits_out,
-			 gptimer_rl_gpt_reset,
-			 perform_write
+			 gptimer_clk_divider_generate_clock,
+			 gptimer_clk_divider_increment_counter,
+			 gptimer_clk_divider_select_clock,
+			 gptimer_generate_slow_clock,
+			 gptimer_sync_gpt_enable_clock_domain_crossing,
+			 gptimer_sync_count_reset_clock_domain_crossing,
+			 gptimer_sync_continuous_count_clock_domain_crossing,
+			 gptimer_sync_gpt_mode_clock_domain_crossing,
+			 gptimer_sync_pwm_fall_intr_en_clock_domain_crossing,
+			 gptimer_sync_pwm_rise_intr_en_clock_domain_crossing,
+			 gptimer_sync_cntr_overflow_intr_en_clock_domain_crossing,
+			 gptimer_sync_cntr_underflow_intr_en_clock_domain_crossing,
+			 gptimer_sync_duty_cycle_clock_domain_crossing,
+			 gptimer_sync_period_clock_domain_crossing
 
 =========================================

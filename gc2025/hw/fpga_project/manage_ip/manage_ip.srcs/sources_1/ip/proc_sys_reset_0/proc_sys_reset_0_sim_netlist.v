@@ -1,14 +1,14 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Mon Apr 27 13:16:00 2026
+// Date        : Thu Apr 30 14:35:44 2026
 // Host        : jarvis running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
-//               /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_sim_netlist.v
+//               /scratch1/iot/new/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/proc_sys_reset_0/proc_sys_reset_0_sim_netlist.v
 // Design      : proc_sys_reset_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a200tsbg484-1
+// Device      : xc7k325tffg900-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -51,7 +51,7 @@ module proc_sys_reset_0
   (* C_AUX_RST_WIDTH = "4" *) 
   (* C_EXT_RESET_HIGH = "1'b0" *) 
   (* C_EXT_RST_WIDTH = "4" *) 
-  (* C_FAMILY = "artix7" *) 
+  (* C_FAMILY = "kintex7" *) 
   (* C_NUM_BUS_RST = "1" *) 
   (* C_NUM_INTERCONNECT_ARESETN = "1" *) 
   (* C_NUM_PERP_ARESETN = "1" *) 
@@ -398,7 +398,7 @@ module proc_sys_reset_0_lpf
 endmodule
 
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
-(* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "artix7" *) (* C_NUM_BUS_RST = "1" *) 
+(* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "kintex7" *) (* C_NUM_BUS_RST = "1" *) 
 (* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
 (* ORIG_REF_NAME = "proc_sys_reset" *) 
 module proc_sys_reset_0_proc_sys_reset

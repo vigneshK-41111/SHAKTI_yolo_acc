@@ -1,14 +1,38 @@
-// See LICENSE.iitm for license details
+/* 
+Copyright (c) 2018, IIT Madras All rights reserved.
 
+Redistribution and use in source and binary forms, with or without modification, are permitted
+provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions
+  and the following disclaimer.  
+* Redistributions in binary form must reproduce the above copyright notice, this list of 
+  conditions and the following disclaimer in the documentation and/or other materials provided 
+ with the distribution.  
+* Neither the name of IIT Madras  nor the names of its contributors may be used to endorse or 
+  promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
+OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+--------------------------------------------------------------------------------------------------
+
+Author: Neel Gala
+Email id: neelgala@gmail.com
+Details:
+
+--------------------------------------------------------------------------------------------------
+*/
 package sign_dump;
   import Vector::*;
   import FIFOF::*;
   import DReg::*;
-`ifdef async_rst
-  import SpecialFIFOs_Modified :: * ;
-`else
-  import SpecialFIFOs :: * ;
-`endif
+  import SpecialFIFOs::*;
   import BRAMCore::*;
   import FIFO::*;
 
@@ -19,22 +43,21 @@ package sign_dump;
 	import Semi_FIFOF:: *;
 
   interface Ifc_sign_dump;
-		interface AXI4_Master_IFC#(`paddr,`axi4_id_width, `buswidth, `USERSPACE) master;
-		interface AXI4_Slave_IFC#(`paddr, `axi4_id_width, `buswidth, `USERSPACE) slave;
+		interface AXI4_Master_IFC#(`paddr, ELEN, USERSPACE) master;
+		interface AXI4_Slave_IFC#(`paddr, ELEN, USERSPACE) slave;
   endinterface
 
   (*synthesize*)
   module mksign_dump(Ifc_sign_dump);
-    
-    let word_count = 128/valueOf(`buswidth);
+    let word_count = 128/valueOf(ELEN);
 
     Reg#(Bool) rg_start<- mkReg(False);
-    Reg#(Bit#(TLog#(TDiv#(128,`buswidth)))) rg_word_count <- mkReg(fromInteger(word_count-1));
+    Reg#(Bit#(TLog#(TDiv#(128,ELEN)))) rg_word_count <- mkReg(fromInteger(word_count-1));
     Reg#(Bit#(`paddr)) rg_total_count <- mkReg(0);
-		AXI4_Master_Xactor_IFC #(`paddr, `axi4_id_width,`buswidth, `USERSPACE) m_xactor <- mkAXI4_Master_Xactor;
-		AXI4_Slave_Xactor_IFC #(`paddr, `axi4_id_width,`buswidth, `USERSPACE) s_xactor <- mkAXI4_Slave_Xactor;
+		AXI4_Master_Xactor_IFC #(`paddr, ELEN, USERSPACE) m_xactor <- mkAXI4_Master_Xactor;
+		AXI4_Slave_Xactor_IFC #(`paddr, ELEN, USERSPACE) s_xactor <- mkAXI4_Slave_Xactor;
     
-    FIFOF#(Bit#(TLog#(TDiv#(`buswidth,8)))) ff_lower_order_bits <- mkSizedFIFOF(8);
+    FIFOF#(Bit#(TLog#(TDiv#(ELEN,8)))) ff_lower_order_bits <- mkSizedFIFOF(8);
 
     Reg#(Bit#(`paddr)) rg_start_address<- mkReg(0);    // 0x2000
     Reg#(Bit#(`paddr)) rg_end_address<- mkReg(0);      // 0x2008
@@ -72,17 +95,15 @@ package sign_dump;
         if(rg_start_address != truncate(w.wdata))
           rg_start<=True;
       end
-    `ifndef cocotb_sim
       else if (aw.awaddr[3:0]=='hc) begin
         $finish(0);        
       end
-    `endif
   	  s_xactor.i_wr_resp.enq (b);
     endrule
     
     rule send_request(rg_start);
       if(rg_start_address<rg_end_address) begin
-  			AXI4_Rd_Addr#(`paddr,`axi4_id_width, `USERSPACE) read_request = AXI4_Rd_Addr {araddr: rg_start_address, aruser: ?, 
+  			AXI4_Rd_Addr#(`paddr, 0) read_request = AXI4_Rd_Addr {araddr: rg_start_address, aruser: ?, 
           arlen:0, arsize: 2, arburst: 'b01, arid:2, arprot: ?}; // arburst: 00-FIXED 01-INCR 10-WRAP
   			m_xactor.i_rd_addr.enq(read_request);	
         rg_start_address<=rg_start_address+4;
@@ -93,10 +114,10 @@ package sign_dump;
     rule receive_response(rg_cnt>=5 && rg_start);
 			let response <- pop_o (m_xactor.o_rd_data);	
       ff_lower_order_bits.deq();
-			Bit#(TLog#(TDiv#(`buswidth,8))) lower_addr_bits= ff_lower_order_bits.first();
-			Bit#(TAdd#(TLog#(TDiv#(`buswidth,8)),3)) lv_shift = {lower_addr_bits,3'd0};
+			Bit#(TLog#(TDiv#(ELEN,8))) lower_addr_bits= ff_lower_order_bits.first();
+			Bit#(TAdd#(TLog#(TDiv#(ELEN,8)),3)) lv_shift = {lower_addr_bits,3'd0};
 			let lv_data= response.rdata >> lv_shift;
-    	$fwrite(dump,"%8h\n", lv_data[31:0]); 
+    	$fwrite(dump,"%4h\n", lv_data[31:0]); 
       rg_total_count<=rg_total_count-1;
       if (response.rresp!=AXI4_OKAY)begin
         $display($time, "\tSIGNATUREDUMP got Bus Error");

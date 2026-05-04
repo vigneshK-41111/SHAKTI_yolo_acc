@@ -1,3 +1,3 @@
 2 errors generated.
 Error while processing /scratch1/iot/cnn_accel/solution1/.autopilot/db/cnn_accel.pp.0.cpp.
-clang-tidy applied 10 of 10 suggested fixes.
+clang-tidy applied 15 of 15 suggested fixes.

@@ -1,11 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler cnn_accel_tile_in_RAM_T2P_BRAM_1R1W BINDTYPE {storage} TYPE {ram_t2p} IMPL {bram} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler cnn_accel_gmem_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
 
@@ -19,13 +14,29 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 set axilite_register_dict [dict create]
 set port_control {
+input_r { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 16
+	offset_end 27
+}
+output_r { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 28
+	offset_end 39
+}
 size { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 16
-	offset_end 23
+	offset 40
+	offset_end 47
 }
 ap_start { }
 ap_done { }
@@ -41,7 +52,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 56 \
+			id 2838 \
 			corename cnn_accel_control_axilite \
 			name cnn_accel_control_s_axi \
 			ports {$port_control} \
@@ -59,51 +70,6 @@ if {${::AESL::PGuard_simmodel_gen}} {
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler cnn_accel_control_s_axi BINDTYPE interface TYPE interface_s_axilite
-}
-
-set port_control_r {
-input_r { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 16
-	offset_end 27
-}
-output_r { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 28
-	offset_end 39
-}
-}
-dict set axilite_register_dict control_r $port_control_r
-
-
-# Native S_AXILite:
-if {${::AESL::PGuard_simmodel_gen}} {
-	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
-		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 57 \
-			corename cnn_accel_control_r_axilite \
-			name cnn_accel_control_r_s_axi \
-			ports {$port_control_r} \
-			op interface \
-			interrupt_clear_mode TOW \
-			interrupt_trigger_type default \
-			is_flushable 0 \
-			is_datawidth64 0 \
-			is_addrwidth64 1 \
-		} "
-	} else {
-		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'control_r'"
-	}
-}
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler cnn_accel_control_r_s_axi BINDTYPE interface TYPE interface_s_axilite
 }
 
 

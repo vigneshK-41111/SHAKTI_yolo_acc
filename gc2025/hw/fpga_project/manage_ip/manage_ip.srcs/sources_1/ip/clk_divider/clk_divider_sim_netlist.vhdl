@@ -1,14 +1,14 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Mon Apr 27 13:16:00 2026
+-- Date        : Thu Apr 30 14:35:43 2026
 -- Host        : jarvis running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               /scratch1/iot/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/clk_divider/clk_divider_sim_netlist.vhdl
+--               /scratch1/iot/new/gc2025/hw/fpga_project/manage_ip/manage_ip.srcs/sources_1/ip/clk_divider/clk_divider_sim_netlist.vhdl
 -- Design      : clk_divider
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a200tsbg484-1
+-- Device      : xc7k325tffg900-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -21,7 +21,8 @@ entity clk_divider_clk_divider_clk_wiz is
     clk_out3 : out STD_LOGIC;
     resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    clk_in1_p : in STD_LOGIC;
+    clk_in1_n : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of clk_divider_clk_divider_clk_wiz : entity is "clk_divider_clk_wiz";
@@ -51,13 +52,13 @@ architecture STRUCTURE of clk_divider_clk_divider_clk_wiz is
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of clkf_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkin1_ibufg : label is "PRIMITIVE";
+  attribute BOX_TYPE of clkin1_ibufgds : label is "PRIMITIVE";
   attribute CAPACITANCE : string;
-  attribute CAPACITANCE of clkin1_ibufg : label is "DONT_CARE";
+  attribute CAPACITANCE of clkin1_ibufgds : label is "DONT_CARE";
   attribute IBUF_DELAY_VALUE : string;
-  attribute IBUF_DELAY_VALUE of clkin1_ibufg : label is "0";
+  attribute IBUF_DELAY_VALUE of clkin1_ibufgds : label is "0";
   attribute IFD_DELAY_VALUE : string;
-  attribute IFD_DELAY_VALUE of clkin1_ibufg : label is "AUTO";
+  attribute IFD_DELAY_VALUE of clkin1_ibufgds : label is "AUTO";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout3_buf : label is "PRIMITIVE";
@@ -68,12 +69,13 @@ clkf_buf: unisim.vcomponents.BUFG
       I => clkfbout_clk_divider,
       O => clkfbout_buf_clk_divider
     );
-clkin1_ibufg: unisim.vcomponents.IBUF
+clkin1_ibufgds: unisim.vcomponents.IBUFDS
     generic map(
       IOSTANDARD => "DEFAULT"
     )
         port map (
-      I => clk_in1,
+      I => clk_in1_p,
+      IB => clk_in1_n,
       O => clk_in1_clk_divider
     );
 clkout1_buf: unisim.vcomponents.BUFG
@@ -94,16 +96,16 @@ clkout3_buf: unisim.vcomponents.BUFG
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 10.000000,
+      CLKFBOUT_MULT_F => 5.000000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
-      CLKIN1_PERIOD => 10.000000,
+      CLKIN1_PERIOD => 5.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 25.000000,
+      CLKOUT0_DIVIDE_F => 20.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
-      CLKOUT1_DIVIDE => 10,
+      CLKOUT1_DIVIDE => 5,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => false,
@@ -197,7 +199,8 @@ entity clk_divider is
     clk_out3 : out STD_LOGIC;
     resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    clk_in1_p : in STD_LOGIC;
+    clk_in1_n : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of clk_divider : entity is true;
@@ -207,7 +210,8 @@ architecture STRUCTURE of clk_divider is
 begin
 inst: entity work.clk_divider_clk_divider_clk_wiz
      port map (
-      clk_in1 => clk_in1,
+      clk_in1_n => clk_in1_n,
+      clk_in1_p => clk_in1_p,
       clk_out1 => clk_out1,
       clk_out2 => clk_out2,
       clk_out3 => clk_out3,

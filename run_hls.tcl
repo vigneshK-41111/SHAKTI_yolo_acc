@@ -1,20 +1,29 @@
+
 open_project cnn_accel
 set_top cnn_accel
 
 add_files cnn_accel.cpp
-add_files conv1_weight.h
-add_files conv2_weight.h
-add_files conv3_weight.h
 
-open_solution "solution1"
+add_files 0_conv_weight.h
+add_files 0_conv_weight_bias.h
 
-set_part xc7a200tsbg484-1
+add_files 1_conv_weight.h
+add_files 1_conv_weight_bias.h
+
+add_files 2_cv1_conv_weight.h
+add_files 2_cv1_conv_weight_bias.h
+
+open_solution "solution2"
+
+set_part xc7k325tffg900-2
+
 create_clock -period 10
 
-# Skip simulation
-# csim_design
+# Keep this
+config_compile -pipeline_loops 1
 
-# Run synthesis directly
 csynth_design
 
 exit
+
+

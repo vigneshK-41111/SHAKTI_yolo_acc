@@ -10,8 +10,8 @@ Config   base-address bound-address
 ======== ============ =============
 Memory   'h8000_0000  'h8FFF_FFFF
 BootRAM  'h0000_1000  'h0000_8FFF
-UART0    'h0001_1300  'h0001_1340
-UART1    'h0001_1400  'h0001_1440
+UART0    'h0001_1300  'h0000_1340
+UART1    'h0001_1400  'h0000_1440
 SPI0     'h0002_0000  'h0002_00FF
 SPI1     'h0002_0100  'h0002_01FF
 I2C0     'h0004_0000  'h0004_00FF

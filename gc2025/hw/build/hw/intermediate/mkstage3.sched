@@ -33,12 +33,7 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -104,12 +99,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      rx_rx_meta_from_stage2_notEmpty,
 			      rx_rx_meta_from_stage2_first_deq_rdy,
@@ -167,12 +157,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      rx_rx_meta_from_stage2_notEmpty,
 			      rx_rx_meta_from_stage2_first_deq_rdy,
@@ -232,8 +217,7 @@ Conflict-free: common_ma_priv,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_mv_flush_fst,
 			       common_mv_flush_snd,
@@ -247,11 +231,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_trapout_to_stage4_enq_ena,
 			       tx_tx_trapout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
-			       tx_tx_fuid_to_stage4_enq_data,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       tx_tx_fuid_to_stage4_enq_data
 Conflicts: common_ma_csr_misa_c
  
 Method: common_ma_sb_release
@@ -285,12 +265,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -337,6 +312,8 @@ Conflict-free: common_mv_flush_fst,
 	       rx_rx_opmeta_from_stage2_first,
 	       tx_tx_baseout_to_stage4_notFull,
 	       tx_tx_baseout_to_stage4_enq_rdy,
+	       tx_tx_baseout_to_stage4_enq_ena,
+	       tx_tx_baseout_to_stage4_enq_data,
 	       tx_tx_trapout_to_stage4_notFull,
 	       tx_tx_trapout_to_stage4_enq_rdy,
 	       tx_tx_systemout_to_stage4_notFull,
@@ -357,27 +334,20 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_ma_sb_release,
 			       rx_rx_meta_from_stage2_deq_ena,
 			       rx_rx_mtval_from_stage2_deq_ena,
 			       rx_rx_instrtype_from_stage2_deq_ena,
 			       rx_rx_opmeta_from_stage2_deq_ena,
-			       tx_tx_baseout_to_stage4_enq_ena,
-			       tx_tx_baseout_to_stage4_enq_data,
 			       tx_tx_trapout_to_stage4_enq_ena,
 			       tx_tx_trapout_to_stage4_enq_data,
 			       tx_tx_memoryout_to_stage4_enq_ena,
 			       tx_tx_memoryout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
-			       cache_mv_memory_request_get,
-			       perfmonitors_mv_count_exestalls
+			       cache_mv_memory_request_get
 Conflicts: common_ma_priv
  
 Method: common_ma_mstatus
@@ -400,6 +370,8 @@ Conflict-free: common_mv_flush_fst,
 	       rx_rx_opmeta_from_stage2_first,
 	       tx_tx_baseout_to_stage4_notFull,
 	       tx_tx_baseout_to_stage4_enq_rdy,
+	       tx_tx_baseout_to_stage4_enq_ena,
+	       tx_tx_baseout_to_stage4_enq_data,
 	       tx_tx_trapout_to_stage4_notFull,
 	       tx_tx_trapout_to_stage4_enq_rdy,
 	       tx_tx_systemout_to_stage4_notFull,
@@ -420,27 +392,20 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_ma_sb_release,
 			       rx_rx_meta_from_stage2_deq_ena,
 			       rx_rx_mtval_from_stage2_deq_ena,
 			       rx_rx_instrtype_from_stage2_deq_ena,
 			       rx_rx_opmeta_from_stage2_deq_ena,
-			       tx_tx_baseout_to_stage4_enq_ena,
-			       tx_tx_baseout_to_stage4_enq_data,
 			       tx_tx_trapout_to_stage4_enq_ena,
 			       tx_tx_trapout_to_stage4_enq_data,
 			       tx_tx_memoryout_to_stage4_enq_ena,
 			       tx_tx_memoryout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
-			       cache_mv_memory_request_get,
-			       perfmonitors_mv_count_exestalls
+			       cache_mv_memory_request_get
 Conflicts: common_ma_mstatus
  
 Method: rx_rx_meta_from_stage2_notEmpty
@@ -498,12 +463,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_meta_from_stage2_notEmpty
  
 Method: rx_rx_meta_from_stage2_first_deq_rdy
@@ -561,12 +521,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_meta_from_stage2_first_deq_rdy
  
 Method: rx_rx_meta_from_stage2_first
@@ -624,12 +579,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_meta_from_stage2_first
  
 Method: rx_rx_meta_from_stage2_deq_ena
@@ -664,12 +614,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -750,12 +695,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: rx_rx_mtval_from_stage2_notEmpty
  
 Method: rx_rx_mtval_from_stage2_first_deq_rdy
@@ -813,12 +753,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_mtval_from_stage2_first_deq_rdy
  
 Method: rx_rx_mtval_from_stage2_first
@@ -866,12 +801,7 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_ma_sb_release,
 			       rx_rx_meta_from_stage2_deq_ena,
@@ -916,12 +846,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -1002,12 +927,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: rx_rx_instrtype_from_stage2_notEmpty
  
 Method: rx_rx_instrtype_from_stage2_first_deq_rdy
@@ -1065,12 +985,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_instrtype_from_stage2_first_deq_rdy
  
 Method: rx_rx_instrtype_from_stage2_first
@@ -1128,12 +1043,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_instrtype_from_stage2_first
  
 Method: rx_rx_instrtype_from_stage2_deq_ena
@@ -1168,12 +1078,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -1254,12 +1159,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: rx_rx_opmeta_from_stage2_notEmpty
  
 Method: rx_rx_opmeta_from_stage2_first_deq_rdy
@@ -1317,12 +1217,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_opmeta_from_stage2_first_deq_rdy
  
 Method: rx_rx_opmeta_from_stage2_first
@@ -1380,12 +1275,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rx_rx_opmeta_from_stage2_first
  
 Method: rx_rx_opmeta_from_stage2_deq_ena
@@ -1420,12 +1310,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -1506,12 +1391,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: tx_tx_baseout_to_stage4_notFull
  
 Method: tx_tx_baseout_to_stage4_enq_rdy
@@ -1540,11 +1420,14 @@ Conflict-free: common_ma_csr_misa_c,
 	       tx_tx_systemout_to_stage4_enq_data,
 	       tx_tx_memoryout_to_stage4_notFull,
 	       tx_tx_memoryout_to_stage4_enq_rdy,
+	       tx_tx_memoryout_to_stage4_enq_ena,
+	       tx_tx_memoryout_to_stage4_enq_data,
 	       tx_tx_fuid_to_stage4_notFull,
 	       tx_tx_fuid_to_stage4_enq_rdy,
 	       rf_ma_op1,
 	       rf_ma_op2,
 	       rf_ma_op3,
+	       cache_mv_memory_request_get,
 	       cache_ma_cache_is_available,
 	       bypass_ma_bypass,
 	       bpu_ma_next_pc,
@@ -1552,8 +1435,7 @@ Conflict-free: common_ma_csr_misa_c,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_mv_flush_fst,
 			       common_mv_flush_snd,
@@ -1566,15 +1448,8 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_baseout_to_stage4_enq_data,
 			       tx_tx_trapout_to_stage4_enq_ena,
 			       tx_tx_trapout_to_stage4_enq_data,
-			       tx_tx_memoryout_to_stage4_enq_ena,
-			       tx_tx_memoryout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
-			       tx_tx_fuid_to_stage4_enq_data,
-			       cache_mv_memory_request_get,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       tx_tx_fuid_to_stage4_enq_data
 Conflicts: tx_tx_baseout_to_stage4_enq_rdy
  
 Method: tx_tx_baseout_to_stage4_enq_ena
@@ -1583,6 +1458,8 @@ Conflict-free: common_ma_update_wEpoch,
 	       common_mv_flush_fst,
 	       common_mv_flush_snd,
 	       common_ma_sb_release,
+	       common_ma_priv,
+	       common_ma_mstatus,
 	       rx_rx_meta_from_stage2_deq_ena,
 	       rx_rx_mtval_from_stage2_notEmpty,
 	       rx_rx_mtval_from_stage2_first,
@@ -1602,25 +1479,20 @@ Conflict-free: common_ma_update_wEpoch,
 	       tx_tx_systemout_to_stage4_enq_ena,
 	       tx_tx_systemout_to_stage4_enq_data,
 	       tx_tx_memoryout_to_stage4_notFull,
+	       tx_tx_memoryout_to_stage4_enq_rdy,
 	       tx_tx_memoryout_to_stage4_enq_ena,
 	       tx_tx_memoryout_to_stage4_enq_data,
 	       tx_tx_fuid_to_stage4_notFull,
 	       tx_tx_fuid_to_stage4_enq_ena,
 	       tx_tx_fuid_to_stage4_enq_data,
 	       cache_mv_memory_request_get,
+	       cache_ma_cache_is_available,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_csr_misa_c,
-			      common_ma_priv,
-			      common_ma_mstatus,
 			      rx_rx_meta_from_stage2_notEmpty,
 			      rx_rx_meta_from_stage2_first_deq_rdy,
 			      rx_rx_meta_from_stage2_first,
@@ -1631,12 +1503,10 @@ Sequenced after (restricted): common_ma_csr_misa_c,
 			      rx_rx_opmeta_from_stage2_first,
 			      tx_tx_baseout_to_stage4_enq_rdy,
 			      tx_tx_trapout_to_stage4_enq_rdy,
-			      tx_tx_memoryout_to_stage4_enq_rdy,
 			      tx_tx_fuid_to_stage4_enq_rdy,
 			      rf_ma_op1,
 			      rf_ma_op2,
 			      rf_ma_op3,
-			      cache_ma_cache_is_available,
 			      bypass_ma_bypass,
 			      bpu_ma_next_pc
  
@@ -1646,6 +1516,8 @@ Conflict-free: common_ma_update_wEpoch,
 	       common_mv_flush_fst,
 	       common_mv_flush_snd,
 	       common_ma_sb_release,
+	       common_ma_priv,
+	       common_ma_mstatus,
 	       rx_rx_meta_from_stage2_deq_ena,
 	       rx_rx_mtval_from_stage2_notEmpty,
 	       rx_rx_mtval_from_stage2_first,
@@ -1665,25 +1537,20 @@ Conflict-free: common_ma_update_wEpoch,
 	       tx_tx_systemout_to_stage4_enq_ena,
 	       tx_tx_systemout_to_stage4_enq_data,
 	       tx_tx_memoryout_to_stage4_notFull,
+	       tx_tx_memoryout_to_stage4_enq_rdy,
 	       tx_tx_memoryout_to_stage4_enq_ena,
 	       tx_tx_memoryout_to_stage4_enq_data,
 	       tx_tx_fuid_to_stage4_notFull,
 	       tx_tx_fuid_to_stage4_enq_ena,
 	       tx_tx_fuid_to_stage4_enq_data,
 	       cache_mv_memory_request_get,
+	       cache_ma_cache_is_available,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_csr_misa_c,
-			      common_ma_priv,
-			      common_ma_mstatus,
 			      rx_rx_meta_from_stage2_notEmpty,
 			      rx_rx_meta_from_stage2_first_deq_rdy,
 			      rx_rx_meta_from_stage2_first,
@@ -1694,12 +1561,10 @@ Sequenced after (restricted): common_ma_csr_misa_c,
 			      rx_rx_opmeta_from_stage2_first,
 			      tx_tx_baseout_to_stage4_enq_rdy,
 			      tx_tx_trapout_to_stage4_enq_rdy,
-			      tx_tx_memoryout_to_stage4_enq_rdy,
 			      tx_tx_fuid_to_stage4_enq_rdy,
 			      rf_ma_op1,
 			      rf_ma_op2,
 			      rf_ma_op3,
-			      cache_ma_cache_is_available,
 			      bypass_ma_bypass,
 			      bpu_ma_next_pc
  
@@ -1758,12 +1623,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: tx_tx_trapout_to_stage4_notFull
  
 Method: tx_tx_trapout_to_stage4_enq_rdy
@@ -1804,8 +1664,7 @@ Conflict-free: common_ma_csr_misa_c,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_mv_flush_fst,
 			       common_mv_flush_snd,
@@ -1822,11 +1681,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_memoryout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
-			       cache_mv_memory_request_get,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       cache_mv_memory_request_get
 Conflicts: tx_tx_trapout_to_stage4_enq_rdy
  
 Method: tx_tx_trapout_to_stage4_enq_ena
@@ -1863,12 +1718,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -1926,12 +1776,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -2010,12 +1855,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: tx_tx_systemout_to_stage4_notFull
  
 Method: tx_tx_systemout_to_stage4_enq_rdy
@@ -2063,10 +1903,7 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_ma_sb_release,
 			       rx_rx_meta_from_stage2_deq_ena,
@@ -2076,9 +1913,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_systemout_to_stage4_enq_ena,
 			       tx_tx_systemout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
-			       tx_tx_fuid_to_stage4_enq_data,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       tx_tx_fuid_to_stage4_enq_data
 Conflicts: tx_tx_systemout_to_stage4_enq_rdy
  
 Method: tx_tx_systemout_to_stage4_enq_ena
@@ -2123,12 +1958,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): rx_rx_meta_from_stage2_notEmpty,
 			      rx_rx_meta_from_stage2_first_deq_rdy,
 			      rx_rx_meta_from_stage2_first,
@@ -2186,12 +2016,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): rx_rx_meta_from_stage2_notEmpty,
 			      rx_rx_meta_from_stage2_first_deq_rdy,
 			      rx_rx_meta_from_stage2_first,
@@ -2262,12 +2087,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: tx_tx_memoryout_to_stage4_notFull
  
 Method: tx_tx_memoryout_to_stage4_enq_rdy
@@ -2291,6 +2111,8 @@ Conflict-free: common_mv_flush_fst,
 	       rx_rx_opmeta_from_stage2_first,
 	       tx_tx_baseout_to_stage4_notFull,
 	       tx_tx_baseout_to_stage4_enq_rdy,
+	       tx_tx_baseout_to_stage4_enq_ena,
+	       tx_tx_baseout_to_stage4_enq_data,
 	       tx_tx_trapout_to_stage4_notFull,
 	       tx_tx_trapout_to_stage4_enq_rdy,
 	       tx_tx_systemout_to_stage4_notFull,
@@ -2310,27 +2132,20 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_ma_sb_release,
 			       rx_rx_meta_from_stage2_deq_ena,
 			       rx_rx_mtval_from_stage2_deq_ena,
 			       rx_rx_instrtype_from_stage2_deq_ena,
 			       rx_rx_opmeta_from_stage2_deq_ena,
-			       tx_tx_baseout_to_stage4_enq_ena,
-			       tx_tx_baseout_to_stage4_enq_data,
 			       tx_tx_trapout_to_stage4_enq_ena,
 			       tx_tx_trapout_to_stage4_enq_data,
 			       tx_tx_memoryout_to_stage4_enq_ena,
 			       tx_tx_memoryout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
-			       cache_mv_memory_request_get,
-			       perfmonitors_mv_count_exestalls
+			       cache_mv_memory_request_get
 Conflicts: tx_tx_memoryout_to_stage4_enq_rdy
  
 Method: tx_tx_memoryout_to_stage4_enq_ena
@@ -2349,6 +2164,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       rx_rx_opmeta_from_stage2_notEmpty,
 	       rx_rx_opmeta_from_stage2_deq_ena,
 	       tx_tx_baseout_to_stage4_notFull,
+	       tx_tx_baseout_to_stage4_enq_rdy,
 	       tx_tx_baseout_to_stage4_enq_ena,
 	       tx_tx_baseout_to_stage4_enq_data,
 	       tx_tx_trapout_to_stage4_notFull,
@@ -2370,12 +2186,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_priv,
 			      common_ma_mstatus,
 			      rx_rx_meta_from_stage2_notEmpty,
@@ -2386,7 +2197,6 @@ Sequenced after (restricted): common_ma_priv,
 			      rx_rx_instrtype_from_stage2_first,
 			      rx_rx_opmeta_from_stage2_first_deq_rdy,
 			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_baseout_to_stage4_enq_rdy,
 			      tx_tx_trapout_to_stage4_enq_rdy,
 			      tx_tx_memoryout_to_stage4_enq_rdy,
 			      tx_tx_fuid_to_stage4_enq_rdy,
@@ -2412,6 +2222,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       rx_rx_opmeta_from_stage2_notEmpty,
 	       rx_rx_opmeta_from_stage2_deq_ena,
 	       tx_tx_baseout_to_stage4_notFull,
+	       tx_tx_baseout_to_stage4_enq_rdy,
 	       tx_tx_baseout_to_stage4_enq_ena,
 	       tx_tx_baseout_to_stage4_enq_data,
 	       tx_tx_trapout_to_stage4_notFull,
@@ -2433,12 +2244,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_priv,
 			      common_ma_mstatus,
 			      rx_rx_meta_from_stage2_notEmpty,
@@ -2449,7 +2255,6 @@ Sequenced after (restricted): common_ma_priv,
 			      rx_rx_instrtype_from_stage2_first,
 			      rx_rx_opmeta_from_stage2_first_deq_rdy,
 			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_baseout_to_stage4_enq_rdy,
 			      tx_tx_trapout_to_stage4_enq_rdy,
 			      tx_tx_memoryout_to_stage4_enq_rdy,
 			      tx_tx_fuid_to_stage4_enq_rdy,
@@ -2514,12 +2319,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Conflicts: tx_tx_fuid_to_stage4_notFull
  
 Method: tx_tx_fuid_to_stage4_enq_rdy
@@ -2577,12 +2377,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: tx_tx_fuid_to_stage4_enq_rdy
  
 Method: tx_tx_fuid_to_stage4_enq_ena
@@ -2617,12 +2412,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -2680,12 +2470,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): common_ma_csr_misa_c,
 			      common_ma_priv,
 			      common_ma_mstatus,
@@ -2766,12 +2551,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rf_ma_op1
  
 Method: rf_ma_op2
@@ -2829,12 +2609,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: rf_ma_op2
  
 Method: rf_ma_op3
@@ -2873,8 +2648,7 @@ Conflict-free: common_ma_csr_misa_c,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_mv_flush_fst,
 			       common_mv_flush_snd,
@@ -2893,11 +2667,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_memoryout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
-			       cache_mv_memory_request_get,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       cache_mv_memory_request_get
 Conflicts: rf_ma_op3
  
 Method: cache_mv_memory_request_get
@@ -2916,6 +2686,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       rx_rx_opmeta_from_stage2_notEmpty,
 	       rx_rx_opmeta_from_stage2_deq_ena,
 	       tx_tx_baseout_to_stage4_notFull,
+	       tx_tx_baseout_to_stage4_enq_rdy,
 	       tx_tx_baseout_to_stage4_enq_ena,
 	       tx_tx_baseout_to_stage4_enq_data,
 	       tx_tx_trapout_to_stage4_notFull,
@@ -2937,12 +2708,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
 Sequenced after (restricted): common_ma_priv,
 			      common_ma_mstatus,
 			      rx_rx_meta_from_stage2_notEmpty,
@@ -2953,7 +2719,6 @@ Sequenced after (restricted): common_ma_priv,
 			      rx_rx_instrtype_from_stage2_first,
 			      rx_rx_opmeta_from_stage2_first_deq_rdy,
 			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_baseout_to_stage4_enq_rdy,
 			      tx_tx_trapout_to_stage4_enq_rdy,
 			      tx_tx_memoryout_to_stage4_enq_rdy,
 			      tx_tx_fuid_to_stage4_enq_rdy,
@@ -2984,6 +2749,8 @@ Conflict-free: common_mv_flush_fst,
 	       rx_rx_opmeta_from_stage2_first,
 	       tx_tx_baseout_to_stage4_notFull,
 	       tx_tx_baseout_to_stage4_enq_rdy,
+	       tx_tx_baseout_to_stage4_enq_ena,
+	       tx_tx_baseout_to_stage4_enq_data,
 	       tx_tx_trapout_to_stage4_notFull,
 	       tx_tx_trapout_to_stage4_enq_rdy,
 	       tx_tx_systemout_to_stage4_notFull,
@@ -3003,27 +2770,20 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_ma_sb_release,
 			       rx_rx_meta_from_stage2_deq_ena,
 			       rx_rx_mtval_from_stage2_deq_ena,
 			       rx_rx_instrtype_from_stage2_deq_ena,
 			       rx_rx_opmeta_from_stage2_deq_ena,
-			       tx_tx_baseout_to_stage4_enq_ena,
-			       tx_tx_baseout_to_stage4_enq_data,
 			       tx_tx_trapout_to_stage4_enq_ena,
 			       tx_tx_trapout_to_stage4_enq_data,
 			       tx_tx_memoryout_to_stage4_enq_ena,
 			       tx_tx_memoryout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
-			       cache_mv_memory_request_get,
-			       perfmonitors_mv_count_exestalls
+			       cache_mv_memory_request_get
 Conflicts: cache_ma_cache_is_available
  
 Method: bypass_ma_bypass
@@ -3081,12 +2841,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
 			       cache_mv_memory_request_get,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: bypass_ma_bypass
  
 Method: bpu_ma_next_pc
@@ -3130,8 +2885,7 @@ Conflict-free: common_ma_csr_misa_c,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv
+	       muldiv_ma_mbox_ready
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_mv_flush_fst,
 			       common_mv_flush_snd,
@@ -3145,11 +2899,7 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       tx_tx_trapout_to_stage4_enq_ena,
 			       tx_tx_trapout_to_stage4_enq_data,
 			       tx_tx_fuid_to_stage4_enq_ena,
-			       tx_tx_fuid_to_stage4_enq_data,
-			       perfmonitors_mv_count_jumps,
-			       perfmonitors_mv_count_branches,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       tx_tx_fuid_to_stage4_enq_data
 Conflicts: bpu_ma_next_pc
  
 Method: bpu_mv_train_bpu
@@ -3208,12 +2958,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
  
 Method: bpu_mv_mispredict_fst
 Ready signal: wr_mispredict_ghr[9]
@@ -3271,12 +3016,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
  
 Method: bpu_mv_mispredict_snd
 Ready signal: wr_mispredict_ghr[9]
@@ -3334,12 +3074,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
 	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_ma_mbox_ready
  
 Method: muldiv_mv_mbox_inputs
 Ready signal: wr_muldiv_inputs.whas
@@ -3384,12 +3119,7 @@ Conflict-free: common_ma_update_wEpoch,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
 	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
+	       muldiv_mv_mbox_inputs
 Sequenced after (restricted): rx_rx_meta_from_stage2_notEmpty,
 			      rx_rx_meta_from_stage2_first_deq_rdy,
 			      rx_rx_meta_from_stage2_first,
@@ -3450,9 +3180,7 @@ Conflict-free: common_mv_flush_fst,
 	       bpu_ma_next_pc,
 	       bpu_mv_train_bpu,
 	       bpu_mv_mispredict_fst,
-	       bpu_mv_mispredict_snd,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches
+	       bpu_mv_mispredict_snd
 Sequenced before (restricted): common_ma_update_wEpoch,
 			       common_ma_sb_release,
 			       rx_rx_meta_from_stage2_deq_ena,
@@ -3461,326 +3189,8 @@ Sequenced before (restricted): common_ma_update_wEpoch,
 			       rx_rx_opmeta_from_stage2_deq_ena,
 			       tx_tx_fuid_to_stage4_enq_ena,
 			       tx_tx_fuid_to_stage4_enq_data,
-			       muldiv_mv_mbox_inputs,
-			       perfmonitors_mv_count_muldiv,
-			       perfmonitors_mv_count_rawstalls,
-			       perfmonitors_mv_count_exestalls
+			       muldiv_mv_mbox_inputs
 Conflicts: muldiv_ma_mbox_ready
- 
-Method: perfmonitors_mv_count_muldiv
-Ready signal: True
-Conflict-free: common_ma_update_wEpoch,
-	       common_mv_flush_fst,
-	       common_mv_flush_snd,
-	       common_ma_csr_misa_c,
-	       common_ma_sb_release,
-	       common_ma_priv,
-	       common_ma_mstatus,
-	       rx_rx_meta_from_stage2_deq_ena,
-	       rx_rx_mtval_from_stage2_notEmpty,
-	       rx_rx_mtval_from_stage2_first,
-	       rx_rx_mtval_from_stage2_deq_ena,
-	       rx_rx_instrtype_from_stage2_notEmpty,
-	       rx_rx_instrtype_from_stage2_deq_ena,
-	       rx_rx_opmeta_from_stage2_notEmpty,
-	       rx_rx_opmeta_from_stage2_deq_ena,
-	       tx_tx_baseout_to_stage4_notFull,
-	       tx_tx_baseout_to_stage4_enq_rdy,
-	       tx_tx_baseout_to_stage4_enq_ena,
-	       tx_tx_baseout_to_stage4_enq_data,
-	       tx_tx_trapout_to_stage4_notFull,
-	       tx_tx_trapout_to_stage4_enq_rdy,
-	       tx_tx_trapout_to_stage4_enq_ena,
-	       tx_tx_trapout_to_stage4_enq_data,
-	       tx_tx_systemout_to_stage4_notFull,
-	       tx_tx_systemout_to_stage4_enq_rdy,
-	       tx_tx_systemout_to_stage4_enq_ena,
-	       tx_tx_systemout_to_stage4_enq_data,
-	       tx_tx_memoryout_to_stage4_notFull,
-	       tx_tx_memoryout_to_stage4_enq_rdy,
-	       tx_tx_memoryout_to_stage4_enq_ena,
-	       tx_tx_memoryout_to_stage4_enq_data,
-	       tx_tx_fuid_to_stage4_notFull,
-	       tx_tx_fuid_to_stage4_enq_ena,
-	       tx_tx_fuid_to_stage4_enq_data,
-	       rf_ma_op3,
-	       cache_mv_memory_request_get,
-	       cache_ma_cache_is_available,
-	       bpu_ma_next_pc,
-	       bpu_mv_train_bpu,
-	       bpu_mv_mispredict_fst,
-	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
-Sequenced after (restricted): rx_rx_meta_from_stage2_notEmpty,
-			      rx_rx_meta_from_stage2_first_deq_rdy,
-			      rx_rx_meta_from_stage2_first,
-			      rx_rx_mtval_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first,
-			      rx_rx_opmeta_from_stage2_first_deq_rdy,
-			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_fuid_to_stage4_enq_rdy,
-			      rf_ma_op1,
-			      rf_ma_op2,
-			      bypass_ma_bypass,
-			      muldiv_ma_mbox_ready
- 
-Method: perfmonitors_mv_count_jumps
-Ready signal: True
-Conflict-free: common_ma_update_wEpoch,
-	       common_mv_flush_fst,
-	       common_mv_flush_snd,
-	       common_ma_sb_release,
-	       common_ma_priv,
-	       common_ma_mstatus,
-	       rx_rx_meta_from_stage2_deq_ena,
-	       rx_rx_mtval_from_stage2_notEmpty,
-	       rx_rx_mtval_from_stage2_first,
-	       rx_rx_mtval_from_stage2_deq_ena,
-	       rx_rx_instrtype_from_stage2_notEmpty,
-	       rx_rx_instrtype_from_stage2_deq_ena,
-	       rx_rx_opmeta_from_stage2_notEmpty,
-	       rx_rx_opmeta_from_stage2_deq_ena,
-	       tx_tx_baseout_to_stage4_notFull,
-	       tx_tx_baseout_to_stage4_enq_ena,
-	       tx_tx_baseout_to_stage4_enq_data,
-	       tx_tx_trapout_to_stage4_notFull,
-	       tx_tx_trapout_to_stage4_enq_ena,
-	       tx_tx_trapout_to_stage4_enq_data,
-	       tx_tx_systemout_to_stage4_notFull,
-	       tx_tx_systemout_to_stage4_enq_rdy,
-	       tx_tx_systemout_to_stage4_enq_ena,
-	       tx_tx_systemout_to_stage4_enq_data,
-	       tx_tx_memoryout_to_stage4_notFull,
-	       tx_tx_memoryout_to_stage4_enq_rdy,
-	       tx_tx_memoryout_to_stage4_enq_ena,
-	       tx_tx_memoryout_to_stage4_enq_data,
-	       tx_tx_fuid_to_stage4_notFull,
-	       tx_tx_fuid_to_stage4_enq_ena,
-	       tx_tx_fuid_to_stage4_enq_data,
-	       cache_mv_memory_request_get,
-	       cache_ma_cache_is_available,
-	       bpu_mv_train_bpu,
-	       bpu_mv_mispredict_fst,
-	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
-Sequenced after (restricted): common_ma_csr_misa_c,
-			      rx_rx_meta_from_stage2_notEmpty,
-			      rx_rx_meta_from_stage2_first_deq_rdy,
-			      rx_rx_meta_from_stage2_first,
-			      rx_rx_mtval_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first,
-			      rx_rx_opmeta_from_stage2_first_deq_rdy,
-			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_baseout_to_stage4_enq_rdy,
-			      tx_tx_trapout_to_stage4_enq_rdy,
-			      tx_tx_fuid_to_stage4_enq_rdy,
-			      rf_ma_op1,
-			      rf_ma_op2,
-			      rf_ma_op3,
-			      bypass_ma_bypass,
-			      bpu_ma_next_pc
- 
-Method: perfmonitors_mv_count_branches
-Ready signal: True
-Conflict-free: common_ma_update_wEpoch,
-	       common_mv_flush_fst,
-	       common_mv_flush_snd,
-	       common_ma_sb_release,
-	       common_ma_priv,
-	       common_ma_mstatus,
-	       rx_rx_meta_from_stage2_deq_ena,
-	       rx_rx_mtval_from_stage2_notEmpty,
-	       rx_rx_mtval_from_stage2_first,
-	       rx_rx_mtval_from_stage2_deq_ena,
-	       rx_rx_instrtype_from_stage2_notEmpty,
-	       rx_rx_instrtype_from_stage2_deq_ena,
-	       rx_rx_opmeta_from_stage2_notEmpty,
-	       rx_rx_opmeta_from_stage2_deq_ena,
-	       tx_tx_baseout_to_stage4_notFull,
-	       tx_tx_baseout_to_stage4_enq_ena,
-	       tx_tx_baseout_to_stage4_enq_data,
-	       tx_tx_trapout_to_stage4_notFull,
-	       tx_tx_trapout_to_stage4_enq_ena,
-	       tx_tx_trapout_to_stage4_enq_data,
-	       tx_tx_systemout_to_stage4_notFull,
-	       tx_tx_systemout_to_stage4_enq_rdy,
-	       tx_tx_systemout_to_stage4_enq_ena,
-	       tx_tx_systemout_to_stage4_enq_data,
-	       tx_tx_memoryout_to_stage4_notFull,
-	       tx_tx_memoryout_to_stage4_enq_rdy,
-	       tx_tx_memoryout_to_stage4_enq_ena,
-	       tx_tx_memoryout_to_stage4_enq_data,
-	       tx_tx_fuid_to_stage4_notFull,
-	       tx_tx_fuid_to_stage4_enq_ena,
-	       tx_tx_fuid_to_stage4_enq_data,
-	       cache_mv_memory_request_get,
-	       cache_ma_cache_is_available,
-	       bpu_mv_train_bpu,
-	       bpu_mv_mispredict_fst,
-	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       muldiv_ma_mbox_ready,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
-Sequenced after (restricted): common_ma_csr_misa_c,
-			      rx_rx_meta_from_stage2_notEmpty,
-			      rx_rx_meta_from_stage2_first_deq_rdy,
-			      rx_rx_meta_from_stage2_first,
-			      rx_rx_mtval_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first,
-			      rx_rx_opmeta_from_stage2_first_deq_rdy,
-			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_baseout_to_stage4_enq_rdy,
-			      tx_tx_trapout_to_stage4_enq_rdy,
-			      tx_tx_fuid_to_stage4_enq_rdy,
-			      rf_ma_op1,
-			      rf_ma_op2,
-			      rf_ma_op3,
-			      bypass_ma_bypass,
-			      bpu_ma_next_pc
- 
-Method: perfmonitors_mv_count_rawstalls
-Ready signal: True
-Conflict-free: common_ma_update_wEpoch,
-	       common_mv_flush_fst,
-	       common_mv_flush_snd,
-	       common_ma_sb_release,
-	       common_ma_priv,
-	       common_ma_mstatus,
-	       rx_rx_meta_from_stage2_deq_ena,
-	       rx_rx_mtval_from_stage2_notEmpty,
-	       rx_rx_mtval_from_stage2_first,
-	       rx_rx_mtval_from_stage2_deq_ena,
-	       rx_rx_instrtype_from_stage2_notEmpty,
-	       rx_rx_instrtype_from_stage2_deq_ena,
-	       rx_rx_opmeta_from_stage2_notEmpty,
-	       rx_rx_opmeta_from_stage2_deq_ena,
-	       tx_tx_baseout_to_stage4_notFull,
-	       tx_tx_baseout_to_stage4_enq_ena,
-	       tx_tx_baseout_to_stage4_enq_data,
-	       tx_tx_trapout_to_stage4_notFull,
-	       tx_tx_trapout_to_stage4_enq_ena,
-	       tx_tx_trapout_to_stage4_enq_data,
-	       tx_tx_systemout_to_stage4_notFull,
-	       tx_tx_systemout_to_stage4_enq_ena,
-	       tx_tx_systemout_to_stage4_enq_data,
-	       tx_tx_memoryout_to_stage4_notFull,
-	       tx_tx_memoryout_to_stage4_enq_rdy,
-	       tx_tx_memoryout_to_stage4_enq_ena,
-	       tx_tx_memoryout_to_stage4_enq_data,
-	       tx_tx_fuid_to_stage4_notFull,
-	       tx_tx_fuid_to_stage4_enq_ena,
-	       tx_tx_fuid_to_stage4_enq_data,
-	       cache_mv_memory_request_get,
-	       cache_ma_cache_is_available,
-	       bpu_mv_train_bpu,
-	       bpu_mv_mispredict_fst,
-	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
-Sequenced after (restricted): common_ma_csr_misa_c,
-			      rx_rx_meta_from_stage2_notEmpty,
-			      rx_rx_meta_from_stage2_first_deq_rdy,
-			      rx_rx_meta_from_stage2_first,
-			      rx_rx_mtval_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first,
-			      rx_rx_opmeta_from_stage2_first_deq_rdy,
-			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_baseout_to_stage4_enq_rdy,
-			      tx_tx_trapout_to_stage4_enq_rdy,
-			      tx_tx_systemout_to_stage4_enq_rdy,
-			      tx_tx_fuid_to_stage4_enq_rdy,
-			      rf_ma_op1,
-			      rf_ma_op2,
-			      rf_ma_op3,
-			      bypass_ma_bypass,
-			      bpu_ma_next_pc,
-			      muldiv_ma_mbox_ready
- 
-Method: perfmonitors_mv_count_exestalls
-Ready signal: True
-Conflict-free: common_ma_update_wEpoch,
-	       common_mv_flush_fst,
-	       common_mv_flush_snd,
-	       common_ma_sb_release,
-	       rx_rx_meta_from_stage2_deq_ena,
-	       rx_rx_mtval_from_stage2_notEmpty,
-	       rx_rx_mtval_from_stage2_first,
-	       rx_rx_mtval_from_stage2_deq_ena,
-	       rx_rx_instrtype_from_stage2_notEmpty,
-	       rx_rx_instrtype_from_stage2_deq_ena,
-	       rx_rx_opmeta_from_stage2_notEmpty,
-	       rx_rx_opmeta_from_stage2_deq_ena,
-	       tx_tx_baseout_to_stage4_notFull,
-	       tx_tx_baseout_to_stage4_enq_ena,
-	       tx_tx_baseout_to_stage4_enq_data,
-	       tx_tx_trapout_to_stage4_notFull,
-	       tx_tx_trapout_to_stage4_enq_ena,
-	       tx_tx_trapout_to_stage4_enq_data,
-	       tx_tx_systemout_to_stage4_notFull,
-	       tx_tx_systemout_to_stage4_enq_ena,
-	       tx_tx_systemout_to_stage4_enq_data,
-	       tx_tx_memoryout_to_stage4_notFull,
-	       tx_tx_memoryout_to_stage4_enq_ena,
-	       tx_tx_memoryout_to_stage4_enq_data,
-	       tx_tx_fuid_to_stage4_notFull,
-	       tx_tx_fuid_to_stage4_enq_ena,
-	       tx_tx_fuid_to_stage4_enq_data,
-	       cache_mv_memory_request_get,
-	       bpu_mv_train_bpu,
-	       bpu_mv_mispredict_fst,
-	       bpu_mv_mispredict_snd,
-	       muldiv_mv_mbox_inputs,
-	       perfmonitors_mv_count_muldiv,
-	       perfmonitors_mv_count_jumps,
-	       perfmonitors_mv_count_branches,
-	       perfmonitors_mv_count_rawstalls,
-	       perfmonitors_mv_count_exestalls
-Sequenced after (restricted): common_ma_csr_misa_c,
-			      common_ma_priv,
-			      common_ma_mstatus,
-			      rx_rx_meta_from_stage2_notEmpty,
-			      rx_rx_meta_from_stage2_first_deq_rdy,
-			      rx_rx_meta_from_stage2_first,
-			      rx_rx_mtval_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first_deq_rdy,
-			      rx_rx_instrtype_from_stage2_first,
-			      rx_rx_opmeta_from_stage2_first_deq_rdy,
-			      rx_rx_opmeta_from_stage2_first,
-			      tx_tx_baseout_to_stage4_enq_rdy,
-			      tx_tx_trapout_to_stage4_enq_rdy,
-			      tx_tx_systemout_to_stage4_enq_rdy,
-			      tx_tx_memoryout_to_stage4_enq_rdy,
-			      tx_tx_fuid_to_stage4_enq_rdy,
-			      rf_ma_op1,
-			      rf_ma_op2,
-			      rf_ma_op3,
-			      cache_ma_cache_is_available,
-			      bypass_ma_bypass,
-			      bpu_ma_next_pc,
-			      muldiv_ma_mbox_ready
  
 Rule schedule
 -------------
@@ -3792,18 +3202,9 @@ Rule: wr_mispredict_ghr__dreg_update
 Predicate: True
 Blocking rules: (none)
  
-Rule: rl_structural_stalls
-Predicate: rx_meta_w_notEmpty.wget
-Blocking rules: rl_mbox,
-		rl_exe_base_memory,
-		rl_exe_base_arith,
-		rl_exe_base_control,
-		rl_trap_from_prev,
-		rl_system_instr,
-		rl_drop_instr
- 
 Rule: rl_perform_fwding
-Predicate: rx_opmeta_w_rdy.wget &&
+Predicate: rx_meta_w_rdy.wget &&
+	   rx_opmeta_w_rdy.wget &&
 	   wr_rf_op1.whas && wr_bypass.whas && wr_rf_op2.whas &&
 	   rx_meta_w_notEmpty.wget
 Blocking rules: (none)
@@ -3883,8 +3284,7 @@ Predicate: rx_instrtype_w_rdy.wget &&
 	   rx_mtval_w_rdy.wget &&
 	   tx_fuid_w_rdy.wget &&
 	   wr_op3.whas && wr_fwd_op1.whas &&
-	   tx_trapout_w_rdy.wget &&
-	   tx_baseout_w_rdy.wget && tx_memoryout_w_rdy.wget &&
+	   tx_trapout_w_rdy.wget && tx_memoryout_w_rdy.wget &&
 	   wr_fwd_op2.whas && wr_mstatus.whas && wr_priv.whas &&
 	   ((rx_instrtype_w_data.whas
 	     ? rx_instrtype_w_data.wget
@@ -4012,10 +3412,6 @@ Logical execution order: common_ma_csr_misa_c,
 			 tx_tx_baseout_to_stage4_enq_data,
 			 tx_tx_trapout_to_stage4_enq_ena,
 			 tx_tx_trapout_to_stage4_enq_data,
-			 perfmonitors_mv_count_jumps,
-			 perfmonitors_mv_count_branches,
-			 rl_structural_stalls,
-			 perfmonitors_mv_count_exestalls,
 			 rl_mbox,
 			 common_ma_update_wEpoch,
 			 common_ma_sb_release,
@@ -4026,8 +3422,6 @@ Logical execution order: common_ma_csr_misa_c,
 			 tx_tx_fuid_to_stage4_enq_ena,
 			 tx_tx_fuid_to_stage4_enq_data,
 			 muldiv_mv_mbox_inputs,
-			 perfmonitors_mv_count_muldiv,
-			 perfmonitors_mv_count_rawstalls,
 			 wr_training_data__dreg_update,
 			 wr_mispredict_ghr__dreg_update
 

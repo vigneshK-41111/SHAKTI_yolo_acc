@@ -1,14 +1,12 @@
 <pragmas>
-<pragma file="cnn_accel.cpp" line="36" pragmaType="loop_tripcount" parentfunction="cnn_accel" min="1" max="416" avg="208"/>
-<pragma file="cnn_accel.cpp" line="39" pragmaType="loop_tripcount" parentfunction="cnn_accel" min="1" max="416" avg="208"/>
-<pragma file="cnn_accel.cpp" line="44" pragmaType="pipeline" parentfunction="cnn_accel" off="0" ii="1" rewind="0" style=""/>
-<pragma file="cnn_accel.cpp" line="67" pragmaType="pipeline" parentfunction="cnn_accel" off="0" ii="1" rewind="0" style=""/>
-<pragma file="cnn_accel.cpp" line="85" pragmaType="pipeline" parentfunction="cnn_accel" off="0" ii="1" rewind="0" style=""/>
-<pragma file="cnn_accel.cpp" line="15" pragmaType="interface" parentfunction="cnn_accel" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="cnn_accel.cpp" line="16" pragmaType="interface" parentfunction="cnn_accel" mode="s_axilite" port="size" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="cnn_accel.cpp" line="18" pragmaType="interface" parentfunction="cnn_accel" mode="m_axi" port="input" bundle="gmem" offset="slave" name="" depth="2768896" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="cnn_accel.cpp" line="19" pragmaType="interface" parentfunction="cnn_accel" mode="m_axi" port="output" bundle="gmem" offset="slave" name="" depth="2768896" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
-<pragma file="cnn_accel.cpp" line="21" pragmaType="interface" parentfunction="cnn_accel" mode="ap_ctrl_hs" port="return" name=""/>
-<pragma file="cnn_accel.cpp" line="29" pragmaType="bind_storage" parentfunction="cnn_accel" op="666" impl="30" latency="-1" variable="tile_in"/>
-<pragma file="cnn_accel.cpp" line="32" pragmaType="bind_storage" parentfunction="cnn_accel" op="666" impl="30" latency="-1" variable="tile_out"/>
+<pragma file="cnn_accel.cpp" line="125" pragmaType="interface" parentfunction="cnn_accel" mode="m_axi" port="input" bundle="gmem" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="cnn_accel.cpp" line="126" pragmaType="interface" parentfunction="cnn_accel" mode="m_axi" port="output" bundle="gmem" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="cnn_accel.cpp" line="127" pragmaType="interface" parentfunction="cnn_accel" mode="s_axilite" port="size" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="cnn_accel.cpp" line="128" pragmaType="interface" parentfunction="cnn_accel" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="cnn_accel.cpp" line="29" pragmaType="inline" parentfunction="conv_layer" off="1" region="0" recursive="0"/>
+<pragma file="cnn_accel.cpp" line="45" pragmaType="pipeline" parentfunction="conv_layer" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cnn_accel.cpp" line="98" pragmaType="pipeline" parentfunction="conv_layer" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cnn_accel.cpp" line="66" pragmaType="pipeline" parentfunction="conv_layer" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cnn_accel.cpp" line="32" pragmaType="bind_storage" parentfunction="conv_layer" op="666" impl="30" latency="-1" variable="tile_in"/>
+<pragma file="cnn_accel.cpp" line="35" pragmaType="bind_storage" parentfunction="conv_layer" op="666" impl="30" latency="-1" variable="tile_out"/>
 </pragmas>

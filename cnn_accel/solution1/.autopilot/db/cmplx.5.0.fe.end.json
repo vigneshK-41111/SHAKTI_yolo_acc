@@ -1,14 +1,23 @@
 {
-    "1": {
-        "name": "cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9",
+    "0": {
+        "name": "cnn_accel",
         "file": "cnn_accel.cpp",
-        "fileloc": "83",
-        "instructions": "213",
-        "total_instructions": "213",
+        "fileloc": "119",
+        "instructions": "18",
+        "total_instructions": "20150",
+        "calls": "4 3 10",
+        "basicblocks": "1"
+    },
+    "1": {
+        "name": "conv_layer_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14",
+        "file": "cnn_accel.cpp",
+        "fileloc": "96",
+        "instructions": "146",
+        "total_instructions": "146",
         "calls": "",
         "basicblocks": "6",
         "loads": {
-            "L": "19"
+            "L": "11"
         },
         "stores": {
             "L": "6"
@@ -17,14 +26,32 @@
             "L": "1"
         }
     },
-    "0": {
-        "name": "cnn_accel",
+    "2": {
+        "name": "conv_layer.2_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5",
         "file": "cnn_accel.cpp",
-        "fileloc": "9",
-        "instructions": "92",
-        "total_instructions": "483",
-        "calls": "2 3 1",
-        "basicblocks": "9",
+        "fileloc": "43",
+        "instructions": "2156",
+        "total_instructions": "2156",
+        "calls": "",
+        "basicblocks": "39",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "582"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "conv_layer.1",
+        "file": "cnn_accel.cpp",
+        "fileloc": "20",
+        "instructions": "329",
+        "total_instructions": "6071",
+        "calls": "11 7 8",
+        "basicblocks": "10",
         "loads": {
             "L": "1"
         },
@@ -33,19 +60,39 @@
         },
         "loops": {
             "L": "1",
-            "N": "1"
+            "N": "2"
         }
     },
-    "2": {
-        "name": "cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4",
+    "4": {
+        "name": "conv_layer",
         "file": "cnn_accel.cpp",
-        "fileloc": "42",
-        "instructions": "84",
-        "total_instructions": "84",
-        "calls": "",
-        "basicblocks": "7",
+        "fileloc": "20",
+        "instructions": "96",
+        "total_instructions": "1472",
+        "calls": "12 5 1",
+        "basicblocks": "10",
         "loads": {
-            "L": "3"
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "2"
+        }
+    },
+    "5": {
+        "name": "conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9",
+        "file": "cnn_accel.cpp",
+        "fileloc": "62",
+        "instructions": "956",
+        "total_instructions": "956",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "G": "28",
+            "L": "248"
         },
         "stores": {
             "L": "11"
@@ -54,19 +101,130 @@
             "L": "1"
         }
     },
-    "3": {
-        "name": "cnn_accel_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6",
+    "6": {
+        "name": "conv_layer.2_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14",
         "file": "cnn_accel.cpp",
-        "fileloc": "65",
-        "instructions": "94",
-        "total_instructions": "94",
+        "fileloc": "96",
+        "instructions": "146",
+        "total_instructions": "146",
+        "calls": "",
+        "basicblocks": "6",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "7": {
+        "name": "conv_layer.1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9",
+        "file": "cnn_accel.cpp",
+        "fileloc": "62",
+        "instructions": "4480",
+        "total_instructions": "4480",
         "calls": "",
         "basicblocks": "4",
         "loads": {
-            "L": "6"
+            "G": "145",
+            "L": "1301"
         },
         "stores": {
-            "L": "22"
+            "L": "11"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "8": {
+        "name": "conv_layer.1_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14",
+        "file": "cnn_accel.cpp",
+        "fileloc": "96",
+        "instructions": "146",
+        "total_instructions": "146",
+        "calls": "",
+        "basicblocks": "6",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "9": {
+        "name": "conv_layer.2_Pipeline_VITIS_LOOP_63_8_VITIS_LOOP_64_9",
+        "file": "cnn_accel.cpp",
+        "fileloc": "63",
+        "instructions": "8491",
+        "total_instructions": "8491",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "2595"
+        },
+        "stores": {
+            "L": "7"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "10": {
+        "name": "conv_layer.2",
+        "file": "cnn_accel.cpp",
+        "fileloc": "20",
+        "instructions": "1796",
+        "total_instructions": "12589",
+        "calls": "2 6 9",
+        "basicblocks": "13",
+        "loads": {
+            "G": "289",
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "3"
+        }
+    },
+    "11": {
+        "name": "conv_layer.1_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5",
+        "file": "cnn_accel.cpp",
+        "fileloc": "43",
+        "instructions": "1116",
+        "total_instructions": "1116",
+        "calls": "",
+        "basicblocks": "39",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "294"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "12": {
+        "name": "conv_layer_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5",
+        "file": "cnn_accel.cpp",
+        "fileloc": "43",
+        "instructions": "274",
+        "total_instructions": "274",
+        "calls": "",
+        "basicblocks": "39",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "60"
         },
         "loops": {
             "L": "1"

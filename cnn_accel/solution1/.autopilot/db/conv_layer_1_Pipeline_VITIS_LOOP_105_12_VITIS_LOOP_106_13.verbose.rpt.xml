@@ -1,0 +1,265 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'conv_layer_1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13'" level="0">
+<item name = "Date">Tue Apr 28 00:17:54 2026
+</item>
+<item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
+<item name = "Project">cnn_accel</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200t-sbg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.514 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1028, 1028, 10.280 us, 10.280 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_105_12_VITIS_LOOP_106_13">1026, 1026, 4, 1, 1, 1024, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 293, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 1, 0, 6, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 54, -</column>
+<column name="Register">-, -, 221, -, -</column>
+<specialColumn name="Available">730, 740, 269200, 134600, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="mul_18s_18s_18_1_1_U219">mul_18s_18s_18_1_1, 0, 1, 0, 6, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln105_2_fu_688_p2">+, 0, 0, 18, 11, 1</column>
+<column name="add_ln105_fu_705_p2">+, 0, 0, 14, 6, 1</column>
+<column name="add_ln106_fu_750_p2">+, 0, 0, 14, 6, 1</column>
+<column name="add_ln110_fu_813_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln113_fu_833_p2">+, 0, 0, 25, 18, 18</column>
+<column name="add_ln116_fu_784_p2">+, 0, 0, 17, 10, 10</column>
+<column name="empty_401_fu_741_p2">+, 0, 0, 39, 32, 32</column>
+<column name="and_ln112_fu_827_p2">and, 0, 0, 2, 1, 1</column>
+<column name="cmp141_fu_773_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln105_fu_682_p2">icmp, 0, 0, 19, 11, 12</column>
+<column name="icmp_ln106_fu_711_p2">icmp, 0, 0, 14, 6, 7</column>
+<column name="icmp_ln112_fu_822_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="select_ln105_2_fu_725_p3">select, 0, 0, 6, 1, 6</column>
+<column name="select_ln105_fu_717_p3">select, 0, 0, 6, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_indvar_flatten28_load">9, 2, 11, 22</column>
+<column name="indvar_flatten28_fu_128">9, 2, 11, 22</column>
+<column name="x_fu_120">9, 2, 6, 12</column>
+<column name="y_fu_124">9, 2, 6, 12</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="H_cast_reg_888">31, 0, 32, 1</column>
+<column name="and_ln112_reg_1014">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
+<column name="empty_401_reg_914">32, 0, 32, 0</column>
+<column name="empty_402_reg_919">18, 0, 18, 0</column>
+<column name="empty_403_reg_924">18, 0, 18, 0</column>
+<column name="indvar_flatten28_fu_128">11, 0, 11, 0</column>
+<column name="select_ln105_reg_903">6, 0, 6, 0</column>
+<column name="trunc_ln112_reg_1009">18, 0, 18, 0</column>
+<column name="trunc_ln116_reg_909">5, 0, 5, 0</column>
+<column name="tx_cast_reg_883">31, 0, 32, 1</column>
+<column name="ty_cast_reg_894">31, 0, 32, 1</column>
+<column name="x_fu_120">6, 0, 6, 0</column>
+<column name="y_fu_124">6, 0, 6, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, conv_layer.1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, conv_layer.1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, conv_layer.1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, conv_layer.1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, conv_layer.1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, conv_layer.1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13, return value</column>
+<column name="ty">in, 31, ap_none, ty, scalar</column>
+<column name="H">in, 31, ap_none, H, scalar</column>
+<column name="empty">in, 18, ap_none, empty, scalar</column>
+<column name="tx">in, 31, ap_none, tx, scalar</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1, array</column>
+<column name="conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed_address0">out, 10, ap_memory, conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed, array</column>
+<column name="conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed_ce0">out, 1, ap_memory, conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed, array</column>
+<column name="conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed_q0">in, 7, ap_memory, conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7_address0">out, 10, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7_ce0">out, 1, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7, array</column>
+<column name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7_q0">in, 7, ap_memory, conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_address0">out, 10, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_ce0">out, 1, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_q0">in, 7, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_address0">out, 10, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_ce0">out, 1, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_q0">in, 7, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_address0">out, 10, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_ce0">out, 1, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_q0">in, 7, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_address0">out, 10, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_ce0">out, 1, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_q0">in, 7, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_address0">out, 10, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_ce0">out, 1, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_q0">in, 7, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15_address0">out, 10, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15_ce0">out, 1, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15, array</column>
+<column name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15_q0">in, 7, ap_memory, p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_address1">out, 18, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_ce1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_we1">out, 1, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20, array</column>
+<column name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_d1">out, 7, ap_memory, cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_10_address1">out, 18, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_10, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_10_ce1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_10, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_10_we1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_10, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_10_d1">out, 7, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_10, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_11_address1">out, 18, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_11, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_11_ce1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_11, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_11_we1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_11, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_11_d1">out, 7, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_11, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_12_address1">out, 18, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_12, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_12_ce1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_12, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_12_we1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_12, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_12_d1">out, 7, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_12, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_13_address1">out, 18, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_13, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_13_ce1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_13, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_13_we1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_13, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_13_d1">out, 7, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_13, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_14_address1">out, 18, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_14, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_14_ce1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_14, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_14_we1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_14, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_14_d1">out, 7, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_14, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_15_address1">out, 18, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_15, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_15_ce1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_15, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_15_we1">out, 1, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_15, array</column>
+<column name="p_ZZ9cnn_accelPVaS0_iE4buf1_15_d1">out, 7, ap_memory, p_ZZ9cnn_accelPVaS0_iE4buf1_15, array</column>
+</table>
+</item>
+</section>
+</profile>

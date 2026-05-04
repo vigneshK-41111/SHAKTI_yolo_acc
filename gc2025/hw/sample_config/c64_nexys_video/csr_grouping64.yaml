@@ -26,6 +26,9 @@ grp1:
     - PMPADDR2
     - PMPADDR3
     - CUSTOMCONTROL
+    - FCSR
+    - FFLAGS
+    - FRM
     - SSCRATCH
     - SSTATUS
     - SATP
@@ -37,8 +40,6 @@ grp1:
     - SIE
     - MCOUNTEREN
     - SCOUNTEREN
-    - MENVCFG
-    - SENVCFG
 grp2:
     - DPC
     - DSCRATCH0

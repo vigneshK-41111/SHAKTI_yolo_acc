@@ -112,24 +112,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd15)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -141,24 +141,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd14)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -170,24 +170,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd13)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -199,24 +199,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd12)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -228,24 +228,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd11)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -257,24 +257,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd10)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -286,24 +286,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd9)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -315,24 +315,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd8)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -344,24 +344,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd7)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -373,24 +373,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd6)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -402,24 +402,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd5)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -431,24 +431,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd4)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -460,24 +460,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd3)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -489,24 +489,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd2)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -518,24 +518,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd1)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -547,24 +547,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd3) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd0)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8) &&
+	      : 2'd0) ==
+	     2'd3) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -576,24 +576,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd15)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -605,24 +605,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd14)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -634,24 +634,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd13)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -663,24 +663,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd12)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -692,24 +692,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd11)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -721,24 +721,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd10)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -750,24 +750,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd9)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -779,24 +779,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd8)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -808,24 +808,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd7)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -837,24 +837,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd6)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -866,24 +866,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd5)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -895,24 +895,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd4)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -924,24 +924,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd3)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -953,24 +953,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd2)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -982,24 +982,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd1)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1011,24 +1011,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd2) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd0)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7) &&
+	      : 2'd0) ==
+	     2'd2) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1040,24 +1040,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd15)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1069,24 +1069,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd14)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1098,24 +1098,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd13)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1127,24 +1127,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd12)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1156,24 +1156,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd11)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1185,24 +1185,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd10)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1214,24 +1214,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd9)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1243,24 +1243,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd8)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1272,24 +1272,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd7)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1301,24 +1301,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd6)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1330,24 +1330,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd5)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1359,24 +1359,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd4)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1388,24 +1388,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd3)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1417,24 +1417,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd2)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1446,24 +1446,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd1)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1475,24 +1475,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd1) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd0)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6) &&
+	      : 2'd0) ==
+	     2'd1) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1504,24 +1504,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd15)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1533,24 +1533,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd14)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1562,24 +1562,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd13)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1591,24 +1591,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd12)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1620,24 +1620,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd11)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1649,24 +1649,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd10)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1678,24 +1678,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd9)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1707,24 +1707,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd8)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1736,24 +1736,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd7)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1765,24 +1765,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd6)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1794,24 +1794,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd5)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1823,24 +1823,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd4)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1852,24 +1852,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd3)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1881,24 +1881,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd2)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1910,24 +1910,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd1)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -1939,2344 +1939,24 @@ Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
 	    wr_valid_v_fb_data_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
+	      : 2'd0) ==
+	     2'd0) &&
+	    ((wr_block_v_fb_data_ma_fill_from_memory.whas
+	      ? wr_block_v_fb_data_ma_fill_from_memory.wget
 	      : 4'd0) ==
 	     4'd0)) ||
 	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_64
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd15)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd15))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_65
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd14)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd14))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_66
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd13)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd13))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_67
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd12)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd12))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_68
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd11)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd11))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_69
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd10)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd10))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_70
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd9)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd9))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_71
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd8)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_72
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd7)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_73
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd6)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_74
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd5)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_75
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_76
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_77
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_78
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_79
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_80
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd15)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd15))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_81
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd14)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd14))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_82
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd13)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd13))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_83
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd12)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd12))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_84
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd11)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd11))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_85
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd10)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd10))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_86
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd9)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd9))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_87
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd8)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_88
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd7)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_89
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd6)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_90
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd5)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_91
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_92
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_93
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_94
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_95
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_96
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd15)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd15))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_97
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd14)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd14))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_98
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd13)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd13))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_99
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd12)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd12))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_100
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd11)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd11))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_101
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd10)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd10))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_102
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd9)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd9))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_103
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd8)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_104
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd7)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_105
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd6)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_106
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd5)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_107
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_108
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_109
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_110
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_111
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_112
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd15)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd15))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_113
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd14)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd14))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_114
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd13)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd13))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_115
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd12)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd12))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_116
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd11)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd11))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_117
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd10)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd10))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_118
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd9)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd9))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_119
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd8)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_120
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd7)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_121
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd6)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_122
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd5)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_123
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_124
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_125
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_126
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_127
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_128
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd15)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd15))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_129
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd14)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd14))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_130
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd13)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd13))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_131
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd12)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd12))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_132
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd11)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd11))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_133
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd10)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd10))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_134
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd9)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd9))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_135
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd8)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_136
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd7)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_137
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd6)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_138
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd5)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_139
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_140
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_141
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_142
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_data_143
-Predicate: (wr_valid_v_fb_data_mav_allocate_line.whas &&
-	    wr_valid_v_fb_data_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_data_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_data_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_data_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_data_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_data_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0) &&
-	    ((wr_block_v_fb_data_ma_fill_from_memory_0.whas
-	      ? wr_block_v_fb_data_ma_fill_from_memory_0.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_data_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_data_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_data_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_data_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0) &&
+	      : 2'd0) ==
+	     2'd0) &&
 	    ((wr_block_v_fb_data_ma_from_storebuffer.whas
 	      ? wr_block_v_fb_data_ma_from_storebuffer.wget
 	      : 4'd0) ==
@@ -4288,14 +1968,14 @@ Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
 	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd8))
+	      : 2'd0) ==
+	     2'd3))
 Blocking rules: (none)
  
 Rule: connect_v_fb_dirty_1
@@ -4303,14 +1983,14 @@ Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
 	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd7))
+	      : 2'd0) ==
+	     2'd2))
 Blocking rules: (none)
  
 Rule: connect_v_fb_dirty_2
@@ -4318,14 +1998,14 @@ Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
 	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd6))
+	      : 2'd0) ==
+	     2'd1))
 Blocking rules: (none)
  
 Rule: connect_v_fb_dirty_3
@@ -4333,89 +2013,14 @@ Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
 	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
 	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
 	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
 	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_dirty_4
-Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
-	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_dirty_5
-Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
-	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_dirty_6
-Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
-	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_dirty_7
-Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
-	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_dirty_8
-Predicate: (wr_valid_v_fb_dirty_mav_allocate_line.whas &&
-	    wr_valid_v_fb_dirty_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_dirty_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_dirty_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_dirty_ma_from_storebuffer.whas &&
-	    wr_valid_v_fb_dirty_ma_from_storebuffer.wget &&
-	    ((wr_fb_index_v_fb_dirty_ma_from_storebuffer.whas
-	      ? wr_fb_index_v_fb_dirty_ma_from_storebuffer.wget
-	      : 4'd0) ==
-	     4'd0))
+	      : 2'd0) ==
+	     2'd0))
 Blocking rules: (none)
  
 Rule: connect_v_fb_addr_valid
@@ -4423,14 +2028,14 @@ Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd8))
+	      : 2'd0) ==
+	     2'd3))
 Blocking rules: (none)
  
 Rule: connect_v_fb_addr_valid_1
@@ -4438,14 +2043,14 @@ Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd7))
+	      : 2'd0) ==
+	     2'd2))
 Blocking rules: (none)
  
 Rule: connect_v_fb_addr_valid_2
@@ -4453,14 +2058,14 @@ Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd6))
+	      : 2'd0) ==
+	     2'd1))
 Blocking rules: (none)
  
 Rule: connect_v_fb_addr_valid_3
@@ -4468,89 +2073,14 @@ Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_addr_valid_4
-Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_addr_valid_5
-Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_addr_valid_6
-Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_addr_valid_7
-Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_addr_valid_8
-Predicate: (wr_valid_v_fb_addr_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_addr_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_addr_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_addr_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_addr_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_addr_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_addr_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd0))
+	      : 2'd0) ==
+	     2'd0))
 Blocking rules: (none)
  
 Rule: connect_v_fb_line_valid
@@ -4558,20 +2088,20 @@ Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd8))
+	      : 2'd0) ==
+	     2'd3))
 Blocking rules: (none)
  
 Rule: connect_v_fb_line_valid_1
@@ -4579,20 +2109,20 @@ Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd7))
+	      : 2'd0) ==
+	     2'd2))
 Blocking rules: (none)
  
 Rule: connect_v_fb_line_valid_2
@@ -4600,20 +2130,20 @@ Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd6))
+	      : 2'd0) ==
+	     2'd1))
 Blocking rules: (none)
  
 Rule: connect_v_fb_line_valid_3
@@ -4621,125 +2151,20 @@ Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
 	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
 	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
 	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
 	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_line_valid_4
-Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_line_valid_5
-Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_line_valid_6
-Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_line_valid_7
-Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_line_valid_8
-Predicate: (wr_valid_v_fb_line_valid_mav_allocate_line.whas &&
-	    wr_valid_v_fb_line_valid_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_line_valid_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_line_valid_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_line_valid_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_line_valid_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_line_valid_ma_perform_release.whas &&
-	    wr_valid_v_fb_line_valid_ma_perform_release.wget &&
-	    ((wr_fb_index_v_fb_line_valid_ma_perform_release.whas
-	      ? wr_fb_index_v_fb_line_valid_ma_perform_release.wget
-	      : 4'd0) ==
-	     4'd0))
+	      : 2'd0) ==
+	     2'd0))
 Blocking rules: (none)
  
 Rule: connect_v_fb_err
@@ -4747,14 +2172,14 @@ Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
 	    wr_valid_v_fb_err_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd8)) ||
+	      : 2'd0) ==
+	     2'd3)) ||
 	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd8))
+	      : 2'd0) ==
+	     2'd3))
 Blocking rules: (none)
  
 Rule: connect_v_fb_err_1
@@ -4762,14 +2187,14 @@ Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
 	    wr_valid_v_fb_err_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd7)) ||
+	      : 2'd0) ==
+	     2'd2)) ||
 	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd7))
+	      : 2'd0) ==
+	     2'd2))
 Blocking rules: (none)
  
 Rule: connect_v_fb_err_2
@@ -4777,14 +2202,14 @@ Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
 	    wr_valid_v_fb_err_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd6)) ||
+	      : 2'd0) ==
+	     2'd1)) ||
 	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd6))
+	      : 2'd0) ==
+	     2'd1))
 Blocking rules: (none)
  
 Rule: connect_v_fb_err_3
@@ -4792,89 +2217,14 @@ Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
 	    wr_valid_v_fb_err_mav_allocate_line.wget &&
 	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
 	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd5)) ||
+	      : 2'd0) ==
+	     2'd0)) ||
 	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
 	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
 	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
 	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd5))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_err_4
-Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
-	    wr_valid_v_fb_err_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd4)) ||
-	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd4))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_err_5
-Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
-	    wr_valid_v_fb_err_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd3)) ||
-	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd3))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_err_6
-Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
-	    wr_valid_v_fb_err_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd2)) ||
-	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd2))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_err_7
-Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
-	    wr_valid_v_fb_err_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd1)) ||
-	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd1))
-Blocking rules: (none)
- 
-Rule: connect_v_fb_err_8
-Predicate: (wr_valid_v_fb_err_mav_allocate_line.whas &&
-	    wr_valid_v_fb_err_mav_allocate_line.wget &&
-	    ((wr_fb_index_v_fb_err_mav_allocate_line.whas
-	      ? wr_fb_index_v_fb_err_mav_allocate_line.wget
-	      : 4'd0) ==
-	     4'd0)) ||
-	   (wr_valid_v_fb_err_ma_fill_from_memory.whas &&
-	    wr_valid_v_fb_err_ma_fill_from_memory.wget &&
-	    ((wr_fb_index_v_fb_err_ma_fill_from_memory.whas
-	      ? wr_fb_index_v_fb_err_ma_fill_from_memory.wget
-	      : 4'd0) ==
-	     4'd0))
+	      : 2'd0) ==
+	     2'd0))
 Blocking rules: (none)
  
 Logical execution order: mv_fbfull,
@@ -4950,121 +2300,21 @@ Logical execution order: mv_fbfull,
 			 connect_v_fb_data_61,
 			 connect_v_fb_data_62,
 			 connect_v_fb_data_63,
-			 connect_v_fb_data_64,
-			 connect_v_fb_data_65,
-			 connect_v_fb_data_66,
-			 connect_v_fb_data_67,
-			 connect_v_fb_data_68,
-			 connect_v_fb_data_69,
-			 connect_v_fb_data_70,
-			 connect_v_fb_data_71,
-			 connect_v_fb_data_72,
-			 connect_v_fb_data_73,
-			 connect_v_fb_data_74,
-			 connect_v_fb_data_75,
-			 connect_v_fb_data_76,
-			 connect_v_fb_data_77,
-			 connect_v_fb_data_78,
-			 connect_v_fb_data_79,
-			 connect_v_fb_data_80,
-			 connect_v_fb_data_81,
-			 connect_v_fb_data_82,
-			 connect_v_fb_data_83,
-			 connect_v_fb_data_84,
-			 connect_v_fb_data_85,
-			 connect_v_fb_data_86,
-			 connect_v_fb_data_87,
-			 connect_v_fb_data_88,
-			 connect_v_fb_data_89,
-			 connect_v_fb_data_90,
-			 connect_v_fb_data_91,
-			 connect_v_fb_data_92,
-			 connect_v_fb_data_93,
-			 connect_v_fb_data_94,
-			 connect_v_fb_data_95,
-			 connect_v_fb_data_96,
-			 connect_v_fb_data_97,
-			 connect_v_fb_data_98,
-			 connect_v_fb_data_99,
-			 connect_v_fb_data_100,
-			 connect_v_fb_data_101,
-			 connect_v_fb_data_102,
-			 connect_v_fb_data_103,
-			 connect_v_fb_data_104,
-			 connect_v_fb_data_105,
-			 connect_v_fb_data_106,
-			 connect_v_fb_data_107,
-			 connect_v_fb_data_108,
-			 connect_v_fb_data_109,
-			 connect_v_fb_data_110,
-			 connect_v_fb_data_111,
-			 connect_v_fb_data_112,
-			 connect_v_fb_data_113,
-			 connect_v_fb_data_114,
-			 connect_v_fb_data_115,
-			 connect_v_fb_data_116,
-			 connect_v_fb_data_117,
-			 connect_v_fb_data_118,
-			 connect_v_fb_data_119,
-			 connect_v_fb_data_120,
-			 connect_v_fb_data_121,
-			 connect_v_fb_data_122,
-			 connect_v_fb_data_123,
-			 connect_v_fb_data_124,
-			 connect_v_fb_data_125,
-			 connect_v_fb_data_126,
-			 connect_v_fb_data_127,
-			 connect_v_fb_data_128,
-			 connect_v_fb_data_129,
-			 connect_v_fb_data_130,
-			 connect_v_fb_data_131,
-			 connect_v_fb_data_132,
-			 connect_v_fb_data_133,
-			 connect_v_fb_data_134,
-			 connect_v_fb_data_135,
-			 connect_v_fb_data_136,
-			 connect_v_fb_data_137,
-			 connect_v_fb_data_138,
-			 connect_v_fb_data_139,
-			 connect_v_fb_data_140,
-			 connect_v_fb_data_141,
-			 connect_v_fb_data_142,
-			 connect_v_fb_data_143,
 			 connect_v_fb_dirty,
 			 connect_v_fb_dirty_1,
 			 connect_v_fb_dirty_2,
 			 connect_v_fb_dirty_3,
-			 connect_v_fb_dirty_4,
-			 connect_v_fb_dirty_5,
-			 connect_v_fb_dirty_6,
-			 connect_v_fb_dirty_7,
-			 connect_v_fb_dirty_8,
 			 connect_v_fb_addr_valid,
 			 connect_v_fb_addr_valid_1,
 			 connect_v_fb_addr_valid_2,
 			 connect_v_fb_addr_valid_3,
-			 connect_v_fb_addr_valid_4,
-			 connect_v_fb_addr_valid_5,
-			 connect_v_fb_addr_valid_6,
-			 connect_v_fb_addr_valid_7,
-			 connect_v_fb_addr_valid_8,
 			 connect_v_fb_line_valid,
 			 connect_v_fb_line_valid_1,
 			 connect_v_fb_line_valid_2,
 			 connect_v_fb_line_valid_3,
-			 connect_v_fb_line_valid_4,
-			 connect_v_fb_line_valid_5,
-			 connect_v_fb_line_valid_6,
-			 connect_v_fb_line_valid_7,
-			 connect_v_fb_line_valid_8,
 			 connect_v_fb_err,
 			 connect_v_fb_err_1,
 			 connect_v_fb_err_2,
-			 connect_v_fb_err_3,
-			 connect_v_fb_err_4,
-			 connect_v_fb_err_5,
-			 connect_v_fb_err_6,
-			 connect_v_fb_err_7,
-			 connect_v_fb_err_8
+			 connect_v_fb_err_3
 
 ==============================================

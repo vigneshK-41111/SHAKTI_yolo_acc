@@ -66,10 +66,10 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   reset_param project.defaultXPMLibraries 
-  open_checkpoint /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.runs/core_impl_1/fpga_top.dcp
-  set_property webtalk.parent_dir /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.cache/wt [current_project]
-  set_property parent.project_path /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.xpr [current_project]
-  set_property ip_output_repo /scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.cache/ip [current_project]
+  open_checkpoint /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.runs/core_impl_1/fpga_top.dcp
+  set_property webtalk.parent_dir /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.cache/wt [current_project]
+  set_property parent.project_path /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.xpr [current_project]
+  set_property ip_output_repo /scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   close_msg_db -file init_design.pb
@@ -106,7 +106,7 @@ set rc [catch {
   if { [llength [get_debug_cores -quiet] ] > 0 }  { 
     implement_debug_core 
   } 
-  place_design -directive ExtraTimingOpt
+  place_design 
   write_checkpoint -force fpga_top_placed.dcp
   create_report "core_impl_1_place_report_io_0" "report_io -file fpga_top_io_placed.rpt"
   create_report "core_impl_1_place_report_utilization_0" "report_utilization -file fpga_top_utilization_placed.rpt -pb fpga_top_utilization_placed.pb"
@@ -121,27 +121,11 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
-start_step phys_opt_design
-set ACTIVE_STEP phys_opt_design
-set rc [catch {
-  create_msg_db phys_opt_design.pb
-  phys_opt_design -directive Explore
-  write_checkpoint -force fpga_top_physopt.dcp
-  close_msg_db -file phys_opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed phys_opt_design
-  return -code error $RESULT
-} else {
-  end_step phys_opt_design
-  unset ACTIVE_STEP 
-}
-
 start_step route_design
 set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
-  route_design -directive NoTimingRelaxation
+  route_design 
   write_checkpoint -force fpga_top_routed.dcp
   create_report "core_impl_1_route_report_drc_0" "report_drc -file fpga_top_drc_routed.rpt -pb fpga_top_drc_routed.pb -rpx fpga_top_drc_routed.rpx"
   create_report "core_impl_1_route_report_methodology_0" "report_methodology -file fpga_top_methodology_drc_routed.rpt -pb fpga_top_methodology_drc_routed.pb -rpx fpga_top_methodology_drc_routed.rpx"

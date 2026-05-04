@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/scratch1/iot/gc2025/hw/fpga_project/c-class/c-class.runs/core_impl_1'
+HD_PWD='/scratch1/iot/new/gc2025/hw/fpga_project/c-class/c-class.runs/core_impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

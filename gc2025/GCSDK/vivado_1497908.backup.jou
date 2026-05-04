@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri May  1 21:40:59 2026
+# Process ID: 1497908
+# Current directory: /scratch1/iot/new/gc2025/GCSDK
+# Command line: vivado
+# Log file: /scratch1/iot/new/gc2025/GCSDK/vivado.log
+# Journal file: /scratch1/iot/new/gc2025/GCSDK/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_hw
+connect_hw_server
+close_hw
+open_project /scratch1/iot/mob_net/gc2025/hw/fpga_project/c-class/c-class.xpr
+update_compile_order -fileset sources_1
+open_run core_impl_1
+report_utilization -name utilization_1

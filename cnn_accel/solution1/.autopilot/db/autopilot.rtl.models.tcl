@@ -1,22 +1,198 @@
 set SynModuleInfo {
-  {SRCNAME cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4 MODELNAME cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4 RTLNAME cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_42_3_VITIS_LOOP_43_4
+  {SRCNAME conv_layer_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5 MODELNAME conv_layer_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5 RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5
     SUBMODULES {
-      {MODELNAME cnn_accel_mul_32ns_32s_62_2_1 RTLNAME cnn_accel_mul_32ns_32s_62_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_33s_32s_63_2_1 RTLNAME cnn_accel_mul_33s_32s_63_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_5ns_7ns_11_1_1 RTLNAME cnn_accel_mul_5ns_7ns_11_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_urem_5ns_3ns_2_9_1 RTLNAME cnn_accel_urem_5ns_3ns_2_9_1 BINDTYPE op TYPE urem IMPL auto LATENCY 8 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_7ns_5ns_11_1_1 RTLNAME cnn_accel_mul_7ns_5ns_11_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME cnn_accel_flow_control_loop_pipe_sequential_init RTLNAME cnn_accel_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME cnn_accel_flow_control_loop_pipe_sequential_init_U}
     }
   }
-  {SRCNAME cnn_accel_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6 MODELNAME cnn_accel_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6 RTLNAME cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6}
-  {SRCNAME cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9 MODELNAME cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9 RTLNAME cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_83_8_VITIS_LOOP_84_9
+  {SRCNAME conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9 MODELNAME conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9 RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9
     SUBMODULES {
-      {MODELNAME cnn_accel_mul_28s_28s_28_3_1 RTLNAME cnn_accel_mul_28s_28s_28_3_1 BINDTYPE op TYPE mul IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_sparsemux_7_2_8_1_1 RTLNAME cnn_accel_sparsemux_7_2_8_1_1 BINDTYPE op TYPE sparsemux IMPL onehotencoding_realdef}
+      {MODELNAME cnn_accel_mul_8s_7s_14_1_1 RTLNAME cnn_accel_mul_8s_7s_14_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_8s_7s_15_1_1 RTLNAME cnn_accel_mul_8s_7s_15_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_8s_6s_14_1_1 RTLNAME cnn_accel_mul_8s_6s_14_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_8s_8s_16_1_1 RTLNAME cnn_accel_mul_8s_8s_16_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mac_muladd_8s_7s_15s_15_4_1 RTLNAME cnn_accel_mac_muladd_8s_7s_15s_15_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_7s_16s_16_4_1 RTLNAME cnn_accel_mac_muladd_8s_7s_16s_16_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_6s_14s_14_4_1 RTLNAME cnn_accel_mac_muladd_8s_6s_14s_14_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_6s_15s_15_4_1 RTLNAME cnn_accel_mac_muladd_8s_6s_15s_15_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_6s_8s_13_4_1 RTLNAME cnn_accel_mac_muladd_8s_6s_8s_13_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_7s_15s_16_4_1 RTLNAME cnn_accel_mac_muladd_8s_7s_15s_16_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_7s_15ns_15_4_1 RTLNAME cnn_accel_mac_muladd_8s_7s_15ns_15_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_bkb RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_bkb BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_cud RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_cud BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_dEe RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_dEe BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_eOg RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_eOg BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_fYi RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_fYi BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_g8j RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_g8j BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_hbi RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_hbi BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ibs RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ibs BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_jbC RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_jbC BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_kbM RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_kbM BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_lbW RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_lbW BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_mb6 RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_mb6 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ncg RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ncg BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ocq RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_ocq BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_pcA RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_pcA BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_qcK RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_qcK BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_rcU RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_rcU BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_sc4 RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_sc4 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_tde RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_tde BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_udo RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_udo BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_vdy RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_vdy BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_wdI RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_wdI BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_xdS RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_xdS BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_yd2 RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_yd2 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_zec RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_zec BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_Aem RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_Aem BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_Bew RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_Bew BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_CeG RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_0_conv_CeG BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14 MODELNAME conv_layer_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14 RTLNAME cnn_accel_conv_layer_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14
+    SUBMODULES {
+      {MODELNAME cnn_accel_mul_32ns_32s_60_2_1 RTLNAME cnn_accel_mul_32ns_32s_60_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer MODELNAME conv_layer RTLNAME cnn_accel_conv_layer
+    SUBMODULES {
+      {MODELNAME cnn_accel_conv_layer_tile_in_RAM_T2P_BRAM_1R1W RTLNAME cnn_accel_conv_layer_tile_in_RAM_T2P_BRAM_1R1W BINDTYPE storage TYPE ram_t2p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_tile_in_437_RAM_T2P_BRAM_1R1W RTLNAME cnn_accel_conv_layer_tile_in_437_RAM_T2P_BRAM_1R1W BINDTYPE storage TYPE ram_t2p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_tile_out_RAM_T2P_BRAM_1R1W RTLNAME cnn_accel_conv_layer_tile_out_RAM_T2P_BRAM_1R1W BINDTYPE storage TYPE ram_t2p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer.1_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5 MODELNAME conv_layer_1_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5
+    SUBMODULES {
+      {MODELNAME cnn_accel_mul_33s_32s_60_2_1 RTLNAME cnn_accel_mul_33s_32s_60_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer.1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9 MODELNAME conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9
+    SUBMODULES {
+      {MODELNAME cnn_accel_mul_8s_7s_13_1_1 RTLNAME cnn_accel_mul_8s_7s_13_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_8s_5s_13_1_1 RTLNAME cnn_accel_mul_8s_5s_13_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mul_8s_8s_15_1_1 RTLNAME cnn_accel_mul_8s_8s_15_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_mac_muladd_8s_8s_16s_16_4_1 RTLNAME cnn_accel_mac_muladd_8s_8s_16s_16_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_8s_15s_15_4_1 RTLNAME cnn_accel_mac_muladd_8s_8s_15s_15_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_5s_14s_14_4_1 RTLNAME cnn_accel_mac_muladd_8s_5s_14s_14_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_6s_14s_15_4_1 RTLNAME cnn_accel_mac_muladd_8s_6s_14s_15_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_6s_15s_16_4_1 RTLNAME cnn_accel_mac_muladd_8s_6s_15s_16_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_6s_13s_14_4_1 RTLNAME cnn_accel_mac_muladd_8s_6s_13s_14_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conDeQ RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conDeQ BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conEe0 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conEe0 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conFfa RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conFfa BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conGfk RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conGfk BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conHfu RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conHfu BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conIfE RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conIfE BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conJfO RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conJfO BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conKfY RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conKfY BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conLf8 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conLf8 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conMgi RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conMgi BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conNgs RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conNgs BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conOgC RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conOgC BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conPgM RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conPgM BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conQgW RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conQgW BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conRg6 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conRg6 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conShg RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conShg BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conThq RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conThq BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conUhA RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conUhA BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conVhK RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conVhK BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conWhU RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conWhU BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conXh4 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conXh4 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conYie RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conYie BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conZio RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conZio BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con0iy RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con0iy BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con1iI RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con1iI BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con2iS RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con2iS BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con3i2 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con3i2 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con4jc RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con4jc BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con5jm RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con5jm BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con6jw RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con6jw BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con7jG RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con7jG BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con8jQ RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con8jQ BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con9j0 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_con9j0 BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbak RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbak BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbbk RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbbk BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbck RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbck BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbdk RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbdk BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbek RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbek BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbfk RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbfk BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbgk RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbgk BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbhl RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbhl BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbil RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbil BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbjl RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbjl BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbkl RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbkl BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbll RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbll BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbml RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbml BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbnm RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbnm BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbom RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbom BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbpm RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbpm BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbqm RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbqm BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbrm RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbrm BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbsm RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbsm BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbtn RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbtn BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbun RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbun BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbvn RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbvn BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbwn RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbwn BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbxn RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbxn BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbyn RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbyn BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbzo RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbzo BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbAo RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbAo BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbBo RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbBo BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbCo RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbCo BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbDo RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbDo BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbEo RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbEo BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbFp RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbFp BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbGp RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbGp BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbHp RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbHp BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbIp RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbIp BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbJp RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbJp BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbKp RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbKp BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbLp RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbLp BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbMq RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbMq BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbNq RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_62_7_VITIS_LOOP_63_8_VITIS_LOOP_64_9_w_1_conbNq BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer.1_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14 MODELNAME conv_layer_1_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14 RTLNAME cnn_accel_conv_layer_1_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14
+    SUBMODULES {
+      {MODELNAME cnn_accel_mul_32ns_32s_59_2_1 RTLNAME cnn_accel_mul_32ns_32s_59_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer.1 MODELNAME conv_layer_1 RTLNAME cnn_accel_conv_layer_1
+    SUBMODULES {
+      {MODELNAME cnn_accel_conv_layer_1_tile_in_RAM_T2P_BRAM_1R1W RTLNAME cnn_accel_conv_layer_1_tile_in_RAM_T2P_BRAM_1R1W BINDTYPE storage TYPE ram_t2p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_1_tile_in_423_RAM_T2P_BRAM_1R1W RTLNAME cnn_accel_conv_layer_1_tile_in_423_RAM_T2P_BRAM_1R1W BINDTYPE storage TYPE ram_t2p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer.2_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5 MODELNAME conv_layer_2_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5 RTLNAME cnn_accel_conv_layer_2_Pipeline_VITIS_LOOP_43_4_VITIS_LOOP_44_5
+    SUBMODULES {
+      {MODELNAME cnn_accel_mul_33s_32s_59_2_1 RTLNAME cnn_accel_mul_33s_32s_59_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer.2_Pipeline_VITIS_LOOP_63_8_VITIS_LOOP_64_9 MODELNAME conv_layer_2_Pipeline_VITIS_LOOP_63_8_VITIS_LOOP_64_9 RTLNAME cnn_accel_conv_layer_2_Pipeline_VITIS_LOOP_63_8_VITIS_LOOP_64_9
+    SUBMODULES {
+      {MODELNAME cnn_accel_mac_muladd_8s_8s_7ns_15_4_1 RTLNAME cnn_accel_mac_muladd_8s_8s_7ns_15_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_8s_16s_17_4_1 RTLNAME cnn_accel_mac_muladd_8s_8s_16s_17_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME cnn_accel_mac_muladd_8s_8s_15s_16_4_1 RTLNAME cnn_accel_mac_muladd_8s_8s_15s_16_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+    }
+  }
+  {SRCNAME conv_layer.2_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14 MODELNAME conv_layer_2_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14 RTLNAME cnn_accel_conv_layer_2_Pipeline_VITIS_LOOP_96_13_VITIS_LOOP_97_14
+    SUBMODULES {
+      {MODELNAME cnn_accel_mul_32ns_32s_58_2_1 RTLNAME cnn_accel_mul_32ns_32s_58_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME conv_layer.2 MODELNAME conv_layer_2 RTLNAME cnn_accel_conv_layer_2
+    SUBMODULES {
+      {MODELNAME cnn_accel_conv_layer_2_w_2_cv1_conv_weight_bias_ROM_AUTO_1R RTLNAME cnn_accel_conv_layer_2_w_2_cv1_conv_weight_bias_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME cnn_accel_conv_layer_2_w_2_cv1_conv_weight_ROM_AUTO_1R RTLNAME cnn_accel_conv_layer_2_w_2_cv1_conv_weight_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
   {SRCNAME cnn_accel MODELNAME cnn_accel RTLNAME cnn_accel IS_TOP 1
     SUBMODULES {
-      {MODELNAME cnn_accel_tile_in_RAM_T2P_BRAM_1R1W RTLNAME cnn_accel_tile_in_RAM_T2P_BRAM_1R1W BINDTYPE storage TYPE ram_t2p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
       {MODELNAME cnn_accel_gmem_m_axi RTLNAME cnn_accel_gmem_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
       {MODELNAME cnn_accel_control_s_axi RTLNAME cnn_accel_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
-      {MODELNAME cnn_accel_control_r_s_axi RTLNAME cnn_accel_control_r_s_axi BINDTYPE interface TYPE interface_s_axilite}
     }
   }
 }

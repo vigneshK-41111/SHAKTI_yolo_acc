@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 # Load image
-img = Image.open("input.jpg")
+img = Image.open("input1.jpg")
 
 # Resize to model input (IMPORTANT)
 img = img.resize((416, 416))
@@ -14,7 +14,7 @@ img = img.convert("RGB")
 arr = np.array(img)
 
 # 🔥 OPTION 1: uint8 (0–255)
-arr.tofile("image3.raw")
+arr.tofile("image_pl.raw")
 
 # 🔥 OPTION 2 (if your CNN expects int8)
 # arr = arr.astype(np.int16) - 128

@@ -54,7 +54,7 @@ char *bootlogo = "\n\
 
 char *bootstring ="\n\
                     SHAKTI PROCESSORS\n\
-                  Yamuna on Arty-A7-100T\n";
+                  E-Class on Arty-A7-35T\n";
 
 
 

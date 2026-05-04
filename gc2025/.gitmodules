@@ -1,0 +1,4 @@
+[submodule "SDK"]
+	path = SDK
+	url = https://gitlab.com/shaktiproject/software/shakti-sdk
+	branch = 44-adding-sos-support

@@ -1,0 +1,3540 @@
+<stg><name>conv_layer.1_Pipeline_VITIS_LOOP_105_12_VITIS_LOOP_106_13</name>
+
+
+<trans_list>
+
+<trans id="184" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="180" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="181" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="2">
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="37" bw="6" op_0_bw="32">
+<![CDATA[
+newFuncRoot:0 %x = alloca i32 1
+
+]]></Node>
+<StgValue><ssdm name="x"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="38" bw="6" op_0_bw="32">
+<![CDATA[
+newFuncRoot:1 %y = alloca i32 1
+
+]]></Node>
+<StgValue><ssdm name="y"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="39" bw="11" op_0_bw="32">
+<![CDATA[
+newFuncRoot:2 %indvar_flatten28 = alloca i32 1
+
+]]></Node>
+<StgValue><ssdm name="indvar_flatten28"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="40" bw="31" op_0_bw="31" op_1_bw="31">
+<![CDATA[
+newFuncRoot:3 %tx_read = read i31 @_ssdm_op_Read.ap_auto.i31, i31 %tx
+
+]]></Node>
+<StgValue><ssdm name="tx_read"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="41" bw="18" op_0_bw="18" op_1_bw="18">
+<![CDATA[
+newFuncRoot:4 %tmp = read i18 @_ssdm_op_Read.ap_auto.i18, i18 %empty
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="42" bw="31" op_0_bw="31" op_1_bw="31">
+<![CDATA[
+newFuncRoot:5 %H_read = read i31 @_ssdm_op_Read.ap_auto.i31, i31 %H
+
+]]></Node>
+<StgValue><ssdm name="H_read"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="43" bw="31" op_0_bw="31" op_1_bw="31">
+<![CDATA[
+newFuncRoot:6 %ty_read = read i31 @_ssdm_op_Read.ap_auto.i31, i31 %ty
+
+]]></Node>
+<StgValue><ssdm name="ty_read"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="44" bw="32" op_0_bw="31">
+<![CDATA[
+newFuncRoot:7 %tx_cast = zext i31 %tx_read
+
+]]></Node>
+<StgValue><ssdm name="tx_cast"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="45" bw="32" op_0_bw="31">
+<![CDATA[
+newFuncRoot:8 %H_cast = zext i31 %H_read
+
+]]></Node>
+<StgValue><ssdm name="H_cast"/></StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="46" bw="32" op_0_bw="31">
+<![CDATA[
+newFuncRoot:9 %ty_cast = zext i31 %ty_read
+
+]]></Node>
+<StgValue><ssdm name="ty_cast"/></StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="47" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:10 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="18" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="48" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:11 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="19" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="49" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:12 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="20" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="50" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:13 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="21" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="51" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:14 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="22" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="52" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:15 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="23" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="53" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:16 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="24" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="54" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:17 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="25" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="55" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:18 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="26" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="56" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:19 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="27" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="57" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:20 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_10, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="28" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="58" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:21 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_11, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="29" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="59" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:22 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_12, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="30" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="60" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:23 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_13, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="31" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="61" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:24 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_14, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="32" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="62" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:25 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_15, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="33" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="63" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:26 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="34" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="64" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:27 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="35" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="65" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:28 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="36" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="66" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:29 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="37" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="67" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:30 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="38" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="68" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:31 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="39" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="69" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:32 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="40" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="70" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:33 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="41" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="71" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:34 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="42" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="72" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:35 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="43" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="73" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:36 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="44" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="74" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:37 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="45" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="75" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:38 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="46" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="76" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:39 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="47" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="77" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:40 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="48" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="78" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+newFuncRoot:41 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9, i64 666, i64 30, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="49" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="79" bw="0" op_0_bw="11" op_1_bw="11">
+<![CDATA[
+newFuncRoot:42 %store_ln0 = store i11 0, i11 %indvar_flatten28
+
+]]></Node>
+<StgValue><ssdm name="store_ln0"/></StgValue>
+</operation>
+
+<operation id="50" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="80" bw="0" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+newFuncRoot:43 %store_ln105 = store i6 0, i6 %y
+
+]]></Node>
+<StgValue><ssdm name="store_ln105"/></StgValue>
+</operation>
+
+<operation id="51" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="81" bw="0" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+newFuncRoot:44 %store_ln106 = store i6 0, i6 %x
+
+]]></Node>
+<StgValue><ssdm name="store_ln106"/></StgValue>
+</operation>
+
+<operation id="52" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="82" bw="0" op_0_bw="0">
+<![CDATA[
+newFuncRoot:45 %br_ln0 = br void %for.body136
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="53" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="84" bw="11" op_0_bw="11" op_1_bw="0">
+<![CDATA[
+for.body136:0 %indvar_flatten28_load = load i11 %indvar_flatten28
+
+]]></Node>
+<StgValue><ssdm name="indvar_flatten28_load"/></StgValue>
+</operation>
+
+<operation id="54" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="85" bw="1" op_0_bw="11" op_1_bw="11">
+<![CDATA[
+for.body136:1 %icmp_ln105 = icmp_eq  i11 %indvar_flatten28_load, i11 1024
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln105"/></StgValue>
+</operation>
+
+<operation id="55" st_id="1" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="86" bw="11" op_0_bw="11" op_1_bw="11">
+<![CDATA[
+for.body136:2 %add_ln105_2 = add i11 %indvar_flatten28_load, i11 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln105_2"/></StgValue>
+</operation>
+
+<operation id="56" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="87" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+for.body136:3 %br_ln105 = br i1 %icmp_ln105, void %for.inc170, void %for.inc173.exitStub
+
+]]></Node>
+<StgValue><ssdm name="br_ln105"/></StgValue>
+</operation>
+
+<operation id="57" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln105" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="184" bw="0" op_0_bw="11" op_1_bw="11" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc167:1 %store_ln105 = store i11 %add_ln105_2, i11 %indvar_flatten28
+
+]]></Node>
+<StgValue><ssdm name="store_ln105"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="3">
+
+<operation id="58" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="89" bw="6" op_0_bw="6" op_1_bw="0">
+<![CDATA[
+for.inc170:0 %x_load = load i6 %x
+
+]]></Node>
+<StgValue><ssdm name="x_load"/></StgValue>
+</operation>
+
+<operation id="59" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="90" bw="6" op_0_bw="6" op_1_bw="0">
+<![CDATA[
+for.inc170:1 %y_load = load i6 %y
+
+]]></Node>
+<StgValue><ssdm name="y_load"/></StgValue>
+</operation>
+
+<operation id="60" st_id="2" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="91" bw="6" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+for.inc170:2 %add_ln105 = add i6 %y_load, i6 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln105"/></StgValue>
+</operation>
+
+<operation id="61" st_id="2" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="94" bw="1" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+for.inc170:5 %icmp_ln106 = icmp_eq  i6 %x_load, i6 32
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln106"/></StgValue>
+</operation>
+
+<operation id="62" st_id="2" stage="1" lat="1">
+<core>Sel</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="95" bw="6" op_0_bw="1" op_1_bw="6" op_2_bw="6">
+<![CDATA[
+for.inc170:6 %select_ln105 = select i1 %icmp_ln106, i6 0, i6 %x_load
+
+]]></Node>
+<StgValue><ssdm name="select_ln105"/></StgValue>
+</operation>
+
+<operation id="63" st_id="2" stage="1" lat="1">
+<core>Sel</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="96" bw="6" op_0_bw="1" op_1_bw="6" op_2_bw="6">
+<![CDATA[
+for.inc170:7 %select_ln105_2 = select i1 %icmp_ln106, i6 %add_ln105, i6 %y_load
+
+]]></Node>
+<StgValue><ssdm name="select_ln105_2"/></StgValue>
+</operation>
+
+<operation id="64" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="97" bw="5" op_0_bw="6">
+<![CDATA[
+for.inc170:8 %trunc_ln116 = trunc i6 %select_ln105_2
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln116"/></StgValue>
+</operation>
+
+<operation id="65" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="99" bw="32" op_0_bw="6">
+<![CDATA[
+for.inc170:10 %zext_ln105 = zext i6 %select_ln105_2
+
+]]></Node>
+<StgValue><ssdm name="zext_ln105"/></StgValue>
+</operation>
+
+<operation id="66" st_id="2" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="100" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+for.inc170:11 %empty_401 = add i32 %zext_ln105, i32 %ty_cast
+
+]]></Node>
+<StgValue><ssdm name="empty_401"/></StgValue>
+</operation>
+
+<operation id="67" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="101" bw="18" op_0_bw="32">
+<![CDATA[
+for.inc170:12 %empty_402 = trunc i32 %empty_401
+
+]]></Node>
+<StgValue><ssdm name="empty_402"/></StgValue>
+</operation>
+
+<operation id="68" st_id="2" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="183" bw="6" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+for.inc167:0 %add_ln106 = add i6 %select_ln105, i6 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln106"/></StgValue>
+</operation>
+
+<operation id="69" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="185" bw="0" op_0_bw="6" op_1_bw="6" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc167:2 %store_ln105 = store i6 %select_ln105_2, i6 %y
+
+]]></Node>
+<StgValue><ssdm name="store_ln105"/></StgValue>
+</operation>
+
+<operation id="70" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="186" bw="0" op_0_bw="6" op_1_bw="6" op_2_bw="0" op_3_bw="0">
+<![CDATA[
+for.inc167:3 %store_ln106 = store i6 %add_ln106, i6 %x
+
+]]></Node>
+<StgValue><ssdm name="store_ln106"/></StgValue>
+</operation>
+
+<operation id="71" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="187" bw="0" op_0_bw="0">
+<![CDATA[
+for.inc167:4 %br_ln106 = br void %for.body136
+
+]]></Node>
+<StgValue><ssdm name="br_ln106"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="4">
+
+<operation id="72" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="92" bw="0" op_0_bw="0" op_1_bw="0">
+<![CDATA[
+for.inc170:3 %specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_105_12_VITIS_LOOP_106_13_str
+
+]]></Node>
+<StgValue><ssdm name="specloopname_ln0"/></StgValue>
+</operation>
+
+<operation id="73" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="93" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<![CDATA[
+for.inc170:4 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1024, i64 1024, i64 1024
+
+]]></Node>
+<StgValue><ssdm name="speclooptripcount_ln0"/></StgValue>
+</operation>
+
+<operation id="74" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="98" bw="10" op_0_bw="10" op_1_bw="5" op_2_bw="5">
+<![CDATA[
+for.inc170:9 %tmp_s = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i5.i5, i5 %trunc_ln116, i5 0
+
+]]></Node>
+<StgValue><ssdm name="tmp_s"/></StgValue>
+</operation>
+
+<operation id="75" st_id="3" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="102" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+for.inc170:13 %cmp141 = icmp_slt  i32 %empty_401, i32 %H_cast
+
+]]></Node>
+<StgValue><ssdm name="cmp141"/></StgValue>
+</operation>
+
+<operation id="76" st_id="3" stage="1" lat="1">
+<core>Multiplier</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="103" bw="18" op_0_bw="18" op_1_bw="18">
+<![CDATA[
+for.inc170:14 %empty_403 = mul i18 %empty_402, i18 %tmp
+
+]]></Node>
+<StgValue><ssdm name="empty_403"/></StgValue>
+</operation>
+
+<operation id="77" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="104" bw="10" op_0_bw="6">
+<![CDATA[
+for.inc170:15 %zext_ln116_66 = zext i6 %select_ln105
+
+]]></Node>
+<StgValue><ssdm name="zext_ln116_66"/></StgValue>
+</operation>
+
+<operation id="78" st_id="3" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="105" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+for.inc170:16 %add_ln116 = add i10 %tmp_s, i10 %zext_ln116_66
+
+]]></Node>
+<StgValue><ssdm name="add_ln116"/></StgValue>
+</operation>
+
+<operation id="79" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="106" bw="64" op_0_bw="10">
+<![CDATA[
+for.inc170:17 %zext_ln116_67 = zext i10 %add_ln116
+
+]]></Node>
+<StgValue><ssdm name="zext_ln116_67"/></StgValue>
+</operation>
+
+<operation id="80" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="107" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:18 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr = getelementptr i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr"/></StgValue>
+</operation>
+
+<operation id="81" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="108" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:19 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr = getelementptr i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr"/></StgValue>
+</operation>
+
+<operation id="82" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="109" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:20 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr = getelementptr i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr"/></StgValue>
+</operation>
+
+<operation id="83" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="110" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:21 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr = getelementptr i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr"/></StgValue>
+</operation>
+
+<operation id="84" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="111" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:22 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr = getelementptr i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr"/></StgValue>
+</operation>
+
+<operation id="85" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="112" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:23 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out = getelementptr i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out"/></StgValue>
+</operation>
+
+<operation id="86" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="113" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:24 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80"/></StgValue>
+</operation>
+
+<operation id="87" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="114" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:25 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81"/></StgValue>
+</operation>
+
+<operation id="88" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="115" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:26 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82"/></StgValue>
+</operation>
+
+<operation id="89" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="116" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:27 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83"/></StgValue>
+</operation>
+
+<operation id="90" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="117" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:28 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84"/></StgValue>
+</operation>
+
+<operation id="91" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="118" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:29 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85"/></StgValue>
+</operation>
+
+<operation id="92" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="119" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:30 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86"/></StgValue>
+</operation>
+
+<operation id="93" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="120" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:31 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87"/></StgValue>
+</operation>
+
+<operation id="94" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="121" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:32 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88 = getelementptr i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88"/></StgValue>
+</operation>
+
+<operation id="95" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="122" bw="10" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+for.inc170:33 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89 = getelementptr i7 %conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed, i64 0, i64 %zext_ln116_67
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89"/></StgValue>
+</operation>
+
+<operation id="96" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="123" bw="32" op_0_bw="6">
+<![CDATA[
+for.inc170:34 %zext_ln106 = zext i6 %select_ln105
+
+]]></Node>
+<StgValue><ssdm name="zext_ln106"/></StgValue>
+</operation>
+
+<operation id="97" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="124" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+for.inc170:35 %specpipeline_ln107 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_9
+
+]]></Node>
+<StgValue><ssdm name="specpipeline_ln107"/></StgValue>
+</operation>
+
+<operation id="98" st_id="3" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="125" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+for.inc170:36 %add_ln110 = add i32 %zext_ln106, i32 %tx_cast
+
+]]></Node>
+<StgValue><ssdm name="add_ln110"/></StgValue>
+</operation>
+
+<operation id="99" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="126" bw="18" op_0_bw="32">
+<![CDATA[
+for.inc170:37 %trunc_ln112 = trunc i32 %add_ln110
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln112"/></StgValue>
+</operation>
+
+<operation id="100" st_id="3" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="127" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+for.inc170:38 %icmp_ln112 = icmp_slt  i32 %add_ln110, i32 %H_cast
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln112"/></StgValue>
+</operation>
+
+<operation id="101" st_id="3" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="128" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+for.inc170:39 %and_ln112 = and i1 %cmp141, i1 %icmp_ln112
+
+]]></Node>
+<StgValue><ssdm name="and_ln112"/></StgValue>
+</operation>
+
+<operation id="102" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="129" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+for.inc170:40 %br_ln112 = br i1 %and_ln112, void %for.inc167, void %VITIS_LOOP_115_14
+
+]]></Node>
+<StgValue><ssdm name="br_ln112"/></StgValue>
+</operation>
+
+<operation id="103" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="133" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:2 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90"/></StgValue>
+</operation>
+
+<operation id="104" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="149" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:18 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91"/></StgValue>
+</operation>
+
+<operation id="105" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="150" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:19 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92"/></StgValue>
+</operation>
+
+<operation id="106" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="151" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:20 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93"/></StgValue>
+</operation>
+
+<operation id="107" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="152" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:21 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94"/></StgValue>
+</operation>
+
+<operation id="108" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="153" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:22 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95"/></StgValue>
+</operation>
+
+<operation id="109" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="154" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:23 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96"/></StgValue>
+</operation>
+
+<operation id="110" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="155" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:24 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97"/></StgValue>
+</operation>
+
+<operation id="111" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="156" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:25 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98"/></StgValue>
+</operation>
+
+<operation id="112" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="157" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:26 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99"/></StgValue>
+</operation>
+
+<operation id="113" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="158" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:27 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load"/></StgValue>
+</operation>
+
+<operation id="114" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:28 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404"/></StgValue>
+</operation>
+
+<operation id="115" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="160" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:29 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405"/></StgValue>
+</operation>
+
+<operation id="116" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="161" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:30 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406"/></StgValue>
+</operation>
+
+<operation id="117" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="162" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:31 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407"/></StgValue>
+</operation>
+
+<operation id="118" st_id="3" stage="2" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="163" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:32 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408"/></StgValue>
+</operation>
+
+<operation id="170" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln105" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="189" bw="0">
+<![CDATA[
+for.inc173.exitStub:0 %ret_ln0 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="5">
+
+<operation id="119" st_id="4" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="131" bw="18" op_0_bw="18" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:0 %add_ln113 = add i18 %trunc_ln112, i18 %empty_403
+
+]]></Node>
+<StgValue><ssdm name="add_ln113"/></StgValue>
+</operation>
+
+<operation id="120" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="132" bw="64" op_0_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:1 %zext_ln116 = zext i18 %add_ln113
+
+]]></Node>
+<StgValue><ssdm name="zext_ln116"/></StgValue>
+</operation>
+
+<operation id="121" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="133" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:2 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90"/></StgValue>
+</operation>
+
+<operation id="122" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="134" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:3 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_addr"/></StgValue>
+</operation>
+
+<operation id="123" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="135" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:4 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_addr"/></StgValue>
+</operation>
+
+<operation id="124" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="136" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:5 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_addr"/></StgValue>
+</operation>
+
+<operation id="125" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="137" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:6 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_addr"/></StgValue>
+</operation>
+
+<operation id="126" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="138" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_addr"/></StgValue>
+</operation>
+
+<operation id="127" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="139" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:8 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_addr"/></StgValue>
+</operation>
+
+<operation id="128" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="140" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:9 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_addr"/></StgValue>
+</operation>
+
+<operation id="129" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="141" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:10 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_addr"/></StgValue>
+</operation>
+
+<operation id="130" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="142" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:11 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_addr"/></StgValue>
+</operation>
+
+<operation id="131" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="143" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:12 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_addr = getelementptr i7 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_addr"/></StgValue>
+</operation>
+
+<operation id="132" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="144" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:13 %p_ZZ9cnn_accelPVaS0_iE4buf1_10_addr = getelementptr i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_10, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_10_addr"/></StgValue>
+</operation>
+
+<operation id="133" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="145" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:14 %p_ZZ9cnn_accelPVaS0_iE4buf1_11_addr = getelementptr i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_11, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_11_addr"/></StgValue>
+</operation>
+
+<operation id="134" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="146" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:15 %p_ZZ9cnn_accelPVaS0_iE4buf1_12_addr = getelementptr i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_12, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_12_addr"/></StgValue>
+</operation>
+
+<operation id="135" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="147" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:16 %p_ZZ9cnn_accelPVaS0_iE4buf1_13_addr = getelementptr i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_13, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_13_addr"/></StgValue>
+</operation>
+
+<operation id="136" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="148" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:17 %p_ZZ9cnn_accelPVaS0_iE4buf1_14_addr = getelementptr i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_14, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_14_addr"/></StgValue>
+</operation>
+
+<operation id="137" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="149" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:18 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91"/></StgValue>
+</operation>
+
+<operation id="138" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="150" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:19 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92"/></StgValue>
+</operation>
+
+<operation id="139" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="151" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:20 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93"/></StgValue>
+</operation>
+
+<operation id="140" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="152" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:21 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94"/></StgValue>
+</operation>
+
+<operation id="141" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="153" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:22 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95"/></StgValue>
+</operation>
+
+<operation id="142" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="154" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:23 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96"/></StgValue>
+</operation>
+
+<operation id="143" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="155" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:24 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97"/></StgValue>
+</operation>
+
+<operation id="144" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="156" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:25 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98"/></StgValue>
+</operation>
+
+<operation id="145" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="157" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:26 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99"/></StgValue>
+</operation>
+
+<operation id="146" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="158" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:27 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr
+
+]]></Node>
+<StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load"/></StgValue>
+</operation>
+
+<operation id="147" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="159" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:28 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404"/></StgValue>
+</operation>
+
+<operation id="148" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="160" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:29 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405"/></StgValue>
+</operation>
+
+<operation id="149" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="161" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:30 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406"/></StgValue>
+</operation>
+
+<operation id="150" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="162" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:31 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407 = load i10 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407"/></StgValue>
+</operation>
+
+<operation id="151" st_id="4" stage="1" lat="2">
+<core>RAM_T2P_BRAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="163" bw="7" op_0_bw="10">
+<![CDATA[
+VITIS_LOOP_115_14:32 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408 = load i10 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out
+
+]]></Node>
+<StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408"/></StgValue>
+</operation>
+
+<operation id="152" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="164" bw="18" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+VITIS_LOOP_115_14:33 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1 = getelementptr i7 %p_ZZ9cnn_accelPVaS0_iE4buf1_15, i64 0, i64 %zext_ln116
+
+]]></Node>
+<StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1"/></StgValue>
+</operation>
+
+<operation id="153" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="165" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:34 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="154" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="166" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:35 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="155" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="167" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:36 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="156" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="168" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:37 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="157" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="169" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:38 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="158" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="170" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:39 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="159" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="171" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:40 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="160" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="172" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:41 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="161" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="173" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:42 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="162" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="174" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:43 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="163" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="175" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:44 %store_ln116 = store i7 %p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load, i18 %p_ZZ9cnn_accelPVaS0_iE4buf1_10_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="164" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="176" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:45 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404, i18 %p_ZZ9cnn_accelPVaS0_iE4buf1_11_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="165" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="177" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:46 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405, i18 %p_ZZ9cnn_accelPVaS0_iE4buf1_12_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="166" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="178" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:47 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406, i18 %p_ZZ9cnn_accelPVaS0_iE4buf1_13_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="167" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="179" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:48 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407, i18 %p_ZZ9cnn_accelPVaS0_iE4buf1_14_addr
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="168" st_id="4" stage="1" lat="1">
+<core>RAM_2P_BRAM</core>
+<MemPortIdVec>1 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="180" bw="0" op_0_bw="7" op_1_bw="18">
+<![CDATA[
+VITIS_LOOP_115_14:49 %store_ln116 = store i7 %conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408, i18 %cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1
+
+]]></Node>
+<StgValue><ssdm name="store_ln116"/></StgValue>
+</operation>
+
+<operation id="169" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="and_ln112" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="181" bw="0" op_0_bw="0">
+<![CDATA[
+VITIS_LOOP_115_14:50 %br_ln106 = br void %for.inc167
+
+]]></Node>
+<StgValue><ssdm name="br_ln106"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="185" name="ty" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="ty"/></StgValue>
+</port>
+<port id="186" name="H" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="H"/></StgValue>
+</port>
+<port id="187" name="empty" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="empty"/></StgValue>
+</port>
+<port id="188" name="tx" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="tx"/></StgValue>
+</port>
+<port id="189" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="190" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="191" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="192" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="193" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="194" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="195" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="196" name="conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="197" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="198" name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="199" name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="200" name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="201" name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="202" name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="203" name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="204" name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15" dir="0" iftype="1">
+<core>RAM_T2P_BRAM</core><StgValue><ssdm name="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="205" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="206" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="207" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="208" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="209" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="210" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="211" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="212" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="213" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="214" name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="215" name="p_ZZ9cnn_accelPVaS0_iE4buf1_10" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_10"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="216" name="p_ZZ9cnn_accelPVaS0_iE4buf1_11" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_11"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="217" name="p_ZZ9cnn_accelPVaS0_iE4buf1_12" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_12"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="218" name="p_ZZ9cnn_accelPVaS0_iE4buf1_13" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_13"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="219" name="p_ZZ9cnn_accelPVaS0_iE4buf1_14" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_14"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="220" name="p_ZZ9cnn_accelPVaS0_iE4buf1_15" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="p_ZZ9cnn_accelPVaS0_iE4buf1_15"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="222" from="StgValue_221" to="x" fromId="221" toId="7">
+</dataflow>
+<dataflow id="223" from="StgValue_221" to="y" fromId="221" toId="8">
+</dataflow>
+<dataflow id="224" from="StgValue_221" to="indvar_flatten28" fromId="221" toId="9">
+</dataflow>
+<dataflow id="226" from="_ssdm_op_Read.ap_auto.i31" to="tx_read" fromId="225" toId="10">
+</dataflow>
+<dataflow id="227" from="tx" to="tx_read" fromId="188" toId="10">
+</dataflow>
+<dataflow id="229" from="_ssdm_op_Read.ap_auto.i18" to="tmp" fromId="228" toId="11">
+</dataflow>
+<dataflow id="230" from="empty" to="tmp" fromId="187" toId="11">
+</dataflow>
+<dataflow id="231" from="_ssdm_op_Read.ap_auto.i31" to="H_read" fromId="225" toId="12">
+</dataflow>
+<dataflow id="232" from="H" to="H_read" fromId="186" toId="12">
+</dataflow>
+<dataflow id="233" from="_ssdm_op_Read.ap_auto.i31" to="ty_read" fromId="225" toId="13">
+</dataflow>
+<dataflow id="234" from="ty" to="ty_read" fromId="185" toId="13">
+</dataflow>
+<dataflow id="235" from="tx_read" to="tx_cast" fromId="10" toId="14">
+</dataflow>
+<dataflow id="236" from="H_read" to="H_cast" fromId="12" toId="15">
+</dataflow>
+<dataflow id="237" from="ty_read" to="ty_cast" fromId="13" toId="16">
+</dataflow>
+<dataflow id="239" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="17">
+</dataflow>
+<dataflow id="240" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1" to="specmemcore_ln0" fromId="205" toId="17">
+</dataflow>
+<dataflow id="242" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="17">
+</dataflow>
+<dataflow id="244" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="17">
+</dataflow>
+<dataflow id="246" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="17">
+</dataflow>
+<dataflow id="247" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="18">
+</dataflow>
+<dataflow id="248" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12" to="specmemcore_ln0" fromId="206" toId="18">
+</dataflow>
+<dataflow id="249" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="18">
+</dataflow>
+<dataflow id="250" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="18">
+</dataflow>
+<dataflow id="251" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="18">
+</dataflow>
+<dataflow id="252" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="19">
+</dataflow>
+<dataflow id="253" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13" to="specmemcore_ln0" fromId="207" toId="19">
+</dataflow>
+<dataflow id="254" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="19">
+</dataflow>
+<dataflow id="255" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="19">
+</dataflow>
+<dataflow id="256" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="19">
+</dataflow>
+<dataflow id="257" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="20">
+</dataflow>
+<dataflow id="258" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14" to="specmemcore_ln0" fromId="208" toId="20">
+</dataflow>
+<dataflow id="259" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="20">
+</dataflow>
+<dataflow id="260" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="20">
+</dataflow>
+<dataflow id="261" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="20">
+</dataflow>
+<dataflow id="262" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="21">
+</dataflow>
+<dataflow id="263" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15" to="specmemcore_ln0" fromId="209" toId="21">
+</dataflow>
+<dataflow id="264" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="21">
+</dataflow>
+<dataflow id="265" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="21">
+</dataflow>
+<dataflow id="266" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="21">
+</dataflow>
+<dataflow id="267" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="22">
+</dataflow>
+<dataflow id="268" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16" to="specmemcore_ln0" fromId="210" toId="22">
+</dataflow>
+<dataflow id="269" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="22">
+</dataflow>
+<dataflow id="270" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="22">
+</dataflow>
+<dataflow id="271" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="22">
+</dataflow>
+<dataflow id="272" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="23">
+</dataflow>
+<dataflow id="273" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17" to="specmemcore_ln0" fromId="211" toId="23">
+</dataflow>
+<dataflow id="274" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="23">
+</dataflow>
+<dataflow id="275" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="23">
+</dataflow>
+<dataflow id="276" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="23">
+</dataflow>
+<dataflow id="277" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="24">
+</dataflow>
+<dataflow id="278" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18" to="specmemcore_ln0" fromId="212" toId="24">
+</dataflow>
+<dataflow id="279" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="24">
+</dataflow>
+<dataflow id="280" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="24">
+</dataflow>
+<dataflow id="281" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="24">
+</dataflow>
+<dataflow id="282" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="25">
+</dataflow>
+<dataflow id="283" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19" to="specmemcore_ln0" fromId="213" toId="25">
+</dataflow>
+<dataflow id="284" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="25">
+</dataflow>
+<dataflow id="285" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="25">
+</dataflow>
+<dataflow id="286" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="25">
+</dataflow>
+<dataflow id="287" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="26">
+</dataflow>
+<dataflow id="288" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20" to="specmemcore_ln0" fromId="214" toId="26">
+</dataflow>
+<dataflow id="289" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="26">
+</dataflow>
+<dataflow id="290" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="26">
+</dataflow>
+<dataflow id="291" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="26">
+</dataflow>
+<dataflow id="292" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="27">
+</dataflow>
+<dataflow id="293" from="p_ZZ9cnn_accelPVaS0_iE4buf1_10" to="specmemcore_ln0" fromId="215" toId="27">
+</dataflow>
+<dataflow id="294" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="27">
+</dataflow>
+<dataflow id="295" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="27">
+</dataflow>
+<dataflow id="296" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="27">
+</dataflow>
+<dataflow id="297" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="28">
+</dataflow>
+<dataflow id="298" from="p_ZZ9cnn_accelPVaS0_iE4buf1_11" to="specmemcore_ln0" fromId="216" toId="28">
+</dataflow>
+<dataflow id="299" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="28">
+</dataflow>
+<dataflow id="300" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="28">
+</dataflow>
+<dataflow id="301" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="28">
+</dataflow>
+<dataflow id="302" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="29">
+</dataflow>
+<dataflow id="303" from="p_ZZ9cnn_accelPVaS0_iE4buf1_12" to="specmemcore_ln0" fromId="217" toId="29">
+</dataflow>
+<dataflow id="304" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="29">
+</dataflow>
+<dataflow id="305" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="29">
+</dataflow>
+<dataflow id="306" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="29">
+</dataflow>
+<dataflow id="307" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="30">
+</dataflow>
+<dataflow id="308" from="p_ZZ9cnn_accelPVaS0_iE4buf1_13" to="specmemcore_ln0" fromId="218" toId="30">
+</dataflow>
+<dataflow id="309" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="30">
+</dataflow>
+<dataflow id="310" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="30">
+</dataflow>
+<dataflow id="311" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="30">
+</dataflow>
+<dataflow id="312" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="31">
+</dataflow>
+<dataflow id="313" from="p_ZZ9cnn_accelPVaS0_iE4buf1_14" to="specmemcore_ln0" fromId="219" toId="31">
+</dataflow>
+<dataflow id="314" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="31">
+</dataflow>
+<dataflow id="315" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="31">
+</dataflow>
+<dataflow id="316" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="31">
+</dataflow>
+<dataflow id="317" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="32">
+</dataflow>
+<dataflow id="318" from="p_ZZ9cnn_accelPVaS0_iE4buf1_15" to="specmemcore_ln0" fromId="220" toId="32">
+</dataflow>
+<dataflow id="319" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="32">
+</dataflow>
+<dataflow id="320" from="StgValue_243" to="specmemcore_ln0" fromId="243" toId="32">
+</dataflow>
+<dataflow id="321" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="32">
+</dataflow>
+<dataflow id="322" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="33">
+</dataflow>
+<dataflow id="323" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15" to="specmemcore_ln0" fromId="204" toId="33">
+</dataflow>
+<dataflow id="324" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="33">
+</dataflow>
+<dataflow id="326" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="33">
+</dataflow>
+<dataflow id="327" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="33">
+</dataflow>
+<dataflow id="328" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="34">
+</dataflow>
+<dataflow id="329" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14" to="specmemcore_ln0" fromId="203" toId="34">
+</dataflow>
+<dataflow id="330" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="34">
+</dataflow>
+<dataflow id="331" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="34">
+</dataflow>
+<dataflow id="332" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="34">
+</dataflow>
+<dataflow id="333" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="35">
+</dataflow>
+<dataflow id="334" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13" to="specmemcore_ln0" fromId="202" toId="35">
+</dataflow>
+<dataflow id="335" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="35">
+</dataflow>
+<dataflow id="336" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="35">
+</dataflow>
+<dataflow id="337" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="35">
+</dataflow>
+<dataflow id="338" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="36">
+</dataflow>
+<dataflow id="339" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12" to="specmemcore_ln0" fromId="201" toId="36">
+</dataflow>
+<dataflow id="340" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="36">
+</dataflow>
+<dataflow id="341" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="36">
+</dataflow>
+<dataflow id="342" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="36">
+</dataflow>
+<dataflow id="343" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="37">
+</dataflow>
+<dataflow id="344" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11" to="specmemcore_ln0" fromId="200" toId="37">
+</dataflow>
+<dataflow id="345" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="37">
+</dataflow>
+<dataflow id="346" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="37">
+</dataflow>
+<dataflow id="347" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="37">
+</dataflow>
+<dataflow id="348" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="38">
+</dataflow>
+<dataflow id="349" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10" to="specmemcore_ln0" fromId="199" toId="38">
+</dataflow>
+<dataflow id="350" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="38">
+</dataflow>
+<dataflow id="351" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="38">
+</dataflow>
+<dataflow id="352" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="38">
+</dataflow>
+<dataflow id="353" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="39">
+</dataflow>
+<dataflow id="354" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7" to="specmemcore_ln0" fromId="198" toId="39">
+</dataflow>
+<dataflow id="355" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="39">
+</dataflow>
+<dataflow id="356" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="39">
+</dataflow>
+<dataflow id="357" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="39">
+</dataflow>
+<dataflow id="358" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="40">
+</dataflow>
+<dataflow id="359" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8" to="specmemcore_ln0" fromId="197" toId="40">
+</dataflow>
+<dataflow id="360" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="40">
+</dataflow>
+<dataflow id="361" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="40">
+</dataflow>
+<dataflow id="362" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="40">
+</dataflow>
+<dataflow id="363" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="41">
+</dataflow>
+<dataflow id="364" from="conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed" to="specmemcore_ln0" fromId="196" toId="41">
+</dataflow>
+<dataflow id="365" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="41">
+</dataflow>
+<dataflow id="366" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="41">
+</dataflow>
+<dataflow id="367" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="41">
+</dataflow>
+<dataflow id="368" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="42">
+</dataflow>
+<dataflow id="369" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1" to="specmemcore_ln0" fromId="195" toId="42">
+</dataflow>
+<dataflow id="370" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="42">
+</dataflow>
+<dataflow id="371" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="42">
+</dataflow>
+<dataflow id="372" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="42">
+</dataflow>
+<dataflow id="373" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="43">
+</dataflow>
+<dataflow id="374" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2" to="specmemcore_ln0" fromId="194" toId="43">
+</dataflow>
+<dataflow id="375" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="43">
+</dataflow>
+<dataflow id="376" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="43">
+</dataflow>
+<dataflow id="377" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="43">
+</dataflow>
+<dataflow id="378" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="44">
+</dataflow>
+<dataflow id="379" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3" to="specmemcore_ln0" fromId="193" toId="44">
+</dataflow>
+<dataflow id="380" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="44">
+</dataflow>
+<dataflow id="381" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="44">
+</dataflow>
+<dataflow id="382" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="44">
+</dataflow>
+<dataflow id="383" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="45">
+</dataflow>
+<dataflow id="384" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4" to="specmemcore_ln0" fromId="192" toId="45">
+</dataflow>
+<dataflow id="385" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="45">
+</dataflow>
+<dataflow id="386" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="45">
+</dataflow>
+<dataflow id="387" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="45">
+</dataflow>
+<dataflow id="388" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="46">
+</dataflow>
+<dataflow id="389" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5" to="specmemcore_ln0" fromId="191" toId="46">
+</dataflow>
+<dataflow id="390" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="46">
+</dataflow>
+<dataflow id="391" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="46">
+</dataflow>
+<dataflow id="392" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="46">
+</dataflow>
+<dataflow id="393" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="47">
+</dataflow>
+<dataflow id="394" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6" to="specmemcore_ln0" fromId="190" toId="47">
+</dataflow>
+<dataflow id="395" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="47">
+</dataflow>
+<dataflow id="396" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="47">
+</dataflow>
+<dataflow id="397" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="47">
+</dataflow>
+<dataflow id="398" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="238" toId="48">
+</dataflow>
+<dataflow id="399" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9" to="specmemcore_ln0" fromId="189" toId="48">
+</dataflow>
+<dataflow id="400" from="StgValue_241" to="specmemcore_ln0" fromId="241" toId="48">
+</dataflow>
+<dataflow id="401" from="StgValue_325" to="specmemcore_ln0" fromId="325" toId="48">
+</dataflow>
+<dataflow id="402" from="StgValue_245" to="specmemcore_ln0" fromId="245" toId="48">
+</dataflow>
+<dataflow id="404" from="StgValue_403" to="store_ln0" fromId="403" toId="49">
+</dataflow>
+<dataflow id="405" from="indvar_flatten28" to="store_ln0" fromId="9" toId="49">
+</dataflow>
+<dataflow id="407" from="StgValue_406" to="store_ln105" fromId="406" toId="50">
+</dataflow>
+<dataflow id="408" from="y" to="store_ln105" fromId="8" toId="50">
+</dataflow>
+<dataflow id="409" from="StgValue_406" to="store_ln106" fromId="406" toId="51">
+</dataflow>
+<dataflow id="410" from="x" to="store_ln106" fromId="7" toId="51">
+</dataflow>
+<dataflow id="411" from="indvar_flatten28" to="indvar_flatten28_load" fromId="9" toId="53">
+</dataflow>
+<dataflow id="412" from="indvar_flatten28_load" to="icmp_ln105" fromId="53" toId="54">
+</dataflow>
+<dataflow id="414" from="StgValue_413" to="icmp_ln105" fromId="413" toId="54">
+</dataflow>
+<dataflow id="415" from="indvar_flatten28_load" to="add_ln105_2" fromId="53" toId="55">
+</dataflow>
+<dataflow id="417" from="StgValue_416" to="add_ln105_2" fromId="416" toId="55">
+</dataflow>
+<dataflow id="418" from="icmp_ln105" to="br_ln105" fromId="54" toId="56">
+</dataflow>
+<dataflow id="419" from="add_ln105_2" to="store_ln105" fromId="55" toId="57">
+</dataflow>
+<dataflow id="420" from="indvar_flatten28" to="store_ln105" fromId="9" toId="57">
+</dataflow>
+<dataflow id="421" from="x" to="x_load" fromId="7" toId="58">
+</dataflow>
+<dataflow id="422" from="y" to="y_load" fromId="8" toId="59">
+</dataflow>
+<dataflow id="423" from="y_load" to="add_ln105" fromId="59" toId="60">
+</dataflow>
+<dataflow id="425" from="StgValue_424" to="add_ln105" fromId="424" toId="60">
+</dataflow>
+<dataflow id="426" from="x_load" to="icmp_ln106" fromId="58" toId="61">
+</dataflow>
+<dataflow id="428" from="StgValue_427" to="icmp_ln106" fromId="427" toId="61">
+</dataflow>
+<dataflow id="429" from="icmp_ln106" to="select_ln105" fromId="61" toId="62">
+</dataflow>
+<dataflow id="430" from="StgValue_406" to="select_ln105" fromId="406" toId="62">
+</dataflow>
+<dataflow id="431" from="x_load" to="select_ln105" fromId="58" toId="62">
+</dataflow>
+<dataflow id="432" from="icmp_ln106" to="select_ln105_2" fromId="61" toId="63">
+</dataflow>
+<dataflow id="433" from="add_ln105" to="select_ln105_2" fromId="60" toId="63">
+</dataflow>
+<dataflow id="434" from="y_load" to="select_ln105_2" fromId="59" toId="63">
+</dataflow>
+<dataflow id="435" from="select_ln105_2" to="trunc_ln116" fromId="63" toId="64">
+</dataflow>
+<dataflow id="436" from="select_ln105_2" to="zext_ln105" fromId="63" toId="65">
+</dataflow>
+<dataflow id="437" from="zext_ln105" to="empty_401" fromId="65" toId="66">
+</dataflow>
+<dataflow id="438" from="ty_cast" to="empty_401" fromId="16" toId="66">
+</dataflow>
+<dataflow id="439" from="empty_401" to="empty_402" fromId="66" toId="67">
+</dataflow>
+<dataflow id="440" from="select_ln105" to="add_ln106" fromId="62" toId="68">
+</dataflow>
+<dataflow id="441" from="StgValue_424" to="add_ln106" fromId="424" toId="68">
+</dataflow>
+<dataflow id="442" from="select_ln105_2" to="store_ln105" fromId="63" toId="69">
+</dataflow>
+<dataflow id="443" from="y" to="store_ln105" fromId="8" toId="69">
+</dataflow>
+<dataflow id="444" from="add_ln106" to="store_ln106" fromId="68" toId="70">
+</dataflow>
+<dataflow id="445" from="x" to="store_ln106" fromId="7" toId="70">
+</dataflow>
+<dataflow id="447" from="_ssdm_op_SpecLoopName" to="specloopname_ln0" fromId="446" toId="72">
+</dataflow>
+<dataflow id="449" from="VITIS_LOOP_105_12_VITIS_LOOP_106_13_str" to="specloopname_ln0" fromId="448" toId="72">
+</dataflow>
+<dataflow id="451" from="_ssdm_op_SpecLoopTripCount" to="speclooptripcount_ln0" fromId="450" toId="73">
+</dataflow>
+<dataflow id="453" from="StgValue_452" to="speclooptripcount_ln0" fromId="452" toId="73">
+</dataflow>
+<dataflow id="454" from="StgValue_452" to="speclooptripcount_ln0" fromId="452" toId="73">
+</dataflow>
+<dataflow id="455" from="StgValue_452" to="speclooptripcount_ln0" fromId="452" toId="73">
+</dataflow>
+<dataflow id="457" from="_ssdm_op_BitConcatenate.i10.i5.i5" to="tmp_s" fromId="456" toId="74">
+</dataflow>
+<dataflow id="458" from="trunc_ln116" to="tmp_s" fromId="64" toId="74">
+</dataflow>
+<dataflow id="460" from="StgValue_459" to="tmp_s" fromId="459" toId="74">
+</dataflow>
+<dataflow id="461" from="empty_401" to="cmp141" fromId="66" toId="75">
+</dataflow>
+<dataflow id="462" from="H_cast" to="cmp141" fromId="15" toId="75">
+</dataflow>
+<dataflow id="463" from="empty_402" to="empty_403" fromId="67" toId="76">
+</dataflow>
+<dataflow id="464" from="tmp" to="empty_403" fromId="11" toId="76">
+</dataflow>
+<dataflow id="465" from="select_ln105" to="zext_ln116_66" fromId="62" toId="77">
+</dataflow>
+<dataflow id="466" from="tmp_s" to="add_ln116" fromId="74" toId="78">
+</dataflow>
+<dataflow id="467" from="zext_ln116_66" to="add_ln116" fromId="77" toId="78">
+</dataflow>
+<dataflow id="468" from="add_ln116" to="zext_ln116_67" fromId="78" toId="79">
+</dataflow>
+<dataflow id="469" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr" fromId="199" toId="80">
+</dataflow>
+<dataflow id="471" from="StgValue_470" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr" fromId="470" toId="80">
+</dataflow>
+<dataflow id="472" from="zext_ln116_67" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr" fromId="79" toId="80">
+</dataflow>
+<dataflow id="473" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr" fromId="200" toId="81">
+</dataflow>
+<dataflow id="474" from="StgValue_470" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr" fromId="470" toId="81">
+</dataflow>
+<dataflow id="475" from="zext_ln116_67" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr" fromId="79" toId="81">
+</dataflow>
+<dataflow id="476" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr" fromId="201" toId="82">
+</dataflow>
+<dataflow id="477" from="StgValue_470" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr" fromId="470" toId="82">
+</dataflow>
+<dataflow id="478" from="zext_ln116_67" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr" fromId="79" toId="82">
+</dataflow>
+<dataflow id="479" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr" fromId="202" toId="83">
+</dataflow>
+<dataflow id="480" from="StgValue_470" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr" fromId="470" toId="83">
+</dataflow>
+<dataflow id="481" from="zext_ln116_67" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr" fromId="79" toId="83">
+</dataflow>
+<dataflow id="482" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr" fromId="203" toId="84">
+</dataflow>
+<dataflow id="483" from="StgValue_470" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr" fromId="470" toId="84">
+</dataflow>
+<dataflow id="484" from="zext_ln116_67" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr" fromId="79" toId="84">
+</dataflow>
+<dataflow id="485" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_15" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out" fromId="204" toId="85">
+</dataflow>
+<dataflow id="486" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out" fromId="470" toId="85">
+</dataflow>
+<dataflow id="487" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out" fromId="79" toId="85">
+</dataflow>
+<dataflow id="488" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_9" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80" fromId="189" toId="86">
+</dataflow>
+<dataflow id="489" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80" fromId="470" toId="86">
+</dataflow>
+<dataflow id="490" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80" fromId="79" toId="86">
+</dataflow>
+<dataflow id="491" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_8" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81" fromId="197" toId="87">
+</dataflow>
+<dataflow id="492" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81" fromId="470" toId="87">
+</dataflow>
+<dataflow id="493" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81" fromId="79" toId="87">
+</dataflow>
+<dataflow id="494" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_7" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82" fromId="198" toId="88">
+</dataflow>
+<dataflow id="495" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82" fromId="470" toId="88">
+</dataflow>
+<dataflow id="496" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82" fromId="79" toId="88">
+</dataflow>
+<dataflow id="497" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_6" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83" fromId="190" toId="89">
+</dataflow>
+<dataflow id="498" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83" fromId="470" toId="89">
+</dataflow>
+<dataflow id="499" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83" fromId="79" toId="89">
+</dataflow>
+<dataflow id="500" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_5" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84" fromId="191" toId="90">
+</dataflow>
+<dataflow id="501" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84" fromId="470" toId="90">
+</dataflow>
+<dataflow id="502" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84" fromId="79" toId="90">
+</dataflow>
+<dataflow id="503" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_4" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85" fromId="192" toId="91">
+</dataflow>
+<dataflow id="504" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85" fromId="470" toId="91">
+</dataflow>
+<dataflow id="505" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85" fromId="79" toId="91">
+</dataflow>
+<dataflow id="506" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_3" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86" fromId="193" toId="92">
+</dataflow>
+<dataflow id="507" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86" fromId="470" toId="92">
+</dataflow>
+<dataflow id="508" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86" fromId="79" toId="92">
+</dataflow>
+<dataflow id="509" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_2" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87" fromId="194" toId="93">
+</dataflow>
+<dataflow id="510" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87" fromId="470" toId="93">
+</dataflow>
+<dataflow id="511" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87" fromId="79" toId="93">
+</dataflow>
+<dataflow id="512" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_1" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88" fromId="195" toId="94">
+</dataflow>
+<dataflow id="513" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88" fromId="470" toId="94">
+</dataflow>
+<dataflow id="514" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88" fromId="79" toId="94">
+</dataflow>
+<dataflow id="515" from="conv_mulmulmullayer_signed_char_signed_char_int_int_int_int_signed_char_signed" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89" fromId="196" toId="95">
+</dataflow>
+<dataflow id="516" from="StgValue_470" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89" fromId="470" toId="95">
+</dataflow>
+<dataflow id="517" from="zext_ln116_67" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89" fromId="79" toId="95">
+</dataflow>
+<dataflow id="518" from="select_ln105" to="zext_ln106" fromId="62" toId="96">
+</dataflow>
+<dataflow id="520" from="_ssdm_op_SpecPipeline" to="specpipeline_ln107" fromId="519" toId="97">
+</dataflow>
+<dataflow id="521" from="StgValue_221" to="specpipeline_ln107" fromId="221" toId="97">
+</dataflow>
+<dataflow id="523" from="StgValue_522" to="specpipeline_ln107" fromId="522" toId="97">
+</dataflow>
+<dataflow id="524" from="StgValue_522" to="specpipeline_ln107" fromId="522" toId="97">
+</dataflow>
+<dataflow id="525" from="StgValue_522" to="specpipeline_ln107" fromId="522" toId="97">
+</dataflow>
+<dataflow id="527" from="empty_9" to="specpipeline_ln107" fromId="526" toId="97">
+</dataflow>
+<dataflow id="528" from="zext_ln106" to="add_ln110" fromId="96" toId="98">
+</dataflow>
+<dataflow id="529" from="tx_cast" to="add_ln110" fromId="14" toId="98">
+</dataflow>
+<dataflow id="530" from="add_ln110" to="trunc_ln112" fromId="98" toId="99">
+</dataflow>
+<dataflow id="531" from="add_ln110" to="icmp_ln112" fromId="98" toId="100">
+</dataflow>
+<dataflow id="532" from="H_cast" to="icmp_ln112" fromId="15" toId="100">
+</dataflow>
+<dataflow id="533" from="cmp141" to="and_ln112" fromId="75" toId="101">
+</dataflow>
+<dataflow id="534" from="icmp_ln112" to="and_ln112" fromId="100" toId="101">
+</dataflow>
+<dataflow id="535" from="and_ln112" to="br_ln112" fromId="101" toId="102">
+</dataflow>
+<dataflow id="536" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90" fromId="86" toId="103">
+</dataflow>
+<dataflow id="537" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91" fromId="89" toId="104">
+</dataflow>
+<dataflow id="538" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92" fromId="90" toId="105">
+</dataflow>
+<dataflow id="539" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93" fromId="91" toId="106">
+</dataflow>
+<dataflow id="540" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94" fromId="92" toId="107">
+</dataflow>
+<dataflow id="541" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95" fromId="93" toId="108">
+</dataflow>
+<dataflow id="542" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96" fromId="94" toId="109">
+</dataflow>
+<dataflow id="543" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97" fromId="95" toId="110">
+</dataflow>
+<dataflow id="544" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98" fromId="87" toId="111">
+</dataflow>
+<dataflow id="545" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99" fromId="88" toId="112">
+</dataflow>
+<dataflow id="546" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load" fromId="80" toId="113">
+</dataflow>
+<dataflow id="547" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404" fromId="81" toId="114">
+</dataflow>
+<dataflow id="548" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405" fromId="82" toId="115">
+</dataflow>
+<dataflow id="549" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406" fromId="83" toId="116">
+</dataflow>
+<dataflow id="550" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407" fromId="84" toId="117">
+</dataflow>
+<dataflow id="551" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408" fromId="85" toId="118">
+</dataflow>
+<dataflow id="552" from="trunc_ln112" to="add_ln113" fromId="99" toId="119">
+</dataflow>
+<dataflow id="553" from="empty_403" to="add_ln113" fromId="76" toId="119">
+</dataflow>
+<dataflow id="554" from="add_ln113" to="zext_ln116" fromId="119" toId="120">
+</dataflow>
+<dataflow id="555" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_80" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90" fromId="86" toId="121">
+</dataflow>
+<dataflow id="556" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_addr" fromId="205" toId="122">
+</dataflow>
+<dataflow id="557" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_addr" fromId="470" toId="122">
+</dataflow>
+<dataflow id="558" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_addr" fromId="120" toId="122">
+</dataflow>
+<dataflow id="559" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_addr" fromId="206" toId="123">
+</dataflow>
+<dataflow id="560" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_addr" fromId="470" toId="123">
+</dataflow>
+<dataflow id="561" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_addr" fromId="120" toId="123">
+</dataflow>
+<dataflow id="562" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_addr" fromId="207" toId="124">
+</dataflow>
+<dataflow id="563" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_addr" fromId="470" toId="124">
+</dataflow>
+<dataflow id="564" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_addr" fromId="120" toId="124">
+</dataflow>
+<dataflow id="565" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_addr" fromId="208" toId="125">
+</dataflow>
+<dataflow id="566" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_addr" fromId="470" toId="125">
+</dataflow>
+<dataflow id="567" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_addr" fromId="120" toId="125">
+</dataflow>
+<dataflow id="568" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_addr" fromId="209" toId="126">
+</dataflow>
+<dataflow id="569" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_addr" fromId="470" toId="126">
+</dataflow>
+<dataflow id="570" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_addr" fromId="120" toId="126">
+</dataflow>
+<dataflow id="571" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_addr" fromId="210" toId="127">
+</dataflow>
+<dataflow id="572" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_addr" fromId="470" toId="127">
+</dataflow>
+<dataflow id="573" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_addr" fromId="120" toId="127">
+</dataflow>
+<dataflow id="574" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_addr" fromId="211" toId="128">
+</dataflow>
+<dataflow id="575" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_addr" fromId="470" toId="128">
+</dataflow>
+<dataflow id="576" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_addr" fromId="120" toId="128">
+</dataflow>
+<dataflow id="577" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_addr" fromId="212" toId="129">
+</dataflow>
+<dataflow id="578" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_addr" fromId="470" toId="129">
+</dataflow>
+<dataflow id="579" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_addr" fromId="120" toId="129">
+</dataflow>
+<dataflow id="580" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_addr" fromId="213" toId="130">
+</dataflow>
+<dataflow id="581" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_addr" fromId="470" toId="130">
+</dataflow>
+<dataflow id="582" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_addr" fromId="120" toId="130">
+</dataflow>
+<dataflow id="583" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_addr" fromId="214" toId="131">
+</dataflow>
+<dataflow id="584" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_addr" fromId="470" toId="131">
+</dataflow>
+<dataflow id="585" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_addr" fromId="120" toId="131">
+</dataflow>
+<dataflow id="586" from="p_ZZ9cnn_accelPVaS0_iE4buf1_10" to="p_ZZ9cnn_accelPVaS0_iE4buf1_10_addr" fromId="215" toId="132">
+</dataflow>
+<dataflow id="587" from="StgValue_470" to="p_ZZ9cnn_accelPVaS0_iE4buf1_10_addr" fromId="470" toId="132">
+</dataflow>
+<dataflow id="588" from="zext_ln116" to="p_ZZ9cnn_accelPVaS0_iE4buf1_10_addr" fromId="120" toId="132">
+</dataflow>
+<dataflow id="589" from="p_ZZ9cnn_accelPVaS0_iE4buf1_11" to="p_ZZ9cnn_accelPVaS0_iE4buf1_11_addr" fromId="216" toId="133">
+</dataflow>
+<dataflow id="590" from="StgValue_470" to="p_ZZ9cnn_accelPVaS0_iE4buf1_11_addr" fromId="470" toId="133">
+</dataflow>
+<dataflow id="591" from="zext_ln116" to="p_ZZ9cnn_accelPVaS0_iE4buf1_11_addr" fromId="120" toId="133">
+</dataflow>
+<dataflow id="592" from="p_ZZ9cnn_accelPVaS0_iE4buf1_12" to="p_ZZ9cnn_accelPVaS0_iE4buf1_12_addr" fromId="217" toId="134">
+</dataflow>
+<dataflow id="593" from="StgValue_470" to="p_ZZ9cnn_accelPVaS0_iE4buf1_12_addr" fromId="470" toId="134">
+</dataflow>
+<dataflow id="594" from="zext_ln116" to="p_ZZ9cnn_accelPVaS0_iE4buf1_12_addr" fromId="120" toId="134">
+</dataflow>
+<dataflow id="595" from="p_ZZ9cnn_accelPVaS0_iE4buf1_13" to="p_ZZ9cnn_accelPVaS0_iE4buf1_13_addr" fromId="218" toId="135">
+</dataflow>
+<dataflow id="596" from="StgValue_470" to="p_ZZ9cnn_accelPVaS0_iE4buf1_13_addr" fromId="470" toId="135">
+</dataflow>
+<dataflow id="597" from="zext_ln116" to="p_ZZ9cnn_accelPVaS0_iE4buf1_13_addr" fromId="120" toId="135">
+</dataflow>
+<dataflow id="598" from="p_ZZ9cnn_accelPVaS0_iE4buf1_14" to="p_ZZ9cnn_accelPVaS0_iE4buf1_14_addr" fromId="219" toId="136">
+</dataflow>
+<dataflow id="599" from="StgValue_470" to="p_ZZ9cnn_accelPVaS0_iE4buf1_14_addr" fromId="470" toId="136">
+</dataflow>
+<dataflow id="600" from="zext_ln116" to="p_ZZ9cnn_accelPVaS0_iE4buf1_14_addr" fromId="120" toId="136">
+</dataflow>
+<dataflow id="601" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_83" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91" fromId="89" toId="137">
+</dataflow>
+<dataflow id="602" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_84" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92" fromId="90" toId="138">
+</dataflow>
+<dataflow id="603" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_85" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93" fromId="91" toId="139">
+</dataflow>
+<dataflow id="604" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_86" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94" fromId="92" toId="140">
+</dataflow>
+<dataflow id="605" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_87" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95" fromId="93" toId="141">
+</dataflow>
+<dataflow id="606" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_88" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96" fromId="94" toId="142">
+</dataflow>
+<dataflow id="607" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_89" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97" fromId="95" toId="143">
+</dataflow>
+<dataflow id="608" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_81" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98" fromId="87" toId="144">
+</dataflow>
+<dataflow id="609" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_82" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99" fromId="88" toId="145">
+</dataflow>
+<dataflow id="610" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_addr" to="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load" fromId="80" toId="146">
+</dataflow>
+<dataflow id="611" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_11_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404" fromId="81" toId="147">
+</dataflow>
+<dataflow id="612" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_12_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405" fromId="82" toId="148">
+</dataflow>
+<dataflow id="613" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_13_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406" fromId="83" toId="149">
+</dataflow>
+<dataflow id="614" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_14_addr" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407" fromId="84" toId="150">
+</dataflow>
+<dataflow id="615" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out" to="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408" fromId="85" toId="151">
+</dataflow>
+<dataflow id="616" from="p_ZZ9cnn_accelPVaS0_iE4buf1_15" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1" fromId="220" toId="152">
+</dataflow>
+<dataflow id="617" from="StgValue_470" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1" fromId="470" toId="152">
+</dataflow>
+<dataflow id="618" from="zext_ln116" to="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1" fromId="120" toId="152">
+</dataflow>
+<dataflow id="619" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_90" to="store_ln116" fromId="121" toId="153">
+</dataflow>
+<dataflow id="620" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_addr" to="store_ln116" fromId="122" toId="153">
+</dataflow>
+<dataflow id="621" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_91" to="store_ln116" fromId="137" toId="154">
+</dataflow>
+<dataflow id="622" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_12_addr" to="store_ln116" fromId="123" toId="154">
+</dataflow>
+<dataflow id="623" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_92" to="store_ln116" fromId="138" toId="155">
+</dataflow>
+<dataflow id="624" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_13_addr" to="store_ln116" fromId="124" toId="155">
+</dataflow>
+<dataflow id="625" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_93" to="store_ln116" fromId="139" toId="156">
+</dataflow>
+<dataflow id="626" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_14_addr" to="store_ln116" fromId="125" toId="156">
+</dataflow>
+<dataflow id="627" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_94" to="store_ln116" fromId="140" toId="157">
+</dataflow>
+<dataflow id="628" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_15_addr" to="store_ln116" fromId="126" toId="157">
+</dataflow>
+<dataflow id="629" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_95" to="store_ln116" fromId="141" toId="158">
+</dataflow>
+<dataflow id="630" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_16_addr" to="store_ln116" fromId="127" toId="158">
+</dataflow>
+<dataflow id="631" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_96" to="store_ln116" fromId="142" toId="159">
+</dataflow>
+<dataflow id="632" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_17_addr" to="store_ln116" fromId="128" toId="159">
+</dataflow>
+<dataflow id="633" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_97" to="store_ln116" fromId="143" toId="160">
+</dataflow>
+<dataflow id="634" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_18_addr" to="store_ln116" fromId="129" toId="160">
+</dataflow>
+<dataflow id="635" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_98" to="store_ln116" fromId="144" toId="161">
+</dataflow>
+<dataflow id="636" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_19_addr" to="store_ln116" fromId="130" toId="161">
+</dataflow>
+<dataflow id="637" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_99" to="store_ln116" fromId="145" toId="162">
+</dataflow>
+<dataflow id="638" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1_20_addr" to="store_ln116" fromId="131" toId="162">
+</dataflow>
+<dataflow id="639" from="p_ZZ10conv_layerPaS_iiiiS_S_E8tile_out_10_load" to="store_ln116" fromId="146" toId="163">
+</dataflow>
+<dataflow id="640" from="p_ZZ9cnn_accelPVaS0_iE4buf1_10_addr" to="store_ln116" fromId="132" toId="163">
+</dataflow>
+<dataflow id="641" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_404" to="store_ln116" fromId="147" toId="164">
+</dataflow>
+<dataflow id="642" from="p_ZZ9cnn_accelPVaS0_iE4buf1_11_addr" to="store_ln116" fromId="133" toId="164">
+</dataflow>
+<dataflow id="643" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_405" to="store_ln116" fromId="148" toId="165">
+</dataflow>
+<dataflow id="644" from="p_ZZ9cnn_accelPVaS0_iE4buf1_12_addr" to="store_ln116" fromId="134" toId="165">
+</dataflow>
+<dataflow id="645" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_406" to="store_ln116" fromId="149" toId="166">
+</dataflow>
+<dataflow id="646" from="p_ZZ9cnn_accelPVaS0_iE4buf1_13_addr" to="store_ln116" fromId="135" toId="166">
+</dataflow>
+<dataflow id="647" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_407" to="store_ln116" fromId="150" toId="167">
+</dataflow>
+<dataflow id="648" from="p_ZZ9cnn_accelPVaS0_iE4buf1_14_addr" to="store_ln116" fromId="136" toId="167">
+</dataflow>
+<dataflow id="649" from="conv_layer_signed_char_signed_char_int_int_int_int_signed_char_signed_char_tile_out_408" to="store_ln116" fromId="151" toId="168">
+</dataflow>
+<dataflow id="650" from="cnn_accel_signed_char_volatile_signed_char_volatile_int_buf1" to="store_ln116" fromId="152" toId="168">
+</dataflow>
+<dataflow id="651" from="icmp_ln105" to="StgValue_2" fromId="54" toId="2">
+</dataflow>
+<dataflow id="652" from="and_ln112" to="StgValue_4" fromId="101" toId="4">
+</dataflow>
+<dataflow id="653" from="and_ln112" to="StgValue_5" fromId="101" toId="5">
+</dataflow>
+<dataflow id="654" from="icmp_ln105" to="StgValue_4" fromId="54" toId="4">
+</dataflow>
+</dataflows>
+
+
+</stg>

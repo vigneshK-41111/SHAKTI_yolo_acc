@@ -1,12 +1,12 @@
 set curdir [ file dirname [ file normalize [ info script ] ] ]
 source $curdir/env.tcl
 
-if { $argc != 6 } {
+if { $argc != 5 } {
   puts "Please pass the top modu le name that needs to be synthesized along with the fpga part"
-  puts " -tclargs <top-module> <xc7a100tcsg324-1> <riscv-isa> <jtag_type> <verilogdir> <axibuswidth>"
+  puts " -tclargs <top-module> <xc7a100tcsg324-1> <riscv-isa> <jtag_type> <verilogdir>"
   exit 2
 } else {
-  puts "Synthesizing with Top Module: [lindex $argv 0] for ISA: [lindex $argv 2] with Jtag: [lindex $argv 3] with AXI Bus Width: [lindex $argv 5]"
+  puts "Synthesizing with Top Module: [lindex $argv 0] for ISA: [lindex $argv 2] with Jtag: [lindex $argv 3]"
 }
 
 set top_module [lindex $argv 0]
@@ -15,8 +15,6 @@ set isa [lindex $argv 2]
 set base_version [string range [version -short] 0 3]
 set jtag_type [lindex $argv 3]
 set verilogdir [lindex $argv 4]
-set axibuswidth [lindex $argv 5]
-
 # create folders
 file mkdir $fpga_dir
 
@@ -64,16 +62,10 @@ import_ip $ip_project_dir/manage_ip.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci
 # force create the synth_1 path (need to make soft link in Makefile)
 if {[string equal [get_runs -quiet core_synth_1] ""]} {
     create_run -flow "Vivado Synthesis $base_version" \
-    -strategy "Flow_AreaOptimized_high" -constrset constrs_1 core_synth_1
-    set_property strategy Flow_AreaOptimized_high [get_runs core_synth_1]
-    set_property STEPS.SYNTH_DESIGN.TCL.PRE {} [get_runs core_synth_1]
-    set_property STEPS.SYNTH_DESIGN.TCL.POST {} [get_runs core_synth_1]
+    -strategy "Vivado Synthesis Defaults" -constrset constrs_1 core_synth_1
 #    -strategy "Flow_AreaOptimized_high" -constrset constrs_1 core_synth_1
 } else {
-#    set_property strategy "Vivado Synthesis Defaults" [get_runs core_synth_1]
-    set_property strategy Flow_AreaOptimized_high [get_runs core_synth_1]
-    set_property STEPS.SYNTH_DESIGN.TCL.PRE {} [get_runs core_synth_1]
-    set_property STEPS.SYNTH_DESIGN.TCL.POST {} [get_runs core_synth_1]
+    set_property strategy "Vivado Synthesis Defaults" [get_runs core_synth_1]
 #    set_property strategy "Flow_AreaOptimized_high" [get_runs core_synth_1]
     set_property flow "Vivado Synthesis $base_version" [get_runs core_synth_1]
 }
@@ -81,18 +73,9 @@ if {[string equal [get_runs -quiet core_synth_1] ""]} {
 #set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs core_synth_1]
 
 ## Add the verilog define argument to the string
-set verilog_define_args " -verilog_define BSV_RESET_FIFO_HEAD -verilog_define BSV_RESET_FIFO_ARRAY  -verilog_define BSV_ASYNC_RESET"
+set verilog_define_args " -verilog_define BSV_RESET_FIFO_HEAD -verilog_define BSV_RESET_FIFO_ARRAY"
 if { $jtag_type eq "JTAG_BSCAN2E" } {
 	append verilog_define_args " -verilog_define JTAG_BSCAN2E"
-}
-if { $axibuswidth eq "BUS_WIDTH128" } {
-	append verilog_define_args " -verilog_define BUS_WIDTH128"
-}
-if { $axibuswidth eq "BUS_WIDTH64" } {
-	append verilog_define_args " -verilog_define BUS_WIDTH64"
-}
-if { $axibuswidth eq "BUS_WIDTH32" } {
-	append verilog_define_args " -verilog_define BUS_WIDTH32"
 }
 
 set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value $verilog_define_args -objects [get_runs core_synth_1]
@@ -103,8 +86,7 @@ current_run -synthesis [get_runs core_synth_1]
 # Create 'impl_1' run (if not found)
 if {[string equal [get_runs -quiet core_impl_1] ""]} {
   create_run -flow "Vivado Implementation $base_version" -strategy\
- "Performance_ExtraTimingOpt" -constrset constrs_1 -parent_run core_synth_1 core_impl_1
-set_property strategy Performance_ExtraTimingOpt [get_runs core_impl_1]
+ "Vivado Implementation Defaults" -constrset constrs_1 -parent_run core_synth_1 core_impl_1
 } else {
   set_property strategy "Vivado Implementation Defaults" [get_runs core_impl_1]
   set_property flow "Vivado Implementation $base_version" [get_runs core_impl_1]

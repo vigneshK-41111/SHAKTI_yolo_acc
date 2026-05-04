@@ -30,17 +30,10 @@ package DebugSoc ;
 
   `include "Logger.bsv"
   `include "Soc.defines"
-
-`ifdef rtldump
-  interface Ifc_soc_sb;
-    interface Sbread sbread;
-    method Maybe#(CommitLogPacket) commitlog;
-  endinterface
-`endif
-
   interface Ifc_DebugSoc;
   `ifdef rtldump
-    interface Ifc_soc_sb soc_sb;
+    interface Sbread sbread;
+    method Maybe#(CommitLogPacket) commitlog;
   `endif
       // ------------- JTAG IOs ----------------------//
     interface Reset soc_reset;
@@ -219,10 +212,8 @@ package DebugSoc ;
       return tdo.crossed();                                                                       
     endmethod
   `ifdef rtldump
-   interface soc_sb = interface Ifc_soc_sb
     interface sbread  =soc.soc_sb.sbread;
     method commitlog = soc.soc_sb.commitlog;
-   endinterface;
   `endif
 
     interface soc_reset = system_reset;

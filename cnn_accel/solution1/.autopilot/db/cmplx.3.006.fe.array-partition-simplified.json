@@ -1,19 +1,59 @@
 {
   "0": {
-    "basicblocks": 25,
+    "basicblocks": 1,
+    "calls": "2 3 1",
+    "file": "cnn_accel.cpp",
+    "fileloc": 119,
+    "instructions": 10,
+    "name": "cnn_accel",
+    "total_instructions": 739
+  },
+  "1": {
+    "basicblocks": 32,
     "calls": "",
     "file": "cnn_accel.cpp",
-    "fileloc": 9,
-    "instructions": 249,
+    "fileloc": 19,
+    "instructions": 243,
     "loads": {
-      "L": 19,
-      "T": 4
+      "G": 10,
+      "L": 18
     },
-    "name": "cnn_accel",
+    "name": "conv_layer",
     "stores": {
-      "L": 22,
-      "T": 17
+      "L": 11
     },
-    "total_instructions": 249
+    "total_instructions": 243
+  },
+  "2": {
+    "basicblocks": 32,
+    "calls": "",
+    "file": "cnn_accel.cpp",
+    "fileloc": 19,
+    "instructions": 243,
+    "loads": {
+      "G": 10,
+      "L": 18
+    },
+    "name": "conv_layer",
+    "stores": {
+      "L": 11
+    },
+    "total_instructions": 243
+  },
+  "3": {
+    "basicblocks": 32,
+    "calls": "",
+    "file": "cnn_accel.cpp",
+    "fileloc": 19,
+    "instructions": 243,
+    "loads": {
+      "G": 10,
+      "L": 18
+    },
+    "name": "conv_layer",
+    "stores": {
+      "L": 11
+    },
+    "total_instructions": 243
   }
 }

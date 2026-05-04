@@ -1296,7 +1296,7 @@ void apatb_cnn_accel_hw(void* __xlx_apatb_param_input_r, void* __xlx_apatb_param
   };
   port3.param = { __xlx_apatb_param_input_r, __xlx_apatb_param_output_r };
   port3.mname = { "input_r", "output_r" };
-  port3.nbytes = { 2768896, 2768896 };
+  port3.nbytes = { 0, 0 };
   for (size_t off = 0, i = 0; i < port3.nbytes.size(); ++i) {
     port3.offset.push_back(off);
     off += hls::sim::divide_ceil(port3.nbytes[i], port3.asize);
