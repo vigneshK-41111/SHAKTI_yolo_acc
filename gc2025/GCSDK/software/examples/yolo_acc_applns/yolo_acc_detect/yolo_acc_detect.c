@@ -3,11 +3,43 @@
 
 #include "cnn_driver.h"
 #include "detect.h"
+// ===============================
+// CONFIG
+// ===============================
+#define DDR_BASE        0x80000000
+#define MAX_IMAGE_SIZE  (600 * 1024)   // ~600KB safety
 
-#define INPUT_ADDR   0x80700000
-#define OUTPUT_ADDR  0x81700000
+// UART registers (adjust if needed)
+#define UART_BASE       0x11300
+#define UART_BAUD   (*(volatile uint32_t *)(UART_BASE + 0x00))
+#define UART_TX     (*(volatile uint32_t *)(UART_BASE + 0x04))
+#define UART_RX     (*(volatile uint32_t *)(UART_BASE + 0x08))
+#define UART_STATUS (*(volatile uint32_t *)(UART_BASE + 0x0C))
+
+#define RX_NOT_EMPTY (1 << 2)
+#define INPUT_ADDR   0x80000000
+#define OUTPUT_ADDR  0x81000000
 
 #define CPU_FREQ 50000000   // 40 MHz
+// ===============================
+// GLOBAL BUFFER + FLAG
+// ===============================
+volatile uint8_t *img_buf = (uint8_t *)DDR_BASE;
+volatile int uart_done = 0;
+
+
+// ===============================
+// UART READ HELPERS
+// ===============================
+static inline uint8_t uart_read_byte() {
+    return getchar();   // uses correct UART mapping
+}
+
+static void uart_read_bytes(uint8_t *buf, uint32_t len) {
+    for (uint32_t i = 0; i < len; i++) {
+        buf[i] = uart_read_byte();
+    }
+}
 
 static inline uint32_t read_reg(uint32_t offset)
 {
@@ -30,6 +62,65 @@ static inline uint64_t read_mtime()
     return ((uint64_t)hi1 << 32) | lo;
 }
 
+
+// ===============================
+// RECEIVE IMAGE FUNCTION
+// ===============================
+int receive_image(uint32_t *out_size) {
+
+    uint32_t size = 0;
+
+    printf("Waiting for image size...\n");
+
+    // ---------------------------
+    // 1. Read size (4 bytes)
+    // ---------------------------
+    uart_read_bytes((uint8_t *)&size, 4);
+
+    printf("Incoming size: %u bytes\n", size);
+
+    // ---------------------------
+    // 2. Safety check
+    // ---------------------------
+    if (size == 0 || size > MAX_IMAGE_SIZE) {
+        printf("ERROR: Invalid size!\n");
+        return -1;
+    }
+
+    // ---------------------------
+    // 3. Receive data → DDR
+    // ---------------------------
+    printf("Receiving image...\n");
+
+    for (uint32_t i = 0; i < size; i++) {
+        img_buf[i] = uart_read_byte();
+    }
+
+    printf("Image received successfully!\n");
+
+    // ---------------------------
+    // 4. Cache flush (IMPORTANT)
+    // ---------------------------
+
+    // ---------------------------
+    // 5. Debug verification
+    // ---------------------------
+    printf("First 8 bytes: ");
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", img_buf[i]);
+    }
+    printf("\n");
+
+    // ---------------------------
+    // 6. Output + flag
+    // ---------------------------
+    *out_size = size;
+    uart_done = 1;
+
+    return 0;
+}
+
+
 int main()
 {
     printf("Waste Detection System Start\n");
@@ -45,17 +136,61 @@ cnn_set_size(16);
 
 printf("SIZE REG = %x\n", read_reg(REG_SIZE));
 printf("Before start: %x\n", read_reg(REG_CONTROL));
-uint64_t start = read_mtime();
+while (1) {
+    uint32_t img_size;
+    printf("READY\n");
+    delay(1000);   // small delay so Python catches it
+    // ---------------------------
+    // 1. Receive image
+    // ---------------------------
+    if (!uart_done) {
+        if (receive_image(&img_size) != 0) {
+            continue;
+        }
+    }
 
-cnn_start();
+    // ---------------------------
+    // 2. Run CNN only after full receive
+    // ---------------------------
+    if (uart_done) {
 
-printf("After start: %x\n", read_reg(REG_CONTROL));
+        printf("[CNN] Starting...\n");
+        uint64_t start = read_mtime();
+        cnn_start();
 
-cnn_wait_done();
+        printf("After start: %x\n", read_reg(REG_CONTROL));
 
-uint64_t end = read_mtime();
+        cnn_wait_done();
 
-uint64_t cycles = end - start;
+        uint64_t end = read_mtime();
+
+        uint64_t cycles = end - start;
+
+        printf("[CNN] Done\n");
+
+        // ---------------------------
+        // 3. Post-process
+        // ---------------------------
+        #define MTIME_FREQ 50000000  // adjust if needed
+
+        float time_ms = (float)cycles / (MTIME_FREQ / 512.0f);
+
+        printf("\n=== Performance ===\n");
+        printf("Ticks: %llu\n", cycles);
+        printf("Inference Time: %.3f ms\n", time_ms);
+
+            printf("CNN inference done\n");
+
+            run_classification(output);
+            print_named_results();
+
+        // ---------------------------
+        // 4. Reset for next frame
+        // ---------------------------
+        uart_done = 0;
+    }
+}
+
 
 
 // // ================= DEBUG START =================
@@ -102,23 +237,11 @@ uint64_t cycles = end - start;
 // printf("\n=== FEATURE MAP GRID ===\n");
 // for (int y = 0; y < GRID_SIZE; y++) {
 //     for (int x = 0; x < GRID_SIZE; x++) {
-//         printf("%3d ", output[y * GRID_SIZE + x]);
+//         printf("%.3d ", output[y * GRID_SIZE + x]);
 //     }
 //     printf("\n");
 // }
 
-#define MTIME_FREQ 50000000  // adjust if needed
-
-float time_ms = (float)cycles / (MTIME_FREQ / 512.0f);
-
-printf("\n=== Performance ===\n");
-printf("Ticks: %llu\n", cycles);
-printf("Inference Time: %.3f ms\n", time_ms);
-
-    printf("CNN inference done\n");
-
-    run_detection(output);
-    print_named_results();
 
     while (1);
 

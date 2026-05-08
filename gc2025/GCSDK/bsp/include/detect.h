@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 #define GRID_SIZE      13        // adjust based on your model
-#define NUM_CLASSES    8
+#define NUM_CLASSES    7
 #define CHANNELS       64
 #define MAX_DETECTIONS 100
 

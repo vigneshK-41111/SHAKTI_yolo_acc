@@ -1,29 +1,45 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "detect.h"
 
 #define IMG_SIZE    416
 #define NMS_THRESH  0.4
 #define CHANNELS    64
-#define MAX_KEEP    10   // keep top detections
+#define MAX_KEEP    10
+
+#define ENABLE_ACCURACY 1   // set 0 to disable accuracy print
 
 Detection detections[MAX_DETECTIONS];
 int det_count = 0;
 
-// Waste class labels
+// ===============================
+// Ground Truth Struct (for accuracy)
+// ===============================
+typedef struct {
+    int x, y, w, h;
+    int class_id;
+} GroundTruth;
+
+
+// ===============================
+// Class names
+// ===============================
 const char *class_names[NUM_CLASSES] = {
-    "plastic",
-    "metal",
     "glass",
     "paper",
     "cardboard",
-    "e-waste",
-    "bio",
-    "other"
+    "plastic",
+    "metal",
+    "E-wast",
+    "Medical_Wast"
 };
 
+
+// ===============================
 // IoU
+// ===============================
 float iou(Detection a, Detection b) {
     float x1 = fmax(a.x, b.x);
     float y1 = fmax(a.y, b.y);
@@ -37,7 +53,10 @@ float iou(Detection a, Detection b) {
     return inter / (areaA + areaB - inter + 1e-6f);
 }
 
+
+// ===============================
 // NMS
+// ===============================
 void apply_nms() {
     for (int i = 0; i < det_count; i++) {
         if (detections[i].score == 0) continue;
@@ -58,7 +77,10 @@ void apply_nms() {
     }
 }
 
-// Print results
+
+// ===============================
+// Print Results
+// ===============================
 void print_named_results() {
     printf("\nDetected Waste Objects:\n");
 
@@ -66,11 +88,10 @@ void print_named_results() {
         if (detections[i].score == 0) continue;
 
         int cid = detections[i].class_id;
-
         if (cid < 0 || cid >= NUM_CLASSES)
             cid = 0;
 
-        printf("Type: %s | Confidence: %.2f | Box[x=%d y=%d w=%d h=%d]\n",
+        printf("Type: %s | Confidence: %.3f | Box[x=%d y=%d w=%d h=%d]\n",
                class_names[cid],
                detections[i].score,
                (int)detections[i].x,
@@ -81,143 +102,108 @@ void print_named_results() {
 }
 
 
-// ================= DETECTION =================
-void run_detection(int8_t *feature_map) {
+// ===============================
+// Accuracy (IoU based)
+// ===============================
+float compute_accuracy(GroundTruth *gt, int gt_count) {
 
-    det_count = 0;
+    if (gt_count == 0) return 0.0f;
 
-    int stride = IMG_SIZE / GRID_SIZE;
-    int group_size = CHANNELS / NUM_CLASSES;
+    int correct = 0;
 
-    for (int gy = 0; gy < GRID_SIZE; gy++) {
-        for (int gx = 0; gx < GRID_SIZE; gx++) {
+    for (int i = 0; i < gt_count; i++) {
 
-            int idx = (gy * GRID_SIZE + gx) * CHANNELS;
+        float best_iou = 0.0f;
 
-            // ===============================
-            // 1. Objectness (energy)
-            // ===============================
-            int energy = 0;
+        for (int j = 0; j < det_count; j++) {
 
-            for (int c = 0; c < CHANNELS; c++) {
-                energy += abs(feature_map[idx + c]);
-            }
+            if (detections[j].score == 0) continue;
 
-            float obj_score = (float)energy / (CHANNELS * 50.0f);
-
-            if (obj_score < 0.1f)
+            if (detections[j].class_id != gt[i].class_id)
                 continue;
 
-            // ===============================
-            // 2. Peak filtering (LOCAL MAX)
-            // ===============================
-            int is_peak = 1;
+            Detection gt_det = {
+                gt[i].x, gt[i].y, gt[i].w, gt[i].h, 1.0f, gt[i].class_id
+            };
 
-            for (int dy = -1; dy <= 1; dy++) {
-                for (int dx = -1; dx <= 1; dx++) {
+            float iou_val = iou(detections[j], gt_det);
 
-                    if (dx == 0 && dy == 0) continue;
-
-                    int ny = gy + dy;
-                    int nx = gx + dx;
-
-                    if (ny >= 0 && ny < GRID_SIZE &&
-                        nx >= 0 && nx < GRID_SIZE) {
-
-                        int nidx = (ny * GRID_SIZE + nx) * CHANNELS;
-
-                        int n_energy = 0;
-                        for (int c = 0; c < CHANNELS; c++) {
-                            n_energy += abs(feature_map[nidx + c]);
-                        }
-
-                        if (n_energy > energy) {
-                            is_peak = 0;
-                        }
-                    }
-                }
+            if (iou_val > best_iou) {
+                best_iou = iou_val;
             }
+        }
 
-            if (!is_peak)
-                continue;
-
-            // ===============================
-            // 3. Class prediction
-            // ===============================
-            int best_class = 0;
-            int best_score = -999999;
-
-            for (int c = 0; c < NUM_CLASSES; c++) {
-
-                int sum = 0;
-
-                for (int k = 0; k < group_size; k++) {
-                    int ch = c * group_size + k;
-                    sum += feature_map[idx + ch];
-                }
-
-                if (sum > best_score) {
-                    best_score = sum;
-                    best_class = c;
-                }
-            }
-
-            if (best_class < 0 || best_class >= NUM_CLASSES)
-                best_class = 0;
-
-            // ===============================
-            // 4. Confidence
-            // ===============================
-            float cls_score = (float)best_score / (group_size * 50.0f);
-            float score = obj_score * cls_score;
-
-            if (score < 0.2f)
-                continue;
-
-            // ===============================
-            // 5. Bounding box
-            // ===============================
-            int x = gx * stride;
-            int y = gy * stride;
-            int box = stride * 3;
-
-            // ===============================
-            // 6. Store
-            // ===============================
-            if (det_count >= MAX_DETECTIONS)
-                break;
-
-            detections[det_count].x = x;
-            detections[det_count].y = y;
-            detections[det_count].w = box;
-            detections[det_count].h = box;
-            detections[det_count].score = score;
-            detections[det_count].class_id = best_class;
-
-            det_count++;
+        if (best_iou > 0.5f) {
+            correct++;
         }
     }
 
-    printf("Raw detections: %d\n", det_count);
+    return (float)correct / gt_count;
+}
+
+
+// ===============================
+// DETECTION PIPELINE
+// ===============================
+void run_classification(int8_t *feature_map) {
+
+    int class_sum[NUM_CLASSES];
+
+    // initialize
+    for (int c = 0; c < NUM_CLASSES; c++)
+        class_sum[c] = 0;
 
     // ===============================
-    // 7. NMS
+    // 1. GLOBAL FEATURE ACCUMULATION
     // ===============================
-    apply_nms();
+    for (int i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
 
-    // ===============================
-    // 8. Top-K pruning (clean output)
-    // ===============================
-    for (int i = 0; i < det_count; i++) {
-        for (int j = i + 1; j < det_count; j++) {
-            if (detections[j].score > detections[i].score) {
-                Detection tmp = detections[i];
-                detections[i] = detections[j];
-                detections[j] = tmp;
-            }
+        int base = i * CHANNELS;
+
+        for (int ch = 0; ch < CHANNELS; ch++) {
+
+            int val = feature_map[base + ch];
+
+            // map channel to class (simple modulo mapping)
+            int c = ch % NUM_CLASSES;
+
+            class_sum[c] += val;
         }
     }
 
-    if (det_count > MAX_KEEP)
-        det_count = MAX_KEEP;
+    // ===============================
+    // 2. Find best class
+    // ===============================
+    int best_class = 0;
+    int best_score = class_sum[0];
+
+    for (int c = 1; c < NUM_CLASSES; c++) {
+        if (class_sum[c] > best_score) {
+            best_score = class_sum[c];
+            best_class = c;
+        }
+    }
+
+    // ===============================
+    // 3. Normalize confidence
+    // ===============================
+    float confidence = (float)best_score / (GRID_SIZE * GRID_SIZE * CHANNELS);
+
+    if (confidence < 0) confidence = 0;
+
+    // ===============================
+    // 4. Debug print
+    // ===============================
+    printf("\n=== CLASS SCORES ===\n");
+    for (int c = 0; c < NUM_CLASSES; c++) {
+        printf("%s : %d\n", class_names[c], class_sum[c]);
+    }
+
+    // ===============================
+    // 5. Final output
+    // ===============================
+    printf("\n=== FINAL CLASSIFICATION ===\n");
+    printf("Type: %s | Confidence: %.3f\n",
+           class_names[best_class],
+           confidence);
 }
