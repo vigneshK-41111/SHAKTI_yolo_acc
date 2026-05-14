@@ -236,6 +236,9 @@ else
 ifeq ($(PROGRAM),yolo_acc_detect)
 filepath := yolo_acc_applns/yolo_acc_detect
 else
+ifeq ($(PROGRAM),capture)
+filepath := yolo_acc_applns/capture
+else
 ifeq ($(PROGRAM),sd_frame_load)
 filepath := yolo_acc_applns/sd_frame_load
 else
@@ -610,6 +613,7 @@ filepath := AS32-TTL-100_LoRa/lora_send_receive
 else
 
 	@echo "Entry for $(PROGRAM) not present"
+endif
 endif
 endif
 endif

@@ -1,41 +1,44 @@
 import cv2
 import serial
-import time
+import numpy as np
 
-ser = serial.Serial('/dev/ttyUSB2', 115200, timeout=2)
-
-# -------------------------
-# WAIT FOR FPGA READY
-# -------------------------
-# print("Waiting for FPGA...")
-
-# while True:
-#     line = ser.readline().decode(errors='ignore')
-#     if "READY" in line:
-#         break
-
-# print("FPGA ready, sending image...")
-
-# -------------------------
-# CAPTURE IMAGE
-# -------------------------
+# Configure serial and camera
+ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=0.1)
 cap = cv2.VideoCapture(0)
-ret, frame = cap.read()
 
-frame = cv2.resize(frame, (416, 416))
-frame = frame[:, :, ::-1]  # BGR → RGB
+def preprocess_frame(frame):
+    # 1. Resize to match your model's input dimensions
+    img = cv2.resize(frame, (416, 416))
+    
+    # 2. BGR to RGB: Crucial for correctly identifying E-waste (green PCBs)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    
+    # 3. Normalization: Standard models expect float 0:1. 
+    # For int8 FPGA, we map 0:255 to -128:127 to prevent "3.3% confidence" noise.
+    img = img.astype(np.int16)
+    img = (img - 128).astype(np.int8)
+    return img.tobytes()
 
-data = frame.tobytes()
-size = len(data)
+print("[PC] System Online. Waiting for READY...")
 
-# -------------------------
-# SEND
-# -------------------------
-ser.write(size.to_bytes(4, 'little'))
-time.sleep(0.05)
+while True:
+    line = ser.readline().decode(errors='ignore').strip()
 
-for i in range(0, size, 256):
-    ser.write(data[i:i+256])
-    time.sleep(0.001)
+    if "READY" in line:
+        ret, frame = cap.read()
+        if not ret: continue
 
-print("Sent live frame:", size)
+        data = preprocess_frame(frame)
+        
+        # Send Size Header (4 bytes)
+        ser.write(len(data).to_bytes(4, 'little'))
+        
+        # Send Data in chunks to avoid overwhelming UART buffer
+        chunk_size = 4096
+        for i in range(0, len(data), chunk_size):
+            ser.write(data[i:i + chunk_size])
+        ser.flush()
+        print(f"[PC] Sent frame ({len(data)} bytes).")
+
+    elif line:
+        print(f" FPGA >> {line}")

@@ -3,23 +3,19 @@
 
 #include <stdint.h>
 
-#define GRID_SIZE      13        // adjust based on your model
-#define NUM_CLASSES    7
-#define CHANNELS       64
-#define MAX_DETECTIONS 100
+#define NUM_CLASSES 7
+#define GRID_SIZE   13   
+#define CHANNELS    64
 
 typedef struct {
-    float x, y, w, h;
-    float score;
+    float confidence;
     int class_id;
-} Detection;
+} ClassificationResult;
 
-// Global detection storage
-extern Detection detections[MAX_DETECTIONS];
-extern int det_count;
+extern ClassificationResult current_result;
 
-// Functions
-void run_detection(int8_t *feature_map);
-void print_named_results();
+// Proper function prototypes
+void run_classification(int8_t *feature_map);
+void print_classification();
 
 #endif
